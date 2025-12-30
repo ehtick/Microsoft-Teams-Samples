@@ -1,15 +1,19 @@
 {
-  "name": "microsoft-teams-hello-world-bot",
+  "name": "teams-hello-world-copilot-optimized",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/OfficeDev/Microsoft-Teams-Samples.git",
+    "directory": "samples/app-hello-world/nodejs"
+  },
   "version": "1.0.0",
   "description": "Microsoft Teams Hello World Bot sample optimized for GitHub Copilot Agent development",
+  "homepage": "https://github.com/OfficeDev/Microsoft-Teams-Samples/tree/main/samples/app-hello-world/nodejs",
   "keywords": [
     "microsoft-teams",
-    "teams-bot",
-    "github-copilot",
     "copilot-agent",
-    "teams-platform",
     "bot-framework",
-    "nodejs"
+    "teams-samples",
+    "officedev"
   ],
   "main": "src/app.js",
   "engines": {
@@ -23,11 +27,6 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "node build.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/OfficeDev/Microsoft-Teams-Samples.git",
-    "directory": "samples/app-hello-world/nodejs"
-  },
   "author": {
     "name": "Microsoft Corporation",
     "email": "teams-dev@microsoft.com",
@@ -37,7 +36,6 @@
   "bugs": {
     "url": "https://github.com/OfficeDev/Microsoft-Teams-Samples/issues"
   },
-  "homepage": "https://docs.microsoft.com/microsoftteams/platform/",
   "copilot": {
     "agent": {
       "priority": "teams-first",
@@ -51,7 +49,7 @@
   },
   "dependencies": {
     "@babel/polyfill": "^7.12.1",
-    "botbuilder": "^4.18.0",
+    "botbuilder": "^4.23.3",
     "config": "^1.28.1",
     "core-js": "^2.6.11",
     "dotenv": "^8.2.0",
