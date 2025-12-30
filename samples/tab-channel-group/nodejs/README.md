@@ -14,7 +14,7 @@ extensions:
 urlFragment: officedev-microsoft-teams-samples-tab-channel-group-js
 ---
 
-# Channel and group tabs in ASP.NET Core with MVC
+# Channel and group tabs in Node.js
 
 Discover how to create custom channel and group tabs in Microsoft Teams using Nodejs in this comprehensive sample app. This guide walks you through the entire process, from setting up your development environment and configuring the app manifest to testing the integration with local tunneling solutions like Ngrok
 
@@ -28,7 +28,7 @@ Discover how to create custom channel and group tabs in Microsoft Teams using No
 ## Try it yourself - experience the App in your Microsoft Teams client
 Please find below demo manifest which is deployed on Microsoft Azure and you can try it yourself by uploading the app package (.zip file link below) to your teams and/or as a personal app. (Uploading must be enabled for your tenant, [see steps here](https://docs.microsoft.com/microsoftteams/platform/concepts/build-and-test/prepare-your-o365-tenant#enable-custom-teams-apps-and-turn-on-custom-app-uploading)).
 
-**Channel and group tabs in ASP.NET Core with MVC:**  [Manifest](/samples/tab-channel-group/js/demo-manifest/tab-channel-group.zip)
+**Channel and group tabs in Node.js:**  [Manifest](/samples/tab-channel-group/js/demo-manifest/tab-channel-group.zip)
 
 ## Prerequisites
 
@@ -125,7 +125,7 @@ Your app is ready to be deployed!
 
 ## Further Reading
 
-[Tab-channel-group](https://learn.microsoft.coms/microsoftteams/platform/tabs/what-are-tabs)
-[Create a Custom Channel and Group Tab with ASP.NET Core and MVC](https://docs.microsoft.com/microsoftteams/platform/tabs/how-to/create-channel-group-tab?pivots=node-java-script&tabs=vs)
+- [Tab-channel-group](https://learn.microsoft.com/en-us/microsoftteams/platform/tabs/what-are-tabs)
+- [Create a Custom Channel and Group Tab with Node.js](https://docs.microsoft.com/microsoftteams/platform/tabs/how-to/create-channel-group-tab?pivots=node-java-script&tabs=vs)
 
 <img src="https://pnptelemetry.azurewebsites.net/microsoft-teams-samples/samples/tab-channel-group-js" />
