@@ -752,6 +752,10 @@ jobs:
               name: 'msgext-search-quickstart'
               version: '14.x'
 
+            - project_path: 'samples/tab-channel-group/nodejs'
+              name: 'tab-channel-group'
+              version: '16.x'
+
             - project_path: 'samples/tab-channel-group-quickstart/js'
               name: 'tab-channel-group-quickstart'
               version: '14.x'

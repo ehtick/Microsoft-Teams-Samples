@@ -325,6 +325,7 @@ The [Teams Toolkit](https://marketplace.visualstudio.com/items?itemName=TeamsDev
 [group-channel-tab#cs#razor]:samples/tab-channel-group/razor-csharp
 [group-channel-tab#cs#mvc]:samples/tab-channel-group/mvc-csharp
 [group-channel-tab#ts#spfx]:samples/tab-channel-group/spfx
+[tab-channel-group#js]:samples/tab-channel-group/nodejs
 
 [connector#cs]:samples/connector-todo-notification/csharp
 [incoming-webhook#cs]:samples/incoming-webhook/csharp
