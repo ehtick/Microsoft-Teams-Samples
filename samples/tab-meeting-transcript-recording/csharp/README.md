@@ -35,7 +35,7 @@ This Microsoft Teams sample application provides a robust solution for capturing
 ## Run the app (Using Microsoft 365 Agents Toolkit for Visual Studio)
 
 The simplest way to run this sample in Teams is to use Microsoft 365 Agents Toolkit for Visual Studio.
-1. Install Visual Studio 2022 **Version 17.14 Preview 3 or higher** [Visual Studio](https://visualstudio.microsoft.com/downloads/)
+1. Install Visual Studio 2022 **Version 17.14 or higher** [Visual Studio](https://visualstudio.microsoft.com/downloads/)
 1. Install Microsoft 365 Agents Toolkit for Visual Studio [Microsoft 365 Agents Toolkit extension](https://learn.microsoft.com/en-us/microsoftteams/platform/toolkit/toolkit-v4/install-teams-toolkit-vs?pivots=visual-studio-v17-7)
 1. In the debug dropdown menu of Visual Studio, select default startup project > **Microsoft Teams (browser)**
 1. Right-click the 'M365Agent' project in Solution Explorer and select **Microsoft 365 Agents Toolkit > Select Microsoft 365 Account**
@@ -45,7 +45,7 @@ The simplest way to run this sample in Teams is to use Microsoft 365 Agents Tool
     </br>![image](https://raw.githubusercontent.com/OfficeDev/TeamsFx/dev/docs/images/visualstudio/debug/debug-button.png)
 1. In the opened web browser, select Add button to install the app in Teams
 
-> If you do not have permission to upload custom apps (sideloading), Microsoft 365 Agents Toolkit will recommend creating and using a Microsoft 365 Developer Program account - a free program to get your own dev environment sandbox that includes Teams.
+> If you do not have permission to upload custom apps (uploading), Microsoft 365 Agents Toolkit will recommend creating and using a Microsoft 365 Developer Program account - a free program to get your own dev environment sandbox that includes Teams.
 
 ### Setup Register you app with Azure AD.
 
@@ -81,6 +81,7 @@ The simplest way to run this sample in Teams is to use Microsoft 365 Agents Tool
   12. Navigate to **API Permissions**, and make sure to add the follow permissions:
   -   Select Add a permission
   -   Select Microsoft Graph -\> Delegated permissions.
+      *   `User.Read` (enabled by default)
   -   Select Microsoft Graph -\> Application permissions.
 
       ![Login-In ](MeetingTranscriptRecording/Images/Permissions.png)
