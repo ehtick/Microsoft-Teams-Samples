@@ -502,7 +502,7 @@ jobs:
               
             - project_path: 'samples/bot-shared-channel-events/csharp/SharedChannelEvents/SharedChannelEvents.csproj'
               name: 'bot-shared-channel-events'
-              version: '6.0.x'
+              version: '8.0.x'
 
             - project_path: 'samples/graph-membership-change-notification/csharp/ChangeNotification/ChangeNotification.csproj'
               name: 'graph-membership-change-notification'
@@ -1202,6 +1202,10 @@ jobs:
               name: 'bot-initiate-thread-in-channel'
               version: '3.10.x'
 
+            - project_path: 'samples/graph-pinned-messages/python'
+              name: 'graph-pinned-messages'
+              version: '3.10.x'
+
             - project_path: 'samples/msgext-search/python'
               name: 'msgext-search'
               version: '3.10.x'
@@ -1216,6 +1220,10 @@ jobs:
 
             - project_path: 'samples/msgext-link-unfurling/python'
               name: 'msgext-link-unfurling'
+              version: '3.10.x'
+
+            - project_path: 'samples/msgext-message-reminder/python'
+              name: 'msgext-message-reminder'
               version: '3.10.x'
               
             - project_path: 'samples/msgext-search-auth-config/python'
@@ -1244,6 +1252,10 @@ jobs:
 
             - project_path: 'samples/agent-knowledge-hub/python'
               name: 'agent-knowledge-hub'
+              version: '3.13.x'
+
+            - project_path: 'samples/bot-all-cards/python'
+              name: 'bot-all-cards'
               version: '3.13.x'
 
       fail-fast: false
