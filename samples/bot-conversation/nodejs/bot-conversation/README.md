@@ -27,11 +27,11 @@ The bot will start listening on `http://localhost:3978`.
 
 ## Features
 
+- **Welcome Card**: Interactive hero card with multiple action buttons
 - **User Information**: Get current user details with "Who am I?" functionality
 - **Adaptive Card Mentions**: Mention users in adaptive cards using UPN and AAD Object ID
 - **Card Management**: Update and delete hero cards dynamically
 - **Immersive Reader**: Send adaptive cards with Immersive Reader support for accessibility
-- **Welcome Card**: Interactive hero card with multiple action buttons
 
 ## Configuration
 
