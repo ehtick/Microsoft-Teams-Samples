@@ -1,30 +1,53 @@
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
-import { App } from '@microsoft/teams.apps';
-import * as ACData from 'adaptivecards-templating';
+import { App, IActivityContext } from '@microsoft/teams.apps';
+import { Activity, TeamsChannelAccount, IMessageActivity } from '@microsoft/teams.api';
+
+// Type definitions for card actions
+interface CardAction {
+    type: string;
+    title: string;
+    value: CardUpdateData | null;
+    text: string;
+}
+
+interface CardUpdateData {
+    count: number;
+}
 
 // Initialize Teams App - automatically uses CLIENT_ID and CLIENT_SECRET from environment variables
 const app = new App();
 
-// Removes bot mention text from the incoming message
-function removeMentionText(text: string, entities: any[]): string {
-    if (!text || !entities) return text || '';
+// Removes only the bot recipient mention from the incoming message text
+function removeRecipientMention(activity: Activity): string {
+    const messageActivity = activity as IMessageActivity;
+    let text = messageActivity.text || '';
+    
+    if (!text || !activity.entities || !activity.recipient) {
+        return text.trim();
+    }
 
-    for (const entity of entities) {
-        if (entity.type === 'mention' && entity.text) {
+    // Only remove mentions that are specifically for the bot recipient
+    for (const entity of activity.entities) {
+        if (entity.type === 'mention' && 
+            entity.mentioned?.id === activity.recipient.id && 
+            entity.text) {
+            // Replace only the first occurrence to avoid removing user mentions
             text = text.replace(entity.text, '').trim();
         }
     }
+    
     return text;
 }
 
 // Handles incoming messages and routes to appropriate functions based on message content
 app.on('message', async (context) => {
     const { activity } = context;
+    console.log(`Received message: ${activity.text}`);
 
     // Remove bot mention from text
-    let text = removeMentionText(activity.text || '', activity.entities || []);
+    let text = removeRecipientMention(activity);
     text = text.trim().toLowerCase();
 
     if (text.includes('mention me')) {
@@ -43,8 +66,8 @@ app.on('message', async (context) => {
 });
 
 // Creates and sends either a welcome card or update card based on isUpdate flag
-async function cardActivity(context: any, isUpdate: boolean) {
-    const cardActions = [
+async function cardActivity(context: IActivityContext, isUpdate: boolean): Promise<void> {
+    const cardActions: CardAction[] = [
         {
             type: 'messageBack',
             title: 'Who am I?',
@@ -79,9 +102,10 @@ async function cardActivity(context: any, isUpdate: boolean) {
 }
 
 // Updates an existing card with incremented count
-async function sendUpdateCard(context: any, cardActions: any[]) {
+async function sendUpdateCard(context: IActivityContext, cardActions: CardAction[]): Promise<void> {
     const { activity } = context;
-    const data = activity.value || { count: 0 };
+    const messageActivity = activity as IMessageActivity;
+    const data: CardUpdateData = messageActivity.value || { count: 0 };
     data.count += 1;
 
     cardActions.push({
@@ -94,6 +118,8 @@ async function sendUpdateCard(context: any, cardActions: any[]) {
     // Update the card using the API
     const conversationId = activity.conversation.id;
     const messageId = activity.replyToId;
+    
+    if (!messageId) return;
 
     await context.api.conversations.activities(conversationId).update(messageId, {
         type: 'message',
@@ -109,8 +135,8 @@ async function sendUpdateCard(context: any, cardActions: any[]) {
 }
 
 // Sends initial welcome card with action buttons
-async function sendWelcomeCard(context: any, cardActions: any[]) {
-    const initialValue = { count: 0 };
+async function sendWelcomeCard(context: IActivityContext, cardActions: CardAction[]): Promise<void> {
+    const initialValue: CardUpdateData = { count: 0 };
 
     cardActions.push({
         type: 'messageBack',
@@ -133,64 +159,25 @@ async function sendWelcomeCard(context: any, cardActions: any[]) {
 }
 
 // Retrieves and displays information about the current user
-async function getSingleMember(context: any) {
+async function getSingleMember(context: IActivityContext): Promise<void> {
     try {
         const { activity } = context;
         const conversationId = activity.conversation.id;
         const userId = activity.from.id;
-
-        const member = await context.api.conversations.members(conversationId).getById(userId);
-
+        
+        const member: TeamsChannelAccount = await context.api.conversations.members(conversationId).getById(userId);
         await context.send({
             type: 'message',
             text: `You are: ${member.name}`
         });
-    } catch (e: any) {
-        console.error('Error getting member:', e);
+    } catch (error) {
+        console.error('Error getting member:', error);
         await context.send({
             type: 'message',
             text: 'Member not found or error occurred.'
         });
     }
 }
-
-// Adaptive card template for mentioning users by UPN and AAD Object ID
-const UserMentionCardTemplate = {
-    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
-    "type": "AdaptiveCard",
-    "version": "1.5",
-    "speak": "This card mentions a user by User Principle Name: Hello ${userName}",
-    "body": [
-        {
-            "type": "TextBlock",
-            "text": "Mention a user by User Principle Name: Hello <at>${userName} UPN</at>"
-        },
-        {
-            "type": "TextBlock",
-            "text": "Mention a user by AAD Object Id: Hello <at>${userName} AAD</at>"
-        }
-    ],
-    "msteams": {
-        "entities": [
-            {
-                "type": "mention",
-                "text": "<at>${userName} UPN</at>",
-                "mentioned": {
-                    "id": "${userUPN}",
-                    "name": "${userName}"
-                }
-            },
-            {
-                "type": "mention",
-                "text": "<at>${userName} AAD</at>",
-                "mentioned": {
-                    "id": "${userAAD}",
-                    "name": "${userName}"
-                }
-            }
-        ]
-    }
-};
 
 // Adaptive card template for Immersive Reader with flight information example
 const ImmersiveReaderCardTemplate = {
@@ -453,24 +440,63 @@ const ImmersiveReaderCardTemplate = {
 };
 
 // Sends an adaptive card that mentions the user by UPN and AAD Object ID
-async function mentionAdaptiveCardActivity(context: any) {
+async function mentionAdaptiveCardActivity(context: IActivityContext): Promise<void> {
     try {
         const { activity } = context;
         const conversationId = activity.conversation.id;
         const userId = activity.from.id;
-
-        const member = await context.api.conversations.members(conversationId).getById(userId);
-
-        const template = new ACData.Template(UserMentionCardTemplate);
-        const memberData = {
-            userName: member.name,
-            userUPN: member.userPrincipalName,
-            userAAD: member.aadObjectId
+        
+        const member: TeamsChannelAccount = await context.api.conversations.members(conversationId).getById(userId);
+        
+        // Use aadObjectId if objectId is not available, or fall back to userId
+        const aadId = (member as any).aadObjectId || member.objectId || userId;
+        
+        if (!member.userPrincipalName) {
+            console.error('Member UPN is missing');
+            await context.send({
+                type: 'message',
+                text: 'Unable to create mention card: user information incomplete.'
+            });
+            return;
+        }
+        
+        // Manually build the adaptive card with proper mentions
+        const adaptiveCard = {
+            "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+            "type": "AdaptiveCard",
+            "version": "1.5",
+            "speak": `This card mentions a user by User Principle Name: Hello ${member.name}`,
+            "body": [
+                {
+                    "type": "TextBlock",
+                    "text": `Mention a user by User Principle Name: Hello <at>${member.name}</at>`
+                },
+                {
+                    "type": "TextBlock",
+                    "text": `Mention a user by AAD Object Id: Hello <at>${member.name}</at>`
+                }
+            ],
+            "msteams": {
+                "entities": [
+                    {
+                        "type": "mention",
+                        "text": `<at>${member.name}</at>`,
+                        "mentioned": {
+                            "id": member.userPrincipalName,
+                            "name": member.name
+                        }
+                    },
+                    {
+                        "type": "mention",
+                        "text": `<at>${member.name}</at>`,
+                        "mentioned": {
+                            "id": aadId,
+                            "name": member.name
+                        }
+                    }
+                ]
+            }
         };
-
-        const adaptiveCard = template.expand({
-            $root: memberData
-        });
 
         await context.send({
             type: 'message',
@@ -479,8 +505,8 @@ async function mentionAdaptiveCardActivity(context: any) {
                 content: adaptiveCard
             }]
         });
-    } catch (e: any) {
-        console.error('Error getting member:', e);
+    } catch (error) {
+        console.error('Error getting member:', error);
         await context.send({
             type: 'message',
             text: 'Member not found or error occurred.'
@@ -489,7 +515,7 @@ async function mentionAdaptiveCardActivity(context: any) {
 }
 
 // Sends an adaptive card with Immersive Reader support showing flight information
-async function getImmersivereaderCard(context: any) {
+async function getImmersivereaderCard(context: IActivityContext): Promise<void> {
     await context.send({
         type: 'message',
         attachments: [{
@@ -500,11 +526,13 @@ async function getImmersivereaderCard(context: any) {
 }
 
 // Deletes a card message from the conversation
-async function deleteCardActivity(context: any) {
+async function deleteCardActivity(context: IActivityContext): Promise<void> {
     const { activity } = context;
     const conversationId = activity.conversation.id;
     const messageId = activity.replyToId;
 
+    if (!messageId) return;
+    
     await context.api.conversations.activities(conversationId).delete(messageId);
 }
 
