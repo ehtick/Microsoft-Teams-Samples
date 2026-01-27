@@ -222,7 +222,7 @@ async Task SendWelcomeCard(IContext<MessageActivity> context)
     counter++;
     var heroCardContent = new
     {
-        title = "Updated card",
+        title = "Initial card",
         text = $"Update count {counter}",
         buttons = new[]
         {
