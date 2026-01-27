@@ -19,7 +19,7 @@ This sample demonstrates a conversation bot for Microsoft Teams using Python and
 
 1. Navigate to this directory:
    ```bash
-   cd python
+   cd python/bot-conversation
    ```
 
 2. Install dependencies using uv:

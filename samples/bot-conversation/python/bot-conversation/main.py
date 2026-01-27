@@ -13,9 +13,9 @@ This sample demonstrates various conversation features including:
 
 import asyncio
 import json
-import os
 import re
 from typing import Dict, List, Optional
+import copy
 
 from dotenv import load_dotenv
 from microsoft_teams.api import MessageActivity, TypingActivityInput, MessageActivityInput
@@ -32,7 +32,7 @@ USER_MENTION_CARD_TEMPLATE = {
     "body": [
         {
             "type": "TextBlock",
-            "text": "Mention a user by User Principle Name: Hello <at>${userName} UPN</at>"
+            "text": "Mention a user by User Principal Name: Hello <at>${userName} UPN</at>"
         },
         {
             "type": "TextBlock",
@@ -66,7 +66,7 @@ IMMERSIVE_READER_CARD_TEMPLATE = {
     "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
     "type": "AdaptiveCard",
     "version": "1.5",
-    "speak": "Flight KL0605 to San Fransisco has been delayed. It will not leave until 10:10 AM.",
+    "speak": "Flight KL0605 to San Francisco has been delayed. It will not leave until 10:10 AM.",
     "body": [
         {
             "type": "ColumnSet",
@@ -324,7 +324,7 @@ IMMERSIVE_READER_CARD_TEMPLATE = {
 app = App()
 
 
-def create_hero_card(title: str, text: str, buttons: List[Dict], update_count: Optional[int] = None) -> Dict:
+def create_hero_card(title: str, text: str, buttons: List[Dict]) -> Dict:
     """Create a Hero Card structure."""
     card = {
         "contentType": "application/vnd.microsoft.card.hero",
@@ -408,15 +408,6 @@ async def send_update_card(ctx: ActivityContext[MessageActivity]) -> None:
     
     buttons = get_welcome_card_buttons(new_value)
     
-    # Remove the last button and re-add with updated value
-    buttons = buttons[:-1]
-    buttons.append({
-        "type": "messageBack",
-        "title": "Update Card",
-        "text": "updatecardaction",
-        "value": json.dumps(new_value)
-    })
-    
     card = create_hero_card(
         title="Updated card",
         text=f"Update count {count}",
@@ -464,8 +455,6 @@ async def mention_adaptive_card_activity(ctx: ActivityContext[MessageActivity]) 
         member_upn = member.user_principal_name if hasattr(member, 'user_principal_name') and member.user_principal_name else member.id
         member_aad = member.aad_object_id if hasattr(member, 'aad_object_id') and member.aad_object_id else member.id
         
-        # Create a copy of the template and process it
-        import copy
         template = copy.deepcopy(USER_MENTION_CARD_TEMPLATE)
         
         # Replace placeholders in the card body
