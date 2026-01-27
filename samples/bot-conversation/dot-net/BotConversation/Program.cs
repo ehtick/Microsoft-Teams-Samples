@@ -59,8 +59,7 @@ async Task MentionAdaptiveCardActivityAsync(IContext<MessageActivity> context)
     try
     {
         var userName = context.Activity.From.Name ?? "User";
-        var userId = context.Activity.From.AadObjectId ?? context.Activity.From.Id;
-        
+        var userId = context.Activity.From.AadObjectId ?? context.Activity.From.Id;        
         var cardContent = new
         {
             type = "AdaptiveCard",
@@ -105,9 +104,7 @@ async Task MentionAdaptiveCardActivityAsync(IContext<MessageActivity> context)
                 }
             }
         };
-
         var cardElement = JsonSerializer.SerializeToElement(cardContent);
-
         var messageActivity = new MessageActivity
         {
             Attachments = new List<Microsoft.Teams.Api.Attachment>
@@ -118,8 +115,7 @@ async Task MentionAdaptiveCardActivityAsync(IContext<MessageActivity> context)
                     Content = cardElement
                 }
             }
-        };
-        
+        };        
         await context.Send(messageActivity);
     }
     catch (Exception ex)
@@ -154,14 +150,12 @@ async Task UpdateCardActivityAsync(IContext<MessageActivity> context)
 {
     try
     {
-        var userId = context.Activity.From.Id;
-        
+        var userId = context.Activity.From.Id;        
         if (!userLastMessageIds.TryGetValue(userId, out var messageId) || string.IsNullOrEmpty(messageId))
         {
             await context.Send("No card found to update. Please send a message first, then try 'update'.");
             return;
         }
-
         counter++;
         var heroCardContent = new
         {
@@ -176,7 +170,6 @@ async Task UpdateCardActivityAsync(IContext<MessageActivity> context)
                 new { type = "imBack", title = "Update Card", value = "update" }
             }
         };
-
         var messageActivity = new MessageActivity
         {
             Type = ActivityType.Message,
@@ -188,8 +181,7 @@ async Task UpdateCardActivityAsync(IContext<MessageActivity> context)
                     Content = JsonSerializer.SerializeToElement(heroCardContent)
                 }
             }
-        };
-        
+        };        
         await context.Api.Conversations.Activities.UpdateAsync(
             context.Activity.Conversation.Id,
             messageId,
@@ -206,14 +198,12 @@ async Task DeleteCardActivityAsync(IContext<MessageActivity> context)
 {
     try
     {
-        var userId = context.Activity.From.Id;
-        
+        var userId = context.Activity.From.Id;        
         if (!userLastMessageIds.TryGetValue(userId, out var messageId) || string.IsNullOrEmpty(messageId))
         {
             await context.Send("No card found to delete. Please send 'welcome' first, then try 'delete'.");
             return;
         }
-
         await context.Api.Conversations.Activities.DeleteAsync(
             context.Activity.Conversation.Id,
             messageId
