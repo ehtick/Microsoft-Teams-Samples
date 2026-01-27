@@ -1,6 +1,6 @@
 # Bot Conversation - Node.js (TypeScript)
 
-This sample demonstrates a comprehensive Teams Conversation Bot for Microsoft Teams using Node.js and TypeScript.
+This sample demonstrates a comprehensive Teams Conversation Bot for Microsoft Teams using Node.js and TypeScript. The bot showcases various conversation features including user mentions, adaptive cards, card updates, and immersive reader support.
 
 ## Prerequisites
 
@@ -24,5 +24,23 @@ This sample demonstrates a comprehensive Teams Conversation Bot for Microsoft Te
    ```
 
 The bot will start listening on `http://localhost:3978`.
+
+## Features
+
+- **User Information**: Get current user details with "Who am I?" functionality
+- **Adaptive Card Mentions**: Mention users in adaptive cards using UPN and AAD Object ID
+- **Card Management**: Update and delete hero cards dynamically
+- **Immersive Reader**: Send adaptive cards with Immersive Reader support for accessibility
+- **Welcome Card**: Interactive hero card with multiple action buttons
+
+## Configuration
+
+`.env` file with your credentials:
+
+```
+TENANT_ID=your-tenant-id
+CLIENT_ID=your-client-id
+CLIENT_SECRET=your-client-secret
+```
 
 Refer to the main [README.md](../../README.md) to interact with your bot in the agentsplayground or in Teams.
