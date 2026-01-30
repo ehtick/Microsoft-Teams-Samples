@@ -13,21 +13,21 @@ const app = new App();
 function removeRecipientMention(activity: Activity): string {
     const messageActivity = activity as IMessageActivity;
     let text = messageActivity.text || '';
-    
+
     if (!text || !activity.entities || !activity.recipient) {
         return text.trim();
     }
 
     // Only remove mentions that are specifically for the bot recipient
     for (const entity of activity.entities) {
-        if (entity.type === 'mention' && 
-            entity.mentioned?.id === activity.recipient.id && 
+        if (entity.type === 'mention' &&
+            entity.mentioned?.id === activity.recipient.id &&
             entity.text) {
             // Replace only the first occurrence to avoid removing user mentions
             text = text.replace(entity.text, '').trim();
         }
     }
-    
+
     return text;
 }
 
@@ -35,7 +35,7 @@ function removeRecipientMention(activity: Activity): string {
 app.on('conversationUpdate', async (context) => {
     const { activity } = context;
     const membersAdded = (activity as any).membersAdded || [];
-    
+
     for (const member of membersAdded) {
         // Check if bot was added to the conversation
         if (member.id !== activity.recipient.id) {
@@ -79,7 +79,7 @@ async function getSingleMember(context: IActivityContext): Promise<void> {
     const { activity } = context;
     const conversationId = activity.conversation.id;
     const userId = activity.from.id;
-    
+
     try {
         const member: TeamsChannelAccount = await context.api.conversations.members(conversationId).getById(userId);
         await context.send({
@@ -100,10 +100,10 @@ async function mentionUser(context: IActivityContext): Promise<void> {
     const { activity } = context;
     const conversationId = activity.conversation.id;
     const userId = activity.from.id;
-    
+
     try {
         const member: TeamsChannelAccount = await context.api.conversations.members(conversationId).getById(userId);
-        
+
         // Create a text message with user mention
         const mentionText = `<at>${member.name}</at>`;
         await context.send({
