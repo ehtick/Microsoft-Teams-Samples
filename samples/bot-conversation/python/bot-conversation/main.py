@@ -1,14 +1,6 @@
 """
 Copyright (c) Microsoft Corporation. All rights reserved.
 Licensed under the MIT License.
-
-Bot Conversation Sample - Microsoft Teams Bot
-This sample demonstrates various conversation features including:
-- Who am I
-- Find me in Adaptive Card (user mentions)
-- Card updates
-- Card deletion
-- Send Immersive Reader Card
 """
 
 import asyncio

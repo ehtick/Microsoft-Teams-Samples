@@ -3,7 +3,7 @@ name = "bot-conversation"
 version = "0.1.0"
 description = "Bot Conversation Sample - Microsoft Teams Bot demonstrating various conversation features"
 readme = "README.md"
-requires-python = ">=3.12,<3.14"
+requires-python = ">=3.12,<3.15"
 dependencies = [
     "python-dotenv>=1.0.*",
     "microsoft-teams-apps>=2.0.*",
