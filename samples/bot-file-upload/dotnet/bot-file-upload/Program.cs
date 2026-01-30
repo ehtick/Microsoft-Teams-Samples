@@ -62,12 +62,15 @@ teamsApp.OnMessage(async context =>
                         await response.Content.CopyToAsync(fileStream);
                     }
 
-                    await context.Send($"File <b>{fileName}</b> downloaded successfully!");
+                    var successMessage = new MessageActivity($"File <b>{fileName}</b> downloaded successfully!");
+                    successMessage.TextFormat = TextFormat.Xml;
+                    await context.Send(successMessage);
                 }
             }
             catch (Exception ex)
             {
-                await context.Send($"Error downloading file: {ex.Message}");
+                Console.WriteLine($"Error downloading file: {ex}");
+                await context.Send("Sorry, there was an error downloading the file. Please try again later.");
             }
         }
         // Handle inline images
@@ -101,7 +104,8 @@ teamsApp.OnMessage(async context =>
             }
             catch (Exception ex)
             {
-                await context.Send($"Error processing image: {ex.Message}");
+                Console.WriteLine($"Error processing image: {ex}");
+                await context.Send("Sorry, there was an error processing your image. Please try again later.");
             }
         }
         else
@@ -147,7 +151,8 @@ teamsApp.OnMessage(async context =>
         }
         catch (Exception ex)
         {
-            await context.Send($"Error: {ex.Message}");
+            Console.WriteLine($"Error creating file consent card: {ex}");
+            await context.Send("Sorry, there was an error preparing the file. Please try again later.");
         }
     }
 });
@@ -213,7 +218,8 @@ teamsApp.OnFileConsent(async context =>
         }
         catch (Exception ex)
         {
-            await context.Send($"Error uploading file: {ex.Message}");
+            Console.WriteLine($"Error uploading file: {ex}");
+            await context.Send("Sorry, there was an error uploading the file. Please try again later.");
         }
     }
     else if (fileConsentResponse?.Action == "decline")
