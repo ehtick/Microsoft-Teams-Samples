@@ -43,8 +43,12 @@
             ],
             "commands": [
               {
-                "title": "Show Welcome",
-                "description": "Shows the welcome card"
+                "title": "Mentionme",
+                "description": "Sends message with @mention of the sender"
+              },
+              {
+                "title": "Whoami",
+                "description": "Sends message with name of the sender"
               }
             ]
           }
