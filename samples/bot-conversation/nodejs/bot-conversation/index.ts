@@ -9,7 +9,6 @@ import { Activity, TeamsChannelAccount, IMessageActivity } from '@microsoft/team
 const app = new App();
 
 // Removes only the bot recipient mention from the incoming message text
-// Note: This helper function should ideally be part of the SDK to avoid duplication across samples
 function removeRecipientMention(activity: Activity): string {
     const messageActivity = activity as IMessageActivity;
     let text = messageActivity.text || '';

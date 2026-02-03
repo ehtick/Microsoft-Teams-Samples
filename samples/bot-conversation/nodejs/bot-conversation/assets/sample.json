@@ -3,10 +3,10 @@
     "name": "officedev-microsoft-teams-samples-bot-conversation-nodejs",
     "source": "officeDev",
     "title": "Bot Conversation",
-    "shortDescription": "This sample demonstrates a basic Teams Conversation Bot using TypeScript with conversation features.",
+    "shortDescription": "This sample demonstrates a basic Teams Bot for Microsoft Teams using TypeScript",
     "url": "https://github.com/OfficeDev/Microsoft-Teams-Samples/tree/main/samples/bot-conversation/nodejs",
     "longDescription": [
-      "This sample demonstrates a basic Teams Conversation Bot for Microsoft Teams using TypeScript. The bot showcases conversation features including conversation update events, message handling, and user mentions."
+      "This sample demonstrates a basic Teams Bot for Microsoft Teams using TypeScript. The bot showcases conversation features including conversation update events, message handling, and user mentions."
     ],
     "creationDateTime": "2022-10-04",
     "updateDateTime": "2026-01-28",
