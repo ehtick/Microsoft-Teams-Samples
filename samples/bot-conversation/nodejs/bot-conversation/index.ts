@@ -87,10 +87,6 @@ async function getSingleMember(context: IActivityContext): Promise<void> {
         });
     } catch (error) {
         console.error('Error getting member:', error);
-        await context.send({
-            type: 'message',
-            text: 'Unable to retrieve member information. This feature may not be available in this context.'
-        });
     }
 }
 
@@ -122,10 +118,6 @@ async function mentionUser(context: IActivityContext): Promise<void> {
         });
     } catch (error) {
         console.error('Error mentioning user:', error);
-        await context.send({
-            type: 'message',
-            text: 'Unable to mention you. This feature may not be available in this context.'
-        });
     }
 }
 
