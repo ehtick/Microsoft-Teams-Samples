@@ -56,9 +56,10 @@ app.on('message', async (context) => {
         await mentionUser(context);
     } else if (text.includes('who')) {
         await getSingleMember(context);
+    } else if (text.includes('hi') || text.includes('hello')) {
+        await echoMessage(context, text);
     } else {
-        // Echo bot functionality - echo back the user's message
-        await echoMessage(context, removeRecipientMention(activity));
+        await sendWelcomeMessage(context);
     }
 });
 
@@ -71,15 +72,15 @@ async function sendWelcomeMessage(context: IActivityContext): Promise<void> {
 Available commands:
 - **mention me** - Bot will mention you in the reply
 - **whoami** - Get your user information
-- **echo** - Send any other message and the bot will echo it back`
+- **echo** - Bot will echo back your message`
     });
 }
 
-// Echo bot functionality - echoes back the user's message
+// Echo back the user's message
 async function echoMessage(context: IActivityContext, text: string): Promise<void> {
     await context.send({
         type: 'message',
-        text: `You said: ${text}`
+        text: `Echo: ${text}`
     });
 }
 
