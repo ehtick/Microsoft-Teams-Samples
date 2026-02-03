@@ -126,6 +126,11 @@ async def handle_message(ctx: ActivityContext[MessageActivity]) -> None:
     
     if "who" in text or "whoami" in text:
         await get_member_info(ctx)
+        return
+    
+    # Echo back any other message
+    if text:
+        await ctx.send(f"Echo: {text}")
 
 
 @app.on_conversation_update
@@ -145,7 +150,8 @@ async def handle_members_added(ctx: ActivityContext) -> None:
                 "Welcome to Microsoft Teams conversationUpdate events demo bot.\n\n"
                 "Available commands:\n"
                 "- **mention me** - Bot will mention you in the reply\n"
-                "- **whoami** - Get your user information"
+                "- **whoami** - Get your user information\n"
+                "- **Echo bot** - Bot will echo your message back"
             )
             await ctx.send(welcome_message)
         # If another member was added to a non-personal conversation
