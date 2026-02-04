@@ -23,9 +23,7 @@ teamsApp.OnMessage(async context =>
     else if (text.Contains("whoami"))
         await GetSingleMemberAsync(context);
     else
-        await context.Send("Available commands:\n" +
-                          "- **mention me** - Bot will mention you in the reply\n" +
-                          "- **whoami** - Get your user information");
+        await context.Send($"You said {context.Activity.Text}");
 });
 
 // Welcome new members to the conversation
