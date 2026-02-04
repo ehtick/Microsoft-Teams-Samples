@@ -1,6 +1,6 @@
-# Teams Conversation Bot
+# Bot Quickstart
 
-This sample demonstrates how to handle various bot conversation events in Microsoft Teams, including adaptive cards, read receipts, message update/delete events, and mentions. It showcases capabilities such as immersive reader support, AI labels, citations, feedback buttons, and sensitivity labels.
+This sample demonstrates how to handle various bot conversation events in Microsoft Teams.
 
 ## Interaction with Bot
 
@@ -9,10 +9,8 @@ This sample demonstrates how to handle various bot conversation events in Micros
 The bot responds to the following commands:
 
 * **Who am I?** - Gets information about the current user
-* **Find me in Adaptive Card** - Mentions the user in an Adaptive Card
-* **Update Card** - Updates the card message with a counter
-* **Delete card** - Deletes the card message
-* **Send Immersive Reader Card** - Shows an Immersive Reader card with flight status
+* **Mention me** - The bot mentions the user in its response
+* **Echo {message}** - The bot echoes back the provided message
 
 ## Sample Implementations
 
@@ -24,7 +22,10 @@ The bot responds to the following commands:
 
 # How to run these samples
 
-You can run these samples locally using the `agentsplayground` tool, without provisioning the Teams App, or you can run in the Teams Client after you have provisioned the Teams Application and configured the application with your local DevTunnels URL.
+You can run these samples locally using
+
+1. The agentsplayground tool, without provisioning the Teams App, or
+2. In the Teams Client after you have provisioned the Teams Application and configured the application with your local DevTunnels URL.
 
 ## Run in the `agentsplayground`
 
@@ -141,6 +142,12 @@ To obtain the TenantId, ClientId and SecretId you can use the Azure CLI with:
 ```
 az ad app credential reset --id $appId
 ```
+
+## Troubleshooting
+
+- If Teams cannot communicate with your bot, verify your DevTunnels URL is reachable.
+- Ensure your .env or appsettings file is setup correctly.
+
 
 ## Further Reading
 
