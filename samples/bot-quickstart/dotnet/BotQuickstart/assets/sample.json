@@ -1,10 +1,10 @@
 [
   {
-    "name": "officedev-microsoft-teams-samples-bot-conversation-dotnet",
+    "name": "officedev-microsoft-teams-samples-bot-quickstart-dotnet",
     "source": "officeDev",
     "title": "Conversation Bot using Teams SDK",
     "shortDescription": "This sample app showcases Teams bot conversation events and adaptive cards.",
-    "url": "https://github.com/OfficeDev/Microsoft-Teams-Samples/tree/main/samples/bot-conversation/dot-net/BotConversation",
+    "url": "https://github.com/OfficeDev/Microsoft-Teams-Samples/tree/main/samples/bot-quickstart/dot-net/BotQuickstart",
     "longDescription": [
       "This app demonstrates using bot conversation events in Microsoft Teams, supporting adaptive cards, read receipts, and message update events. It includes immersive reader support for enhanced accessibility."
     ],
@@ -35,7 +35,7 @@
       {
         "type": "image",
         "order": 100,
-        "url": "https://raw.githubusercontent.com/OfficeDev/Microsoft-Teams-Samples/main/samples/bot-conversation/bot-conversation.gif",
+        "url": "https://raw.githubusercontent.com/OfficeDev/Microsoft-Teams-Samples/main/samples/bot-quickstart/bot-quickstart.gif",
         "alt": "Solution UX showing Conversation Bot using Teams SDK"
       }
     ],

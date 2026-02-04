@@ -36,7 +36,7 @@ teamsApp.OnConversationUpdate(async context =>
             if (member.Id != context.Activity.Recipient.Id)
             {
                 await context.Send($"Welcome to the team {member.Name}!\n\n" +
-                                  "Welcome to Microsoft Teams conversationUpdate events demo bot.\n\n" +
+                                  "Welcome to Microsoft Teams bot-quickstart.\n\n" +
                                   "Available commands:\n" +
                                   "- **mention me** - Bot will mention you in the reply\n" +
                                   "- **whoami** - Get your user information");
@@ -61,7 +61,7 @@ async Task MentionUserAsync(IContext<MessageActivity> context)
     }
     catch (Exception ex)
     {
-        await context.Send($"Error sending mention: {ex.Message}");
+        Console.WriteLine($"Error in MentionUserAsync: {ex.Message}");
     }
 }
 
@@ -83,6 +83,6 @@ async Task GetSingleMemberAsync(IContext<MessageActivity> context)
     }
     catch (Exception ex)
     {
-        await context.Send($"Unable to get member information: {ex.Message}");
+        Console.WriteLine($"Error in GetSingleMemberAsync: {ex.Message}");
     }
 }

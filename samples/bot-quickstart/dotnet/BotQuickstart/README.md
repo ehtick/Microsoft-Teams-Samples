@@ -1,6 +1,6 @@
-# Bot Conversation - .NET (C#)
+# Bot Quickstart - .NET (C#)
 
-This sample demonstrates a Bot Conversation for Microsoft Teams using .NET and ASP.NET Core.
+This sample demonstrates a Bot Quickstart for Microsoft Teams using .NET and ASP.NET Core.
 
 ## Prerequisites
 
@@ -10,7 +10,7 @@ This sample demonstrates a Bot Conversation for Microsoft Teams using .NET and A
 
 1. Navigate to this directory:
    ```bash
-   cd dotnet/BotConversation
+   cd dotnet/BotQuickstart
    ```
 
 2. Restore dependencies and run:
