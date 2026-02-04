@@ -1,4 +1,4 @@
-# Bot Conversation - TypeScript
+# Bot Quickstart - TypeScript
 
 This sample demonstrates a basic Teams Conversation Bot for Microsoft Teams using TypeScript with conversation features including message handling and user mentions.
 
@@ -10,7 +10,7 @@ This sample demonstrates a basic Teams Conversation Bot for Microsoft Teams usin
 
 1. Navigate to this directory:
    ```
-   cd nodejs/bot-conversation
+   cd nodejs/bot-quickstart
    ```
 
 2. Install dependencies:
