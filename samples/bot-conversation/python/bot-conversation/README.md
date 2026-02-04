@@ -1,6 +1,6 @@
 # Bot Conversation - Python
 
-This sample demonstrates a comprehensive Teams Conversation Bot for Microsoft Teams using Node.js and TypeScript. The bot showcases various conversation features including user mentions.
+This sample demonstrates a comprehensive Teams Conversation Bot for Microsoft Teams using Python. The bot showcases various conversation features including user mentions.
 
 ## Prerequisites
 

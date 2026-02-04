@@ -41,9 +41,7 @@ async def get_member_info(ctx: ActivityContext[MessageActivity]) -> None:
             await ctx.send(f"You are: {ctx.activity.from_.name}")
             
     except Exception as e:
-        if "MemberNotFoundInConversation" in str(e):
-            await ctx.send("Member not found.")
-        else:
+        if "MemberNotFoundInConversation" not in str(e):
             raise
 
 
@@ -91,9 +89,7 @@ async def mention_user(ctx: ActivityContext[MessageActivity]) -> None:
         await ctx.send(activity)
         
     except Exception as e:
-        if "MemberNotFoundInConversation" in str(e):
-            await ctx.send("Member not found.")
-        else:
+        if "MemberNotFoundInConversation" not in str(e):
             raise
 
 
