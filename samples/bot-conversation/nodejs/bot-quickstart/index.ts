@@ -2,32 +2,40 @@
 // Licensed under the MIT License.
 
 import { App, IActivityContext } from '@microsoft/teams.apps';
-import { Activity, TeamsChannelAccount, IMessageActivity } from '@microsoft/teams.api';
+import { TeamsChannelAccount, IMessageActivity } from '@microsoft/teams.api';
 
 // Initialize Teams App - automatically uses CLIENT_ID and CLIENT_SECRET from environment variables
 // Note: .env file is only required when running on Teams (not needed for local development with devtools)
 const app = new App();
 
-// Removes only the bot recipient mention from the incoming message text
-function removeRecipientMention(activity: Activity): string {
-    const messageActivity = activity as IMessageActivity;
-    let text = messageActivity.text || '';
+// Simple in-memory storage for conversation references (for proactive messaging)
+// In production, use persistent storage like a database
+const conversationStorage: Map<string, string> = new Map();
 
-    if (!text || !activity.entities || !activity.recipient) {
-        return text.trim();
+// Send a proactive message to a user
+async function sendProactiveNotification(
+    userId: string,
+    message: string = 'Hey! This is a proactive message from the bot!'
+): Promise<boolean> {
+    const conversationId = conversationStorage.get(userId);
+    if (!conversationId) {
+        return false;
     }
 
-    // Only remove mentions that are specifically for the bot recipient
-    for (const entity of activity.entities) {
-        if (entity.type === 'mention' &&
-            entity.mentioned?.id === activity.recipient.id &&
-            entity.text) {
-            // Replace only the first occurrence to avoid removing user mentions
-            text = text.replace(entity.text, '').trim();
-        }
-    }
+    await app.send(conversationId, {
+        type: 'message',
+        text: message
+    });
+    return true;
+}
 
-    return text;
+// Send a proactive message after a delay
+async function delayedProactiveMessage(userId: string, delaySeconds: number = 10): Promise<void> {
+    await new Promise(resolve => setTimeout(resolve, delaySeconds * 1000));
+    await sendProactiveNotification(
+        userId,
+        `Reminder: This proactive message was sent ${delaySeconds} seconds after your request!`
+    );
 }
 
 // Handle conversation update events (when bot is added or members join)
@@ -37,7 +45,7 @@ app.on('conversationUpdate', async (context) => {
 
     for (const member of membersAdded) {
         // Check if bot was added to the conversation
-        if (member.id !== activity.recipient.id) {
+        if (member.id === activity.recipient.id) {
             await sendWelcomeMessage(context);
         }
     }
@@ -46,33 +54,64 @@ app.on('conversationUpdate', async (context) => {
 // Handles incoming messages and routes to appropriate functions based on message content
 app.on('message', async (context) => {
     const { activity } = context;
-    console.log(`Received message: ${activity.text}`);
 
-    // Remove bot mention from text
-    let text = removeRecipientMention(activity);
-    text = text.trim().toLowerCase();
+    // Get message text and normalize it
+    const messageActivity = activity as IMessageActivity;
+    let text = (messageActivity.text || '').trim().toLowerCase();
 
-    if (text.includes('mention me')) {
+    // Store conversation reference for proactive messaging (from any message)
+    const userAadId = (activity.from as any).aadObjectId;
+    if (userAadId) {
+        conversationStorage.set(userAadId, activity.conversation.id);
+    }
+
+    // Handle proactive messaging command
+    if (text.includes('proactive')) {
+        if (userAadId) {
+            await context.send({
+                type: 'message',
+                text: "Got it! I'll send you a proactive message in 10 seconds..."
+            });
+            // Schedule the proactive message (runs in background)
+            delayedProactiveMessage(userAadId, 10).catch(err => {
+                console.error('Error sending proactive message:', err);
+            });
+        } else {
+            await context.send({
+                type: 'message',
+                text: "Sorry, I couldn't identify your user ID for proactive messaging."
+            });
+        }
+        return;
+    }
+
+    // Handle mention me command
+    if (text.includes('mentionme') || text.includes('mention me')) {
         await mentionUser(context);
-    } else if (text.includes('who')) {
+    }
+    // Handle whoami command
+    else if (text.includes('whoami')) {
         await getSingleMember(context);
-    } else if (text.includes('hi') || text.includes('hello')) {
-        await echoMessage(context, text);
-    } else {
+    }
+    // Handle welcome command
+    else if (text.includes('welcome')) {
         await sendWelcomeMessage(context);
+    }
+    // Handle greeting messages
+    else if (text.includes('hi') || text.includes('hello')) {
+        await echoMessage(context, text);
+    }
+    // Default: echo back any other message
+    else if (text) {
+        await echoMessage(context, text);
     }
 });
 
-// Sends a welcome message with available commands
+// Sends a welcome message
 async function sendWelcomeMessage(context: IActivityContext): Promise<void> {
     await context.send({
         type: 'message',
-        text: `Welcome to Microsoft Teams conversation update events demo bot.
-
-Available commands:
-- **mention me** - Bot will mention you in the reply
-- **whoami** - Get your user information
-- **echo** - Bot will echo back your message`
+        text: 'Welcome to the Teams Quickstart Bot!'
     });
 }
 
@@ -80,7 +119,7 @@ Available commands:
 async function echoMessage(context: IActivityContext, text: string): Promise<void> {
     await context.send({
         type: 'message',
-        text: `Echo: ${text}`
+        text: `**Echo:** ${text}`
     });
 }
 
@@ -133,7 +172,4 @@ async function mentionUser(context: IActivityContext): Promise<void> {
 }
 
 // Starts the Teams bot application and listens for incoming requests
-app.start().catch((err) => {
-    console.error('Failed to start app:', err);
-    process.exit(1);
-});
+app.start().catch(console.error);
