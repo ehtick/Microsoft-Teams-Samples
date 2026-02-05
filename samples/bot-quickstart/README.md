@@ -2,14 +2,27 @@
 
 This sample demonstrates how to handle various bot conversation events in Microsoft Teams.
 
+## Table of Contents
+
+- [Interaction with Bot](#interaction-with-bot)
+- [Sample Implementations](#sample-implementations)
+- [How to run these samples](#how-to-run-these-samples)
+  - [Run in the agentsplayground](#run-in-the-agentsplayground)
+  - [Run in the Teams Client](#run-in-the-teams-client)
+- [Configure the new project to use the new Teams Bot Application](#configure-the-new-project-to-use-the-new-teams-bot-application)
+- [Pro Tip: Read the configuration settings using the Azure CLI](#pro-tip-read-the-configuration-settings-using-the-azure-cli)
+- [Troubleshooting](#troubleshooting)
+- [Further Reading](#further-reading)
+
 ## Interaction with Bot
 
-![Conversation Bot](bot-conversation.gif)
+![Conversation Bot](bot-quickstart.gif)
 
 The bot responds to the following commands:
 
 * **Who am I?** - Gets information about the current user
 * **Mention me** - The bot mentions the user in its response
+* **Proactive** - The bot sends a proactive message after a delay
 * **Echo {message}** - The bot echoes back the provided message
 
 ## Sample Implementations
@@ -18,7 +31,7 @@ The bot responds to the following commands:
 |----------|-----------|-----------|
 | C# | .NET 10 / ASP.NET Core | [dotnet/bot-conversation](dotnet/bot-conversation/README.md) |
 | TypeScript | Node.js | [nodejs/bot-conversation](nodejs/bot-conversation/README.md) |
-| Python | Python 3.12+ | [python/bot-conversation](python/bot-conversation/README.md) |
+| Python | Python | [python/bot-conversation](python/bot-conversation/README.md) |
 
 # How to run these samples
 
