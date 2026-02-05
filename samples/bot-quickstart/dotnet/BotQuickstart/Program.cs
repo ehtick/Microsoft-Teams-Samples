@@ -1,18 +1,15 @@
-/*
-Copyright (c) Microsoft Corporation. All rights reserved.
-Licensed under the MIT License.
-*/
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
 
 using Microsoft.Teams.Plugins.AspNetCore.Extensions;
 using Microsoft.Teams.Apps;
 using Microsoft.Teams.Apps.Activities;
 using Microsoft.Teams.Api.Activities;
 using Microsoft.Teams.Api.Clients;
-using System.Text.Json;
 using System.Collections.Concurrent;
-using System.Text.RegularExpressions;
 
-// Load environment variables (handled by ASP.NET Core configuration system)
+// Initialize Teams App - automatically uses CLIENT_ID and CLIENT_SECRET from environment variables
+// Note: .env file is only required when running on Teams (not needed for local development with devtools)
 var builder = WebApplication.CreateBuilder(args);
 builder.AddTeams();
 var webApp = builder.Build();
@@ -21,222 +18,175 @@ var teamsApp = webApp.UseTeams(true);
 
 // Simple in-memory storage for conversation references (for proactive messaging)
 // In production, use persistent storage like a database
-var conversation_storage = new ConcurrentDictionary<string, string>();
+var conversationStorage = new ConcurrentDictionary<string, string>();
 
-// Get and display information about the current user.
-async Task get_member_info(IContext<MessageActivity> ctx)
+// Send a proactive message to a user
+async Task<bool> sendProactiveNotification(
+    string userId,
+    string message = "Hey! This is a proactive message from the bot!")
 {
-    try
-    {
-        var conversation_id = ctx.Activity.Conversation.Id;
-        var user_id = ctx.Activity.From.Id;
-
-        // Try to get member details from the API
-        try
-        {
-            var members = await ctx.Api.Conversations.Members.GetAsync(conversation_id);
-            var member = members?.FirstOrDefault(m => m.Id == user_id);
-
-            if (member != null)
-            {
-                await ctx.Send($"You are: {member.Name}");
-            }
-            else
-            {
-                await ctx.Send($"You are: {ctx.Activity.From.Name}");
-            }
-        }
-        catch (Exception)
-        {
-            // Fallback to activity sender info
-            await ctx.Send($"You are: {ctx.Activity.From.Name}");
-        }
-    }
-    catch (Exception e)
-    {
-        if (!e.Message.Contains("MemberNotFoundInConversation"))
-        {
-            throw;
-        }
-    }
-}
-
-// Mention the current user in a text message.
-async Task mention_user(IContext<MessageActivity> ctx)
-{
-    try
-    {
-        var conversation_id = ctx.Activity.Conversation.Id;
-        var user_id = ctx.Activity.From.Id;
-
-        // Try to get member details from the API
-        var member = ctx.Activity.From;
-        try
-        {
-            var members = await ctx.Api.Conversations.Members.GetAsync(conversation_id);
-            var foundMember = members?.FirstOrDefault(m => m.Id == user_id);
-
-            if (foundMember != null)
-            {
-                member = foundMember;
-            }
-        }
-        catch (Exception)
-        {
-            member = ctx.Activity.From;
-        }
-
-        var member_name = member.Name ?? "User";
-        var member_id = member.Id;
-
-        // Create the mention text
-        var mention_text = $"<at>{member_name}</at>";
-
-        // Send message with mention entity
-        var activity = new MessageActivity()
-            .WithText($"Hello {mention_text}!")
-            .AddMention(member, addText: false);
-
-        await ctx.Send(activity);
-    }
-    catch (Exception e)
-    {
-        if (!e.Message.Contains("MemberNotFoundInConversation"))
-        {
-            throw;
-        }
-    }
-}
-
-// Remove bot mention from the text.
-string remove_recipient_mention(string? text, string? recipient_name = null)
-{
-    if (string.IsNullOrEmpty(text))
-    {
-        return "";
-    }
-
-    // Remove <at>...</at> tags
-    var cleaned = Regex.Replace(text, @"<at>.*?</at>", "");
-    // Remove extra whitespace
-    cleaned = string.Join(" ", cleaned.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries));
-    return cleaned.Trim();
-}
-
-// Send a proactive message to a user.
-async Task<bool> send_proactive_notification(string user_id, string message = "Hey! This is a proactive message from the bot!")
-{
-    if (!conversation_storage.TryGetValue(user_id, out var conversation_id) || string.IsNullOrEmpty(conversation_id))
+    if (!conversationStorage.TryGetValue(userId, out var conversationId) || string.IsNullOrEmpty(conversationId))
     {
         return false;
     }
 
-    var activity = new MessageActivity().WithText(message);
-    await teamsApp.Send(conversation_id, activity);
+    await teamsApp.Send(conversationId, new MessageActivity().WithText(message));
     return true;
 }
 
-// Send a proactive message after a delay.
-async Task delayed_proactive_message(string user_id, int delay_seconds = 10)
+// Send a proactive message after a delay
+async Task delayedProactiveMessage(string userId, int delaySeconds = 10)
 {
-    await Task.Delay(TimeSpan.FromSeconds(delay_seconds));
-    await send_proactive_notification(
-        user_id,
-        $"Reminder: This proactive message was sent {delay_seconds} seconds after your request!"
+    await Task.Delay(TimeSpan.FromSeconds(delaySeconds));
+    await sendProactiveNotification(
+        userId,
+        $"Reminder: This proactive message was sent {delaySeconds} seconds after your request!"
     );
 }
 
-// Handle incoming message activities.
-teamsApp.OnMessage(async (IContext<MessageActivity> ctx) =>
+// Handle conversation update events (when bot is added or members join)
+teamsApp.OnConversationUpdate(async (IContext<ConversationUpdateActivity> context) =>
 {
-    // Get the text and clean it (remove bot mention)
-    var raw_text = ctx.Activity.Text ?? "";
-    var recipient_name = ctx.Activity.Recipient?.Name;
-    var text = remove_recipient_mention(raw_text, recipient_name).ToLower();
+    var membersAdded = context.Activity.MembersAdded;
+    if (membersAdded != null)
+    {
+        foreach (var member in membersAdded)
+        {
+            // Check if bot was added to the conversation
+            if (member.Id == context.Activity.Recipient?.Id)
+            {
+                await sendWelcomeMessage(context);
+            }
+        }
+    }
+});
+
+// Handles incoming messages and routes to appropriate functions based on message content
+teamsApp.OnMessage(async (IContext<MessageActivity> context) =>
+{
+    // Get message text and normalize it
+    var text = (context.Activity.Text ?? "").Trim().ToLower();
 
     // Store conversation reference for proactive messaging (from any message)
-    var user_aad_id = ctx.Activity.From.AadObjectId;
-    if (!string.IsNullOrEmpty(user_aad_id))
+    var userAadId = context.Activity.From.AadObjectId;
+    if (!string.IsNullOrEmpty(userAadId))
     {
-        conversation_storage.AddOrUpdate(user_aad_id, ctx.Activity.Conversation.Id, (key, oldValue) => ctx.Activity.Conversation.Id);
+        conversationStorage.AddOrUpdate(userAadId, context.Activity.Conversation.Id, (key, oldValue) => context.Activity.Conversation.Id);
     }
 
     // Handle proactive messaging command
     if (text.Contains("proactive"))
     {
-        if (!string.IsNullOrEmpty(user_aad_id))
+        if (!string.IsNullOrEmpty(userAadId))
         {
-            await ctx.Send("Got it! I'll send you a proactive message in 10 seconds...");
+            await context.Send("Got it! I'll send you a proactive message in 10 seconds...");
             // Schedule the proactive message (runs in background)
-            _ = Task.Run(async () => await delayed_proactive_message(user_aad_id, 10));
+            _ = Task.Run(async () =>
+            {
+                try
+                {
+                    await delayedProactiveMessage(userAadId, 10);
+                }
+                catch (Exception err)
+                {
+                    Console.WriteLine($"Error sending proactive message: {err.Message}");
+                }
+            });
         }
         else
         {
-            await ctx.Send("Sorry, I couldn't identify your user ID for proactive messaging.");
+            await context.Send("Sorry, I couldn't identify your user ID for proactive messaging.");
         }
         return;
     }
 
-    // Handle different commands
-    if (text.Contains("mentionme"))
+    // Handle mention me command
+    if (text.Contains("mentionme") || text.Contains("mention me"))
     {
-        await mention_user(ctx);
-        return;
+        await mentionUser(context);
     }
-
-    if (text.Contains("who") || text.Contains("whoami"))
+    // Handle whoami command
+    else if (text.Contains("whoami"))
     {
-        await get_member_info(ctx);
-        return;
+        await getSingleMember(context);
     }
-
-    // Echo back any other message
-    if (!string.IsNullOrEmpty(text))
+    // Handle welcome command
+    else if (text.Contains("welcome"))
     {
-        await ctx.Send($"Echo: {text}");
+        await sendWelcomeMessage(context);
+    }
+    // Echo greeting messages
+    else if (text.Contains("hi") || text.Contains("hello"))
+    {
+        await echoMessage(context, text);
+    }
+    else
+    {
+        await sendWelcomeMessage(context);
     }
 });
 
-// Handle when new members are added to the conversation.
-teamsApp.OnConversationUpdate(async (IContext<ConversationUpdateActivity> ctx) =>
+// Sends a welcome message
+async Task sendWelcomeMessage<T>(IContext<T> context) where T : IActivity
 {
-    var members_added = ctx.Activity.MembersAdded;
-    if (members_added == null || !members_added.Any())
+    await context.Send("Welcome to the Teams Quickstart Bot!");
+}
+
+// Echo back the user's message
+async Task echoMessage(IContext<MessageActivity> context, string text)
+{
+    await context.Send($"**Echo :** {text}");
+}
+
+// Retrieves and displays information about the current user
+async Task getSingleMember(IContext<MessageActivity> context)
+{
+    var conversationId = context.Activity.Conversation.Id;
+    var userId = context.Activity.From.Id;
+
+    try
     {
-        return;
-    }
+        var members = await context.Api.Conversations.Members.GetAsync(conversationId);
+        var member = members?.FirstOrDefault(m => m.Id == userId);
 
-    var recipient_id = ctx.Activity.Recipient?.Id;
-    var conversation_type = ctx.Activity.Conversation?.Id?.Contains("personal");
-
-    foreach (var member in members_added)
-    {
-        // If the bot itself was added, send welcome message
-        if (member.Id == recipient_id)
+        if (member != null)
         {
-            var welcome_message =
-                "Welcome to Microsoft Teams conversationUpdate events demo bot.\n\n" +
-                "Available commands:\n" +
-                "- **mention me** - Bot will mention you in the reply\n" +
-                "- **whoami** - Get your user information\n" +
-                "- **proactive** - Bot will send a proactive message in 10 seconds\n" +
-                "- **Echo** - Bot will echo your message back";
-
-            await ctx.Send(welcome_message);
-        }
-        // If another member was added to a non-personal conversation
-        else if (conversation_type == false)
-        {
-            var given_name = "";
-            var surname = "";
-            var name = $"{given_name} {surname}".Trim();
-            if (string.IsNullOrEmpty(name))
-            {
-                name = member.Name ?? "User";
-            }
-            await ctx.Send($"Welcome to the team {name}");
+            await context.Send($"You are: {member.Name}");
         }
     }
-});
+    catch (Exception error)
+    {
+        Console.WriteLine($"Error getting member: {error.Message}");
+    }
+}
 
+// Mention a user in a message
+async Task mentionUser(IContext<MessageActivity> context)
+{
+    var conversationId = context.Activity.Conversation.Id;
+    var userId = context.Activity.From.Id;
+
+    try
+    {
+        var members = await context.Api.Conversations.Members.GetAsync(conversationId);
+        var member = members?.FirstOrDefault(m => m.Id == userId);
+
+        if (member != null)
+        {
+            // Create a text message with user mention
+            var mentionText = $"<at>{member.Name}</at>";
+            var activity = new MessageActivity()
+                .WithText($"Hello {mentionText}")
+                .AddMention(member, addText: false);
+
+            await context.Send(activity);
+        }
+    }
+    catch (Exception error)
+    {
+        Console.WriteLine($"Error mentioning user: {error.Message}");
+    }
+}
+
+// Starts the Teams bot application and listens for incoming requests
 webApp.Run();
