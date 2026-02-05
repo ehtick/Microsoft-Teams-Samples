@@ -1,12 +1,12 @@
 [
   {
-    "name": "officedev-microsoft-teams-samples-bot-conversation-python",
+    "name": "officedev-microsoft-teams-samples-bot-quickstart-python",
     "source": "officeDev",
-    "title": "Bot Conversation",
+    "title": "Bot Quickstart",
     "shortDescription": "This sample demonstrates a comprehensive Teams Conversation Bot using Python with conversation features.",
     "url": "https://github.com/OfficeDev/Microsoft-Teams-Samples/tree/main/samples/bot-conversation/python",
     "longDescription": [
-      "This sample demonstrates a comprehensive Teams Conversation Bot for Microsoft Teams using Python. The bot showcases various conversation features including user mentions."
+      "This sample demonstrates a basic Teams Bot for Microsoft Teams using Python. The bot showcases conversation features including conversation update events, message handling, and user mentions"
     ],
     "creationDateTime": "2022-10-04",
     "updateDateTime": "2026-01-28",
@@ -35,7 +35,7 @@
       {
         "type": "Image",
         "order": 100,
-        "url": "https://raw.githubusercontent.com/OfficeDev/Microsoft-Teams-Samples/main/samples/bot-conversation/bot-conversation.gif",
+        "url": "https://raw.githubusercontent.com/OfficeDev/Microsoft-Teams-Samples/main/samples/bot-quickstart/bot-quickstart.gif",
         "alt": "Solution UX showing conversation events for teams bot"
       }
     ],

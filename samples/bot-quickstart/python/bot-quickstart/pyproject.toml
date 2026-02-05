@@ -1,7 +1,7 @@
 [project]
-name = "bot-conversation"
+name = "bot-quickstart"
 version = "0.1.0"
-description = "Bot Conversation Sample - Microsoft Teams Bot demonstrating various conversation features"
+description = "This sample demonstrates a Bot Quickstart for Microsoft Teams using Python."
 readme = "README.md"
 requires-python = ">=3.12,<3.15"
 dependencies = [
