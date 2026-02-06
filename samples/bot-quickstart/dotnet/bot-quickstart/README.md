@@ -10,7 +10,7 @@ This sample demonstrates a Bot Quickstart for Microsoft Teams using .NET and ASP
 
 1. Navigate to this directory:
    ```bash
-   cd dotnet/BotQuickstart
+   cd dotnet/bot-quickstart
    ```
 
 2. Restore dependencies and run:
