@@ -44,12 +44,7 @@ async def delayed_proactive_message(user_id: str, delay_seconds: int = 10) -> No
 async def send_welcome_message(ctx: ActivityContext) -> None:
     """Sends a welcome message with available commands."""
     welcome_message = (
-        "Welcome to the Teams Quickstart Bot!\n\n"
-        "Available commands:\n"
-        "- **mention me** - Bot will mention you in the reply\n"
-        "- **whoami** - Get your user information\n"
-        "- **proactive** - Bot will send a proactive message in 10 seconds\n"
-        "- **echo** - Bot will echo back your message"
+        "Welcome to the Teams Quickstart Bot!"
     )
     await ctx.send(MessageActivityInput(text=welcome_message))
 
@@ -62,8 +57,9 @@ async def echo_message(ctx: ActivityContext, text: str) -> None:
 async def get_single_member(ctx: ActivityContext[MessageActivity]) -> None:
     """Retrieves and displays information about the current user."""
     try:
-        # Get user info directly from the activity
-        user = ctx.activity.from_
+        conversationId = ctx.activity.conversation.id
+        userId = ctx.activity.from_.id
+        user = await ctx.api.conversations.members(conversationId).get(userId)
         await ctx.send(MessageActivityInput(text=f"You are: {user.name}"))
     except Exception as error:
         print(f"Error getting member: {error}")
@@ -72,13 +68,15 @@ async def get_single_member(ctx: ActivityContext[MessageActivity]) -> None:
 async def mention_user(ctx: ActivityContext[MessageActivity]) -> None:
     """Mention a user in a message."""
     try:
+
+        conversationId = ctx.activity.conversation.id
+        userId = ctx.activity.from_.id
+
         # Get user info directly from the activity
-        user = ctx.activity.from_
-        user_id = user.id
-        user_name = user.name
+        user = await ctx.api.conversations.members(conversationId).get(userId)
         
         # Create a text message with user mention
-        mention_text = f"<at>{user_name}</at>"
+        mention_text = f"<at>{user.name}</at>"
         await ctx.send(MessageActivityInput(
             text=f"Hello {mention_text}",
             entities=[
@@ -86,8 +84,8 @@ async def mention_user(ctx: ActivityContext[MessageActivity]) -> None:
                     "type": "mention",
                     "text": mention_text,
                     "mentioned": {
-                        "id": user_id,
-                        "name": user_name,
+                        "id": userId,
+                        "name": user.name,
                         "role": "user"
                     }
                 }
@@ -128,10 +126,7 @@ async def handle_message(ctx: ActivityContext[MessageActivity]) -> None:
             # Schedule the proactive message (runs in background)
             asyncio.create_task(delayed_proactive_message(user_aad_id, 10))
         else:
-            await ctx.send(MessageActivityInput(
-                text="Sorry, I couldn't identify your user ID for proactive messaging."
-            ))
-        return
+            return
     
     # Handle mention me command
     if "mentionme" in text or "mention me" in text:
@@ -139,12 +134,12 @@ async def handle_message(ctx: ActivityContext[MessageActivity]) -> None:
     # Handle whoami command
     elif "whoami" in text:
         await get_single_member(ctx)
+    # Handle welcome command
+    elif 'welcome' in text:
+        await send_welcome_message(ctx)
     # Handle hi/hello - echo back
     elif "hi" in text or "hello" in text:
         await echo_message(ctx, text)
-    # Default: send welcome message
-    else:
-        await send_welcome_message(ctx)
 
 
 # Starts the Teams bot application and listens for incoming requests
