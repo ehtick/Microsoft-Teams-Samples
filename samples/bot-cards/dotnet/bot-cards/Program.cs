@@ -6,6 +6,7 @@ using Microsoft.Teams.Apps.Activities;
 using Microsoft.Teams.Apps.Activities.Invokes;
 using Microsoft.Teams.Api.Activities;
 using Microsoft.Teams.Api;
+using Microsoft.Teams.Apps;
 using System.Net.Http.Headers;
 using System.Text.Json;
 using System.Text.Json.Serialization;
@@ -25,19 +26,95 @@ if (!Directory.Exists(filesPath))
 
 var httpClientFactory = webApp.Services.GetRequiredService<IHttpClientFactory>();
 
+// Handle bot installation and new members (conversationUpdate)
+teamsApp.OnConversationUpdate(async context =>
+{
+    var activity = context.Activity;
+    var membersAdded = activity.MembersAdded;
+
+    if (membersAdded != null && membersAdded.Any())
+    {
+        foreach (var member in membersAdded)
+        {
+            // Check if bot was added to the conversation
+            if (member.Id == activity.Recipient?.Id)
+            {
+                await SendWelcomeMessage(context);
+            }
+        }
+    }
+});
+
 // Handle incoming messages
 teamsApp.OnMessage(async context =>
 {
     var activity = context.Activity;
+    var text = activity.Text?.Trim() ?? "";
+    var attachment = activity.Attachments?.FirstOrDefault();
 
-    // Check if message contains actual file attachments
-    bool hasFileAttachment = activity.Attachments != null &&
-                             activity.Attachments.Count > 0 &&
-                             activity.Attachments[0].ContentType?.Value != "text/html";
-
-    if (hasFileAttachment)
+    // Handle data submission from adaptive cards (activity.Value)
+    if (activity.Value != null)
     {
-        var attachment = activity.Attachments![0];
+        var dataSubmitted = JsonSerializer.Serialize(activity.Value);
+        Console.WriteLine($"Data submitted: {dataSubmitted}");
+        await context.Send($"Data Submitted: {dataSubmitted}");
+        return;
+    }
+
+    // Handle text commands
+    if (!string.IsNullOrEmpty(text))
+    {
+        var normalizedText = text.ToLower();
+
+        // Handle card-related commands
+        if (normalizedText.Contains("card actions"))
+        {
+            await SendAdaptiveCardActions(context);
+            return;
+        }
+        else if (normalizedText.Contains("suggested actions"))
+        {
+            await SendSuggestedActions(context);
+            return;
+        }
+        else if (normalizedText.Contains("togglevisibility"))
+        {
+            await SendToggleVisibilityCard(context);
+            return;
+        }
+        // Handle color input
+        else if (normalizedText.Contains("red"))
+        {
+            await context.Send("Red is the best color, I agree.");
+            return;
+        }
+        else if (normalizedText.Contains("blue"))
+        {
+            await context.Send("Blue is the best color, I agree.");
+            return;
+        }
+        else if (normalizedText.Contains("yellow"))
+        {
+            await context.Send("Yellow is the best color, I agree.");
+            return;
+        }
+        // Handle file commands
+        else if (normalizedText.Contains("send file") || normalizedText == "file")
+        {
+            await SendFileCard(context, filesPath);
+            return;
+        }
+        // Unrecognized command - show welcome
+        else
+        {
+            await SendWelcomeMessage(context);
+            return;
+        }
+    }
+
+    // Handle file attachments
+    if (attachment != null)
+    {
         var contentTypeValue = attachment.ContentType?.Value ?? attachment.ContentType?.ToString() ?? "";
 
         // Handle file downloads
@@ -70,90 +147,25 @@ teamsApp.OnMessage(async context =>
             catch (Exception ex)
             {
                 Console.WriteLine($"Error downloading file: {ex}");
-                await context.Send("Sorry, there was an error downloading the file. Please try again later.");
+                await context.Send($"Error downloading file: {ex.Message}");
             }
         }
         // Handle inline images
         else if (contentTypeValue.StartsWith("image/"))
         {
-            try
-            {
-                var httpClient = httpClientFactory.CreateClient();
-                var response = await httpClient.GetAsync(attachment.ContentUrl);
-                response.EnsureSuccessStatusCode();
-
-                var fileName = $"ImageFromUser_{DateTime.Now.Ticks}.png";
-                var filePath = Path.Combine(filesPath, fileName);
-
-                using (var fileStream = new FileStream(filePath, FileMode.Create, FileAccess.Write, FileShare.None))
-                {
-                    await response.Content.CopyToAsync(fileStream);
-                }
-
-                var imageData = Convert.ToBase64String(File.ReadAllBytes(filePath));
-                var inlineAttachment = new Attachment
-                {
-                    Name = fileName,
-                    ContentType = new ContentType("image/png"),
-                    ContentUrl = $"data:image/png;base64,{imageData}"
-                };
-
-                var replyMessage = new MessageActivity($"Received and saved your image. File size: {response.Content.Headers.ContentLength} bytes");
-                replyMessage.Attachments = new List<Attachment> { inlineAttachment };
-                await context.Send(replyMessage);
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Error processing image: {ex}");
-                await context.Send("Sorry, there was an error processing your image. Please try again later.");
-            }
+            await ProcessInlineImage(context, attachment, filesPath, httpClientFactory);
+            return;
         }
         else
         {
-            await context.Send($"File attachment received but type '{contentTypeValue}' not supported for processing.");
+            await SendFileCard(context, filesPath);
+            return;
         }
     }
+    // No text or attachment - show welcome
     else
     {
-        // Send a file consent card
-        try
-        {
-            var fileName = "teams-logo.png";
-            var filePath = Path.Combine(filesPath, fileName);
-
-            if (!File.Exists(filePath))
-            {
-                await File.WriteAllTextAsync(filePath, "Sample file content for Teams file upload demo.");
-            }
-
-            var fileInfo = new FileInfo(filePath);
-            var fileSize = fileInfo.Length;
-
-            var fileConsentCard = new FileConsentCard
-            {
-                Name = fileName,
-                Description = "This is the file I want to send you",
-                SizeInBytes = fileSize,
-                AcceptContext = new { fileName = fileName },
-                DeclineContext = new { fileName = fileName }
-            };
-
-            var consentAttachment = new Attachment
-            {
-                ContentType = new ContentType(FileConsentCard.ContentType),
-                Name = fileName,
-                Content = fileConsentCard
-            };
-
-            var message = new MessageActivity("Please accept the file");
-            message.Attachments = new List<Attachment> { consentAttachment };
-            await context.Send(message);
-        }
-        catch (Exception ex)
-        {
-            Console.WriteLine($"Error creating file consent card: {ex}");
-            await context.Send("Sorry, there was an error preparing the file. Please try again later.");
-        }
+        await SendWelcomeMessage(context);
     }
 });
 
@@ -169,7 +181,7 @@ teamsApp.OnFileConsent(async context =>
             var contextData = JsonSerializer.Deserialize<Dictionary<string, string>>(
                 JsonSerializer.Serialize(fileConsentResponse.Context));
 
-            var fileName = contextData?["fileName"] ?? "file.txt";
+            var fileName = contextData?["filename"] ?? "file.txt";
             var filePath = Path.Combine(filesPath, fileName);
 
             if (!File.Exists(filePath))
@@ -189,32 +201,25 @@ teamsApp.OnFileConsent(async context =>
             var uploadResponse = await httpClient.PutAsync(uploadInfo!.UploadUrl, fileContent);
             uploadResponse.EnsureSuccessStatusCode();
 
-            var lowerFileName = fileName.ToLower();
-            if (lowerFileName.EndsWith(".png") || lowerFileName.EndsWith(".jpg") ||
-                lowerFileName.EndsWith(".jpeg") || lowerFileName.EndsWith(".gif"))
+            // Send success message with download link and file info
+            var downloadCard = new
             {
-                var imageData = Convert.ToBase64String(fileData);
-                var mimeType = lowerFileName.EndsWith(".png") ? "image/png" :
-                              lowerFileName.EndsWith(".gif") ? "image/gif" : "image/jpeg";
+                uniqueId = uploadInfo.UniqueId,
+                fileType = uploadInfo.FileType
+            };
 
-                var imageAttachment = new Attachment
-                {
-                    Name = fileName,
-                    ContentType = new ContentType(mimeType),
-                    ContentUrl = $"data:{mimeType};base64,{imageData}"
-                };
-
-                var successMessage = new MessageActivity($"<b>File uploaded successfully.</b> Your file <b>{fileName}</b> has been uploaded to OneDrive.");
-                successMessage.TextFormat = TextFormat.Xml;
-                successMessage.Attachments = new List<Attachment> { imageAttachment };
-                await context.Send(successMessage);
-            }
-            else
+            var fileInfoAttachment = new Attachment
             {
-                var successMessage = new MessageActivity($"<b>File uploaded successfully.</b> Your file <b>{fileName}</b> has been uploaded to <a href=\"{uploadInfo.ContentUrl}\">OneDrive</a>. Click the link to view or download.");
-                successMessage.TextFormat = TextFormat.Xml;
-                await context.Send(successMessage);
-            }
+                ContentType = new ContentType("application/vnd.microsoft.teams.card.file.info"),
+                Name = fileName,
+                ContentUrl = uploadInfo.ContentUrl,
+                Content = downloadCard
+            };
+
+            var successMessage = new MessageActivity($"<b> File uploaded successfully!</b><br/><br/>Your file <b>{fileName}</b> has been uploaded to OneDrive.<br/><br/><a href=\"{uploadInfo.ContentUrl}\">Click here to open in OneDrive</a>");
+            successMessage.TextFormat = TextFormat.Xml;
+            successMessage.Attachments = new List<Attachment> { fileInfoAttachment };
+            await context.Send(successMessage);
         }
         catch (Exception ex)
         {
@@ -229,7 +234,7 @@ teamsApp.OnFileConsent(async context =>
             var contextData = JsonSerializer.Deserialize<Dictionary<string, string>>(
                 JsonSerializer.Serialize(fileConsentResponse.Context));
 
-            var fileName = contextData?["fileName"] ?? "file";
+            var fileName = contextData?["filename"] ?? "file";
 
             var declineMessage = new MessageActivity($"Declined. We won't upload file <b>{fileName}</b>.");
             declineMessage.TextFormat = TextFormat.Xml;
@@ -237,12 +242,300 @@ teamsApp.OnFileConsent(async context =>
         }
         catch
         {
-            await context.Send("You declined the file upload.");
+            await context.Send("You declined the file.");
         }
     }
 });
 
 webApp.Run();
+
+// Helper Methods
+
+// Send welcome message with available commands
+async Task SendWelcomeMessage(dynamic context)
+{
+    await context.Send("Welcome to the Teams Bot Cards!");
+}
+
+// Send file consent card
+async Task SendFileCard(dynamic context, string filesPath)
+{
+    try
+    {
+        var filename = "teams-logo.png";
+        var filePath = Path.Combine(filesPath, filename);
+        
+        // Check if teams logo exists
+        if (!File.Exists(filePath))
+        {
+            await context.Send($"Error: {filename} not found in Files folder. Please add the teams-logo.png file.");
+            return;
+        }
+
+        var stats = new FileInfo(filePath);
+        var fileSize = stats.Length;
+        var consentContext = new { filename = filename };
+
+        var fileCard = new FileConsentCard
+        {
+            Description = "This is the file I want to send you",
+            SizeInBytes = fileSize,
+            Name = filename,
+            AcceptContext = consentContext,
+            DeclineContext = consentContext
+        };
+
+        var message = new MessageActivity();
+        message.Attachments = new List<Attachment>
+        {
+            new Attachment
+            {
+                Content = fileCard,
+                ContentType = new ContentType("application/vnd.microsoft.teams.card.file.consent"),
+                Name = filename
+            }
+        };
+        await context.Send(message);
+    }
+    catch (Exception ex)
+    {
+        Console.WriteLine($"Error sending file card: {ex}");
+        await context.Send($"Error sending file card: {ex.Message}");
+    }
+}
+
+// Process inline image
+async Task ProcessInlineImage(dynamic context, Attachment file, string filesPath, IHttpClientFactory httpClientFactory)
+{
+    try
+    {
+        var httpClient = httpClientFactory.CreateClient();
+        var response = await httpClient.GetAsync(file.ContentUrl);
+        response.EnsureSuccessStatusCode();
+
+        var fileName = await GenerateFileName(filesPath);
+        var filePath = Path.Combine(filesPath, fileName);
+
+        using (var fileStream = new FileStream(filePath, FileMode.Create))
+        {
+            await response.Content.CopyToAsync(fileStream);
+        }
+
+        var fileSize = new FileInfo(filePath).Length;
+        var inlineAttachment = GetInlineAttachment(fileName, filesPath);
+
+        var message = new MessageActivity($"Image <b>{fileName}</b> of size <b>{fileSize}</b> bytes received and saved.");
+        message.Attachments = new List<Attachment> { inlineAttachment };
+        await context.Send(message);
+    }
+    catch (Exception ex)
+    {
+        Console.WriteLine($"Error processing inline image: {ex}");
+        await context.Send($"Error processing image: {ex.Message}");
+    }
+}
+
+// Get inline attachment
+Attachment GetInlineAttachment(string fileName, string filesPath)
+{
+    var imageData = File.ReadAllBytes(Path.Combine(filesPath, fileName));
+    var base64Image = Convert.ToBase64String(imageData);
+    return new Attachment
+    {
+        Name = fileName,
+        ContentType = new ContentType("image/png"),
+        ContentUrl = $"data:image/png;base64,{base64Image}"
+    };
+}
+
+// Generate sequential file name
+async Task<string> GenerateFileName(string fileDir)
+{
+    const string filenamePrefix = "UserAttachment";
+    var files = Directory.GetFiles(fileDir);
+    var filteredFiles = files
+        .Select(f => Path.GetFileName(f))
+        .Where(f => f.Contains(filenamePrefix))
+        .Select(f =>
+        {
+            var parts = f.Split(filenamePrefix);
+            if (parts.Length > 1)
+            {
+                var numStr = parts[1].Split('.')[0];
+                return int.TryParse(numStr, out var num) ? num : 0;
+            }
+            return 0;
+        })
+        .Where(num => num > 0)
+        .ToList();
+
+    var maxSeq = filteredFiles.Any() ? filteredFiles.Max() : 0;
+    return $"{filenamePrefix}{maxSeq + 1}.png";
+}
+
+// Send Adaptive Card with various actions
+async Task SendAdaptiveCardActions(dynamic context)
+{
+    var adaptiveCardJson = """
+    {
+        "type": "AdaptiveCard",
+        "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+        "version": "1.4",
+        "body": [
+            {
+                "type": "TextBlock",
+                "text": "Adaptive Card Actions",
+                "weight": "bolder",
+                "size": "large"
+            }
+        ],
+        "actions": [
+            {
+                "type": "Action.OpenUrl",
+                "title": "Action Open URL",
+                "url": "https://adaptivecards.io"
+            },
+            {
+                "type": "Action.ShowCard",
+                "title": "Action Submit",
+                "card": {
+                    "type": "AdaptiveCard",
+                    "body": [
+                        {
+                            "type": "Input.Text",
+                            "id": "name",
+                            "label": "Please enter your name:",
+                            "isRequired": true,
+                            "errorMessage": "Name is required"
+                        }
+                    ],
+                    "actions": [
+                        {
+                            "type": "Action.Submit",
+                            "title": "Submit"
+                        }
+                    ]
+                }
+            },
+            {
+                "type": "Action.ShowCard",
+                "title": "Action ShowCard",
+                "card": {
+                    "type": "AdaptiveCard",
+                    "body": [
+                        {
+                            "type": "TextBlock",
+                            "text": "This card's action will show another card"
+                        }
+                    ],
+                    "actions": [
+                        {
+                            "type": "Action.ShowCard",
+                            "title": "Action.ShowCard",
+                            "card": {
+                                "type": "AdaptiveCard",
+                                "body": [
+                                    {
+                                        "type": "TextBlock",
+                                        "text": "Welcome To New Card"
+                                    }
+                                ],
+                                "actions": [
+                                    {
+                                        "type": "Action.Submit",
+                                        "title": "Click Me",
+                                        "data": {
+                                            "value": "Button has Clicked"
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            }
+        ]
+    }
+    """;
+
+    var message = new MessageActivity();
+    message.Attachments = new List<Attachment>
+    {
+        new Attachment
+        {
+            ContentType = new ContentType("application/vnd.microsoft.card.adaptive"),
+            Content = JsonSerializer.Deserialize<JsonElement>(adaptiveCardJson)
+        }
+    };
+    await context.Send(message);
+}
+
+// Send Toggle Visibility Card
+async Task SendToggleVisibilityCard(dynamic context)
+{
+    var adaptiveCardJson = """
+    {
+        "type": "AdaptiveCard",
+        "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+        "version": "1.4",
+        "body": [
+            {
+                "type": "TextBlock",
+                "text": "**Action.ToggleVisibility example**: click the button to show or hide a welcome message",
+                "wrap": true
+            },
+            {
+                "type": "TextBlock",
+                "text": "**Hello World!**",
+                "id": "helloWorld",
+                "isVisible": false,
+                "size": "ExtraLarge"
+            }
+        ],
+        "actions": [
+            {
+                "type": "Action.ToggleVisibility",
+                "title": "Click me!",
+                "targetElements": ["helloWorld"]
+            }
+        ]
+    }
+    """;
+
+    var message = new MessageActivity();
+    message.Attachments = new List<Attachment>
+    {
+        new Attachment
+        {
+            ContentType = new ContentType("application/vnd.microsoft.card.adaptive"),
+            Content = JsonSerializer.Deserialize<JsonElement>(adaptiveCardJson)
+        }
+    };
+    await context.Send(message);
+}
+
+// Send Suggested Actions with buttons
+async Task SendSuggestedActions(dynamic context)
+{
+    // Method 1: Using imBack actions (simple text responses)
+    var reply = new MessageActivity("What is your favorite color?");
+    
+    // Add suggested actions in a Teams-compatible format
+    reply.Value = new
+    {
+        suggestedActions = new
+        {
+            actions = new[]
+            {
+                new { title = "Red", type = "imBack", value = "Red" },
+                new { title = "Yellow", type = "imBack", value = "Yellow" },
+                new { title = "Blue", type = "imBack", value = "Blue" }
+            }
+        }
+    };
+
+    await context.Send(reply);
+}
 
 // Model classes
 public class FileConsentCard

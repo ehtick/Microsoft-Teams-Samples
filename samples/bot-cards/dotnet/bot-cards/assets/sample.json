@@ -1,15 +1,15 @@
 [
   {
-    "name": "officedev-microsoft-teams-samples-bot-file-upload-csharp",
+    "name": "officedev-microsoft-teams-samples-bot-file-upload-dotnet",
     "source": "officeDev",
-    "title": "File Upload with Bot using Teams SDK",
-    "shortDescription": "This bot sample for Teams demonstrates file upload capabilities using Teams SDK, enabling users to upload files and view inline images within chats.",
-    "url": "https://github.com/OfficeDev/Microsoft-Teams-Samples/tree/main/samples/bot-file-upload/dotnet/bot-file-upload",
+    "title": "Bot Cards with Teams SDK",
+    "shortDescription": "This bot sample for Teams demonstrates adaptive card actions, file handling, and interactive card features using Teams SDK.",
+    "url": "https://github.com/OfficeDev/Microsoft-Teams-Samples/tree/main/samples/bot-cards/dotnet/bot-cards",
     "longDescription": [
       "This bot allows users to upload files and send inline images directly in Microsoft Teams, utilizing Teams SDK for seamless file handling. It also shows how to manage and process file attachments within chat conversations."
     ],
     "creationDateTime": "2026-01-30",
-    "updateDateTime": "22026-01-30",
+    "updateDateTime": "2026-01-30",
     "products": [
       "Teams"
     ],
@@ -20,7 +20,7 @@
       },
       {
         "key": "TEAMS-SERVER-LANGUAGE",
-        "value": "csharp"
+        "value": "dotnet"
       },
       {
         "key": "TEAMS-SERVER-PLATFORM",
@@ -28,15 +28,15 @@
       },
       {
         "key": "TEAMS-FEATURES",
-        "value": "bot"
+        "value": "bot cards"
       }
     ],
     "thumbnails": [
       {
         "type": "image",
         "order": 100,
-        "url": "https://raw.githubusercontent.com/OfficeDev/Microsoft-Teams-Samples/main/samples/bot-file-upload/bot-file-upload.gif",
-        "alt": "Solution UX showing file upload with bot using Teams SDK"
+        "url": "https://raw.githubusercontent.com/OfficeDev/Microsoft-Teams-Samples/main/samples/bot-cards/bot-cards.gif",
+        "alt": "Solution UX showing bot cards with adaptive actions using Teams SDK"
       }
     ],
     "authors": [
