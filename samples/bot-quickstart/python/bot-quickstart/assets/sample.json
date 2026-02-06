@@ -3,7 +3,7 @@
     "name": "officedev-microsoft-teams-samples-bot-quickstart-python",
     "source": "officeDev",
     "title": "Bot Quickstart",
-    "shortDescription": "This sample demonstrates a comprehensive Teams Conversation Bot using Python with conversation features.",
+    "shortDescription": "This sample demonstrates a comprehensive Teams Conversation Bot using Python",
     "url": "https://github.com/OfficeDev/Microsoft-Teams-Samples/tree/main/samples/bot-conversation/python",
     "longDescription": [
       "This sample demonstrates a basic Teams Bot for Microsoft Teams using Python. The bot showcases conversation features including conversation update events, message handling, and user mentions"
