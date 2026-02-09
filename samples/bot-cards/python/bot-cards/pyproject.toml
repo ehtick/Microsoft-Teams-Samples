@@ -1,7 +1,7 @@
 [project]
-name = "bot-file-upload"
+name = "bot-cards"
 version = "0.1.0"
-description = "Bot File Upload sample"
+description = "Bot Cards sample"
 readme = "README.md"
 requires-python = ">=3.12,<3.15"
 dependencies = [

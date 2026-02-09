@@ -1,6 +1,6 @@
-# Bot Cards
+# Cards and Attachments Bot - Python
 
-This sample demonstrates a Bot with various card types for Microsoft Teams using Python. The bot showcases Adaptive Card Actions, Suggested Actions, Toggle Visibility Cards, and file upload capabilities.
+This sample demonstrates how to upload files and interact with adaptive cards in Microsoft Teams using a bot built with Teams SDK.
 
 ## Prerequisites
 
