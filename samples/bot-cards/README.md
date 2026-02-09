@@ -53,7 +53,10 @@ The bot supports the following functionalities:
 
 # How to run these samples
 
-You can run these samples locally using the `agentsplayground` tool, without provisioning the Teams App, or you can run in the Teams Client after you have provisioned the Teams Application and configured the application with your local DevTunnels URL.
+You can run these samples locally using
+
+1. The agentsplayground tool, without provisioning the Teams App, or
+2. In the Teams Client after you have provisioned the Teams Application and configured the application with your local DevTunnels URL.
 
 ## Run in the `agentsplayground`
 
