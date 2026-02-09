@@ -126,7 +126,10 @@ async def handle_message(ctx: ActivityContext[MessageActivity]) -> None:
             # Schedule the proactive message (runs in background)
             asyncio.create_task(delayed_proactive_message(user_aad_id, 10))
         else:
-            return
+             await ctx.send(MessageActivityInput(
+                text="Sorry, I couldn't identify your user ID for proactive messaging."
+            ))
+        return
     
     # Handle mention me command
     if "mentionme" in text or "mention me" in text:
