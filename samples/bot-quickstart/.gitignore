@@ -1,6 +1,0 @@
-launchSettings.json
-appsettings.*.json
-package-lock.json
-.env
-uv.lock
-.venv/
