@@ -1,6 +1,6 @@
 # Cards and Attachments Bot
 
-This sample demonstrates how to upload files in Microsoft Teams using a bot built with Teams SDK. Users can send files as attachments or inline images directly within a chat, and the bot can handle, retrieve, and process these files effectively. The bot also illustrates interaction with adaptive cards and supports file uploads through various methods, making it versatile for file management in Teams.
+This sample demonstrates various card types and attachment handling in Microsoft Teams using a bot built with Teams SDK. The bot showcases four key functionalities: **Suggested Actions** for quick user interactions, **Adaptive Card Actions** for dynamic card behaviors, **Toggle Visibility Cards** for showing/hiding content, and **File Upload** capabilities for managing attachments and inline images. This comprehensive sample illustrates how to create rich, interactive bot experiences in Teams using cards and file management features.
 
 ## Table of Contents
 
@@ -20,9 +20,24 @@ This sample demonstrates how to upload files in Microsoft Teams using a bot buil
 
 ![File Upload](bot_cards.gif)
 
-The bot supports the following file operations:
+The bot supports the following functionalities:
 
-* **Send a message** - Bot responds with a card prompting you to upload a file
+### 1. Suggested Actions
+* Provides quick action buttons for user interactions
+* Allows users to respond with predefined options
+* Simplifies common bot interactions with one-click responses
+
+### 2. Adaptive Card Actions
+* Interactive cards with submit actions and button interactions
+* Dynamic card behaviors based on user input
+* Demonstrates various adaptive card action types
+
+### 3. Toggle Visibility Card
+* Shows/hides content dynamically within cards
+* Demonstrates collapsible sections in adaptive cards
+* Provides better content organization and user experience
+
+### 4. File Upload
 * **Accept file upload** - Uploads the `teams-logo.png` file from the Files directory
 * **Decline file upload** - Cancels the file upload operation
 * **Send file attachment** - Bot receives and saves the file sent as an attachment
