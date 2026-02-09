@@ -1,10 +1,24 @@
-# Teams File Upload Bot
+# Cards and Attachments Bot
 
 This sample demonstrates how to upload files in Microsoft Teams using a bot built with Teams SDK. Users can send files as attachments or inline images directly within a chat, and the bot can handle, retrieve, and process these files effectively. The bot also illustrates interaction with adaptive cards and supports file uploads through various methods, making it versatile for file management in Teams.
 
+## Table of Contents
+
+- [Interaction with Bot](#interaction-with-bot)
+- [Sample Implementations](#sample-implementations)
+- [How to run these samples](#how-to-run-these-samples)
+  - [Run in the agentsplayground](#run-in-the-agentsplayground)
+  - [Run in the Teams Client](#run-in-the-teams-client)
+    - [Configure DevTunnels](#configure-devtunnels)
+    - [Provisioning the Teams Application](#provisioning-the-teams-application)
+  - [Configure the new project to use the new Teams Bot Application](#configure-the-new-project-to-use-the-new-teams-bot-application)
+  - [Pro Tip: Read the configuration settings using the Azure CLI](#pro-tip-read-the-configuration-settings-using-the-azure-cli)
+- [Troubleshooting](#troubleshooting)
+- [Further Reading](#further-reading)
+
 ## Interaction with Bot
 
-![File Upload](bot-file-upload.gif)
+![File Upload](bot_cards.gif)
 
 The bot supports the following file operations:
 
@@ -18,9 +32,9 @@ The bot supports the following file operations:
 
 | Language | Framework | Directory |
 |----------|-----------|-----------|
-| C# | .NET 10 / ASP.NET Core | [dotnet](csharp/bot-file-upload/README.md) |
-| Typescript | Node.js | [nodejs](nodejs/bot-file-upload/README.md) |
-| Python | Python 3.12+ | [python](python/bot-file-upload/README.md) |
+| C# | .NET 10 / ASP.NET Core | [dotnet](dotnet/bot-cards/README.md) |
+| Typescript | Node.js | [nodejs](nodejs/bot-cards/README.md) |
+| Python | Python | [python](python/bot-cards/README.md) |
 
 # How to run these samples
 
@@ -140,6 +154,33 @@ To obtain the TenantId, ClientId and SecretId you can use the Azure CLI with:
 ```
 az ad app credential reset --id $appId
 ```
+
+## Troubleshooting
+
+### Bot not responding
+
+- Verify that your bot is running locally (usually on port 3978)
+- Check that your DevTunnel is active and properly configured
+- Ensure the bot endpoint in Teams Developer Portal matches your DevTunnel URL + `/api/messages`
+- Confirm your `CLIENT_ID`, `CLIENT_SECRET`, and `TENANT_ID` are correctly configured
+
+### Authentication errors
+
+- Verify your bot credentials match those created in Teams Developer Portal or Azure Bot Service
+- Ensure your bot has the necessary permissions in your M365 tenant
+- Check that you're using the correct tenant ID
+
+### File upload not working
+
+- Verify the bot has permission to receive file uploads in Teams
+- Check that the file size is within Teams limits
+- Ensure the Files directory exists and has proper write permissions
+
+### Common issues
+
+- **"Bot not found"**: Make sure the bot is added to the Teams app and the app is installed in your Teams client
+- **Connection timeout**: Check your firewall settings and ensure DevTunnel is running
+- **Invalid manifest**: Validate your manifest.json using the Teams Developer Portal validation tool
 
 ## Further Reading
 
