@@ -8,7 +8,7 @@
     "longDescription": [
       "This sample demonstrates a basic Teams Bot for Microsoft Teams using TypeScript. The bot showcases conversation features including conversation update events, message handling, and user mentions."
     ],
-    "creationDateTime": "2022-10-04",
+    "creationDateTime": "2026-01-28",
     "updateDateTime": "2026-01-28",
     "products": [
       "Teams"
