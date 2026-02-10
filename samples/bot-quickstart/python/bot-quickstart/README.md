@@ -1,6 +1,6 @@
 # Bot Conversation - Python
 
-This sample demonstrates a comprehensive Teams Conversation Bot for Microsoft Teams using Python. The bot showcases various conversation features including user mentions.
+This sample demonstrates a Bot Quickstart for Microsoft Teams using Python.
 
 ## Prerequisites
 
@@ -11,7 +11,7 @@ This sample demonstrates a comprehensive Teams Conversation Bot for Microsoft Te
 
 1. Navigate to this directory:
    ```bash
-   cd python/echo_bot
+   cd python/bot-quickstart
    ```
 2. Run the bot using pip:
 
