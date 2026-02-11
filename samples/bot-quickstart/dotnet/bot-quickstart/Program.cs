@@ -13,7 +13,6 @@ using System.Collections.Concurrent;
 var builder = WebApplication.CreateBuilder(args);
 builder.AddTeams();
 var webApp = builder.Build();
-var configuration = webApp.Services.GetRequiredService<IConfiguration>();
 var teamsApp = webApp.UseTeams(true);
 
 // Simple in-memory storage for conversation references (for proactive messaging)
@@ -21,7 +20,7 @@ var teamsApp = webApp.UseTeams(true);
 var conversationStorage = new ConcurrentDictionary<string, string>();
 
 // Send a proactive message to a user
-async Task<bool> sendProactiveNotification(
+async Task<bool> SendProactiveNotification(
     string userId,
     string message = "Hey! This is a proactive message from the bot!")
 {
@@ -35,10 +34,10 @@ async Task<bool> sendProactiveNotification(
 }
 
 // Send a proactive message after a delay
-async Task delayedProactiveMessage(string userId, int delaySeconds = 10)
+async Task DelayedProactiveMessage(string userId, int delaySeconds = 10)
 {
     await Task.Delay(TimeSpan.FromSeconds(delaySeconds));
-    await sendProactiveNotification(
+    await SendProactiveNotification(
         userId,
         $"Reminder: This proactive message was sent {delaySeconds} seconds after your request!"
     );
@@ -55,7 +54,7 @@ teamsApp.OnConversationUpdate(async (IContext<ConversationUpdateActivity> contex
             // Check if bot was added to the conversation
             if (member.Id == context.Activity.Recipient?.Id)
             {
-                await sendWelcomeMessage(context);
+                await SendWelcomeMessage(context);
             }
         }
     }
@@ -85,7 +84,7 @@ teamsApp.OnMessage(async (IContext<MessageActivity> context) =>
             {
                 try
                 {
-                    await delayedProactiveMessage(userAadId, 10);
+                    await DelayedProactiveMessage(userAadId, 10);
                 }
                 catch (Exception err)
                 {
@@ -103,43 +102,43 @@ teamsApp.OnMessage(async (IContext<MessageActivity> context) =>
     // Handle mention me command
     if (text.Contains("mentionme") || text.Contains("mention me"))
     {
-        await mentionUser(context);
+        await MentionUser(context);
     }
     // Handle whoami command
     else if (text.Contains("whoami"))
     {
-        await getSingleMember(context);
+        await GetSingleMember(context);
     }
     // Handle welcome command
     else if (text.Contains("welcome"))
     {
-        await sendWelcomeMessage(context);
+        await SendWelcomeMessage(context);
     }
     // Echo greeting messages
     else if (text.Contains("hi") || text.Contains("hello"))
     {
-        await echoMessage(context, text);
+        await EchoMessage(context, text);
     }
     else
     {
-        await sendWelcomeMessage(context);
+        await SendWelcomeMessage(context);
     }
 });
 
 // Sends a welcome message
-async Task sendWelcomeMessage<T>(IContext<T> context) where T : IActivity
+async Task SendWelcomeMessage<T>(IContext<T> context) where T : IActivity
 {
     await context.Send("Welcome to the Teams Quickstart Bot!");
 }
 
 // Echo back the user's message
-async Task echoMessage(IContext<MessageActivity> context, string text)
+async Task EchoMessage(IContext<MessageActivity> context, string text)
 {
     await context.Send($"**Echo :** {text}");
 }
 
 // Retrieves and displays information about the current user
-async Task getSingleMember(IContext<MessageActivity> context)
+async Task GetSingleMember(IContext<MessageActivity> context)
 {
     var conversationId = context.Activity.Conversation.Id;
     var userId = context.Activity.From.Id;
@@ -161,7 +160,7 @@ async Task getSingleMember(IContext<MessageActivity> context)
 }
 
 // Mention a user in a message
-async Task mentionUser(IContext<MessageActivity> context)
+async Task MentionUser(IContext<MessageActivity> context)
 {
     var conversationId = context.Activity.Conversation.Id;
     var userId = context.Activity.From.Id;

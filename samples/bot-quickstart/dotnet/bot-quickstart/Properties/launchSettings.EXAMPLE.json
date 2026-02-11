@@ -18,7 +18,7 @@
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development",
         "Teams__TenantId": "YOUR_TenantId",
-        "Teams__ClientID": "YOUR_ClientId",
+        "Teams__ClientId": "YOUR_ClientId",
         "Teams__ClientSecret": "YOUR_ClientSecret"
       }
     }
