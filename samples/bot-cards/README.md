@@ -175,34 +175,11 @@ az ad app credential reset --id $appId
 
 ## Troubleshooting
 
-### Bot not responding
-
-- Verify that your bot is running locally (usually on port 3978)
-- Check that your DevTunnel is active and properly configured
-- Ensure the bot endpoint in Teams Developer Portal matches your DevTunnel URL + `/api/messages`
-- Confirm your `CLIENT_ID`, `CLIENT_SECRET`, and `TENANT_ID` are correctly configured
-
-### Authentication errors
-
-- Verify your bot credentials match those created in Teams Developer Portal or Azure Bot Service
-- Ensure your bot has the necessary permissions in your M365 tenant
-- Check that you're using the correct tenant ID
-
-### File upload not working
-
-- Verify the bot has permission to receive file uploads in Teams
-- Check that the file size is within Teams limits
-- Ensure the Files directory exists and has proper write permissions
-
-### Common issues
-
-- **"Bot not found"**: Make sure the bot is added to the Teams app and the app is installed in your Teams client
-- **Connection timeout**: Check your firewall settings and ensure DevTunnel is running
-- **Invalid manifest**: Validate your manifest.json using the Teams Developer Portal validation tool
+- If Teams cannot communicate with your bot, verify your DevTunnels URL is reachable.
+- Ensure your .env or appsettings file is setup correctly.
+- For file upload issues, verify the bot has permission to receive file uploads and the Files directory exists with proper write permissions.
 
 ## Further Reading
 
 - [Upload Files Using Bots](https://learn.microsoft.com/en-us/microsoftteams/platform/bots/how-to/bots-filesv4)
 - [Microsoft Teams SDK Documentation](https://learn.microsoft.com/microsoftteams/platform/)
-- [Teams Bot Basics](https://learn.microsoft.com/en-us/microsoftteams/platform/bots/what-are-bots)
-- [Teams Adaptive Cards](https://learn.microsoft.com/en-us/microsoftteams/platform/task-modules-and-cards/cards/cards-reference)
