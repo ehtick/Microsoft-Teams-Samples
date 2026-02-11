@@ -11,3 +11,6 @@ obj/
 appsettings.Development.json
 appsettings.json
 launchSettings.json
+
+# Logs
+*.log
