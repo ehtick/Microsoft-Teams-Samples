@@ -1,6 +1,6 @@
 # Bot Cards - .NET (C#)
 
-This sample demonstrates a Bot Cards sample for Microsoft Teams using .NET and ASP.NET Core. The bot showcases various adaptive card actions, file handling functionality, and interactive card features.
+This sample demonstrates how to upload files and interact with adaptive cards in Microsoft Teams using a bot built with Teams SDK.
 
 ## Prerequisites
 

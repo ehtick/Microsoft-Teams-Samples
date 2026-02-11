@@ -1,12 +1,12 @@
 [
   {
-    "name": "officedev-microsoft-teams-samples-bot-file-upload-dotnet",
+    "name": "officedev-microsoft-teams-samples-bot-cards-dotnet",
     "source": "officeDev",
-    "title": "Bot Cards with Teams SDK",
-    "shortDescription": "This bot sample for Teams demonstrates adaptive card actions, file handling, and interactive card features using Teams SDK.",
+    "title": "Cards and Attachments Bot",
+    "shortDescription": "This sample demonstrates how to upload files and interact with adaptive cards in Microsoft Teams using a bot built with Teams SDK.",
     "url": "https://github.com/OfficeDev/Microsoft-Teams-Samples/tree/main/samples/bot-cards/dotnet/bot-cards",
     "longDescription": [
-      "This bot allows users to upload files and send inline images directly in Microsoft Teams, utilizing Teams SDK for seamless file handling. It also shows how to manage and process file attachments within chat conversations."
+      "This sample demonstrates various card types and attachment handling in Microsoft Teams using a bot built with Teams SDK. It showcases Adaptive Card Actions for dynamic card behaviors, Toggle Visibility Cards for showing/hiding content, and File Upload capabilities for managing attachments and inline images. This comprehensive sample illustrates how to create rich, interactive bot experiences in Teams using cards and file management features."
     ],
     "creationDateTime": "2026-01-30",
     "updateDateTime": "2026-01-30",

@@ -72,30 +72,9 @@ teamsApp.OnMessage(async context =>
             await SendAdaptiveCardActions(context);
             return;
         }
-        else if (normalizedText.Contains("suggested actions"))
-        {
-            await SendSuggestedActions(context);
-            return;
-        }
         else if (normalizedText.Contains("togglevisibility"))
         {
             await SendToggleVisibilityCard(context);
-            return;
-        }
-        // Handle color input
-        else if (normalizedText.Contains("red"))
-        {
-            await context.Send("Red is the best color, I agree.");
-            return;
-        }
-        else if (normalizedText.Contains("blue"))
-        {
-            await context.Send("Blue is the best color, I agree.");
-            return;
-        }
-        else if (normalizedText.Contains("yellow"))
-        {
-            await context.Send("Yellow is the best color, I agree.");
             return;
         }
         // Handle file commands
@@ -512,29 +491,6 @@ async Task SendToggleVisibilityCard(dynamic context)
         }
     };
     await context.Send(message);
-}
-
-// Send Suggested Actions with buttons
-async Task SendSuggestedActions(dynamic context)
-{
-    // Method 1: Using imBack actions (simple text responses)
-    var reply = new MessageActivity("What is your favorite color?");
-    
-    // Add suggested actions in a Teams-compatible format
-    reply.Value = new
-    {
-        suggestedActions = new
-        {
-            actions = new[]
-            {
-                new { title = "Red", type = "imBack", value = "Red" },
-                new { title = "Yellow", type = "imBack", value = "Yellow" },
-                new { title = "Blue", type = "imBack", value = "Blue" }
-            }
-        }
-    };
-
-    await context.Send(reply);
 }
 
 // Model classes
