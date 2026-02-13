@@ -22,7 +22,6 @@ The bot responds to the following commands:
 
 * **Who am I?** - Gets information about the current user
 * **Mention me** - The bot mentions the user in its response
-* **Proactive** - The bot sends a proactive message after a delay
 * **Echo {message}** - The bot echoes back the provided message
 
 ## Sample Implementations
