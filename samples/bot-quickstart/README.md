@@ -7,7 +7,6 @@ This sample demonstrates how to handle various bot conversation events in Micros
 - [Interaction with Bot](#interaction-with-bot)
 - [Sample Implementations](#sample-implementations)
 - [How to run these samples](#how-to-run-these-samples)
-  - [Run in the agentsplayground](#run-in-the-agentsplayground)
   - [Run in the Teams Client](#run-in-the-teams-client)
 - [Configure the new project to use the new Teams Bot Application](#configure-the-new-project-to-use-the-new-teams-bot-application)
 - [Pro Tip: Read the configuration settings using the Azure CLI](#pro-tip-read-the-configuration-settings-using-the-azure-cli)
@@ -36,8 +35,7 @@ The bot responds to the following commands:
 
 You can run these samples locally using
 
-1. The agentsplayground tool, without provisioning the Teams App, or
-2. In the Teams Client after you have provisioned the Teams Application and configured the application with your local DevTunnels URL.
+1. In the Teams Client after you have provisioned the Teams Application and configured the application with your local DevTunnels URL.
 
 ## Run in the Teams Client
 
@@ -135,6 +133,7 @@ az ad app credential reset --id $appId
 
 - If Teams cannot communicate with your bot, verify your DevTunnels URL is reachable.
 - Ensure your .env or appsettings file is setup correctly.
+- Use the Channels UI in Azure Bot Service in the Azure Portal to see detailed endpoint errors (not available in Teams Developer Portal).
 
 
 ## Further Reading
