@@ -14,10 +14,6 @@ load_dotenv()
 # Note: .env file is only required when running on Teams (not needed for local development with devtools)
 app = App()
 
-# Simple in-memory storage for conversation references (for proactive messaging)
-# In production, use persistent storage like a database
-conversation_storage: dict[str, str] = {}
-
 async def send_welcome_message(ctx: ActivityContext) -> None:
     """Sends a welcome message with available commands."""
     welcome_message = (
@@ -88,11 +84,6 @@ async def handle_message(ctx: ActivityContext[MessageActivity]) -> None:
     """Handles incoming messages and routes to appropriate functions based on message content."""
     # Get message text and normalize it
     text = (ctx.activity.text or "").strip().lower()
-    
-    # Store conversation reference for proactive messaging (from any message)
-    user_aad_id = ctx.activity.from_.aad_object_id
-    if user_aad_id:
-        conversation_storage[user_aad_id] = ctx.activity.conversation.id
         
     # Handle mention me command
     if "mentionme" in text or "mention me" in text:
