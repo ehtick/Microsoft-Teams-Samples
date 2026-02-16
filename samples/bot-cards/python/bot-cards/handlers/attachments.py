@@ -199,5 +199,5 @@ async def process_inline_image(ctx: ActivityContext, attachment) -> None:
 
         await ctx.send(f"Received <b>{filename}</b> ({len(content)} bytes). Requesting permission to save to your OneDrive...")
         await send_file_card(ctx, filename, file_id)
-    except Exception:
-        pass
+    except Exception as e:
+        print(f"Error handling file attachment: {e}")
