@@ -47,11 +47,9 @@ The bot supports the following functionalities:
 
 # How to run these samples
 
-To run these samples in the Teams Client, you need to provision your app in a M365 Tenant, and configure the app to your DevTunnels URL.
-
 ## Run in the Teams Client
 
-To run these samples in the Teams Client, you need to provision your app in a M365 Tenant, and configure the app to your DevTunnels URL.
+In the Teams Client after you have provisioned the Teams Application and configured the application with your local DevTunnels URL.
 
 1. Install the tool DevTunnels https://learn.microsoft.com/en-us/azure/developer/dev-tunnels/get-started
 2. Get Access to a M365 Developer Tenant https://learn.microsoft.com/en-us/office/developer-program/microsoft-365-developer-program-get-started
@@ -145,6 +143,7 @@ az ad app credential reset --id $appId
 - If Teams cannot communicate with your bot, verify your DevTunnels URL is reachable.
 - Ensure your .env or appsettings file is setup correctly.
 - For file upload issues, verify the bot has permission to receive file uploads and the Files directory exists with proper write permissions.
+- The Azure Bot Service (ABS) Channels UI is very useful to see any errors in the endpoint (only available in ABS, not in Teams Developer Portal).
 
 ## Further Reading
 
