@@ -10,6 +10,7 @@ using Microsoft.Teams.Apps;
 using Microsoft.Teams.Samples.BotCards.Handlers;
 using System.Net.Http.Headers;
 using System.Text.Json;
+using FileDownloadInfoModel = Microsoft.Teams.Samples.BotCards.Models.FileDownloadInfo;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddHttpClient();
@@ -101,7 +102,7 @@ teamsApp.OnMessage(async context =>
         {
             try
             {
-                var fileDownloadInfo = JsonSerializer.Deserialize<FileDownloadInfo>(
+                var fileDownloadInfo = JsonSerializer.Deserialize<FileDownloadInfoModel>(
                     JsonSerializer.Serialize(attachment.Content));
 
                 if (fileDownloadInfo != null)
@@ -126,7 +127,6 @@ teamsApp.OnMessage(async context =>
             catch (Exception ex)
             {
                 Console.WriteLine($"Error downloading file: {ex}");
-                await context.Send($"Error downloading file: {ex.Message}");
             }
         }
         // Handle inline images
@@ -203,7 +203,6 @@ teamsApp.OnFileConsent(async context =>
         catch (Exception ex)
         {
             Console.WriteLine($"Error uploading file: {ex}");
-            await context.Send("Sorry, there was an error uploading the file. Please try again later.");
         }
     }
     else if (fileConsentResponse?.Action == "decline")
@@ -221,7 +220,7 @@ teamsApp.OnFileConsent(async context =>
         }
         catch
         {
-            await context.Send("You declined the file.");
+            Console.WriteLine("Error processing file decline response");
         }
     }
 });

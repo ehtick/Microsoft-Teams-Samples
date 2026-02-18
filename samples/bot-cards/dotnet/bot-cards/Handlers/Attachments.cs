@@ -4,6 +4,8 @@
 using Microsoft.Teams.Api.Activities;
 using Microsoft.Teams.Api;
 using System.Text.Json.Serialization;
+using FileConsentCardModel = Microsoft.Teams.Samples.BotCards.Models.FileConsentCard;
+using FileDownloadInfoModel = Microsoft.Teams.Samples.BotCards.Models.FileDownloadInfo;
 
 namespace Microsoft.Teams.Samples.BotCards.Handlers;
 
@@ -28,7 +30,7 @@ public static class Attachments
             var fileSize = stats.Length;
             var consentContext = new { filename = filename };
 
-            var fileCard = new FileConsentCard
+            var fileCard = new FileConsentCardModel
             {
                 Description = "This is the file I want to send you",
                 SizeInBytes = fileSize,
@@ -52,7 +54,6 @@ public static class Attachments
         catch (Exception ex)
         {
             Console.WriteLine($"Error sending file card: {ex}");
-            await context.Send($"Error sending file card: {ex.Message}");
         }
     }
 
@@ -83,7 +84,6 @@ public static class Attachments
         catch (Exception ex)
         {
             Console.WriteLine($"Error processing inline image: {ex}");
-            await context.Send($"Error processing image: {ex.Message}");
         }
     }
 
@@ -124,37 +124,4 @@ public static class Attachments
         var maxSeq = filteredFiles.Any() ? filteredFiles.Max() : 0;
         return $"{filenamePrefix}{maxSeq + 1}.png";
     }
-}
-
-// Model classes
-public class FileConsentCard
-{
-    public const string ContentType = "application/vnd.microsoft.teams.card.file.consent";
-
-    [JsonPropertyName("name")]
-    public string Name { get; set; } = string.Empty;
-
-    [JsonPropertyName("description")]
-    public string Description { get; set; } = string.Empty;
-
-    [JsonPropertyName("sizeInBytes")]
-    public long SizeInBytes { get; set; }
-
-    [JsonPropertyName("acceptContext")]
-    public object? AcceptContext { get; set; }
-
-    [JsonPropertyName("declineContext")]
-    public object? DeclineContext { get; set; }
-}
-
-public class FileDownloadInfo
-{
-    [JsonPropertyName("downloadUrl")]
-    public string DownloadUrl { get; set; } = string.Empty;
-
-    [JsonPropertyName("uniqueId")]
-    public string? UniqueId { get; set; }
-
-    [JsonPropertyName("fileType")]
-    public string? FileType { get; set; }
 }
