@@ -5,6 +5,7 @@ This sample demonstrates how to upload files and interact with adaptive cards in
 ## Prerequisites
 
 - [Python >=3.12,<3.15](https://www.python.org/downloads/)
+- [pip](https://pip.pypa.io/en/stable/installation/)
 - [uv](https://docs.astral.sh/uv/)
 
 ## Run the sample

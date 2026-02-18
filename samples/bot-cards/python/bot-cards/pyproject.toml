@@ -1,7 +1,7 @@
 [project]
 name = "bot-cards"
 version = "0.1.0"
-description = "Bot Cards sample"
+description = "Bot Cards and Attachments sample"
 readme = "README.md"
 requires-python = ">=3.12,<3.15"
 dependencies = [
