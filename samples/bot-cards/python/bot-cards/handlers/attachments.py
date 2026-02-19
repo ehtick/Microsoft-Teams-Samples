@@ -89,8 +89,8 @@ async def send_file_card(ctx: ActivityContext, filename: str = None, file_id: st
 
 
 async def file_upload_failed(ctx: ActivityContext, error: str) -> None:
-    """Handles failed file upload silently (logs only, no chat message)."""
-    pass  # Silent failure - no error message to chat
+    """Handles failed file upload."""
+    print(f"File upload failed: {error}")
 
 
 async def file_upload_completed(ctx: ActivityContext, file_consent_card_response) -> None:
@@ -149,8 +149,8 @@ async def handle_file_download(ctx: ActivityContext, attachment) -> None:
 
         await ctx.send(f"Received <b>{filename}</b>. Requesting permission to save to your OneDrive...")
         await send_file_card(ctx, filename, file_id)
-    except Exception:
-        pass
+    except Exception as e:
+        print(f"Error handling file download: {e}")
 
 
 async def process_inline_image(ctx: ActivityContext, attachment) -> None:

@@ -84,7 +84,7 @@ async def handle_message(ctx: ActivityContext[MessageActivity]) -> None:
             await process_inline_image(ctx, attachment)
             return
 
-    text = ctx.activity.text.lower() or ""
+    text = (ctx.activity.text or "").lower()
 
     # Handle Adaptive Card Actions commands
     if "card actions" in text:
