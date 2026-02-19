@@ -13,22 +13,25 @@ from microsoft_teams.api import (
     TaskSubmitInvokeActivity,
     InvokeResponse,
     card_attachment,
-    Attachment,
     AdaptiveCardAttachment,
     TaskModuleResponse,
     TaskModuleContinueResponse,
     TaskModuleMessageResponse,
     UrlTaskModuleTaskInfo,
     CardTaskModuleTaskInfo,
+    HeroCard,
+    HeroCardAttachment,
+    CardAction,
 )
 from microsoft_teams.cards import AdaptiveCard, TextBlock, SubmitAction, TextInput, TaskFetchAction
+from task_module_config import TaskModuleIds
 
 
 # Load environment variables
 load_dotenv()
 
-# Get BASE_URL from environment or default to localhost
-BASE_URL = os.environ.get("BaseUrl", "http://localhost:3978")
+# Get BASE_URL from environment
+BASE_URL = os.environ.get("BaseUrl", "")
 
 # Initialize Teams App
 app = App()
@@ -41,57 +44,29 @@ app.page("customform", os.path.join(os.path.dirname(__file__), "pages", "CustomF
 app.http.mount("css", os.path.join(os.path.dirname(__file__), "pages", "css"))
 
 
-# Task Module Constants
-class TaskModuleIds:
-    """Task module identifiers."""
-    YOUTUBE = "YouTube"
-    CUSTOM_FORM = "CustomForm"
-    ADAPTIVE_CARD = "AdaptiveCard"
-
-
-class UISettings:
-    """UI settings for task modules."""
-    def __init__(self, width: int, height: int, title: str, id: str, button_title: str):
-        self.width = width
-        self.height = height
-        self.title = title
-        self.id = id
-        self.button_title = button_title
-
-
-class TaskModuleUIConstants:
-    """Constants for Task Module UI settings."""
-    YOUTUBE = UISettings(1000, 700, "YouTube Video", TaskModuleIds.YOUTUBE, "YouTube")
-    CUSTOM_FORM = UISettings(510, 450, "Custom Form", TaskModuleIds.CUSTOM_FORM, "Custom Form")
-    ADAPTIVE_CARD = UISettings(400, 200, "Adaptive Card: Inputs", TaskModuleIds.ADAPTIVE_CARD, "Adaptive Card")
-
-
-def create_hero_card_attachment() -> Attachment:
+def create_hero_card_attachment() -> HeroCardAttachment:
     """Creates a HeroCard with task module options."""
-    hero_card_content = {
-        "title": "Task Module Invocation from Hero Card",
-        "buttons": [
-            {
-                "type": "invoke",
-                "title": TaskModuleUIConstants.ADAPTIVE_CARD.button_title,
-                "value": {"type": "task/fetch", "data": TaskModuleUIConstants.ADAPTIVE_CARD.id}
-            },
-            {
-                "type": "invoke",
-                "title": TaskModuleUIConstants.CUSTOM_FORM.button_title,
-                "value": {"type": "task/fetch", "data": TaskModuleUIConstants.CUSTOM_FORM.id}
-            },
-            {
-                "type": "invoke",
-                "title": TaskModuleUIConstants.YOUTUBE.button_title,
-                "value": {"type": "task/fetch", "data": TaskModuleUIConstants.YOUTUBE.id}
-            }
+    hero_card = HeroCard(
+        title="Task Module Invocation from Hero Card",
+        buttons=[
+            CardAction.model_construct(
+                type="invoke",
+                title=TaskModuleIds.ADAPTIVE_CARD.button_title,
+                value={"type": "task/fetch", "data": TaskModuleIds.ADAPTIVE_CARD.id}
+            ),
+            CardAction.model_construct(
+                type="invoke",
+                title=TaskModuleIds.CUSTOM_FORM.button_title,
+                value={"type": "task/fetch", "data": TaskModuleIds.CUSTOM_FORM.id}
+            ),
+            CardAction.model_construct(
+                type="invoke",
+                title=TaskModuleIds.YOUTUBE.button_title,
+                value={"type": "task/fetch", "data": TaskModuleIds.YOUTUBE.id}
+            )
         ]
-    }
-    return Attachment(
-        content_type="application/vnd.microsoft.card.hero",
-        content=hero_card_content
     )
+    return HeroCardAttachment(content=hero_card)
 
 
 def create_adaptive_card_with_task_module_options() -> AdaptiveCard:
@@ -99,9 +74,9 @@ def create_adaptive_card_with_task_module_options() -> AdaptiveCard:
     card = AdaptiveCard(version="1.4").with_body([
         TextBlock(text="Task Module Invocation from Adaptive Card", weight="Bolder", size="Large")
     ]).with_actions([
-        TaskFetchAction(value={"data": TaskModuleUIConstants.ADAPTIVE_CARD.id}).with_title(TaskModuleUIConstants.ADAPTIVE_CARD.button_title),
-        TaskFetchAction(value={"data": TaskModuleUIConstants.CUSTOM_FORM.id}).with_title(TaskModuleUIConstants.CUSTOM_FORM.button_title),
-        TaskFetchAction(value={"data": TaskModuleUIConstants.YOUTUBE.id}).with_title(TaskModuleUIConstants.YOUTUBE.button_title)
+        TaskFetchAction(value={"data": TaskModuleIds.ADAPTIVE_CARD.id}).with_title(TaskModuleIds.ADAPTIVE_CARD.button_title),
+        TaskFetchAction(value={"data": TaskModuleIds.CUSTOM_FORM.id}).with_title(TaskModuleIds.CUSTOM_FORM.button_title),
+        TaskFetchAction(value={"data": TaskModuleIds.YOUTUBE.id}).with_title(TaskModuleIds.YOUTUBE.button_title)
     ])
     
     return card
@@ -160,31 +135,31 @@ async def handle_task_module_fetch(ctx: ActivityContext[TaskFetchInvokeActivity]
     
     # Default to AdaptiveCard if we can't determine what was clicked
     if card_data is None:
-        card_data = TaskModuleIds.ADAPTIVE_CARD
+        card_data = TaskModuleIds.ADAPTIVE_CARD.id
     
     task_info = None
     
-    if card_data == TaskModuleIds.YOUTUBE:
+    if card_data == TaskModuleIds.YOUTUBE.id:
         task_info = UrlTaskModuleTaskInfo(
-            title=TaskModuleUIConstants.YOUTUBE.title,
-            width=TaskModuleUIConstants.YOUTUBE.width,
-            height=TaskModuleUIConstants.YOUTUBE.height,
+            title=TaskModuleIds.YOUTUBE.title,
+            width=TaskModuleIds.YOUTUBE.width,
+            height=TaskModuleIds.YOUTUBE.height,
             url=f"{BASE_URL}/youtube",
             fallback_url=f"{BASE_URL}/youtube"
         )
-    elif card_data == TaskModuleIds.CUSTOM_FORM:
+    elif card_data == TaskModuleIds.CUSTOM_FORM.id:
         task_info = UrlTaskModuleTaskInfo(
-            title=TaskModuleUIConstants.CUSTOM_FORM.title,
-            width=TaskModuleUIConstants.CUSTOM_FORM.width,
-            height=TaskModuleUIConstants.CUSTOM_FORM.height,
+            title=TaskModuleIds.CUSTOM_FORM.title,
+            width=TaskModuleIds.CUSTOM_FORM.width,
+            height=TaskModuleIds.CUSTOM_FORM.height,
             url=f"{BASE_URL}/customform",
             fallback_url=f"{BASE_URL}/customform"
         )
     else:  # Default to ADAPTIVE_CARD
         task_info = CardTaskModuleTaskInfo(
-            title=TaskModuleUIConstants.ADAPTIVE_CARD.title,
-            width=TaskModuleUIConstants.ADAPTIVE_CARD.width,
-            height=TaskModuleUIConstants.ADAPTIVE_CARD.height,
+            title=TaskModuleIds.ADAPTIVE_CARD.title,
+            width=TaskModuleIds.ADAPTIVE_CARD.width,
+            height=TaskModuleIds.ADAPTIVE_CARD.height,
             card=card_attachment(AdaptiveCardAttachment(content=create_adaptive_card_for_task_module()))
         )
     
@@ -211,7 +186,6 @@ async def handle_task_module_submit(ctx: ActivityContext[TaskSubmitInvokeActivit
     # Add each field from the submitted data
     if data:
         for key, val in data.items():
-            # Format the key nicely (capitalize, replace underscores with spaces)
             formatted_key = key.replace("_", " ").title()
             body_items.append(
                 TextBlock(text=f"**{formatted_key}:** {val}", wrap=True)
