@@ -29,6 +29,6 @@ The bot will start listening on `http://localhost:3978`.
 
 ## Next Steps
 
-Refer to the [main README](../../../README.md) for instructions on how to:
+Refer to the [main README](../../README.md) for instructions on how to:
 - Deploy and test your bot in Microsoft Teams
 - Configure Teams app manifest and credentials
