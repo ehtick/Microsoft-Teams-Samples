@@ -27,23 +27,10 @@ if (!Directory.Exists(filesPath))
 
 var httpClientFactory = webApp.Services.GetRequiredService<IHttpClientFactory>();
 
-// Handle bot installation and new members (conversationUpdate)
-teamsApp.OnConversationUpdate(async context =>
+// Handle bot installation (send welcome message when bot is first added)
+teamsApp.OnInstall(async context =>
 {
-    var activity = context.Activity;
-    var membersAdded = activity.MembersAdded;
-
-    if (membersAdded != null && membersAdded.Any())
-    {
-        foreach (var member in membersAdded)
-        {
-            // Check if bot was added to the conversation
-            if (member.Id == activity.Recipient?.Id)
-            {
-                await SendWelcomeMessage(context);
-            }
-        }
-    }
+    await SendWelcomeMessage(context);
 });
 
 // Handle incoming messages
@@ -102,8 +89,9 @@ teamsApp.OnMessage(async context =>
         {
             try
             {
-                var fileDownloadInfo = JsonSerializer.Deserialize<FileDownloadInfoModel>(
-                    JsonSerializer.Serialize(attachment.Content));
+                var fileDownloadInfo = attachment.Content != null 
+                    ? JsonSerializer.Deserialize<FileDownloadInfoModel>((JsonElement)attachment.Content)
+                    : null;
 
                 if (fileDownloadInfo != null)
                 {
@@ -119,8 +107,7 @@ teamsApp.OnMessage(async context =>
                         await response.Content.CopyToAsync(fileStream);
                     }
 
-                    var successMessage = new MessageActivity($"File <b>{fileName}</b> downloaded successfully!");
-                    successMessage.TextFormat = TextFormat.Xml;
+                    var successMessage = new MessageActivity().WithText($"File <b>{fileName}</b> downloaded successfully!").WithTextFormat(TextFormat.Xml);
                     await context.Send(successMessage);
                 }
             }
@@ -153,12 +140,13 @@ teamsApp.OnFileConsent(async context =>
 {
     var fileConsentResponse = context.Activity.Value;
 
-    if (fileConsentResponse?.Action == "accept")
+    if (fileConsentResponse != null && fileConsentResponse.Action == Microsoft.Teams.Api.Action.Accept)
     {
         try
         {
-            var contextData = JsonSerializer.Deserialize<Dictionary<string, string>>(
-                JsonSerializer.Serialize(fileConsentResponse.Context));
+            var contextData = fileConsentResponse.Context != null
+                ? JsonSerializer.Deserialize<Dictionary<string, string>>((JsonElement)fileConsentResponse.Context)
+                : null;
 
             var fileName = contextData?["filename"] ?? "file.txt";
             var filePath = Path.Combine(filesPath, fileName);
@@ -195,8 +183,7 @@ teamsApp.OnFileConsent(async context =>
                 Content = downloadCard
             };
 
-            var successMessage = new MessageActivity($"<b> File uploaded successfully!</b><br/><br/>Your file <b>{fileName}</b> has been uploaded to OneDrive.<br/><br/><a href=\"{uploadInfo.ContentUrl}\">Click here to open in OneDrive</a>");
-            successMessage.TextFormat = TextFormat.Xml;
+            var successMessage = new MessageActivity().WithText($"<b> File uploaded successfully!</b><br/><br/>Your file <b>{fileName}</b> has been uploaded to OneDrive.<br/><br/><a href=\"{uploadInfo.ContentUrl}\">Click here to open in OneDrive</a>").WithTextFormat(TextFormat.Xml);
             successMessage.Attachments = new List<Attachment> { fileInfoAttachment };
             await context.Send(successMessage);
         }
@@ -205,17 +192,17 @@ teamsApp.OnFileConsent(async context =>
             Console.WriteLine($"Error uploading file: {ex}");
         }
     }
-    else if (fileConsentResponse?.Action == "decline")
+    else if (fileConsentResponse != null && fileConsentResponse.Action == Microsoft.Teams.Api.Action.Decline)
     {
         try
         {
-            var contextData = JsonSerializer.Deserialize<Dictionary<string, string>>(
-                JsonSerializer.Serialize(fileConsentResponse.Context));
+            var contextData = fileConsentResponse.Context != null
+                ? JsonSerializer.Deserialize<Dictionary<string, string>>((JsonElement)fileConsentResponse.Context)
+                : null;
 
             var fileName = contextData?["filename"] ?? "file";
 
-            var declineMessage = new MessageActivity($"Declined. We won't upload file <b>{fileName}</b>.");
-            declineMessage.TextFormat = TextFormat.Xml;
+            var declineMessage = new MessageActivity().WithText($"Declined. We won't upload file <b>{fileName}</b>.").WithTextFormat(TextFormat.Xml);
             await context.Send(declineMessage);
         }
         catch
@@ -227,8 +214,8 @@ teamsApp.OnFileConsent(async context =>
 
 webApp.Run();
 
-// Helper method
-async Task SendWelcomeMessage(dynamic context)
+// Sends a welcome message
+async Task SendWelcomeMessage<T>(IContext<T> context) where T : IActivity
 {
     await context.Send("Welcome to the Teams Bot Cards!");
 }

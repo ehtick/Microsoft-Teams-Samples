@@ -3,8 +3,8 @@
 
 using Microsoft.Teams.Api.Activities;
 using Microsoft.Teams.Api;
+using Microsoft.Teams.Apps;
 using System.Text.Json.Serialization;
-using FileConsentCardModel = Microsoft.Teams.Samples.BotCards.Models.FileConsentCard;
 using FileDownloadInfoModel = Microsoft.Teams.Samples.BotCards.Models.FileDownloadInfo;
 
 namespace Microsoft.Teams.Samples.BotCards.Handlers;
@@ -12,7 +12,7 @@ namespace Microsoft.Teams.Samples.BotCards.Handlers;
 public static class Attachments
 {
     // Send file consent card
-    public static async Task SendFileCard(dynamic context, string filesPath)
+    public static async Task SendFileCard<T>(IContext<T> context, string filesPath) where T : IActivity
     {
         try
         {
@@ -30,23 +30,24 @@ public static class Attachments
             var fileSize = stats.Length;
             var consentContext = new { filename = filename };
 
-            var fileCard = new FileConsentCardModel
+            var fileCard = new FileConsentCard
             {
                 Description = "This is the file I want to send you",
-                SizeInBytes = fileSize,
-                Name = filename,
+                SizeInBytes = (int)fileSize,
                 AcceptContext = consentContext,
                 DeclineContext = consentContext
             };
 
-            var message = new MessageActivity();
-            message.Attachments = new List<Attachment>
+            var message = new MessageActivity
             {
-                new Attachment
+                Attachments = new List<Attachment>
                 {
-                    Content = fileCard,
-                    ContentType = new ContentType("application/vnd.microsoft.teams.card.file.consent"),
-                    Name = filename
+                    new Attachment
+                    {
+                        Content = fileCard,
+                        ContentType = new ContentType("application/vnd.microsoft.teams.card.file.consent"),
+                        Name = filename
+                    }
                 }
             };
             await context.Send(message);
@@ -58,7 +59,7 @@ public static class Attachments
     }
 
     // Process inline image
-    public static async Task ProcessInlineImage(dynamic context, Attachment file, string filesPath, IHttpClientFactory httpClientFactory)
+    public static async Task ProcessInlineImage<T>(IContext<T> context, Attachment file, string filesPath, IHttpClientFactory httpClientFactory) where T : IActivity
     {
         try
         {
@@ -77,8 +78,10 @@ public static class Attachments
             var fileSize = new FileInfo(filePath).Length;
             var inlineAttachment = GetInlineAttachment(fileName, filesPath);
 
-            var message = new MessageActivity($"Image <b>{fileName}</b> of size <b>{fileSize}</b> bytes received and saved.");
-            message.Attachments = new List<Attachment> { inlineAttachment };
+            var message = new MessageActivity($"Image <b>{fileName}</b> of size <b>{fileSize}</b> bytes received and saved.")
+            {
+                Attachments = new List<Attachment> { inlineAttachment }
+            };
             await context.Send(message);
         }
         catch (Exception ex)
