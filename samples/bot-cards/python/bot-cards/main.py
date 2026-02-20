@@ -102,7 +102,7 @@ async def handle_message(ctx: ActivityContext[MessageActivity]) -> None:
         return
 
     # Default: trigger file upload for "send file" or similar
-    if "send file" in text.lower() or "file" in text.lower():
+    if "send file" in text or "file" in text:
         await send_file_card(ctx, "teams-logo.png")
         return
 
