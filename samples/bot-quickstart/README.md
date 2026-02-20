@@ -90,7 +90,7 @@ CLIENT_SECRET=
 
 For dotnet you need to add these values to `appsettings.json` or `launchSettings.json` using the next syntax.
 
-appSettings.json
+appsettings.json
 
 
 ```json
