@@ -121,7 +121,7 @@ Or to use Env Vars from the profile defined in `launchSettings.json` (using the 
 
 ## Pro Tip: Read the configuration settings using the Azure CLI
 
-To obtain the TenantId, ClientId and SecretId you can use the Azure CLI with:
+To obtain the TenantId, ClientId and ClientSecret you can use the Azure CLI with:
 
 > Note. If you don't have access to an Azure Subscription you can still use the Azure CLI, make sure you login with `az login --allow-no-subscription` 
 
