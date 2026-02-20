@@ -33,7 +33,7 @@ The bot responds to the following commands:
 
 # How to run these samples
 
-You can run these samples locally using
+You can run these samples locally using:
 
 1. In the Teams Client after you have provisioned the Teams Application and configured the application with your local DevTunnels URL.
 
