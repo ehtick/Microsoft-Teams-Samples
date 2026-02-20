@@ -3,6 +3,7 @@
 
 import asyncio
 import os
+from typing import Any, Optional
 
 from dotenv import load_dotenv
 from microsoft_teams.apps import App, ActivityContext
@@ -37,7 +38,6 @@ BASE_URL = os.environ.get("BaseUrl", "")
 app = App()
 
 # Host static webpages for task modules
-app.page("youtube", os.path.join(os.path.dirname(__file__), "pages", "YouTube"), "/youtube")
 app.page("customform", os.path.join(os.path.dirname(__file__), "pages", "CustomForm"), "/customform")
 
 # Mount CSS files for task module pages
@@ -58,11 +58,6 @@ def create_hero_card_attachment() -> HeroCardAttachment:
                 type="invoke",
                 title=TaskModuleIds.CUSTOM_FORM.button_title,
                 value={"type": "task/fetch", "data": TaskModuleIds.CUSTOM_FORM.id}
-            ),
-            CardAction.model_construct(
-                type="invoke",
-                title=TaskModuleIds.YOUTUBE.button_title,
-                value={"type": "task/fetch", "data": TaskModuleIds.YOUTUBE.id}
             )
         ]
     )
@@ -75,8 +70,7 @@ def create_adaptive_card_with_task_module_options() -> AdaptiveCard:
         TextBlock(text="Task Module Invocation from Adaptive Card", weight="Bolder", size="Large")
     ]).with_actions([
         TaskFetchAction(value={"data": TaskModuleIds.ADAPTIVE_CARD.id}).with_title(TaskModuleIds.ADAPTIVE_CARD.button_title),
-        TaskFetchAction(value={"data": TaskModuleIds.CUSTOM_FORM.id}).with_title(TaskModuleIds.CUSTOM_FORM.button_title),
-        TaskFetchAction(value={"data": TaskModuleIds.YOUTUBE.id}).with_title(TaskModuleIds.YOUTUBE.button_title)
+        TaskFetchAction(value={"data": TaskModuleIds.CUSTOM_FORM.id}).with_title(TaskModuleIds.CUSTOM_FORM.button_title)
     ])
     
     return card
@@ -84,15 +78,18 @@ def create_adaptive_card_with_task_module_options() -> AdaptiveCard:
 
 def create_adaptive_card_for_task_module() -> AdaptiveCard:
     """Creates an AdaptiveCard to be shown in a task module."""
+    text_input = (
+        TextInput()
+        .with_id("usertext")
+        .with_placeholder("add some text and submit")
+        .with_is_multiline(True)
+    )
     return AdaptiveCard(
         schema="http://adaptivecards.io/schemas/adaptive-card.json",
         version="1.0"
     ).with_body([
         TextBlock(text="Enter Text Here", weight="Bolder"),
-        TextInput()
-            .with_id("usertext")
-            .with_placeholder("add some text and submit")
-            .with_is_multiline(True)
+        text_input
     ]).with_actions([
         SubmitAction().with_title("Submit")
     ])
@@ -115,23 +112,8 @@ async def handle_message(ctx: ActivityContext[MessageActivity]) -> None:
 @app.on_dialog_open
 async def handle_task_module_fetch(ctx: ActivityContext[TaskFetchInvokeActivity]) -> InvokeResponse:
     """Called when the user selects an option from the displayed HeroCard or AdaptiveCard."""
-    # Get the task module data from the request
-    value = ctx.activity.value
-    card_data = None
-    
-    # Extract data - try multiple approaches
-    if hasattr(value, "data") and value.data:
-        data = value.data
-        if isinstance(data, dict):
-            card_data = data.get("data")
-        elif isinstance(data, str):
-            card_data = data
-    
-    # If card_data is still None, try to get it from the raw value
-    if card_data is None and hasattr(value, "data") and isinstance(value.data, dict):
-        # Maybe the data key contains the ID directly without nesting
-        if "type" in value.data and value.data.get("type") == "task/fetch":
-            card_data = value.data.get("data")
+    data: Optional[Any] = ctx.activity.value.data
+    card_data = data.get("data") if isinstance(data, dict) else data
     
     # Default to AdaptiveCard if we can't determine what was clicked
     if card_data is None:
@@ -139,15 +121,7 @@ async def handle_task_module_fetch(ctx: ActivityContext[TaskFetchInvokeActivity]
     
     task_info = None
     
-    if card_data == TaskModuleIds.YOUTUBE.id:
-        task_info = UrlTaskModuleTaskInfo(
-            title=TaskModuleIds.YOUTUBE.title,
-            width=TaskModuleIds.YOUTUBE.width,
-            height=TaskModuleIds.YOUTUBE.height,
-            url=f"{BASE_URL}/youtube",
-            fallback_url=f"{BASE_URL}/youtube"
-        )
-    elif card_data == TaskModuleIds.CUSTOM_FORM.id:
+    if card_data == TaskModuleIds.CUSTOM_FORM.id:
         task_info = UrlTaskModuleTaskInfo(
             title=TaskModuleIds.CUSTOM_FORM.title,
             width=TaskModuleIds.CUSTOM_FORM.width,

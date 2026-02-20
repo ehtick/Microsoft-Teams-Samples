@@ -14,6 +14,5 @@ class UISettings:
 
 class TaskModuleIds:
     """Task module identifiers and settings."""
-    YOUTUBE = UISettings(1000, 700, "YouTube Video", "YouTube", "YouTube")
     CUSTOM_FORM = UISettings(510, 450, "Custom Form", "CustomForm", "Custom Form")
     ADAPTIVE_CARD = UISettings(400, 200, "Adaptive Card: Inputs", "AdaptiveCard", "Adaptive Card")
