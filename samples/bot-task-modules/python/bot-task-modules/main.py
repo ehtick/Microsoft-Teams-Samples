@@ -40,9 +40,6 @@ app = App()
 # Host static webpages for task modules
 app.page("customform", os.path.join(os.path.dirname(__file__), "pages", "CustomForm"), "/customform")
 
-# Mount CSS files for task module pages
-app.http.mount("css", os.path.join(os.path.dirname(__file__), "pages", "css"))
-
 
 def create_hero_card_attachment() -> HeroCardAttachment:
     """Creates a HeroCard with task module options."""
@@ -160,6 +157,8 @@ async def handle_task_module_submit(ctx: ActivityContext[TaskSubmitInvokeActivit
     # Add each field from the submitted data
     if data:
         for key, val in data.items():
+            if "password" in key.lower():
+                continue
             formatted_key = key.replace("_", " ").title()
             body_items.append(
                 TextBlock(text=f"**{formatted_key}:** {val}", wrap=True)
