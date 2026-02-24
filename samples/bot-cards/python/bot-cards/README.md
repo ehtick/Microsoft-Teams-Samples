@@ -1,6 +1,6 @@
 # Cards and Attachments Bot - Python
 
-This sample demonstrates how to upload files and interact with adaptive cards in Microsoft Teams using a bot built with Teams SDK.
+This sample demonstrates how to interact with adaptive cards in Microsoft Teams using a bot built with Teams SDK.
 
 ## Prerequisites
 

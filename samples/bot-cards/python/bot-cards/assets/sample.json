@@ -2,11 +2,11 @@
   {
     "name": "officedev-microsoft-teams-samples-bot-cards-python",
     "source": "officeDev",
-    "title": "Bot Cards and Attachments using Teams SDK",
-    "shortDescription": "This bot sample for Teams demonstrates various card types including Adaptive Card Actions, Toggle Visibility Cards, and file upload capabilities using Teams SDK.",
+    "title": "Bot Cards using Teams SDK",
+    "shortDescription": "This sample demonstrates adaptive cards with the Teams SDK.",
     "url": "https://github.com/OfficeDev/Microsoft-Teams-Samples/tree/main/samples/bot-cards/python/bot-cards",
     "longDescription": [
-      "This bot demonstrates multiple card types in Microsoft Teams using Teams SDK. It showcases Adaptive Card Actions (OpenURL, ShowCard, Submit), Toggle Visibility Cards, and file upload with OneDrive integration."
+      "This bot demonstrates cards in Microsoft Teams using Teams SDK. It showcases taking various actions on cards, and toggling visibility."
     ],
     "creationDateTime": "2026-01-30",
     "updateDateTime": "2026-02-06",
