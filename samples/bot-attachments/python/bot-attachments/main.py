@@ -4,12 +4,12 @@ Licensed under the MIT License.
 """
 
 import asyncio
+import re
 import uuid
 
 from dotenv import load_dotenv
 from microsoft_teams.api import (
     Attachment,
-    InstalledActivity,
     MessageActivity,
     MessageActivityInput,
     FileConsentInvokeActivity,
@@ -30,10 +30,6 @@ app = App()
 
 pending_uploads: dict[str, bytes] = {}
 
-@app.on_install_add
-async def handle_install(ctx: ActivityContext[InstalledActivity]) -> None:
-    await ctx.send("Welcome to the Bot Attachments sample!")
-
 @app.on_file_consent
 async def handle_file_consent(ctx: ActivityContext[FileConsentInvokeActivity]) -> None:
     value = ctx.activity.value
@@ -48,20 +44,33 @@ async def handle_file_consent(ctx: ActivityContext[FileConsentInvokeActivity]) -
         pending_uploads.pop(file_id, None)
         await ctx.send(f"Declined. We won't upload file <b>{filename}</b>.")
 
-
 @app.on_message
 async def handle_message(ctx: ActivityContext[MessageActivity]) -> None:
-    attachment = next(iter(ctx.activity.attachments or []), None)
-
-    if attachment and attachment.content_type == CONTENT_TYPE_FILE_DOWNLOAD:
-        content = await _download_attachment(attachment.content.get("downloadUrl"))
-        file_id = str(uuid.uuid4())
-        pending_uploads[file_id] = content
-        await ctx.send(f"Received <b>{attachment.name}</b>. Requesting permission to save to your OneDrive...")
-        await _send_file_consent_card(ctx, attachment.name, file_id)
+    content = await _get_attachment_content(ctx)
+    if content is None:
+        await ctx.send("Welcome to the Bot Attachments sample! Please attach a file or image to save to your OneDrive!")
         return
 
-    await ctx.send("Welcome to the Bot Attachments sample!")
+    attachment = next(iter(ctx.activity.attachments or []))
+    filename = attachment.name or f"image_{uuid.uuid4()}.png"
+    file_id = str(uuid.uuid4())
+    pending_uploads[file_id] = content
+    await ctx.send(f"Received <b>{filename}</b>. Requesting permission to save to your OneDrive...")
+    await _send_file_consent_card(ctx, filename, file_id)
+
+async def _get_attachment_content(ctx: ActivityContext[MessageActivity]) -> bytes | None:
+    attachment = next(iter(ctx.activity.attachments or []), None)
+    if attachment is None:
+        return None
+
+    if attachment.content_type == CONTENT_TYPE_FILE_DOWNLOAD:
+        try:
+            return await _download_attachment(attachment.content.get("downloadUrl"))
+        except Exception as e:
+            print(f"Failed to download attachment: {e}")
+            return None
+
+    return None
 
 async def _download_attachment(url: str) -> bytes:
     response = await Client(ClientOptions()).get(url)
