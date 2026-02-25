@@ -32,7 +32,7 @@ from task_module_config import TaskModuleIds
 load_dotenv()
 
 # Get BASE_URL from environment
-BASE_URL = os.environ.get("BaseUrl", "")
+BASE_URL = os.environ.get("BASE_URL", "")
 
 # Initialize Teams App
 app = App()
