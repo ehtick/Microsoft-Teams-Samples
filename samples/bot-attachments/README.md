@@ -1,6 +1,6 @@
-# Bot Cards
+# Bot Attachments
 
-This sample demonstrates how to handle various card types and interactive card behaviors in Microsoft Teams.
+This sample demonstrates how to handle file downloads, uploads, and consent cards for file management in Microsoft Teams with OneDrive integration.
 
 ## Table of Contents
 
@@ -15,20 +15,21 @@ This sample demonstrates how to handle various card types and interactive card b
 
 ## Interaction with Bot
 
-![Bot Cards](bot-cards.gif)
+![Bot Attachments](bot-attachments.gif)
 
-The bot responds to the following commands:
+The bot supports the following file management functionalities:
 
-* **card actions** - Interactive cards with submit actions and button interactions
-* **toggle visibility** - Shows/hides content dynamically within cards
+* **File Download** - Receives files sent as attachments from users in Teams chat
+* **File Consent Card** - Requests user permission to upload files to OneDrive (accept or decline)
+* **OneDrive Upload** - Successfully saves files to user's OneDrive and displays file info cards
 
 ## Sample Implementations
 
 | Language | Framework | Directory |
 |----------|-----------|-----------|
-| C# | .NET 10 / ASP.NET Core | [dotnet/bot-cards](dotnet/bot-cards/README.md) |
-| TypeScript | Node.js | [nodejs/bot-cards](nodejs/bot-cards/README.md) |
-| Python | Python | [python/bot-cards](python/bot-cards/README.md) |
+| C# | .NET 10 / ASP.NET Core | [dotnet/bot-attachments](dotnet/bot-attachments/README.md) |
+| TypeScript | Node.js | [nodejs/bot-attachments](nodejs/bot-attachments/README.md) |
+| Python | Python | [python/bot-attachments](python/bot-attachments/README.md) |
 
 # How to run these samples
 
@@ -122,7 +123,7 @@ Or to use Env Vars from the profile defined in `launchSettings.json` (using the 
 
 To obtain the TenantId, ClientId and ClientSecret you can use the Azure CLI with:
 
-> Note. If you don't have access to an Azure Subscription you can still use the Azure CLI, make sure you login with `az login --allow-no-subscription`
+> Note. If you don't have access to an Azure Subscription you can still use the Azure CLI, make sure you login with `az login --allow-no-subscription` 
 
 ```
 az ad app credential reset --id $appId
