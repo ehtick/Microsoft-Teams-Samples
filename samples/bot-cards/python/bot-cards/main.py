@@ -69,7 +69,7 @@ def create_toggle_visibility_card() -> AdaptiveCard:
     return AdaptiveCard(
         body=[
             TextBlock(
-                text="**Action.ToggleVisibility example**: click the button to show or hide the welcome message"
+                text="Click to show or hide the message"
             ),
             TextBlock(
                 id="helloWorld",
