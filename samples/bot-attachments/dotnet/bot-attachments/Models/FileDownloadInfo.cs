@@ -3,7 +3,7 @@
 
 using System.Text.Json.Serialization;
 
-namespace Microsoft.Teams.Samples.BotCards.Models;
+namespace Microsoft.Teams.Samples.BotAttachments.Models;
 
 public class FileDownloadInfo
 {

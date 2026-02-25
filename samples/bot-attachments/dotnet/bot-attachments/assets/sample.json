@@ -1,12 +1,12 @@
 [
   {
-    "name": "officedev-microsoft-teams-samples-bot-cards-dotnet",
+    "name": "officedev-microsoft-teams-samples-bot-attachments-dotnet",
     "source": "officeDev",
-    "title": "Cards Bot",
-    "shortDescription": "This sample demonstrates how to interact with adaptive cards in Microsoft Teams using a bot built with Teams SDK.",
-    "url": "https://github.com/OfficeDev/Microsoft-Teams-Samples/tree/main/samples/bot-cards/dotnet/bot-cards",
+    "title": "Bot Attachments",
+    "shortDescription": "This sample demonstrates how to send and receive file attachments in Microsoft Teams using a bot built with the Teams SDK.",
+    "url": "https://github.com/OfficeDev/Microsoft-Teams-Samples/tree/main/samples/bot-attachments/dotnet/bot-attachments",
     "longDescription": [
-      "This sample demonstrates adaptive card functionality in Microsoft Teams using a bot built with Teams SDK. It showcases Adaptive Card Actions for dynamic card behaviors including Action.OpenUrl, Action.Submit, and nested Action.ShowCard, as well as Toggle Visibility Cards for showing and hiding content interactively."
+      "This sample demonstrates file attachment handling in Microsoft Teams using a bot built with the Teams SDK. When a user sends a file, the bot downloads it, stores it in memory, and sends a File Consent Card requesting permission to upload to OneDrive. Upon acceptance, the bot uploads the file and sends a File Info Card with a direct link. Declined requests are handled gracefully with a notification message."
     ],
     "creationDateTime": "2026-01-30",
     "updateDateTime": "2026-01-30",
@@ -28,15 +28,15 @@
       },
       {
         "key": "TEAMS-FEATURES",
-        "value": "bot cards"
+        "value": "bot attachments"
       }
     ],
     "thumbnails": [
       {
         "type": "image",
         "order": 100,
-        "url": "https://raw.githubusercontent.com/OfficeDev/Microsoft-Teams-Samples/main/samples/bot-cards/bot-cards.gif",
-        "alt": "Solution UX showing bot cards with adaptive actions using Teams SDK"
+        "url": "https://raw.githubusercontent.com/OfficeDev/Microsoft-Teams-Samples/main/samples/bot-attachments/bot-attachments.gif",
+        "alt": "Solution UX showing bot attachments with file consent and OneDrive upload using Teams SDK"
       }
     ],
     "authors": [

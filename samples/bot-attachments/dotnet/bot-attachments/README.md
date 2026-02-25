@@ -1,11 +1,6 @@
-# Bot Cards - .NET (C#)
+# Bot Attachments - .NET (C#)
 
-This sample demonstrates how to interact with adaptive cards in Microsoft Teams using a bot built with Teams SDK.
-
-## Features
-
-- **Card Actions** — Adaptive card with `Action.OpenUrl`, `Action.Submit`, and nested `Action.ShowCard` behaviours.
-- **Toggle Visibility** — Adaptive card with `Action.ToggleVisibility` to show or hide content.
+This sample demonstrates how to send and receive file attachments in Microsoft Teams using a bot built with the Teams SDK. When a user sends a file, the bot downloads it, requests consent via a File Consent Card, and uploads the file to the user's OneDrive upon acceptance.
 
 ## Prerequisites
 
@@ -15,7 +10,7 @@ This sample demonstrates how to interact with adaptive cards in Microsoft Teams 
 
 1. Navigate to this directory:
    ```bash
-   cd dotnet/bot-cards
+   cd dotnet/bot-attachments
    ```
 
 2. Copy the example launch settings file:
@@ -32,12 +27,12 @@ This sample demonstrates how to interact with adaptive cards in Microsoft Teams 
 
 The bot will start listening on `http://localhost:3978`.
 
-## Bot commands
+## Features
 
-| Command | Description |
-|---|---|
-| `card actions` | Sends an adaptive card showcasing various card actions |
-| `toggle visibility` | Sends a card demonstrating `Action.ToggleVisibility` |
+- **File receive**: Accepts files sent by the user in a Teams chat.
+- **File Consent Card**: Requests user permission before uploading to OneDrive.
+- **OneDrive upload**: On acceptance, uploads the file and sends a File Info Card with a link.
+- **Decline handling**: Notifies the user gracefully when consent is declined.
 
 ## Next Steps
 
