@@ -2,15 +2,15 @@
 // Licensed under the MIT License.
 
 using Microsoft.Teams.Plugins.AspNetCore.Extensions;
+using Microsoft.Teams.Apps;
 using Microsoft.Teams.Apps.Activities;
 using Microsoft.Teams.Apps.Activities.Invokes;
-using Microsoft.Teams.Api.Activities;
 using Microsoft.Teams.Api;
-using Microsoft.Teams.Apps;
+using Microsoft.Teams.Api.Activities;
+using Microsoft.Teams.Samples.BotAttachments.Models;
 using System.Collections.Concurrent;
 using System.Net.Http.Headers;
 using System.Text.Json;
-using FileDownloadInfoModel = Microsoft.Teams.Samples.BotAttachments.Models.FileDownloadInfo;
 
 const string ContentTypeFileDownload = "application/vnd.microsoft.teams.file.download.info";
 const string ContentTypeFileConsent = "application/vnd.microsoft.teams.card.file.consent";
@@ -25,12 +25,6 @@ var teamsApp = webApp.UseTeams(true);
 
 var httpClientFactory = webApp.Services.GetRequiredService<IHttpClientFactory>();
 var pendingUploads = new ConcurrentDictionary<string, byte[]>();
-
-// Handle bot installation
-teamsApp.OnInstall(async context =>
-{
-    await context.Send("Welcome to the Bot Attachments sample!");
-});
 
 // Handle incoming messages
 teamsApp.OnMessage(async context =>
@@ -47,7 +41,7 @@ teamsApp.OnMessage(async context =>
             try
             {
                 var fileDownloadInfo = attachment.Content != null
-                    ? JsonSerializer.Deserialize<FileDownloadInfoModel>((JsonElement)attachment.Content)
+                    ? JsonSerializer.Deserialize<FileDownloadInfo>((JsonElement)attachment.Content)
                     : null;
 
                 if (fileDownloadInfo?.DownloadUrl != null)
@@ -60,7 +54,7 @@ teamsApp.OnMessage(async context =>
                     var fileId = Guid.NewGuid().ToString();
                     pendingUploads[fileId] = content;
 
-                    var fileName = attachment.Name ?? "file";
+                    var fileName = attachment.Name ?? $"image_{Guid.NewGuid()}.png";
                     var receivedMessage = new MessageActivity()
                         .WithText($"Received <b>{fileName}</b>. Requesting permission to save to your OneDrive...")
                         .WithTextFormat(TextFormat.Xml);
@@ -71,13 +65,13 @@ teamsApp.OnMessage(async context =>
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Error processing file: {ex}");
+                Console.WriteLine($"Failed to download attachment: {ex}");
             }
             return;
         }
     }
 
-    await context.Send("Welcome to the Bot Attachments sample!");
+    await context.Send("Welcome to the Bot Attachments sample! Please attach a file or image to save to your OneDrive!");
 });
 
 // Handle file consent responses
@@ -130,7 +124,7 @@ teamsApp.OnFileConsent(async context =>
                 var successMessage = new MessageActivity()
                     .WithText($"<b>{uploadInfo.Name ?? fileName}</b> has been successfully uploaded.")
                     .WithTextFormat(TextFormat.Xml);
-                successMessage.Attachments = new List<Attachment> { fileInfoAttachment };
+                successMessage.Attachments = [fileInfoAttachment];
                 await context.Send(successMessage);
             }
             catch (Exception ex)
@@ -167,15 +161,15 @@ async Task SendFileConsentCard<T>(IContext<T> context, string fileName, string f
 
     var message = new MessageActivity
     {
-        Attachments = new List<Attachment>
-        {
+        Attachments =
+        [
             new Attachment
             {
                 Content = fileCard,
                 ContentType = new ContentType(ContentTypeFileConsent),
                 Name = fileName
             }
-        }
+        ]
     };
     await context.Send(message);
 }
