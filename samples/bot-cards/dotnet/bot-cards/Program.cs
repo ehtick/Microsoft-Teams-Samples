@@ -2,55 +2,47 @@
 // Licensed under the MIT License.
 
 using Microsoft.Teams.Plugins.AspNetCore.Extensions;
+using Microsoft.Teams.Apps;
 using Microsoft.Teams.Apps.Activities;
+using Microsoft.Teams.Apps.Activities.Invokes;
 using Microsoft.Teams.Api.Activities;
 using Microsoft.Teams.Api;
-using Microsoft.Teams.Apps;
 using Microsoft.Teams.Samples.BotCards.Handlers;
-using System.Text.Json;
 
+// Initialize Teams App - automatically uses CLIENT_ID and CLIENT_SECRET from environment variables
 var builder = WebApplication.CreateBuilder(args);
 builder.AddTeams();
-
 var webApp = builder.Build();
 var teamsApp = webApp.UseTeams(true);
 
-// Handle incoming messages
-teamsApp.OnMessage(async context =>
+// Handles card action submissions
+teamsApp.OnAdaptiveCardAction(async context =>
 {
-    var activity = context.Activity;
-    var text = activity.Text?.Trim() ?? "";
-
-    // Handle data submission from adaptive cards (activity.Value)
-    if (activity.Value != null)
-    {
-        var dataSubmitted = JsonSerializer.Serialize(activity.Value);
-        Console.WriteLine($"Data submitted: {dataSubmitted}");
-        await context.Send($"Data Submitted: {dataSubmitted}");
-        return;
-    }
-
-    // Handle text commands
-    if (!string.IsNullOrEmpty(text))
-    {
-        var normalizedText = text.ToLower();
-
-        if (normalizedText.Contains("card actions"))
-        {
-            await Cards.SendAdaptiveCardActions(context);
-            return;
-        }
-        else if (normalizedText.Contains("toggle visibility"))
-        {
-            await Cards.SendToggleVisibilityCard(context);
-            return;
-        }
-    }
-
-    // Default - show welcome message
-    await SendWelcomeMessage(context);
+    var data = context.Activity.Value?.Action?.Data;
+    var name = data?["name"]?.ToString() ?? "";
+    await context.Send($"Data Submitted: {name}");
 });
 
+// Handles incoming messages and routes to appropriate functions based on message content
+teamsApp.OnMessage(async context =>
+{
+    var text = (context.Activity.Text ?? "").Trim().ToLower();
+
+    if (text.Contains("card actions"))
+    {
+        await Cards.SendAdaptiveCardActions(context);
+    }
+    else if (text.Contains("toggle visibility"))
+    {
+        await Cards.SendToggleVisibilityCard(context);
+    }
+    else
+    {
+        await SendWelcomeMessage(context);
+    }
+});
+
+// Starts the Teams bot application and listens for incoming requests
 webApp.Run();
 
 // Sends a welcome message

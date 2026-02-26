@@ -6,7 +6,6 @@ using Microsoft.Teams.Api.Activities;
 using Microsoft.Teams.Api;
 using Microsoft.Teams.Common;
 using Microsoft.Teams.Apps;
-using System.Text.Json;
 
 namespace Microsoft.Teams.Samples.BotCards.Handlers;
 
@@ -21,10 +20,6 @@ public static class Cards
             Body = new List<CardElement>
             {
                 new TextBlock("Adaptive Card Actions")
-                {
-                    Weight = TextWeight.Bolder,
-                    Size = TextSize.Large
-                }
             },
             Actions = new List<Microsoft.Teams.Cards.Action>
             {
@@ -52,7 +47,15 @@ public static class Cards
                         {
                             new ExecuteAction
                             {
-                                Title = "Submit"
+                                Title = "Submit",
+                                AssociatedInputs = AssociatedInputs.Auto,
+                                Data = new Union<string, SubmitActionData>(new SubmitActionData
+                                {
+                                    NonSchemaProperties = new Dictionary<string, object?>
+                                    {
+                                        { "action", "submit_name" }
+                                    }
+                                })
                             }
                         }
                     }
@@ -77,21 +80,8 @@ public static class Cards
                                     Schema = "http://adaptivecards.io/schemas/adaptive-card.json",
                                     Body = new List<CardElement>
                                     {
-                                        new TextBlock("Welcome To New Card")
-                                    },
-                                    Actions = new List<Microsoft.Teams.Cards.Action>
-                                    {
-                                        new ExecuteAction
-                                        {
-                                            Title = "Click Me",
-                                            Data = new Union<string, SubmitActionData>(new SubmitActionData
-                                            {
-                                                NonSchemaProperties = new Dictionary<string, object?>
-                                                {
-                                                    { "value", "Button has Clicked" }
-                                                }
-                                            })
-                                        }
+                                        new TextBlock("**Welcome To Your New Card**"),
+                                        new TextBlock("This is your new card inside another card")
                                     }
                                 }
                             }
@@ -104,7 +94,7 @@ public static class Cards
         await context.Send(adaptiveCard);
     }
 
-       // Send Toggle Visibility Card
+    // Send Toggle Visibility Card
     public static async Task SendToggleVisibilityCard<T>(IContext<T> context) where T : IActivity
     {
         var adaptiveCard = new AdaptiveCard
@@ -112,10 +102,7 @@ public static class Cards
             Schema = "http://adaptivecards.io/schemas/adaptive-card.json",
             Body = new List<CardElement>
             {
-                new TextBlock("**Action.ToggleVisibility example**: click the button to show or hide a welcome message")
-                {
-                    Wrap = true
-                },
+                new TextBlock("Click to show or hide the message"),
                 new TextBlock("**Hello World!**")
                 {
                     Id = "helloWorld",
@@ -128,10 +115,7 @@ public static class Cards
                 new ToggleVisibilityAction
                 {
                     Title = "Click me!",
-                    TargetElements = new Union<IList<string>, IList<TargetElement>>(new List<TargetElement>
-                    {
-                        new TargetElement { ElementId = "helloWorld" }
-                    })
+                    TargetElements = new Union<IList<string>, IList<TargetElement>>(new List<string> { "helloWorld" })
                 }
             }
         };
