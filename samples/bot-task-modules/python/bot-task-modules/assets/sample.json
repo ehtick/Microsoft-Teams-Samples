@@ -2,11 +2,11 @@
     {
       "name": "officedev-microsoft-teams-samples-bot-task-modules-python",
       "source": "officeDev",
-      "title": "Task Module using Teams SDK for Python",
-      "shortDescription": "This sample app demonstrate how to use Task Module",
+      "title": "Task Modules using Teams SDK for Python",
+      "shortDescription": "This sample app demonstrate how to use Task Modules",
       "url": "https://github.com/OfficeDev/Microsoft-Teams-Samples/tree/main/samples/bot-task-modules/python",
       "longDescription": [
-        "This sample app demonstrate how to use Task Module"
+        "This sample app demonstrate how to use Task Modules"
       ],
       "creationDateTime": "2026-02-18",
       "products": [
@@ -23,7 +23,7 @@
         },
         {
           "key": "TEAMS-SERVER-PLATFORM",
-          "value": "nodejs"
+          "value": "python"
         },
         {
           "key": "TEAMS-FEATURES",
@@ -35,7 +35,7 @@
           "type": "image",
           "order": 100,
           "url": "https://raw.githubusercontent.com/OfficeDev/Microsoft-Teams-Samples/main/samples/bot-task-modules/bot-task-modules.gif",
-          "alt": "Solution UX showing Task Module"
+          "alt": "Solution UX showing Task Modules"
         }
       ],
       "authors": [
