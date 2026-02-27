@@ -3,10 +3,10 @@
     "name": "officedev-microsoft-teams-samples-bot-cards-dotnet",
     "source": "officeDev",
     "title": "Cards Bot",
-    "shortDescription": "This sample demonstrates how to interact with adaptive cards in Microsoft Teams using a bot built with Teams SDK.",
+    "shortDescription": "This sample demonstrates how to interact with cards in Microsoft Teams using a bot built with Teams SDK.",
     "url": "https://github.com/OfficeDev/Microsoft-Teams-Samples/tree/main/samples/bot-cards/dotnet/bot-cards",
     "longDescription": [
-      "This sample demonstrates adaptive card functionality in Microsoft Teams using a bot built with Teams SDK. It showcases Adaptive Card Actions for dynamic card behaviors including Action.OpenUrl, Action.Submit, and nested Action.ShowCard, as well as Toggle Visibility Cards for showing and hiding content interactively."
+      "This bot demonstrates cards in Microsoft Teams using Teams SDK. It showcases taking various actions on cards, and toggling visibility."
     ],
     "creationDateTime": "2026-01-30",
     "updateDateTime": "2026-01-30",
