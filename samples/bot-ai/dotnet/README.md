@@ -1,6 +1,6 @@
-# Bot AI - .NET (C#)
+# Bot AI Messages - .NET (C#)
 
-This sample demonstrates a Teams bot that showcases AI message formatting features such as AI labels, citations, feedback buttons, and sensitivity labels using the Teams SDK.
+This sample demonstrates how to enhance AI-generated bot messages for Microsoft Teams using .NET (C#).
 
 ## Prerequisites
 
@@ -20,4 +20,4 @@ This sample demonstrates a Teams bot that showcases AI message formatting featur
 
 The bot will start listening on `http://localhost:3978`.
 
-Refer to the main [README.md](../../README.md) to interact with your bot in the agentsplayground or in Teams.
+Refer to the main [README.md](../../README.md) to interact with your bot in Teams.

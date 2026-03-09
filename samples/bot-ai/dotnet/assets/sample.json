@@ -1,15 +1,15 @@
 [
   {
-    "name": "officedev-microsoft-teams-samples-bot-ai-dotnet",
+    "name": "officedev-microsoft-teams-samples-bot-ai-messages-dotnet",
     "source": "officeDev",
-    "title": "Bot AI using Teams SDK",
-    "shortDescription": "This sample app demonstrates AI features in Teams bot messages using the Teams SDK.",
-    "url": "https://github.com/OfficeDev/Microsoft-Teams-Samples/tree/main/samples/bot-ai/dotnet",
+    "title": "Bot AI Messages Sample",
+    "shortDescription": "This sample demonstrates how to enhance AI-generated bot messages for Microsoft Teams using .NET (C#).",
+    "url": "https://github.com/OfficeDev/Microsoft-Teams-Samples/tree/main/samples/bot-ai-messages/dotnet",
     "longDescription": [
-      "This app demonstrates AI features in Microsoft Teams bot messages, including AI labels, citations, feedback buttons, and sensitivity labels using the Teams SDK."
+      "This sample demonstrates how to enhance AI-generated bot messages for Microsoft Teams, built with the Teams SDK. It showcases AI labels, citations, feedback buttons, and sensitivity labels."
     ],
-    "creationDateTime": "2026-02-27",
-    "updateDateTime": "2026-02-27",
+    "creationDateTime": "2026-03-05",
+    "updateDateTime": "2026-03-05",
     "products": [
       "Teams"
     ],
@@ -28,15 +28,15 @@
       },
       {
         "key": "TEAMS-FEATURES",
-        "value": "bot"
+        "value": "bot,ai-label,citations,feedback-buttons,sensitivity-label"
       }
     ],
     "thumbnails": [
       {
-        "type": "image",
+        "type": "Image",
         "order": 100,
-        "url": "https://raw.githubusercontent.com/OfficeDev/Microsoft-Teams-Samples/main/samples/bot-ai/dotnet/bot-ai.gif",
-        "alt": "Solution UX showing Bot AI using Teams SDK"
+        "url": "https://raw.githubusercontent.com/OfficeDev/Microsoft-Teams-Samples/main/samples/bot-ai-messages/bot-ai-messages.gif",
+        "alt": "Solution UX showing AI bot message formatting features for Microsoft Teams"
       }
     ],
     "authors": [
