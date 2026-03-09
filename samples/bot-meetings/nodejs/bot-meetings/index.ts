@@ -1,52 +1,63 @@
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
-import { ClientSecretCredential } from '@azure/identity';
+import { DefaultAzureCredential } from '@azure/identity';
 import { App } from '@microsoft/teams.apps';
 import { AdaptiveCard, TextBlock, OpenUrlAction } from '@microsoft/teams.cards';
-import axios from 'axios';
+import { Client } from '@microsoft/teams.graph';
+import * as betaEndpoints from '@microsoft/teams.graph-endpoints-beta';
 import * as dotenv from 'dotenv';
 
 dotenv.config();
 
 // Authenticate the app, needed for the transcript API
-const credential = new ClientSecretCredential(
-  process.env.TENANT_ID || '',
-  process.env.CLIENT_ID || '',
-  process.env.CLIENT_SECRET || ''
-);
+const credential = new DefaultAzureCredential();
 
-async function getToken(): Promise<string> {
-  const token = await credential.getToken('https://graph.microsoft.com/.default');
-  return token.token;
-}
+const graphClient = new Client({
+  token: async () => {
+    const tokenResponse = await credential.getToken('https://graph.microsoft.com/.default');
+    return tokenResponse.token;
+  },
+});
 
 const app = new App();
 
 async function getMeetingTranscript(meetingResourceId: string, userId: string): Promise<string> {
   try {
-    const token = await getToken();
-    
-    // Retrieve metadata for all the transcripts (using beta endpoint)
-    const transcriptsResponse = await axios.get(
-      `https://graph.microsoft.com/beta/users/${userId}/onlineMeetings/${meetingResourceId}/transcripts`,
-      { headers: { 'Authorization': `Bearer ${token}` } }
+    const transcriptsResponse = await graphClient.call(
+      betaEndpoints.users.onlineMeetings.transcripts.list,
+      {
+        'user-id': userId,
+        'onlineMeeting-id': meetingResourceId
+      }
     );
 
-    if (!transcriptsResponse.data || !transcriptsResponse.data.value || transcriptsResponse.data.value.length === 0) {
+    if (!transcriptsResponse.value?.length) {
       return '';
     }
 
-    // Get the first transcript (current meeting's transcript)
-    const transcriptId = transcriptsResponse.data.value[0].id;
+    // Select the latest transcript by createdDateTime
+    const latestTranscript = transcriptsResponse.value.reduce((latest, current) => {
+      const latestDate = latest.createdDateTime ? new Date(latest.createdDateTime) : new Date(0);
+      const currentDate = current.createdDateTime ? new Date(current.createdDateTime) : new Date(0);
+      return currentDate > latestDate ? current : latest;
+    }, transcriptsResponse.value[0]);
 
-    // Retrieve the transcript content
-    const contentResponse = await axios.get(
-      `https://graph.microsoft.com/beta/users/${userId}/onlineMeetings/${meetingResourceId}/transcripts/${transcriptId}/content?$format=text/vtt`,
-      { headers: { 'Authorization': `Bearer ${token}` } }
+    if (!latestTranscript.id) {
+      return '';
+    }
+
+    const content = await graphClient.call(
+      betaEndpoints.users.onlineMeetings.transcripts.content.get,
+      {
+        'user-id': userId,
+        'onlineMeeting-id': meetingResourceId,
+        'callTranscript-id': latestTranscript.id
+      },
+      { requestConfig: { headers: { Accept: 'text/vtt' } } }
     );
 
-    return contentResponse.data || '';
+    return content ?? '';
   } catch (error) {
     console.error('Error retrieving transcript:', error);
     return '';
@@ -69,17 +80,17 @@ app.on('meetingStart', async (context) => {
 
 function parseVtt(vtt: string): string {
   const lines: string[] = [];
-  for (const line of vtt.split('\n')) {
-    const trimmed = line.trim();
+  for (const line of vtt.split(/\r?\n/)) {
+    let trimmed = line.trim();
     if (!trimmed || trimmed.startsWith('WEBVTT') || trimmed.includes('-->')) {
       continue;
     }
     // Replace <v Speaker Name>text with Speaker Name: text
-    let processed = trimmed.replace(/<v ([^>]+)>/g, '$1: ');
+    trimmed = trimmed.replace(/<v ([^>]+)>/g, '$1: ');
     // Strip any remaining VTT tags like </v>, <c>, etc.
-    processed = processed.replace(/<[^>]+>/g, '').trim();
-    if (processed) {
-      lines.push(processed);
+    trimmed = trimmed.replace(/<[^>]+>/g, '').trim();
+    if (trimmed) {
+      lines.push(trimmed);
     }
   }
   return lines.join('\n');
@@ -87,21 +98,19 @@ function parseVtt(vtt: string): string {
 
 app.on('meetingEnd', async (context) => {
   const value = context.activity.value;
-  const meetingId = context.activity.channelData?.meeting?.id;
+  const meetingId = context.activity.channelData?.meeting?.id ?? '';
   let msGraphResourceId = context.activity.channelData?.meeting?.details?.msGraphResourceId;
   const meetingInfo = await context.api.meetings.getById(meetingId);
 
-  // Retrieve the user ID of the organizer for the transcript API
   let userId = '';
   if (meetingInfo && meetingInfo.organizer) {
-    userId = meetingInfo.organizer.aadObjectId || '';
+    userId = meetingInfo.organizer.objectId || '';
   }
 
   if (!msGraphResourceId && meetingInfo && meetingInfo.details) {
     msGraphResourceId = meetingInfo.details.msGraphResourceId;
   }
 
-  // Wait 30 seconds for the transcript to become available, then retry up to 3 times
   await new Promise(resolve => setTimeout(resolve, 30000));
 
   let transcript = '';
@@ -137,8 +146,7 @@ app.on('meetingParticipantJoin', async (context) => {
   const meetingData = context.activity.value;
   const participant = meetingData.members[0];
 
-  // Skip bot's own join event (no aadObjectId)
-  if (!participant.user?.aadObjectId) return;
+  if (!participant.user?.objectId) return;
 
   const member = participant.user.name || 'A participant';
   const role = participant.meeting?.role || 'a participant';
@@ -157,8 +165,8 @@ app.on('meetingParticipantLeave', async (context) => {
   const meetingData = context.activity.value;
   const participant = meetingData.members[0];
 
-  // Skip bot's own leave event (no aadObjectId)
-  if (!participant.user?.aadObjectId) return;
+  // Skip bot's own leave event (no objectId)
+  if (!participant.user?.objectId) return;
 
   const member = participant.user.name || 'A participant';
 
