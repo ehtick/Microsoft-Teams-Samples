@@ -29,7 +29,7 @@ app.on('message.ext.query', async ({ activity }) => {
   let attachments: MessagingExtensionAttachment[] = []
 
   // Route to appropriate search
-  if (commandId === 'wikipediaSearch' || commandId === 'searchQuery') {
+  if (commandId === 'wikipediaSearch') {
     const results = await searchWikipedia(query)
     attachments = results.map((r: any) =>
       createAttachment(
@@ -43,7 +43,7 @@ app.on('message.ext.query', async ({ activity }) => {
   if (!attachments.length) {
     return {
       composeExtension: {
-        type: 'message' as const,
+        type: 'message',
         text: `No results found for '${query}'`,
       },
     }
@@ -51,8 +51,8 @@ app.on('message.ext.query', async ({ activity }) => {
 
   return {
     composeExtension: {
-      type: 'result' as const,
-      attachmentLayout: 'list' as const,
+      type: 'result',
+      attachmentLayout: 'list',
       attachments,
     },
   }
