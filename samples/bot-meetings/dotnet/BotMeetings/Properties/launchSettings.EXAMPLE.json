@@ -19,8 +19,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development",
         "Teams__TenantId": "YOUR_TenantId",
         "Teams__ClientId": "YOUR_ClientId",
-        "Teams__ClientSecret": "YOUR_ClientSecret",
-        "Teams__AppBaseUrl": "YOUR_AppBaseUrl"
+        "Teams__ClientSecret": "YOUR_ClientSecret"
       }
     }
   }
