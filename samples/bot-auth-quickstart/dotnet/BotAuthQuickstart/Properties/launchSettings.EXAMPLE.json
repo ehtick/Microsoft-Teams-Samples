@@ -4,7 +4,7 @@
     "Start Project": {
       "commandName": "Project",
       "dotnetRunMessages": true,
-      "applicationUrl": "http://localhost:5130",
+      "applicationUrl": "http://localhost:3978",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development",
         "Teams__ClientId": "<your-client-id>",

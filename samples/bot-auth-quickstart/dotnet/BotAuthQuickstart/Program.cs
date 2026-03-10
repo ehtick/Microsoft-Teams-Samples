@@ -11,7 +11,7 @@ using Microsoft.Teams.Plugins.AspNetCore.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
-var connectionName = builder.Configuration["ConnectionName"];
+var connectionName = builder.Configuration["Teams:ConnectionName"];
 
 builder.AddTeams(App.Builder().AddOAuth(connectionName));
 
