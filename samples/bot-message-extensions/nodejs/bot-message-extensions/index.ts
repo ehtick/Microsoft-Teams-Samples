@@ -18,7 +18,6 @@ import axios from 'axios'
 
 const app = new App()
 
-// handle_query
 app.on('message.ext.query', async ({ activity }) => {
   const commandId = activity.value?.commandId
   const params = activity.value?.parameters || []
@@ -58,12 +57,10 @@ app.on('message.ext.query', async ({ activity }) => {
   }
 })
 
-// handle_link
 app.on('message.ext.query-link', async ({ activity }) => {
   return _cardResultResponse(createLinkPreviewCard(activity.value?.url || ''))
 })
 
-// handle_message
 app.on('message', async ({ send, activity }) => {
   const text = (activity.text || '').toLowerCase()
 
@@ -76,8 +73,6 @@ app.on('message', async ({ send, activity }) => {
     await send(`You said: ${activity.text}\n\nType 'help' to learn more.`)
   }
 })
-
-// ---- Helper Functions ----
 
 function createWikipediaCard(result: Record<string, any>): AdaptiveCard {
   const title = result.title || 'No Title'
