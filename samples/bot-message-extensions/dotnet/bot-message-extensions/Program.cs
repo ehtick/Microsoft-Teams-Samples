@@ -21,7 +21,6 @@ var app = builder.Build();
 
 var teams = app.UseTeams();
 
-// Message extension query handler
 teams.OnQuery(async (ctx) =>
 {
     var commandId = ctx.Activity.Value.CommandId;
@@ -67,13 +66,11 @@ teams.OnQuery(async (ctx) =>
     };
 });
 
-// Message extension link unfurling handler
 teams.OnQueryLink((ctx) =>
 {
     return Task.FromResult(CardResultResponse(CreateLinkPreviewCard(ctx.Activity.Value?.Url ?? "")));
 });
 
-// Message handler
 teams.OnMessage(async (ctx) =>
 {
     var text = (ctx.Activity.Text ?? "").ToLowerInvariant();
@@ -92,7 +89,6 @@ teams.OnMessage(async (ctx) =>
 
 app.Run();
 
-// --- Helper Methods ---
 
 static AdaptiveCard CreateWikipediaCard(JToken result)
 {

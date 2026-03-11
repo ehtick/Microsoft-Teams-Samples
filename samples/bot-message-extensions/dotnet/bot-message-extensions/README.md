@@ -1,6 +1,6 @@
 # Bot Message Extensions - .NET (C#)
 
-This sample demonstrates a search-based messaging extension in Microsoft Teams that allows users to search for Wikipedia articles..
+This sample demonstrates a search-based messaging extension in Microsoft Teams that allows users to search for Wikipedia articles.
 
 ## Prerequisites
 
@@ -10,7 +10,7 @@ This sample demonstrates a search-based messaging extension in Microsoft Teams t
 
 1. Navigate to this directory:
    ```bash
-   cd dotnet/BotMessageExtensions
+   cd dotnet/bot-message-extensions
    ```
 
 2. Restore dependencies and run:
