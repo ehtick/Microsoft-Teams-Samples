@@ -16,13 +16,12 @@ builder.AddTeams();
 var webApp = builder.Build();
 var teamsApp = webApp.UseTeams(true);
 
-// Authenticate the app, needed for the transcript API
-var tenantId = builder.Configuration["Teams:TenantId"] ?? Environment.GetEnvironmentVariable("TENANT_ID") ?? "";
-var clientId = builder.Configuration["Teams:ClientId"] ?? Environment.GetEnvironmentVariable("CLIENT_ID") ?? "";
-var clientSecret = builder.Configuration["Teams:ClientSecret"] ?? Environment.GetEnvironmentVariable("CLIENT_SECRET") ?? "";
+Environment.SetEnvironmentVariable("AZURE_TENANT_ID", builder.Configuration["Teams:TenantId"] ?? "");
+Environment.SetEnvironmentVariable("AZURE_CLIENT_ID", builder.Configuration["Teams:ClientId"] ?? "");
+Environment.SetEnvironmentVariable("AZURE_CLIENT_SECRET", builder.Configuration["Teams:ClientSecret"] ?? "");
 
-var credential = new ClientSecretCredential(tenantId, clientId, clientSecret);
-var graphClient = new GraphServiceClient(credential);
+var credential = new DefaultAzureCredential();
+var graphClient = new GraphServiceClient(credential, new[] { "https://graph.microsoft.com/.default" });
 
 // Method to retrieve meeting transcript
 async Task<string> GetMeetingTranscriptAsync(string meetingResourceId, string userId)
