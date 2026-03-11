@@ -57,8 +57,6 @@ teams.OnSubmitAction(async context =>
     await context.Send($"Provided reaction: {reaction}\nFeedback: {feedbackText}");
 });
 
-app.Run("http://localhost:3978");
-
 async Task SendAILabel(IContext<MessageActivity> context)
 {
     await context.Send(new MessageActivity
@@ -86,7 +84,7 @@ async Task SendCitations(IContext<MessageActivity> context)
     var message = new MessageActivity
     {
         Text = "Hey I'm a friendly AI bot. This message is generated through AI [1]"
-    }.AddAIGenerated();
+    };
 
     message.AddCitation(1, new CitationAppearance
     {
@@ -108,3 +106,5 @@ async Task SendWelcomeCard(IContext<MessageActivity> context)
 {
     await context.Send("Welcome to the AI bot! Try sending messages with keywords like 'label', 'sensitivity', 'feedback', or 'citation' to see different AI features.");
 }
+
+app.Run();

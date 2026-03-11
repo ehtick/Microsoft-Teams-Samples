@@ -10,7 +10,7 @@ This sample demonstrates how to enhance AI-generated bot messages for Microsoft 
 
 1. Navigate to this directory:
    ```bash
-   cd dotnet
+   cd dotnet/bot-ai-messages
    ```
 
 2. Restore dependencies and run:
