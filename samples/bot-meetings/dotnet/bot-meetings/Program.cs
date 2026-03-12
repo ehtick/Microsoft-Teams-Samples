@@ -16,6 +16,7 @@ builder.AddTeams();
 var webApp = builder.Build();
 var teamsApp = webApp.UseTeams(true);
 
+// AZURE_* credentials must be set to use secrets.
 Environment.SetEnvironmentVariable("AZURE_TENANT_ID", builder.Configuration["Teams:TenantId"] ?? "");
 Environment.SetEnvironmentVariable("AZURE_CLIENT_ID", builder.Configuration["Teams:ClientId"] ?? "");
 Environment.SetEnvironmentVariable("AZURE_CLIENT_SECRET", builder.Configuration["Teams:ClientSecret"] ?? "");

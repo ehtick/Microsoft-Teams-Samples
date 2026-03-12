@@ -10,7 +10,7 @@ This sample demonstrates a bot for Microsoft Teams that handles real-time meetin
 
 1. Navigate to this directory:
    ```bash
-   cd dotnet/BotMeetings
+   cd dotnet/bot-meetings
    ```
 
 2. Restore dependencies and run:
