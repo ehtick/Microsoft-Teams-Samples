@@ -1,6 +1,6 @@
-# Bot Quickstart
+# Bot Message Extensions
 
-This sample demonstrates how to handle various bot conversation events in Microsoft Teams.
+This sample demonstrates a search-based messaging extension in Microsoft Teams that allows users to search for Wikipedia articles. The extension supports search commands, item selection, and link unfurling.
 
 ## Table of Contents
 
@@ -8,6 +8,7 @@ This sample demonstrates how to handle various bot conversation events in Micros
 - [Sample Implementations](#sample-implementations)
 - [How to run these samples](#how-to-run-these-samples)
   - [Run in the Teams Client](#run-in-the-teams-client)
+  - [Configure the App Manifest](#configure-the-app-manifest)
 - [Configure the new project to use the new Teams Bot Application](#configure-the-new-project-to-use-the-new-teams-bot-application)
 - [Pro Tip: Read the configuration settings using the Azure CLI](#pro-tip-read-the-configuration-settings-using-the-azure-cli)
 - [Troubleshooting](#troubleshooting)
@@ -15,21 +16,20 @@ This sample demonstrates how to handle various bot conversation events in Micros
 
 ## Interaction with Bot
 
-![Conversation Bot](bot-quickstart.gif)
+![Bot Message Extensions](bot-message-extensions.gif)
 
-The bot responds to the following commands:
+The extension supports the following capabilities:
 
-* **Who am I?** - Gets information about the current user
-* **Mention me** - The bot mentions the user in its response
-* **Echo {message}** - The bot echoes back the provided message
+* **Wikipedia Search** - Search for Wikipedia articles directly from the compose area
+* **Link Unfurling** - Generates a rich preview card when a URL is shared in the compose area
 
 ## Sample Implementations
 
 | Language | Framework | Directory |
 |----------|-----------|-----------|
-| C# | .NET 10 / ASP.NET Core | [dotnet/bot-quickstart](dotnet/bot-quickstart/README.md) |
-| TypeScript | Node.js | [nodejs/bot-quickstart](nodejs/bot-quickstart/README.md) |
-| Python | Python | [python/bot-quickstart](python/bot-quickstart/README.md) |
+| C# | .NET 10 / ASP.NET Core | [dotnet/bot-message-extensions](dotnet/bot-message-extensions/README.md) |
+| TypeScript | Node.js | [nodejs/bot-message-extensions](nodejs/bot-message-extensions/README.md) |
+| Python | Python | [python/bot-message-extensions](python/bot-message-extensions/README.md) |
 
 # How to run these samples
 
@@ -78,20 +78,57 @@ Navigate to the Teams Developer Portal http://dev.teams.microsoft.com
 
 > Note. When using an Azure Bot resource, provide the ClientID instead of selecting an existing bot.
 
+### Configure the App Manifest
+
+Ensure the `manifest.json` includes the `composeExtensions` section as shown below:
+
+```json
+"composeExtensions": [
+  {
+    "botId": "${BOT_ID}",
+    "canUpdateConfiguration": true,
+    "commands": [
+      {
+        "id": "wikipediaSearch",
+        "context": [ "compose", "commandBox" ],
+        "description": "Search Wikipedia articles",
+        "title": "Wikipedia Search",
+        "type": "query",
+        "parameters": [
+          {
+            "name": "searchQuery",
+            "title": "Search Query",
+            "description": "Your search query",
+            "inputType": "text"
+          }
+        ]
+      }
+    ],
+    "messageHandlers": [
+      {
+        "type": "link",
+        "value": {
+          "domains": ["*.wikipedia.org"]
+        }
+      }
+    ]
+  }
+],
+```
+
 ## Configure the new project to use the new Teams Bot Application
 
 For NodeJS and Python you will need a `.env` file with the next fields
 
 ```
-TENANT_ID=
 CLIENT_ID=
 CLIENT_SECRET=
+TENANT_ID=
 ```
 
 For dotnet you need to add these values to `appsettings.json` or `launchSettings.json` using the next syntax.
 
 appsettings.json
-
 
 ```json
 "urls" : "http://localhost:3978",
@@ -99,7 +136,7 @@ appsettings.json
     "ClientID": "",
     "ClientSecret": "",
     "TenantId": ""
-  },
+ },
 ```
 
 Or to use Env Vars from the profile defined in `launchSettings.json` (using the Environment Configuration Provider)
@@ -119,11 +156,27 @@ Or to use Env Vars from the profile defined in `launchSettings.json` (using the 
     }
 ```
 
+For Python, run the bot using pip:
+
+```bash
+pip install -e .
+python main.py
+```
+
+### Alternative: Using uv (Python)
+
+```bash
+uv sync
+uv run main.py
+```
+
+The bot will start listening on `http://localhost:3978`.
+
 ## Pro Tip: Read the configuration settings using the Azure CLI
 
 To obtain the TenantId, ClientId and ClientSecret you can use the Azure CLI with:
 
-> Note. If you don't have access to an Azure Subscription you can still use the Azure CLI, make sure you login with `az login --allow-no-subscription` 
+> Note. If you don't have access to an Azure Subscription you can still use the Azure CLI, make sure you login with `az login --allow-no-subscription`
 
 ```
 az ad app credential reset --id $appId
@@ -135,7 +188,9 @@ az ad app credential reset --id $appId
 - Ensure your .env or appsettings file is setup correctly.
 - Use the Channels UI in Azure Bot Service in the Azure Portal to see detailed endpoint errors (not available in Teams Developer Portal).
 
-
 ## Further Reading
 
 - [Microsoft Teams SDK Documentation](https://learn.microsoft.com/microsoftteams/platform/)
+- [Message extensions overview](https://learn.microsoft.com/en-us/microsoftteams/platform/messaging-extensions/what-are-messaging-extensions)
+- [Search commands](https://learn.microsoft.com/en-us/microsoftteams/platform/messaging-extensions/how-to/search-commands/define-search-command)
+- [Link unfurling](https://learn.microsoft.com/en-us/microsoftteams/platform/messaging-extensions/how-to/link-unfurling)

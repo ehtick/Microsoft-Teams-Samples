@@ -5,7 +5,8 @@ A Microsoft Teams bot with SSO authentication and Microsoft Graph integration.
 ## Features
 
 - **SSO Authentication** - Single Sign-On with Microsoft Entra ID
-- **Graph Integration** - Fetch user profile via Microsoft Graph
+
+- **Graph Integration** - Fetch user profile
 
 ## Prerequisites
 

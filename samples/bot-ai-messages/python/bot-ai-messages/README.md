@@ -1,6 +1,6 @@
-# Bot Quickstart - Python
+# Bot AI Messages - Python
 
-This sample demonstrates a Bot Quickstart for Microsoft Teams using Python.
+This sample demonstrates how to enhance AI-generated bot messages for Microsoft Teams using Python.
 
 ## Prerequisites
 
@@ -11,8 +11,9 @@ This sample demonstrates a Bot Quickstart for Microsoft Teams using Python.
 
 1. Navigate to this directory:
    ```bash
-   cd python/bot-quickstart
+   cd python/bot-ai-messages
    ```
+
 2. Run the bot using pip:
 
 ```bash
@@ -34,4 +35,4 @@ python main.py
 
 The bot will start listening on `http://localhost:3978`.
 
-Refer to the main [README.md](../../README.md) to interact with your bot in the agentsplayground or in Teams.
+Refer to the main [README.md](../../README.md) to interact with your bot in Teams.
