@@ -6,9 +6,9 @@ using Microsoft.Teams.Api.Activities;
 using Microsoft.Teams.Api.Entities;
 using Microsoft.Teams.Apps;
 using Microsoft.Teams.Apps.Activities;
+using Microsoft.Teams.Apps.Activities.Invokes;
 using Microsoft.Teams.Plugins.AspNetCore.Extensions;
 using System.Text.Json;
-using System.Text.Json.Nodes;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.AddTeams();
@@ -32,44 +32,34 @@ teams.OnMessage(async context =>
         await SendWelcomeCard(context);
 });
 
-teams.OnActivity(async context =>
+teams.OnFeedback(async context =>
 {
-    var activity = context.Activity;
-    var activityType = activity.Type?.ToString() ?? "";
-
-    if (!activityType.Equals("invoke", StringComparison.OrdinalIgnoreCase))
-        return;
-
-    var json = activity.ToString();
-    using var doc = JsonDocument.Parse(json!);
-    var root = doc.RootElement;
-
-    if (!root.TryGetProperty("name", out var nameProp) ||
-        nameProp.GetString() != "message/submitAction")
-        return;
-
     var reaction = "No reaction";
-    var feedbackText = "No feedback";
+    var feedbackText = "No feedback was provided.";
 
-    if (root.TryGetProperty("value", out var valueProp) &&
-        valueProp.TryGetProperty("actionValue", out var actionValue))
+    var actionValue = context.Activity.Value.ActionValue;
+    if (actionValue != null)
     {
-        if (actionValue.TryGetProperty("reaction", out var reactionProp))
+        var json = JsonSerializer.Serialize(actionValue);
+        using var doc = JsonDocument.Parse(json);
+        var root = doc.RootElement;
+
+        if (root.TryGetProperty("reaction", out var reactionProp))
             reaction = reactionProp.GetString() ?? "No reaction";
 
-        if (actionValue.TryGetProperty("feedback", out var feedbackProp))
+        if (root.TryGetProperty("feedback", out var feedbackProp))
         {
             var feedbackJsonStr = feedbackProp.GetString();
             if (!string.IsNullOrEmpty(feedbackJsonStr))
             {
                 using var feedbackDoc = JsonDocument.Parse(feedbackJsonStr);
                 if (feedbackDoc.RootElement.TryGetProperty("feedbackText", out var ftProp))
-                    feedbackText = ftProp.GetString() ?? "No feedback";
+                    feedbackText = ftProp.GetString() ?? "No feedback was provided.";
             }
         }
     }
 
-    await context.Send($"Provided reaction: {reaction}\nFeedback: {feedbackText}");
+    await context.Send($"Provided reaction: {reaction}<br> Feedback: {feedbackText}");
 });
 
 async Task SendAILabel(IContext<MessageActivity> context)
@@ -83,20 +73,18 @@ async Task SendAILabel(IContext<MessageActivity> context)
 async Task SendFeedbackButtons(IContext<MessageActivity> context)
 {
     await context.Send(new MessageActivity("This is an example of a feedback button - this helps to provide feedback for a message")
-        .AddFeedback(true));
+        .AddFeedback());
 }
 
 async Task SendSensitivityLabel(IContext<MessageActivity> context)
 {
     var entity = new CitationEntity();
     entity.Properties["@id"] = "";
-    entity.Properties["usageInfo"] = new JsonObject
+    entity.Properties["usageInfo"] = JsonSerializer.SerializeToNode(new SensitiveUsageEntity
     {
-        ["type"] = "https://schema.org/Message",
-        ["@type"] = "CreativeWork",
-        ["name"] = "Confidential \\ Contoso FTE",
-        ["description"] = "Please be mindful of sharing outside of your team"
-    };
+        Name = "Confidential \\ Contoso FTE",
+        Description = "Please be mindful of sharing outside of your team"
+    });
 
     await context.Send(new MessageActivity
     {
