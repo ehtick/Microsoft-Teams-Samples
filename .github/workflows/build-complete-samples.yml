@@ -1053,7 +1053,7 @@ jobs:
 
             - project_path: 'samples/TeamsJS/m365-actions-preview/nodejs/tabs'
               name: 'm365-actions-preview'
-              version: '18.x'
+              version: '20.x'
 
             - project_path: 'samples/TeamsJS/m365-actions-preview/nodejs/api'
               name: 'm365-actions-preview-api'
