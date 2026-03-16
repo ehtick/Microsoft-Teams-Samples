@@ -44,7 +44,7 @@ jobs:
               name: 'app-localization'
               version: '6.0.x'
 
-            - project_path: 'samples/app-sso/csharp/App SSO Sample/App SSO Sample.csproj'
+            - project_path: 'samples/TeamsJS/app-sso/csharp/App SSO Sample/App SSO Sample.csproj'
               name: 'app-sso'
               version: '6.0.x'
 
@@ -132,7 +132,7 @@ jobs:
               name: 'meetings-notification'
               version: '6.0.x'
 
-            - project_path: 'samples/meetings-details-tab/csharp/DetailsTab/DetailsTab.csproj'
+            - project_path: 'samples/TeamsJS/meetings-details-tab/csharp/DetailsTab/DetailsTab.csproj'
               name: 'meetings-details-tab'
               version: '6.0.x'
 
@@ -140,7 +140,7 @@ jobs:
               name: 'meetings-live-code-interview'
               version: '6.0.x'
 
-            - project_path: 'samples/meetings-sidepanel/csharp/SidePanel/SidePanel.csproj'
+            - project_path: 'samples/TeamsJS/meetings-sidepanel/csharp/SidePanel/SidePanel.csproj'
               name: 'meetings-sidepanel'
               version: '6.0.x'
 
@@ -148,19 +148,19 @@ jobs:
               name: 'meetings-stage-view'
               version: '6.0.x'
 
-            - project_path: 'samples/meetings-token-app/csharp/TokenApp.csproj'
+            - project_path: 'samples/TeamsJS/meetings-token-app/csharp/TokenApp.csproj'
               name: 'meetings-token-app'
               version: '6.0.x'
 
-            - project_path: 'samples/msgext-link-unfurling-meeting/csharp/Source/Microsoft.Teams.Samples.LinkUnfurling.Web./Microsoft.Teams.Samples.LinkUnfurling.Web.csproj'
+            - project_path: 'samples/TeamsJS/msgext-link-unfurling-meeting/csharp/Source/Microsoft.Teams.Samples.LinkUnfurling.Web./Microsoft.Teams.Samples.LinkUnfurling.Web.csproj'
               name: 'msgext-link-unfurling-meeting'
               version: '6.0.x'
 
-            - project_path: 'samples/msgext-link-unfurling-reddit/csharp/dotnet/RLU.csproj'
+            - project_path: 'samples/TeamsJS/msgext-link-unfurling-reddit/csharp/dotnet/RLU.csproj'
               name: 'msgext-link-unfurling-reddit'
               version: '6.0.x'
 
-            - project_path: 'samples/msgext-link-unfurling-reddit/csharp/dotnet_user_auth/RLU.csproj'
+            - project_path: 'samples/TeamsJS/msgext-link-unfurling-reddit/csharp/dotnet_user_auth/RLU.csproj'
               name: 'msgext-link-unfurling-reddit'
               version: '6.0.x'
 
@@ -328,7 +328,7 @@ jobs:
               name: 'meetings-attendance-report'
               version: '6.0.x'
 
-            - project_path: 'samples/meetings-context-app/csharp/MeetingContextApp/MeetingContextApp.csproj'
+            - project_path: 'samples/TeamsJS/meetings-context-app/csharp/MeetingContextApp/MeetingContextApp.csproj'
               name: 'meetings-context-app'
               version: '6.0.x'
 
@@ -340,27 +340,27 @@ jobs:
               name: 'meetings-transcription'
               version: '6.0.x'
 
-            - project_path: 'samples/meetings-share-to-stage-signing/csharp/Source/MeetingSigning.Domain.Tests/Microsoft.Teams.Samples.MeetingSigning.Domain.Tests.csproj'
+            - project_path: 'samples/TeamsJS/meetings-share-to-stage-signing/csharp/Source/MeetingSigning.Domain.Tests/Microsoft.Teams.Samples.MeetingSigning.Domain.Tests.csproj'
               name: 'meetings-share-to-stage-signing'
               version: '6.0.x'
 
-            - project_path: 'samples/meetings-share-to-stage-signing/csharp/Source/MeetingSigning.Domain/Microsoft.Teams.Samples.MeetingSigning.Domain.csproj'
+            - project_path: 'samples/TeamsJS/meetings-share-to-stage-signing/csharp/Source/MeetingSigning.Domain/Microsoft.Teams.Samples.MeetingSigning.Domain.csproj'
               name: 'meetings-share-to-stage-signing'
               version: '6.0.x'
 
-            - project_path: 'samples/meetings-share-to-stage-signing/csharp/Source/MeetingSigning.Infrastructure.Tests/Microsoft.Teams.Samples.MeetingSigning.Infrastructure.Tests.csproj'
+            - project_path: 'samples/TeamsJS/meetings-share-to-stage-signing/csharp/Source/MeetingSigning.Infrastructure.Tests/Microsoft.Teams.Samples.MeetingSigning.Infrastructure.Tests.csproj'
               name: 'meetings-share-to-stage-signing'
               version: '6.0.x'
               
-            - project_path: 'samples/meetings-share-to-stage-signing/csharp/Source/MeetingSigning.Infrastructure/Microsoft.Teams.Samples.MeetingSigning.Infrastructure.csproj'
+            - project_path: 'samples/TeamsJS/meetings-share-to-stage-signing/csharp/Source/MeetingSigning.Infrastructure/Microsoft.Teams.Samples.MeetingSigning.Infrastructure.csproj'
               name: 'meetings-share-to-stage-signing'
               version: '6.0.x'
 
-            - project_path: 'samples/meetings-share-to-stage-signing/csharp/Source/MeetingSigning.Web.Tests/Microsoft.Teams.Samples.MeetingSigning.Web.Tests.csproj'
+            - project_path: 'samples/TeamsJS/meetings-share-to-stage-signing/csharp/Source/MeetingSigning.Web.Tests/Microsoft.Teams.Samples.MeetingSigning.Web.Tests.csproj'
               name: 'meetings-share-to-stage-signing'
               version: '6.0.x'
 
-            - project_path: 'samples/meetings-share-to-stage-signing/csharp/Source/MeetingSigning.Web/Microsoft.Teams.Samples.MeetingSigning.Web.csproj'
+            - project_path: 'samples/TeamsJS/meetings-share-to-stage-signing/csharp/Source/MeetingSigning.Web/Microsoft.Teams.Samples.MeetingSigning.Web.csproj'
               name: 'meetings-share-to-stage-signing'
               version: '6.0.x'
 
@@ -384,7 +384,7 @@ jobs:
               name: 'msgext-search'
               version: '6.0.x'   
                     
-            - project_path: 'samples/msteams-application-resourcehub/Source/microsoft-teams-apps-selfhelp/Microsoft.Teams.Apps.Selfhelp.csproj'
+            - project_path: 'samples/TeamsJS/msteams-application-resourcehub/Source/microsoft-teams-apps-selfhelp/Microsoft.Teams.Apps.Selfhelp.csproj'
               name: 'msteams-application-resourcehub'
               version: '6.0.x' 
 
@@ -392,15 +392,15 @@ jobs:
               name: 'outgoing-webhook'
               version: '6.0.x' 
 
-            - project_path: 'samples/msteams-application-qbot/Source/Microsoft.Teams.App.Domain/Microsoft.Teams.Apps.QBot.Domain.csproj'
+            - project_path: 'samples/TeamsJS/msteams-application-qbot/Source/Microsoft.Teams.App.Domain/Microsoft.Teams.Apps.QBot.Domain.csproj'
               name: 'msteams-application-qbot'
               version: '2.0'
 
-            - project_path: 'samples/msteams-application-qbot/Source/Microsoft.Teams.Apps.QBot.Infrastructure/Microsoft.Teams.Apps.QBot.Infrastructure.csproj'
+            - project_path: 'samples/TeamsJS/msteams-application-qbot/Source/Microsoft.Teams.Apps.QBot.Infrastructure/Microsoft.Teams.Apps.QBot.Infrastructure.csproj'
               name: 'msteams-application-qbot'
               version: '3.1'
 
-            - project_path: 'samples/msteams-application-qbot/Source/Microsoft.Teams.Apps.QBot.Web/Microsoft.Teams.Apps.QBot.Web.csproj'
+            - project_path: 'samples/TeamsJS/msteams-application-qbot/Source/Microsoft.Teams.Apps.QBot.Web/Microsoft.Teams.Apps.QBot.Web.csproj'
               name: 'msteams-application-qbot'
               version: '3.1'    
 
@@ -436,7 +436,7 @@ jobs:
               name: 'bot-all-cards'
               version: '6.0.x'
 
-            - project_path: 'samples/app-anonymous-users/csharp/AnonymousUsers.csproj'
+            - project_path: 'samples/TeamsJS/app-anonymous-users/csharp/AnonymousUsers.csproj'
               name: 'app-anonymous-users'
               version: '6.0.x'
 
@@ -480,7 +480,7 @@ jobs:
               name: 'app-complete-sample'
               version: '6.0.x'
 
-            - project_path: 'samples/tab-meeting-auto-recording/csharp/MeetingAutoRecording/MeetingAutoRecording.csproj'
+            - project_path: 'samples/TeamsJS/tab-meeting-auto-recording/csharp/MeetingAutoRecording/MeetingAutoRecording.csproj'
               name: 'tab-meeting-auto-recording'
               version: '6.0.x'
             
@@ -564,11 +564,11 @@ jobs:
               name: 'app-complete-sample'
               version: '14.x'
 
-            - project_path: 'samples/app-sso/nodejs'
+            - project_path: 'samples/TeamsJS/app-sso/nodejs'
               name: 'app-sso'
               version: '18.x'
 
-            - project_path: 'samples/app-sso/nodejs/client'
+            - project_path: 'samples/TeamsJS/app-sso/nodejs/client'
               name: 'app-sso-client'
               version: '18.x'
 
@@ -664,11 +664,11 @@ jobs:
               name: 'meetings-events'
               version: '14.x'
 
-            - project_path: 'samples/meetings-sidepanel/nodejs'
+            - project_path: 'samples/TeamsJS/meetings-sidepanel/nodejs'
               name: 'meetings-sidepanel'
               version: '18.x'
 
-            - project_path: 'samples/meetings-sidepanel/nodejs/ClientApp'
+            - project_path: 'samples/TeamsJS/meetings-sidepanel/nodejs/ClientApp'
               name: 'meetings-sidepanel-clientapp'
               version: '18.x'
 
@@ -680,7 +680,7 @@ jobs:
               name: 'meetings-stage-view-clientapp'
               version: '14.x'
 
-            - project_path: 'samples/meetings-token-app/nodejs'
+            - project_path: 'samples/TeamsJS/meetings-token-app/nodejs'
               name: 'meetings-token-app'
               version: '16.18.0'
 
@@ -904,15 +904,15 @@ jobs:
               name: 'meetings-attendance-report'
               version: '16.x'
 
-            - project_path: 'samples/meetings-context-app/nodejs/client'
+            - project_path: 'samples/TeamsJS/meetings-context-app/nodejs/client'
               name: 'meetings-context-app-client'
               version: '16.x'
 
-            - project_path: 'samples/meetings-context-app/nodejs'
+            - project_path: 'samples/TeamsJS/meetings-context-app/nodejs'
               name: 'meetings-context-app-server'
               version: '16.x'
 
-            - project_path: 'samples/meetings-details-tab/nodejs'
+            - project_path: 'samples/TeamsJS/meetings-details-tab/nodejs'
               name: 'meetings-details-tab'
               version: '16.x'
 
@@ -988,11 +988,11 @@ jobs:
               name: 'app-cache-meetings'
               version: '18.x'
 
-            - project_path: 'samples/app-anonymous-users/nodejs/ClientApp'
+            - project_path: 'samples/TeamsJS/app-anonymous-users/nodejs/ClientApp'
               name: 'app-anonymous-users-clientapp'
               version: '18.x'
 
-            - project_path: 'samples/app-anonymous-users/nodejs'
+            - project_path: 'samples/TeamsJS/app-anonymous-users/nodejs'
               name: 'app-anonymous-users-api'
               version: '18.x'
 
@@ -1051,11 +1051,11 @@ jobs:
             - project_path: 'samples/bot-tag-mention/nodejs'
               name: 'bot-tag-mention-nodejs'
 
-            - project_path: 'samples/m365-actions-preview/nodejs/tabs'
+            - project_path: 'samples/TeamsJS/m365-actions-preview/nodejs/tabs'
               name: 'm365-actions-preview'
               version: '18.x'
 
-            - project_path: 'samples/m365-actions-preview/nodejs/api'
+            - project_path: 'samples/TeamsJS/m365-actions-preview/nodejs/api'
               name: 'm365-actions-preview-api'
               version: '18.x'
 
