@@ -9,7 +9,7 @@ This sample demonstrates how to implement Single Sign-On (SSO) authentication fo
 
 > **IMPORTANT**: The manifest file in this app requires the following fields for the Teams SDK OAuth flow:
 > - **`validDomains`**: Must include `"token.botframework.com"` to allow the OAuth token flow.
-> - **`webApplicationInfo`**: Must be configured with your Azure AD app's `id` (Application client ID) and `resource` (e.g., `api://botid-{MicrosoftAppId}`). This is required for SSO authentication to work in Teams.
+> - **`webApplicationInfo`**: Must be configured with your Azure AD app's `id` (App Id / Client ID) and `resource` (e.g., `api://botid-{AppId}`). This is required for SSO authentication to work in Teams.
 > Both fields must be present in any bot that uses Teams SSO or OAuth authentication.
 
 ## Table of Contents
@@ -97,15 +97,13 @@ Teams SSO involves two types of consent:
 - Language-specific prerequisites:
   - **Node.js**: [NodeJS](https://nodejs.org/en/download/)
   - **.NET**: [.NET SDK](https://dotnet.microsoft.com/download)
-  - **Python**: Python or higher
+  - **Python**: [Python](https://www.python.org/downloads/)
 
 > **Note**: Authentication samples require Microsoft Teams and cannot be tested using the `agentsplayground` tool or the Teams SDK Dev Tools. The OAuth flow and SSO authentication features only work within the Teams client environment.
 
 ## Setup Instructions
 
-### Option 1: Using Microsoft 365 Agents Toolkit (Node.js and Python only)
-
-The simplest way to run this sample in Teams is to use Microsoft 365 Agents Toolkit for Visual Studio Code. For .NET, use Visual Studio with the Microsoft 365 Agents Toolkit VS extension instead.
+### Option 1: Using Microsoft 365 Agents Toolkit
 
 1. Ensure you have downloaded and installed [Visual Studio Code](https://code.visualstudio.com/docs/setup/setup-overview)
 2. Install the [Microsoft 365 Agents Toolkit extension](https://marketplace.visualstudio.com/items?itemName=TeamsDevApp.ms-teams-vscode-extension)
@@ -245,12 +243,10 @@ dotnet run
 
 For Python:
 ```bash
-python app.py
+python main.py
 ```
 
 ## Running the Sample
-
-Once the bot is running and added to Teams, you can interact with it using the following commands:
 
 ### Bot Commands
 
@@ -291,15 +287,19 @@ Detailed logs can help diagnose authentication and connection issues.
 }
 ```
 
-**For Node.js**, set the `DEBUG` environment variable before starting the app:
-```bash
-DEBUG=botbuilder* node index.js
+**For Node.js (TypeScript)**, logging is configured directly in the app via `ConsoleLogger`:
+```typescript
+const app = new App({
+  logger: new ConsoleLogger('@samples/bot-auth-quickstart', { level: 'debug' }),
+});
 ```
 
-**For Python**, configure logging at the start of `app.py`:
+**For Python**, logging is configured via `ConsoleLogger` in `main.py`:
 ```python
-import logging
-logging.basicConfig(level=logging.DEBUG)
+from microsoft_teams.common import ConsoleLogger, ConsoleLoggerOptions
+
+logger = ConsoleLogger().create_logger("bot-auth-quickstart", ConsoleLoggerOptions(level="debug"))
+app = App(logger=logger)
 ```
 
 ### Common Issues
