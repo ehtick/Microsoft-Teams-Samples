@@ -35,7 +35,7 @@
       {
         "type": "image",
         "order": 100,
-        "url": "https://raw.githubusercontent.com/OfficeDev/Microsoft-Teams-Samples/main/samples/app-anonymous-users/nodejs/Images/anonymoususersupport.gif",
+        "url": "https://raw.githubusercontent.com/OfficeDev/Microsoft-Teams-Samples/main/samples/TeamsJS/app-anonymous-users/nodejs/Images/anonymoususersupport.gif",
         "alt": "Solution UX showing anonymous user support in Teams meeting apps."
       }
     ],

@@ -35,7 +35,7 @@
       {
         "type": "Image",
         "order": 100,
-        "url": "https://raw.githubusercontent.com/OfficeDev/Microsoft-Teams-Samples/main/samples/graph-channel-lifecycle/python/Images/GraphChannelLifeCycleModule.gif",
+        "url": "https://raw.githubusercontent.com/OfficeDev/Microsoft-Teams-Samples/main/samples/TeamsJS/graph-channel-lifecycle/python/Images/GraphChannelLifeCycleModule.gif",
         "alt": "Solution UX showing channel life cycle using node js"
       }
     ],

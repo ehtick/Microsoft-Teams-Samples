@@ -35,7 +35,7 @@
       {
         "type": "image",
         "order": 100,
-        "url": "https://raw.githubusercontent.com/OfficeDev/Microsoft-Teams-Samples/main/samples/tab-ui-templates/python/Images/tab-ui-templates.gif",
+        "url": "https://raw.githubusercontent.com/OfficeDev/Microsoft-Teams-Samples/main/samples/TeamsJS/tab-ui-templates/python/Images/tab-ui-templates.gif",
         "alt": "Solution UX showing Teams UI templates using python"
       }
     ],

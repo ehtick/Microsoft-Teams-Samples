@@ -35,7 +35,7 @@
       {
         "type": "image",
         "order": 100,
-        "url": "https://raw.githubusercontent.com/OfficeDev/Microsoft-Teams-Samples/main/samples/meetings-stage-view/python/Images/preview_web.gif",
+        "url": "https://raw.githubusercontent.com/OfficeDev/Microsoft-Teams-Samples/main/samples/TeamsJS/meetings-stage-view/python/Images/preview_web.gif",
         "alt": "Solution UX showing meetings stage view"
       }
     ],

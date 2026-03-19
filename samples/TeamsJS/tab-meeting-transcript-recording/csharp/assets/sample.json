@@ -35,7 +35,7 @@
       {
         "type": "Image",
         "order": 100,
-        "url": "https://raw.githubusercontent.com/OfficeDev/Microsoft-Teams-Samples/main/samples/tab-meeting-transcript-recording/csharp/MeetingTranscriptRecording/Images/MeetingTranscriptRecording.gif",
+        "url": "https://raw.githubusercontent.com/OfficeDev/Microsoft-Teams-Samples/main/samples/TeamsJS/tab-meeting-transcript-recording/csharp/MeetingTranscriptRecording/Images/MeetingTranscriptRecording.gif",
         "alt": "Solution UX showing gif meeting transcripts and recordings."
       }
     ],

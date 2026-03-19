@@ -35,7 +35,7 @@
       {
         "type": "image",
         "order": 100,
-        "url": "https://raw.githubusercontent.com/OfficeDev/Microsoft-Teams-Samples/main/samples/tab-navbar-menu/ts/Images/MenuGif.gif",
+        "url": "https://raw.githubusercontent.com/OfficeDev/Microsoft-Teams-Samples/main/samples/TeamsJS/tab-navbar-menu/ts/Images/MenuGif.gif",
         "alt": "Solution UX showing personal tab with navbar menu in typescript"
       }
     ],

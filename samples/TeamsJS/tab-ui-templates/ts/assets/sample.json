@@ -35,7 +35,7 @@
       {
         "type": "Image",
         "order": 100,
-        "url": "https://raw.githubusercontent.com/OfficeDev/Microsoft-Teams-Samples/main/samples/tab-ui-templates/ts/Images/tab-ui-templates.gif",
+        "url": "https://raw.githubusercontent.com/OfficeDev/Microsoft-Teams-Samples/main/samples/TeamsJS/tab-ui-templates/ts/Images/tab-ui-templates.gif",
         "alt": "Solution UX showing UI templates for teams tabs."
       }
     ],

@@ -35,7 +35,7 @@
       {
         "type": "image",
         "order": 100,
-        "url": "https://raw.githubusercontent.com/OfficeDev/Microsoft-Teams-Samples/main/samples/meeting-tabs/csharp/Images/MeetingTabsGif.gif",
+        "url": "https://raw.githubusercontent.com/OfficeDev/Microsoft-Teams-Samples/main/samples/TeamsJS/meeting-tabs/csharp/Images/MeetingTabsGif.gif",
         "alt": "Solution UX showing Meeting Tab with different features"
       }
     ],

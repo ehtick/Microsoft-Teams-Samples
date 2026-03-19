@@ -35,7 +35,7 @@
       {
         "type": "image",
         "order": 100,
-        "url": "https://raw.githubusercontent.com/OfficeDev/Microsoft-Teams-Samples/main/samples/msteams-application-resourcehub/Documentation/Dashboard.png",
+        "url": "https://raw.githubusercontent.com/OfficeDev/Microsoft-Teams-Samples/main/samples/TeamsJS/msteams-application-resourcehub/Documentation/Dashboard.png",
         "alt": "Gif showing  initial setup of a Mathematics course (Team)"
       }
     ],

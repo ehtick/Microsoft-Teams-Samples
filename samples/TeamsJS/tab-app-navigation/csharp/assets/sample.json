@@ -35,7 +35,7 @@
       {
         "type": "image",
         "order": 100,
-        "url": "https://raw.githubusercontent.com/OfficeDev/Microsoft-Teams-Samples/main/samples/tab-app-navigation/csharp/Microsoft.Teams.Samples.TabAppNavigation.Web/Images/tab_app_navigation_module.gif",
+        "url": "https://raw.githubusercontent.com/OfficeDev/Microsoft-Teams-Samples/main/samples/TeamsJS/tab-app-navigation/csharp/Microsoft.Teams.Samples.TabAppNavigation.Web/Images/tab_app_navigation_module.gif",
         "alt": "Solution UX showing microsoft teams sample for tab app navigation"
       }
     ],

@@ -35,7 +35,7 @@
       {
         "type": "Image",
         "order": 100,
-        "url": "https://raw.githubusercontent.com/OfficeDev/Microsoft-Teams-Samples/main/samples/graph-bulk-meetings/csharp/EventMeeting/Images/graph-bulk-meetings.gif",
+        "url": "https://raw.githubusercontent.com/OfficeDev/Microsoft-Teams-Samples/main/samples/TeamsJS/graph-bulk-meetings/csharp/EventMeeting/Images/graph-bulk-meetings.gif",
         "alt": "Solution UX showing gif animation for teams meeting event creation operations."
       }
     ],

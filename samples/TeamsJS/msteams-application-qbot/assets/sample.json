@@ -35,7 +35,7 @@
       {
         "type": "image",
         "order": 100,
-        "url": "https://raw.githubusercontent.com/OfficeDev/Microsoft-Teams-Samples/main/samples/msteams-application-qbot/Documentation/InitialSetup.gif",
+        "url": "https://raw.githubusercontent.com/OfficeDev/Microsoft-Teams-Samples/main/samples/TeamsJS/msteams-application-qbot/Documentation/InitialSetup.gif",
         "alt": "Gif showing  initial setup of a Mathematics course (Team)"
       }
     ],

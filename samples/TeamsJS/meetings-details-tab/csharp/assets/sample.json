@@ -35,7 +35,7 @@
       {
         "type": "image",
         "order": 100,
-        "url": "https://raw.githubusercontent.com/OfficeDev/Microsoft-Teams-Samples/main/samples/csharp/DetailsTab/Images/DetailsTabModule.gif",
+        "url": "https://raw.githubusercontent.com/OfficeDev/Microsoft-Teams-Samples/main/samples/TeamsJS/csharp/DetailsTab/Images/DetailsTabModule.gif",
         "alt": "Solution UX showing meetings details tab"
       }
     ],

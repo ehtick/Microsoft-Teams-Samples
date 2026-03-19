@@ -34,7 +34,7 @@
       {
         "type": "image",
         "order": 100,
-        "url": "https://raw.githubusercontent.com/OfficeDev/Microsoft-Teams-Samples/main/samples/graph-membership-change-notification/csharp/ChangeNotification/Images/ChangeNotifications.gif",
+        "url": "https://raw.githubusercontent.com/OfficeDev/Microsoft-Teams-Samples/main/samples/TeamsJS/graph-membership-change-notification/csharp/ChangeNotification/Images/ChangeNotifications.gif",
         "alt": "Solution UX showing Graph Membership Change Notification Team/Channel csharp"
       }
     ],

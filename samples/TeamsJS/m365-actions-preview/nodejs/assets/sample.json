@@ -35,7 +35,7 @@
       {
         "type": "image",
         "order": 100,
-        "url": "https://raw.githubusercontent.com/OfficeDev/Microsoft-Teams-Samples/main/samples/m365-actions-preview/nodejs/Images/m365-actions-preview.gif",
+        "url": "https://raw.githubusercontent.com/OfficeDev/Microsoft-Teams-Samples/main/samples/TeamsJS/m365-actions-preview/nodejs/Images/m365-actions-preview.gif",
         "alt": "Solution UX showing actions across microsoft 365"
       }
     ],

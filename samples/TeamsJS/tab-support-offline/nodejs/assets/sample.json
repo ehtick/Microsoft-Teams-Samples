@@ -31,7 +31,7 @@
       {
         "type": "image",
         "order": 100,
-        "url": "https://raw.githubusercontent.com/OfficeDev/Microsoft-Teams-Samples/main/samples/tab-support-offline/nodejs/Images/tab-support-offline.gif",
+        "url": "https://raw.githubusercontent.com/OfficeDev/Microsoft-Teams-Samples/main/samples/TeamsJS/tab-support-offline/nodejs/Images/tab-support-offline.gif",
         "alt": "Solution UX showing gif offline support tickets."
       }
     ],

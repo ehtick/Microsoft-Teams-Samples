@@ -35,7 +35,7 @@
       {
         "type": "image",
         "order": 100,
-        "url": "https://raw.githubusercontent.com/OfficeDev/Microsoft-Teams-Samples/main/samples/tab-adhoccalls-transcript-recording/nodejs/Images/adhoccalls-transcript-recording.gif",
+        "url": "https://raw.githubusercontent.com/OfficeDev/Microsoft-Teams-Samples/main/samples/TeamsJS/tab-adhoccalls-transcript-recording/nodejs/Images/adhoccalls-transcript-recording.gif",
         "alt": "Solution UX showing gif AdhocCalls record and transcript."
       }
     ],

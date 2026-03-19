@@ -35,7 +35,7 @@
       {
         "type": "image",
         "order": 100,
-        "url": "https://raw.githubusercontent.com/OfficeDev/Microsoft-Teams-Samples/main/samples/tab-channel-group/js/Images/ChannelGroupTabModule.gif",
+        "url": "https://raw.githubusercontent.com/OfficeDev/Microsoft-Teams-Samples/main/samples/TeamsJS/tab-channel-group/js/Images/ChannelGroupTabModule.gif",
         "alt": "Solution UX showing starter solution: channel/group tab in javascript"
       }
     ],
