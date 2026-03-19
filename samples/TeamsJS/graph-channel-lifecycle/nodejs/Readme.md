@@ -94,7 +94,7 @@ The simplest way to run this sample in Teams is to use Microsoft 365 Agents Tool
     ```bash
     git clone https://github.com/OfficeDev/Microsoft-Teams-Samples.git
     ```
-  - In a terminal, navigate to `samples/graph-channel-lifecycle/nodejs
+  - In a terminal, navigate to `samples/TeamsJS/graph-channel-lifecycle/nodejs
  
  - Update the `.env` configuration with the Microsoft `ClientId` and `ClientSecret`
 

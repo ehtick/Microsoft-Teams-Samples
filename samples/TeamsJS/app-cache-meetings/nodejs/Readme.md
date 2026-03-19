@@ -71,7 +71,7 @@ The simplest way to run this sample in Teams is to use Microsoft 365 Agents Tool
 
     - Launch Visual Studio code
     - File -> Open Folder
-    - Navigate to `samples/app-cache-meetings` folder
+    - Navigate to `samples/TeamsJS/app-cache-meetings` folder
     - Select `nodejs` folder and open it
 
    Install node modules (Either open any local terminal inside your `nodejs` folder or open Visual Studio Code terminal by opening the project in Visual Studio Code)
@@ -148,4 +148,4 @@ The simplest way to run this sample in Teams is to use Microsoft 365 Agents Tool
 [Handle theme change](https://learn.microsoft.com/en-us/microsoftteams/platform/tabs/how-to/access-teams-context?tabs=Json-v2%2Cteamsjs-v2%2Cdefault#handle-theme-change)
 
 
-<img src="https://pnptelemetry.azurewebsites.net/microsoft-teams-samples/samples/app-cache-meetings-nodejs" />
+<img src="https://pnptelemetry.azurewebsites.net/microsoft-teams-samples/samples/TeamsJS/app-cache-meetings-nodejs" />

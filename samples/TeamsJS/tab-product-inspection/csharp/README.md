@@ -94,7 +94,7 @@ The simplest way to run this sample in Teams is to use Microsoft 365 Agents Tool
 
   - Launch Visual Studio
   - File -> Open -> Project/Solution
-  - Navigate to `samples/tab-product-inspection/csharp/ProductInspection` folder
+  - Navigate to `samples/TeamsJS/tab-product-inspection/csharp/ProductInspection` folder
   - Select `ProductInspection.csproj` file
   - Press `F5` to run the project
 

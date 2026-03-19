@@ -94,7 +94,7 @@ The simplest way to run this sample in Teams is to use Microsoft 365 Agents Tool
     git clone https://github.com/OfficeDev/Microsoft-Teams-Samples.git
     ```
     
-3. In a different terminal, navigate to `samples/tab-nested-auth/nodejs` folder, Open your local terminal and run the below command to install node modules. You can do the same in Visual studio code terminal by opening the project in Visual studio code 
+3. In a different terminal, navigate to `samples/TeamsJS/tab-nested-auth/nodejs` folder, Open your local terminal and run the below command to install node modules. You can do the same in Visual studio code terminal by opening the project in Visual studio code 
 
     ```bash
     npm install
@@ -105,7 +105,7 @@ The simplest way to run this sample in Teams is to use Microsoft 365 Agents Tool
     ```
 - The client will start running on 3978 port
 
-4. Open Msal.js file from this path folder `samples/tab-nested-auth/nodejs/src/components` and update:
+4. Open Msal.js file from this path folder `samples/TeamsJS/tab-nested-auth/nodejs/src/components` and update:
    - `{{clientId}}` - Generated from Step 1 (Application (client) ID)is the application app id
    
 **This step is specific to Teams:**

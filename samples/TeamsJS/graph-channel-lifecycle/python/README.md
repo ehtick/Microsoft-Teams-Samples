@@ -120,7 +120,7 @@ the Teams service needs to call into the app.
     ```bash
     git clone https://github.com/OfficeDev/Microsoft-Teams-Samples.git
     ```
-  - In a terminal, navigate to `samples/graph-channel-lifecycle/python`
+  - In a terminal, navigate to `samples/TeamsJS/graph-channel-lifecycle/python`
 
   - Activate your desired virtual environment
 
@@ -184,4 +184,4 @@ the Teams service needs to call into the app.
 - [Graph-Channel-Lifecycle](https://learn.microsoft.com/en-us/microsoftteams/plan-teams-lifecycle)
 - [Extend Teams apps across Microsoft 365](https://learn.microsoft.com/en-us/microsoftteams/platform/m365-apps/overview)
 
-<img src="https://pnptelemetry.azurewebsites.net/microsoft-teams-samples/samples/graph-channel-lifecycle-python" />
+<img src="https://pnptelemetry.azurewebsites.net/microsoft-teams-samples/samples/TeamsJS/graph-channel-lifecycle-python" />

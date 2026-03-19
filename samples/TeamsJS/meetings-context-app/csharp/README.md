@@ -122,7 +122,7 @@ Here is the exact content that must be added if it’s missing or incomplete:
 
 - Run the bot from a terminal or from Visual Studio:
 
-  A) From a terminal, navigate to `samples/meetings-context-app/csharp`
+  A) From a terminal, navigate to `samples/TeamsJS/meetings-context-app/csharp`
 
   ```bash
   # run the bot
@@ -130,7 +130,7 @@ Here is the exact content that must be added if it’s missing or incomplete:
   ```
   - Launch Visual Studio
    - File -> Open -> Project/Solution
-   - Navigate to folder where repository is cloned then `samples/meetings-context-app/csharp/MeetingContextApp.sln`
+   - Navigate to folder where repository is cloned then `samples/TeamsJS/meetings-context-app/csharp/MeetingContextApp.sln`
     
 5. Setup Manifest for Teams
 - __*This step is specific to Teams.*__

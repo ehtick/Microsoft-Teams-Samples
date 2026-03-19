@@ -314,4 +314,4 @@ To learn more about deploying a bot to Azure, see [Deploy your bot to Azure](htt
 - [Microsoft Teams Developer Platform](https://docs.microsoft.com/en-us/microsoftteams/platform/)
 
 
-<img src="https://pnptelemetry.azurewebsites.net/microsoft-teams-samples/samples/msgext-link-unfurling-meeting-csharp" />
+<img src="https://pnptelemetry.azurewebsites.net/microsoft-teams-samples/samples/TeamsJS/msgext-link-unfurling-meeting-csharp" />

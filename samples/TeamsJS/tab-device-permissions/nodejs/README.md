@@ -107,7 +107,7 @@ The simplest way to run this sample in Teams is to use Microsoft 365 Agents Tool
     ```bash
     git clone https://github.com/OfficeDev/Microsoft-Teams-Samples.git
     ```
- - In a terminal, navigate to `samples/tab-device-permissions/nodejs`
+ - In a terminal, navigate to `samples/TeamsJS/tab-device-permissions/nodejs`
 
 - Install modules
 

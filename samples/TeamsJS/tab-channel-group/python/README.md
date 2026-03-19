@@ -241,4 +241,4 @@ The app allows users to configure custom tabs in Microsoft Teams channels and gr
 
 This project is licensed under the MIT License - see the LICENSE file for details.
 
-<img src="https://pnptelemetry.azurewebsites.net/microsoft-teams-samples/samples/tab-channel-group-python-flask" />
+<img src="https://pnptelemetry.azurewebsites.net/microsoft-teams-samples/samples/TeamsJS/tab-channel-group-python-flask" />

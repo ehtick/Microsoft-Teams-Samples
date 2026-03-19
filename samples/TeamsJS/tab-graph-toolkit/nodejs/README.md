@@ -187,4 +187,4 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 
 
 
-<img src="https://pnptelemetry.azurewebsites.net/microsoft-teams-samples/samples/tab-graph-toolkit-nodejs" />
+<img src="https://pnptelemetry.azurewebsites.net/microsoft-teams-samples/samples/TeamsJS/tab-graph-toolkit-nodejs" />

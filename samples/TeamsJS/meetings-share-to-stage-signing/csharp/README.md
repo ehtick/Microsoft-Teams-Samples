@@ -160,7 +160,7 @@ If you do not have permission to upload custom apps (uploading), Microsoft 365 A
     ```
 
 - Install modules
- navigate to `samples/meetings-share-to-stage-signing/csharp/Source/MeetingSigning/ClientApp`
+ navigate to `samples/TeamsJS/meetings-share-to-stage-signing/csharp/Source/MeetingSigning/ClientApp`
 
     ```bash
     npm install
@@ -177,14 +177,14 @@ If you do not have permission to upload custom apps (uploading), Microsoft 365 A
 
     ### Locally using .NET SDK
     * Point tunnel to port 5001: Eg : `ngrok http -host-header=rewrite 5001`
-    * In a terminal, navigate to `samples/meetings-share-to-stage-signing/csharp/Source/MeetingSigning`
+    * In a terminal, navigate to `samples/TeamsJS/meetings-share-to-stage-signing/csharp/Source/MeetingSigning`
     * Run `dotnet run`
 
     ### Locally in Visual Studio
     * Point tunnel to port 3978: Eg: `ngrok http 44326 --host-header="localhost:3978"`
     * Launch Visual Studio
     * File -> Open -> Project/Solution
-    * Navigate to `samples/meetings-share-to-stage-signing/csharp/Source` folder
+    * Navigate to `samples/TeamsJS/meetings-share-to-stage-signing/csharp/Source` folder
     * Select `MeetingSigning.sln` file
     * Ensure the start-up project is set to `Microsoft.Teams.Samples.MeetingSigning.Web`
     * Press `F5` to start Debugging using IIS Express
@@ -353,4 +353,4 @@ The tour files can be found in the `.tours` directory.
 - [Microsoft Teams Developer Platform](https://docs.microsoft.com/en-us/microsoftteams/platform/)
 
 
-<img src="https://pnptelemetry.azurewebsites.net/microsoft-teams-samples/samples/meetings-share-to-stage-signing-csharp" />
+<img src="https://pnptelemetry.azurewebsites.net/microsoft-teams-samples/samples/TeamsJS/meetings-share-to-stage-signing-csharp" />

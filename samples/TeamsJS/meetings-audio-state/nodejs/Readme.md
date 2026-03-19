@@ -85,7 +85,7 @@ The simplest way to run this sample in Teams is to use Microsoft 365 Agents Tool
     git clone https://github.com/OfficeDev/Microsoft-Teams-Samples.git
     ```
 
-4. In the folder where repository is cloned navigate to `samples/meetings-audio-state/nodejs`
+4. In the folder where repository is cloned navigate to `samples/TeamsJS/meetings-audio-state/nodejs`
 
 5. Install node modules
 
@@ -155,4 +155,4 @@ App theme changes to contrast when Teams theme switch to contrast .
 - [Get incoming audio speaker](https://docs.microsoft.com/en-us/microsoftteams/platform/apps-in-teams-meetings/api-references?tabs=dotnet#get-incoming-audio-speaker)
 - [Handle theme change](https://learn.microsoft.com/en-us/microsoftteams/platform/tabs/how-to/access-teams-context?tabs=Json-v2%2Cteamsjs-v2%2Cdefault#handle-theme-change)
 
-<img src="https://pnptelemetry.azurewebsites.net/microsoft-teams-samples/samples/meetings-audio-state-nodejs" />
+<img src="https://pnptelemetry.azurewebsites.net/microsoft-teams-samples/samples/TeamsJS/meetings-audio-state-nodejs" />

@@ -197,7 +197,7 @@ There is also a personal tab that will list inquires from all the support depart
 
   - Launch Visual Studio
   - File -> Open -> Project/Solution
-  - Navigate to `samples\bot-tab-conversations\csharp\Source\ConversationalTabs.Web` folder
+  - Navigate to `samples\TeamsJS\bot-tab-conversations\csharp\Source\ConversationalTabs.Web` folder
   - Select `Microsoft.Teams.Samples.ConversationalTabs.Web.csproj` file
   - Press `F5` to run the project
 
@@ -219,7 +219,7 @@ There is also a personal tab that will list inquires from all the support depart
     * Create a zip containing `manifest.json`, `colorIcon.png` and `outlineIcon.png` from `Source\ConversationalTabs.Web\appPackage`.
     * [You can upload you app by following these instructions](https://docs.microsoft.com/microsoftteams/platform/concepts/deploy-and-publish/apps-upload)
 
-**Note**: If you are facing any issue in your app, please uncomment [this](https://github.com/OfficeDev/Microsoft-Teams-Samples/blob/main/samples/bot-tab-conversations/csharp/Source/ConversationalTabs.Web/Bot/BotHttpAdapter.cs#L24) line and put your debugger for local debug.
+**Note**: If you are facing any issue in your app, please uncomment [this](https://github.com/OfficeDev/Microsoft-Teams-Samples/blob/main/samples/TeamsJS/bot-tab-conversations/csharp/Source/ConversationalTabs.Web/Bot/BotHttpAdapter.cs#L24) line and put your debugger for local debug.
 
 ## Known issues
 * When the solution is run on a local web browser (anywhere outside of Teams), it will load a spinner. Instead side-load the application to a teams client, or open up `<<tunnel-url>>/admin` to open the admin page
@@ -265,7 +265,7 @@ The tour files can be found in the `.tours` directory.
 ![Image of the app to Added Inquiry Successful for The HR Department](Docs/images/addedinquirysuccessfully.png)
 
 ### Docker
-*Note the below instructions are using [Podman](https://podman.io/), but Docker's commands are similar. [There are instructions for setting up Podman on WSL2 here](https://github.com/OfficeDev/Microsoft-Teams-Samples/blob/main/samples/meetings-share-to-stage-signing/csharp/Docs/installing-podman-on-wsl2.md)*
+*Note the below instructions are using [Podman](https://podman.io/), but Docker's commands are similar. [There are instructions for setting up Podman on WSL2 here](https://github.com/OfficeDev/Microsoft-Teams-Samples/blob/main/samples/TeamsJS/meetings-share-to-stage-signing/csharp/Docs/installing-podman-on-wsl2.md)*
 * From this directory build the Docker image `podman build -f Deployment/Dockerfile --ignorefile Deployment/.dockerignore ./Source`
 * Wait for the container to build
 * Run `podman images` to view available images, copy the Image ID
@@ -277,4 +277,4 @@ The tour files can be found in the `.tours` directory.
 * [Create conversational tabs](https://docs.microsoft.com/en-us/microsoftteams/platform/tabs/how-to/conversational-tabs) 
 
 
-<img src="https://pnptelemetry.azurewebsites.net/microsoft-teams-samples/samples/bot-tab-conversations-csharp" />
+<img src="https://pnptelemetry.azurewebsites.net/microsoft-teams-samples/samples/TeamsJS/bot-tab-conversations-csharp" />

@@ -124,7 +124,7 @@ The simplest way to run this sample in Teams is to use Microsoft 365 Agents Tool
 
 16. Open the code in Visual Studio
    - File -> Open -> Project/Solution
-   - Navigate to folder where repository is cloned then `samples/graph-activity-feed-broadcast/csharp/ActivityFeedBroadcast.sln`
+   - Navigate to folder where repository is cloned then `samples/TeamsJS/graph-activity-feed-broadcast/csharp/ActivityFeedBroadcast.sln`
     
 17. Run ngrok - point to port 3978
 
@@ -158,7 +158,7 @@ The simplest way to run this sample in Teams is to use Microsoft 365 Agents Tool
    - Go to your project directory, the ./appPackage folder, select the zip folder, and choose Open.
    - Select Add in the pop-up dialog box. Your app is uploaded to Teams.    
 
-**Note**: If you are facing any issue in your app, please uncomment [this](https://github.com/OfficeDev/Microsoft-Teams-Samples/blob/main/samples/graph-activity-feed-broadcast/csharp/ActivityFeedBroadcast/AdapterWithErrorHandler.cs#L26) line and put your debugger for local debug.
+**Note**: If you are facing any issue in your app, please uncomment [this](https://github.com/OfficeDev/Microsoft-Teams-Samples/blob/main/samples/TeamsJS/graph-activity-feed-broadcast/csharp/ActivityFeedBroadcast/AdapterWithErrorHandler.cs#L26) line and put your debugger for local debug.
 
 ## Running the sample
 
@@ -181,4 +181,4 @@ The simplest way to run this sample in Teams is to use Microsoft 365 Agents Tool
 - [Send Notification to User](https://docs.microsoft.com/en-us/graph/api/userteamwork-sendactivitynotification?view=graph-rest-beta&tabs=http)
 
 
-<img src="https://pnptelemetry.azurewebsites.net/microsoft-teams-samples/samples/graph-activity-feed-broadcast-csharp" />
+<img src="https://pnptelemetry.azurewebsites.net/microsoft-teams-samples/samples/TeamsJS/graph-activity-feed-broadcast-csharp" />

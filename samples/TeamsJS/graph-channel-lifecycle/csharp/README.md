@@ -108,7 +108,7 @@ The simplest way to run this sample in Teams is to use Microsoft 365 Agents Tool
 
 - Run the bot from a terminal or from Visual Studio:
 
-  A) From a terminal, navigate to `samples/graph-channel-lifecycle/csharp`
+  A) From a terminal, navigate to `samples/TeamsJS/graph-channel-lifecycle/csharp`
 
   ```bash
   # run the bot

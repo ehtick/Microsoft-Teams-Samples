@@ -98,7 +98,7 @@ The simplest way to run this sample in Teams is to use Microsoft 365 Agents Tool
     ```
   - Update the `.env` configuration for the bot to use the `ClientID` and `ClientSecret`. (Note the MicrosoftAppId is the AppId created in step 1 (Setup for Bot), the MicrosoftAppPassword is referred to as the "client secret" in step 1 (Setup for Bot) and you can always create a new client secret anytime.)
  
- - In a terminal, navigate to `samples/graph-app-installation-lifecycle/nodejs
+ - In a terminal, navigate to `samples/TeamsJS/graph-app-installation-lifecycle/nodejs
 
  - Install modules
 

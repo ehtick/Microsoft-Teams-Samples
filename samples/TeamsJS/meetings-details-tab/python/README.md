@@ -109,7 +109,7 @@ The simplest way to run this sample in Teams is to use Microsoft 365 Agents Tool
     - Navigate to the Python backend directory
     
         ```bash
-        cd samples/meetings-details-tab/python-backend
+        cd samples/TeamsJS/meetings-details-tab/python-backend
         ```
 
     - Create a virtual environment (recommended)

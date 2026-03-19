@@ -147,4 +147,4 @@ To learn more about deploying a bot to Azure, see [Deploy your bot to Azure](htt
 - [Event resource type](https://docs.microsoft.com/en-us/graph/api/resources/event?view=graph-rest-1.0)
 
 
-<img src="https://pnptelemetry.azurewebsites.net/microsoft-teams-samples/samples/graph-bulk-meetings-csharp" />
+<img src="https://pnptelemetry.azurewebsites.net/microsoft-teams-samples/samples/TeamsJS/graph-bulk-meetings-csharp" />

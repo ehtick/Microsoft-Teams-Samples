@@ -94,7 +94,7 @@ To include resource data of graph notifications, this Graph API require self-sig
 
   - Launch Visual Studio
   - File -> Open Folder
-  - Navigate to `samples/graph-change-notification-team-channel/csharp` folder
+  - Navigate to `samples/TeamsJS/graph-change-notification-team-channel/csharp` folder
   - Select `ChangeNotiifcation` solution file
 
   **Instruction for appsetting**
@@ -117,7 +117,7 @@ To include resource data of graph notifications, this Graph API require self-sig
 
 - Add the app to shared channel in team scope
 
-**Note**: If you are facing any issue in your app, please uncomment [this](https://github.com/OfficeDev/Microsoft-Teams-Samples/blob/main/samples/graph-change-notification-team-channel/csharp/ChangeNotification/AdapterWithErrorHandler.cs#L27) line and put your debugger for local debug.
+**Note**: If you are facing any issue in your app, please uncomment [this](https://github.com/OfficeDev/Microsoft-Teams-Samples/blob/main/samples/TeamsJS/graph-change-notification-team-channel/csharp/ChangeNotification/AdapterWithErrorHandler.cs#L27) line and put your debugger for local debug.
 
 ## Using RSC Permissions
 
@@ -183,4 +183,4 @@ If you prefer to use Resource-Specific Consent (RSC) permissions instead of appl
 
 - [Create subscription permissions for supported resource](https://docs.microsoft.com/en-us/graph/api/subscription-post-subscriptions?view=graph-rest-1.0&tabs=http#team-channel-and-chat)
 
-<img src="https://pnptelemetry.azurewebsites.net/microsoft-teams-samples/samples/graph-change-notification-team-channel-csharp" />
+<img src="https://pnptelemetry.azurewebsites.net/microsoft-teams-samples/samples/TeamsJS/graph-change-notification-team-channel-csharp" />

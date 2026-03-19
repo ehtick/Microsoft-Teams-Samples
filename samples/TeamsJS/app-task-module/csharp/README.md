@@ -76,13 +76,13 @@ Task modules build on the foundation of Microsoft Teams tabs: a task module is e
     ```bash
     git clone https://github.com/OfficeDev/Microsoft-Teams-Samples.git
     ```
-- From a terminal, navigate to `samples/app-task-module/csharp`
+- From a terminal, navigate to `samples/TeamsJS/app-task-module/csharp`
     
 -  Modify the /web.config in appSettings section and fill in the {{ MicrosoftAppId }},{{ MicrosoftAppPassword }} with the id from step 1 and {{BaseUrl}} we get from previous step. E.g. https://12345.ngrok-free.app if you are using ngrok and if you are using dev tunnels, your URL will be like: https://12345.devtunnels.ms.
  
 - Run the bot from a terminal or from Visual Studio:
 
-  A) From a terminal, navigate to `samples/app-task-module/csharp`
+  A) From a terminal, navigate to `samples/TeamsJS/app-task-module/csharp`
 
   ```bash
   # run the bot
@@ -93,7 +93,7 @@ Task modules build on the foundation of Microsoft Teams tabs: a task module is e
 
   - Launch Visual Studio
   - File -> Open -> Project/Solution
-  - Navigate to `samples/app-task-module/csharp` folder
+  - Navigate to `samples/TeamsJS/app-task-module/csharp` folder
   - Select `Microsoft.Teams.Samples.TaskModule.sln` file
   - Press `F5` to run the project
   
@@ -209,4 +209,4 @@ contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additio
 - [Extend Teams apps across Microsoft 365](https://learn.microsoft.com/en-us/microsoftteams/platform/m365-apps/overview)
 
 
-<img src="https://pnptelemetry.azurewebsites.net/microsoft-teams-samples/samples/app-task-module-csharp" />
+<img src="https://pnptelemetry.azurewebsites.net/microsoft-teams-samples/samples/TeamsJS/app-task-module-csharp" />

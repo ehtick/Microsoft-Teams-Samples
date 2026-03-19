@@ -79,9 +79,9 @@ This sample demonstrates how to use Incoming Webhooks in Microsoft Teams to send
    ```
 1) Install node modules
 
-   Inside node js folder,  navigate to `samples/incoming-webhoook/nodejs/api` open your local terminal and run the below command to install node modules. You can do the same in Visual Studio code terminal by opening the project in Visual Studio code.
+   Inside node js folder,  navigate to `samples/TeamsJS/incoming-webhoook/nodejs/api` open your local terminal and run the below command to install node modules. You can do the same in Visual Studio code terminal by opening the project in Visual Studio code.
 
-   - Repeat the same step in folder `samples/incoming-webhoook/nodejs/ClientApp`
+   - Repeat the same step in folder `samples/TeamsJS/incoming-webhoook/nodejs/ClientApp`
 
     ```bash
     npm install
@@ -95,11 +95,11 @@ This sample demonstrates how to use Incoming Webhooks in Microsoft Teams to send
 
 1) We have two different solutions to run so follow below steps:
  
-   A) In a terminal, navigate to `samples/incoming-webhoook/nodejs/api`
+   A) In a terminal, navigate to `samples/TeamsJS/incoming-webhoook/nodejs/api`
 
-   B) In a different terminal, navigate to `samples/incoming-webhoook/nodejs/ClientApp`
+   B) In a different terminal, navigate to `samples/TeamsJS/incoming-webhoook/nodejs/ClientApp`
 
-1) Run both solutions i.e. `samples/incoming-webhoook/nodejs/api` and `samples/incoming-webhoook/nodejs/ClientApp`
+1) Run both solutions i.e. `samples/TeamsJS/incoming-webhoook/nodejs/api` and `samples/TeamsJS/incoming-webhoook/nodejs/ClientApp`
     ```
     npm start
     ```
@@ -158,4 +158,4 @@ This sample demonstrates how to use Incoming Webhooks in Microsoft Teams to send
 - [Build webhooks and connectors ](https://docs.microsoft.com/en-us/microsoftteams/platform/webhooks-and-connectors/what-are-webhooks-and-connectors)
 - [Extend Teams apps across Microsoft 365](https://learn.microsoft.com/en-us/microsoftteams/platform/m365-apps/overview)
 
-<img src="https://pnptelemetry.azurewebsites.net/microsoft-teams-samples/samples/incoming-webhook-nodejs" />
+<img src="https://pnptelemetry.azurewebsites.net/microsoft-teams-samples/samples/TeamsJS/incoming-webhook-nodejs" />

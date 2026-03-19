@@ -87,14 +87,14 @@ All required source code are located in the `./src` folder:
         git clone https://github.com/OfficeDev/Microsoft-Teams-Samples.git
         ```
 
-    - Create a `.env` file under `samples/tab-deeplink-pass-values/ts`, and copy/paste the contents of `.env_sample` into it. Then, update the below configurations:
+    - Create a `.env` file under `samples/TeamsJS/tab-deeplink-pass-values/ts`, and copy/paste the contents of `.env_sample` into it. Then, update the below configurations:
       - `PUBLIC_HOSTNAME` should point to your tunnel url (e.g., 124.ngrok-free.app)
       - `APPLICATION_ID` should be the ID of your Microsoft Teams application
 
-    - In a terminal, navigate to `samples/tab-deeplink-pass-values/ts`
+    - In a terminal, navigate to `samples/TeamsJS/tab-deeplink-pass-values/ts`
 
         ```bash
-        cd samples/tab-deeplink-pass-values/ts
+        cd samples/TeamsJS/tab-deeplink-pass-values/ts
         ```
 
     - Install npm modules
@@ -182,4 +182,4 @@ If you are using Microsoft Azure to host your Microsoft Teams app, then you can 
 
 
 
-<img src="https://pnptelemetry.azurewebsites.net/microsoft-teams-samples/samples/tab-deeplink-pass-values-ts" />
+<img src="https://pnptelemetry.azurewebsites.net/microsoft-teams-samples/samples/TeamsJS/tab-deeplink-pass-values-ts" />

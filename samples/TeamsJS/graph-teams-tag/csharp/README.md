@@ -109,7 +109,7 @@ The simplest way to run this sample in Teams is to use Microsoft 365 Agents Tool
 
   - Launch Visual Studio
    - File -> Open -> Project/Solution
-   - Navigate to folder where repository is cloned then `samples/graph-teams-tag/csharp/GraphTeamsTag.sln`  
+   - Navigate to folder where repository is cloned then `samples/TeamsJS/graph-teams-tag/csharp/GraphTeamsTag.sln`  
  
 
   - Update appsettings.json
@@ -142,4 +142,4 @@ Replace the following details:
 - [TeamworkTag resource type](https://docs.microsoft.com/en-us/graph/api/resources/teamworktag?view=graph-rest-beta)
 
 
-<img src="https://pnptelemetry.azurewebsites.net/microsoft-teams-samples/samples/graph-teams-tag-csharp" />
+<img src="https://pnptelemetry.azurewebsites.net/microsoft-teams-samples/samples/TeamsJS/graph-teams-tag-csharp" />

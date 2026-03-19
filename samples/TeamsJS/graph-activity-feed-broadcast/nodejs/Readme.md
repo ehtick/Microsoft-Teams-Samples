@@ -117,7 +117,7 @@ The simplest way to run this sample in Teams is to use Microsoft 365 Agents Tool
     git clone https://github.com/OfficeDev/Microsoft-Teams-Samples.git
     ```
 
-2) In the folder where repository is cloned navigate to `samples/graph-activity-feed-broadcast/nodejs`
+2) In the folder where repository is cloned navigate to `samples/TeamsJS/graph-activity-feed-broadcast/nodejs`
 
 3) Install node modules
 
@@ -168,4 +168,4 @@ The simplest way to run this sample in Teams is to use Microsoft 365 Agents Tool
 - [Send Notification to User in Team](https://docs.microsoft.com/en-us/graph/api/team-sendactivitynotification?view=graph-rest-beta&tabs=http)
 - [Send Notification to User](https://docs.microsoft.com/en-us/graph/api/userteamwork-sendactivitynotification?view=graph-rest-beta&tabs=http)
 
-<img src="https://pnptelemetry.azurewebsites.net/microsoft-teams-samples/samples/graph-activity-feed-broadcast-nodejs" />
+<img src="https://pnptelemetry.azurewebsites.net/microsoft-teams-samples/samples/TeamsJS/graph-activity-feed-broadcast-nodejs" />

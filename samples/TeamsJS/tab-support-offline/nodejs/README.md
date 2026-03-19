@@ -113,14 +113,14 @@ The simplest way to run this sample in Teams is to use Microsoft 365 Agents Tool
     
 3. We have two different solutions to run, so follow below steps:
  
-- In a terminal, navigate to `samples/tab-support-offline/nodejs/server` folder, Open your local terminal and run the below command to install node modules. You can do the same in Visual studio code terminal by opening the project in Visual studio code
+- In a terminal, navigate to `samples/TeamsJS/tab-support-offline/nodejs/server` folder, Open your local terminal and run the below command to install node modules. You can do the same in Visual studio code terminal by opening the project in Visual studio code
 
     ```bash
     npx nodemon index
     ```
 - The server will start running on 8080 port
 
-- In a different terminal, navigate to `samples/tab-support-offline/nodejs/client` folder, Open your local terminal and run the below command to install node modules. You can do the same in Visual studio code terminal by opening the project in Visual studio code 
+- In a different terminal, navigate to `samples/TeamsJS/tab-support-offline/nodejs/client` folder, Open your local terminal and run the below command to install node modules. You can do the same in Visual studio code terminal by opening the project in Visual studio code 
 
     ```bash
     npm run start

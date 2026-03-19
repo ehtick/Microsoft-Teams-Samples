@@ -125,14 +125,14 @@ The simplest way to run this sample in Teams is to use Microsoft 365 Agents Tool
     git clone https://github.com/OfficeDev/Microsoft-Teams-Samples.git
     ```
 
-  - In a terminal, navigate to `samples/tab-graph-toolkit/csharp`
+  - In a terminal, navigate to `samples/TeamsJS/tab-graph-toolkit/csharp`
 
     change into project folder
     ```bash
     cd # TabGraphToolkit
     ```
  - Install modules
-   navigate to `samples/tab-graph-toolkit/csharp/TabGraphToolkit/ClientApp`
+   navigate to `samples/TeamsJS/tab-graph-toolkit/csharp/TabGraphToolkit/ClientApp`
 
     ```bash
     npm install
@@ -249,4 +249,4 @@ The simplest way to run this sample in Teams is to use Microsoft 365 Agents Tool
 [Extend Teams apps across Microsoft 365](https://learn.microsoft.com/en-us/microsoftteams/platform/m365-apps/overview)
 
 
-<img src="https://pnptelemetry.azurewebsites.net/microsoft-teams-samples/samples/tab-graph-toolkit-csharp" />
+<img src="https://pnptelemetry.azurewebsites.net/microsoft-teams-samples/samples/TeamsJS/tab-graph-toolkit-csharp" />

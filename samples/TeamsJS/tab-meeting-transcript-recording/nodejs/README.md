@@ -102,7 +102,7 @@ This Microsoft Teams sample application facilitates the capture and management o
     
 3. We have two different solutions to run, so follow below steps:
  
-- In a terminal, navigate to `samples/tab-meeting-transcript-recording/nodejs/api-server` folder, Open your local terminal and run the below command to install node modules. You can do the same in Visual studio code terminal by opening the project in Visual studio code
+- In a terminal, navigate to `samples/TeamsJS/tab-meeting-transcript-recording/nodejs/api-server` folder, Open your local terminal and run the below command to install node modules. You can do the same in Visual studio code terminal by opening the project in Visual studio code
 
     ```bash
     npm install
@@ -113,7 +113,7 @@ This Microsoft Teams sample application facilitates the capture and management o
     ```
 - The server will start running on 5000 port
 
-- In a different terminal, navigate to `samples/tab-meeting-transcript-recording/nodejs` folder, Open your local terminal and run the below command to install node modules. You can do the same in Visual studio code terminal by opening the project in Visual studio code 
+- In a different terminal, navigate to `samples/TeamsJS/tab-meeting-transcript-recording/nodejs` folder, Open your local terminal and run the below command to install node modules. You can do the same in Visual studio code terminal by opening the project in Visual studio code 
 
     ```bash
     npm install
@@ -124,7 +124,7 @@ This Microsoft Teams sample application facilitates the capture and management o
     ```
 - The client will start running on 3978 port
 
-4. Open .env file from this path folders `samples/tab-meeting-transcript-recording/nodejs` and `samples/tab-meeting-transcript-recording/nodejs/api-server` update:
+4. Open .env file from this path folders `samples/TeamsJS/tab-meeting-transcript-recording/nodejs` and `samples/TeamsJS/tab-meeting-transcript-recording/nodejs/api-server` update:
    - `APP_REGISTRATION_ID` - Generated from Step 1 (Application (client) ID)is the application app ids
    - `CLIENT_SECRET` - Generated from Step 1.14, also referred to as Client secret
    - `BASE_URL` - Your application's base url. E.g. https://12345.ngrok-free.app if you are using ngrok and if you are using dev tunnels, your URL will be like: https://12345.devtunnels.ms.
@@ -190,4 +190,4 @@ You can interact with Teams Tab meeting sidepanel.
 - [Designing your Microsoft Teams app with basic Fluent UI components](https://learn.microsoft.com/en-us/microsoftteams/platform/concepts/design/design-teams-app-basic-ui-components)
 
 
-<img src="https://pnptelemetry.azurewebsites.net/microsoft-teams-samples/samples/tab-meeting-transcript-recording-nodejs" />
+<img src="https://pnptelemetry.azurewebsites.net/microsoft-teams-samples/samples/TeamsJS/tab-meeting-transcript-recording-nodejs" />

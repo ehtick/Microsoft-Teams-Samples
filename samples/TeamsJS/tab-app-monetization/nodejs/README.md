@@ -92,12 +92,12 @@ The simplest way to run this sample in Teams is to use Microsoft 365 Agents Tool
    ```
 2) Install node modules
 
-   Inside node js folder,  navigate to `samples/tab-app-monetization/nodejs/ClientApp` open your local terminal and run the below command to install node modules. You can do the same in Visual Studio code terminal by opening the project in Visual Studio code.
+   Inside node js folder,  navigate to `samples/TeamsJS/tab-app-monetization/nodejs/ClientApp` open your local terminal and run the below command to install node modules. You can do the same in Visual Studio code terminal by opening the project in Visual Studio code.
 
     ```bash
     npm install
     ```
-   **_Note_** - Navigate to `samples/tab-app-monetization/nodejs/ClientApp/src/components/tab.tsx` and update the planId and term on line 14 and 15 with plan details created in step 2
+   **_Note_** - Navigate to `samples/TeamsJS/tab-app-monetization/nodejs/ClientApp/src/components/tab.tsx` and update the planId and term on line 14 and 15 with plan details created in step 2
 
 3) Run the solution from the same path terminal using below command.
 

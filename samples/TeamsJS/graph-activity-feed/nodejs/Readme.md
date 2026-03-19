@@ -115,7 +115,7 @@ The simplest way to run this sample in Teams is to use Microsoft 365 Agents Tool
     git clone https://github.com/OfficeDev/Microsoft-Teams-Samples.git
     ```
 
-1) In a terminal, navigate to `samples/graph-activity-feed/nodejs
+1) In a terminal, navigate to `samples/TeamsJS/graph-activity-feed/nodejs
 `
 
 1) Install modules
@@ -183,4 +183,4 @@ The app demonstrates a feature that allows developers to configure custom activi
 
 - [Activity Feed](https://docs.microsoft.com/en-us/graph/api/chat-sendactivitynotification?view=graph-rest-1.0&tabs=http)
 
-<img src="https://pnptelemetry.azurewebsites.net/microsoft-teams-samples/samples/graph-activity-feed-nodejs" />
+<img src="https://pnptelemetry.azurewebsites.net/microsoft-teams-samples/samples/TeamsJS/graph-activity-feed-nodejs" />

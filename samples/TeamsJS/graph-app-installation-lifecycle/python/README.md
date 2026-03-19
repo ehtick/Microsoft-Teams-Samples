@@ -91,7 +91,7 @@ The simplest way to run this sample in Teams is to use Microsoft 365 Agents Tool
 - Navigate to the Python sample directory
 
     ```bash
-    cd samples/graph-app-installation-lifecycle/python
+    cd samples/TeamsJS/graph-app-installation-lifecycle/python
     ```
 
 - Install Python dependencies
@@ -161,4 +161,4 @@ The application provides a comprehensive interface for managing Teams app instal
 - [Flask Documentation](https://flask.palletsprojects.com/)
 - [Microsoft Teams Developer Platform](https://docs.microsoft.com/microsoftteams/platform/)
 
-<img src="https://pnptelemetry.azurewebsites.net/microsoft-teams-samples/samples/graph-app-installation-lifecycle-python" />
+<img src="https://pnptelemetry.azurewebsites.net/microsoft-teams-samples/samples/TeamsJS/graph-app-installation-lifecycle-python" />

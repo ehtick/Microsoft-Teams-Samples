@@ -82,7 +82,7 @@ The simplest way to run this sample in Teams is to use Microsoft 365 Agents Tool
     * `User.Read` (enabled by default)
     * Click on Add permissions. Please make sure to grant the admin consent for the required permissions.
 
-4. In a terminal, navigate to `samples/tab-product-inspection/python`
+4. In a terminal, navigate to `samples/TeamsJS/tab-product-inspection/python`
 
 5. Activate your desired virtual environment
 
@@ -146,4 +146,4 @@ Interact with Product Inspection by clicking on the App icon.
 - [Teams tabs](https://learn.microsoft.com/microsoftteams/platform/tabs/what-are-tabs)
 - [Integrate media Capabilities inside your app](https://learn.microsoft.com/microsoftteams/platform/concepts/device-capabilities/media-capabilities?tabs=mobile)
 
-<img src="https://pnptelemetry.azurewebsites.net/microsoft-teams-samples/samples/tab-product-inspection-python" />
+<img src="https://pnptelemetry.azurewebsites.net/microsoft-teams-samples/samples/TeamsJS/tab-product-inspection-python" />

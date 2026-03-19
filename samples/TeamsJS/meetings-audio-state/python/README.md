@@ -87,7 +87,7 @@ The simplest way to run this sample in Teams is to use Microsoft 365 Agents Tool
     git clone https://github.com/OfficeDev/Microsoft-Teams-Samples.git
     ```
 
-4. In the folder where repository is cloned navigate to `samples/meetings-audio-state/python`
+4. In the folder where repository is cloned navigate to `samples/TeamsJS/meetings-audio-state/python`
 
 5. Create a virtual environment and install dependencies
 
@@ -177,4 +177,4 @@ App theme changes to contrast when Teams theme switch to contrast .
 - [Flask Documentation](https://flask.palletsprojects.com/)
 - [Microsoft Teams JavaScript SDK](https://docs.microsoft.com/en-us/microsoftteams/platform/tabs/how-to/using-teams-client-sdk)
 
-<img src="https://pnptelemetry.azurewebsites.net/microsoft-teams-samples/samples/meetings-audio-state-python" />
+<img src="https://pnptelemetry.azurewebsites.net/microsoft-teams-samples/samples/TeamsJS/meetings-audio-state-python" />

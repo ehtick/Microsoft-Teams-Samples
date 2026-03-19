@@ -196,4 +196,4 @@ Welcome Message when Team selected for subscription.
 
 
 
-<img src="https://pnptelemetry.azurewebsites.net/microsoft-teams-samples/samples/graph-change-notification-team-channel-nodejs" />
+<img src="https://pnptelemetry.azurewebsites.net/microsoft-teams-samples/samples/TeamsJS/graph-change-notification-team-channel-nodejs" />

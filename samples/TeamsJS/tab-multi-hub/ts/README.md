@@ -119,17 +119,17 @@ The simplest way to run this sample in Teams is to use Microsoft 365 Agents Tool
     git clone https://github.com/OfficeDev/Microsoft-Teams-Samples.git
     ```
     
-3. Open .env file from this path folder `samples/tab-multi-hub/ts/api-server` and update 
+3. Open .env file from this path folder `samples/TeamsJS/tab-multi-hub/ts/api-server` and update 
    - `{{CLIENT_ID}}` - Generated from Step 1 (Application (client) ID)is the application app id
    - `{{CLIENT_SECRET}}` - Generated from Step 1.14, also referred to as Client secret
 
-4. Open .env file from this path folder `samples/tab-multi-hub/ts` and update 
+4. Open .env file from this path folder `samples/TeamsJS/tab-multi-hub/ts` and update 
    - `{{REACT_APP_AZURE_APP_REGISTRATION_ID}}` - Generated from Step 1 (Application (client) ID)is the application app id
    - `{{REACT_APP_BASE_URL}}` - Your application's base url. E.g. https://12345.ngrok-free.app if you are using ngrok and if you are using dev tunnels, your URL will be like: https://12345.devtunnels.ms.
      
 5. We have two different solutions to run, so follow below steps:
  
-- In a terminal, navigate to `samples/tab-multi-hub/ts/api-server` folder, Open your local terminal and run the below command to install node modules. You can do the same in Visual studio code terminal by opening the project in Visual studio code
+- In a terminal, navigate to `samples/TeamsJS/tab-multi-hub/ts/api-server` folder, Open your local terminal and run the below command to install node modules. You can do the same in Visual studio code terminal by opening the project in Visual studio code
 
     ```bash
     npm install
@@ -140,7 +140,7 @@ The simplest way to run this sample in Teams is to use Microsoft 365 Agents Tool
     ```
 - The server will start running on 5000 port
 
-- In a different terminal, navigate to `samples/tab-multi-hub/ts` folder, Open your local terminal and run the below command to install node modules. You can do the same in Visual studio code terminal by opening the project in Visual studio code 
+- In a different terminal, navigate to `samples/TeamsJS/tab-multi-hub/ts` folder, Open your local terminal and run the below command to install node modules. You can do the same in Visual studio code terminal by opening the project in Visual studio code 
 
     ```bash
     npm install
@@ -276,4 +276,4 @@ The simplest way to run this sample in Teams is to use Microsoft 365 Agents Tool
 - [TeamsJS capability support across Microsoft 365](https://learn.microsoft.com/en-us/microsoftteams/platform/m365-apps/teamsjs-support-m365)
 - [Extend Teams apps across Microsoft 365](https://learn.microsoft.com/microsoftteams/platform/m365-apps/overview)
 
-<img src="https://pnptelemetry.azurewebsites.net/microsoft-teams-samples/samples/tab-multi-hub-ts" />
+<img src="https://pnptelemetry.azurewebsites.net/microsoft-teams-samples/samples/TeamsJS/tab-multi-hub-ts" />

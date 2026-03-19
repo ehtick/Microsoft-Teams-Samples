@@ -123,7 +123,7 @@ The simplest way to run this sample in Teams is to use Microsoft 365 Agents Tool
     
 3. Run the app from a terminal or from Visual Studio, choose option A or B.
 
-    A) From a terminal, navigate to `samples/tab-meeting-transcript-recording/csharp`
+    A) From a terminal, navigate to `samples/TeamsJS/tab-meeting-transcript-recording/csharp`
 
     ```bash
     # run the app
@@ -133,11 +133,11 @@ The simplest way to run this sample in Teams is to use Microsoft 365 Agents Tool
 
     - Launch Visual Studio
     - File -> Open -> Project/Solution
-    - Navigate to `samples/tab-meeting-transcript-recording/csharp` folder
+    - Navigate to `samples/TeamsJS/tab-meeting-transcript-recording/csharp` folder
     - Select `MeetingTranscriptRecording.sln` file
     - Press `F5` to run the project
 
-4. In a terminal, navigate to `samples/tab-meeting-transcript-recording/csharp/MeetingTranscriptRecording/ClientApp`
+4. In a terminal, navigate to `samples/TeamsJS/tab-meeting-transcript-recording/csharp/MeetingTranscriptRecording/ClientApp`
 
     - Inside ClientApp folder execute the below command.
 
@@ -147,7 +147,7 @@ The simplest way to run this sample in Teams is to use Microsoft 365 Agents Tool
 
         ```
 
-5. Open .env file from this path folder `samples/tab-meeting-transcript-recording/csharp/MeetingTranscriptRecording/ClientApp` and update:
+5. Open .env file from this path folder `samples/TeamsJS/tab-meeting-transcript-recording/csharp/MeetingTranscriptRecording/ClientApp` and update:
    - `{{MicrosoftAppId}}` - Generated from Step 1 (Application (client) ID)is the application app id\
    
 
@@ -215,4 +215,4 @@ You can interact with Teams Tab meeting sidepanel.
 - [Designing your Microsoft Teams app with basic Fluent UI components](https://learn.microsoft.com/en-us/microsoftteams/platform/concepts/design/design-teams-app-basic-ui-components)
 
 
-<img src="https://pnptelemetry.azurewebsites.net/microsoft-teams-samples/samples/tab-meeting-transcript-recording-csharp" />
+<img src="https://pnptelemetry.azurewebsites.net/microsoft-teams-samples/samples/TeamsJS/tab-meeting-transcript-recording-csharp" />

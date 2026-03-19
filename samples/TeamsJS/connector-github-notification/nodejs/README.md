@@ -54,4 +54,4 @@ For more information see the [Code of Conduct FAQ](https://opensource.microsoft.
 contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
 
 
-<img src="https://pnptelemetry.azurewebsites.net/microsoft-teams-samples/samples/connector-github-notification-nodejs" />
+<img src="https://pnptelemetry.azurewebsites.net/microsoft-teams-samples/samples/TeamsJS/connector-github-notification-nodejs" />

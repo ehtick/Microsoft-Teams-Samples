@@ -120,20 +120,20 @@ The simplest way to run this sample in Teams is to use Teams Toolkit for Visual 
     git clone https://github.com/OfficeDev/Microsoft-Teams-Samples.git
     ```
     
-4. Open .env file from this path folder `samples/app-anonymous-users/nodejs/api/server` and update 
+4. Open .env file from this path folder `samples/TeamsJS/app-anonymous-users/nodejs/api/server` and update 
    - `{{Microsoft-App-id}}` - Generated from Step 1 (Application (client) ID)is the application app id
    - `{{MicrosoftAppPassword}}` - Generated from Step 1.14, also referred to as Client secret
    - `{{TenantId}}` - Generated from Step 1(Directory (tenant) ID) is the tenant id
    - `{{FacebookAppId}} and {{FacebookAppPassword}}`- Generated from step 16.
    - `{{domain-name}}` - Your domain name. E.g. if you are using ngrok it would be `https://1234.ngrok-free.app` then your domain-name will be `1234.ngrok-free.app` and if you are using dev tunnels then your domain will be like: `12345.devtunnels.ms`.
 
-5. Open .env file from this path folder `samples/app-anonymous-users/nodejs/ClientApp` and update 
+5. Open .env file from this path folder `samples/TeamsJS/app-anonymous-users/nodejs/ClientApp` and update 
    - `{{Microsoft-App-id}}` - Generated from Step 1 (Application (client) ID)is the application app id
    - `{{FacebookAppId}}`- Generated from step 16.
      
 6. We have two different solutions to run, so follow below steps:
  
-- In a terminal, navigate to `samples/app-anonymous-users/nodejs/api` folder, Open your local terminal and run the below command to install node modules. You can do the same in Visual studio code terminal by opening the project in Visual studio code
+- In a terminal, navigate to `samples/TeamsJS/app-anonymous-users/nodejs/api` folder, Open your local terminal and run the below command to install node modules. You can do the same in Visual studio code terminal by opening the project in Visual studio code
 
     ```bash
     npm install
@@ -144,7 +144,7 @@ The simplest way to run this sample in Teams is to use Teams Toolkit for Visual 
     ```
 - The server will start running on 3000 port
 
-- In a different terminal, navigate to `samples/app-anonymous-users/nodejs/ClientApp` folder, Open your local terminal and run the below command to install node modules. You can do the same in Visual studio code terminal by opening the project in Visual studio code 
+- In a different terminal, navigate to `samples/TeamsJS/app-anonymous-users/nodejs/ClientApp` folder, Open your local terminal and run the below command to install node modules. You can do the same in Visual studio code terminal by opening the project in Visual studio code 
 
     ```bash
     npm install
@@ -156,7 +156,7 @@ The simplest way to run this sample in Teams is to use Teams Toolkit for Visual 
 - The client will start running on 3978 port
 
 **Note:**
--   If you are facing any issue in your app,  [please uncomment this line](https://github.com/OfficeDev/Microsoft-Teams-Samples/blob/main/samples/app-anonymous-users/nodejs/api/server/index.js#L154) and put your debugger for local debug.
+-   If you are facing any issue in your app,  [please uncomment this line](https://github.com/OfficeDev/Microsoft-Teams-Samples/blob/main/samples/TeamsJS/app-anonymous-users/nodejs/api/server/index.js#L154) and put your debugger for local debug.
 
 7. __*This step is specific to Teams.*__
 
@@ -171,7 +171,7 @@ The simplest way to run this sample in Teams is to use Teams Toolkit for Visual 
 - Add the app to team/groupChat scope (Supported scopes). 
 
 **Note:**
--   If you are facing any issue in your app,  [please uncomment this line](https://github.com/OfficeDev/Microsoft-Teams-Samples/blob/main/samples/app-anonymous-users/nodejs/api/server/index.js#L156) and put your debugger for local debug.
+-   If you are facing any issue in your app,  [please uncomment this line](https://github.com/OfficeDev/Microsoft-Teams-Samples/blob/main/samples/TeamsJS/app-anonymous-users/nodejs/api/server/index.js#L156) and put your debugger for local debug.
 
 ## Running the sample
 
@@ -313,4 +313,4 @@ You can interact with Teams Tab meeting sidepanel.
 - [Create facebook app for development](https://developers.facebook.com/docs/development/create-an-app/)
 
 
-<img src="https://pnptelemetry.azurewebsites.net/microsoft-teams-samples/samples/app-anonymous-users-nodejs" />
+<img src="https://pnptelemetry.azurewebsites.net/microsoft-teams-samples/samples/TeamsJS/app-anonymous-users-nodejs" />

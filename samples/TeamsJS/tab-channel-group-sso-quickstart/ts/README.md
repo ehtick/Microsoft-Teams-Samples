@@ -133,7 +133,7 @@ The simplest way to run this sample in Teams is to use Microsoft 365 Agents Tool
     git clone https://github.com/OfficeDev/Microsoft-Teams-Samples.git
     ```
 
-  - In a terminal, navigate to `samples/tab-channel-group-sso-quickstart/ts`
+  - In a terminal, navigate to `samples/TeamsJS/tab-channel-group-sso-quickstart/ts`
   
   -Update the `.env` configuration for the bot to use the `REACT_APP_AZURE_APP_REGISTRATION_ID` `, `REACT_APP_BASE_URL` with application base url. For e.g., your ngrok or dev tunnels url. (Note the MicrosoftAppId is the AppId created in step 1 (Setup for Bot).
   

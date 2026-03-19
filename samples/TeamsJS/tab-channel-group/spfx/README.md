@@ -39,7 +39,7 @@ Please find below demo manifest which is deployed on Microsoft Azure and you can
 
     ```bash
     git clone https://github.com/OfficeDev/Microsoft-Teams-Samples.git
-    cd samples/tab-channel-group/spfx
+    cd samples/TeamsJS/tab-channel-group/spfx
     ```
 
 1) If you are using Visual Code

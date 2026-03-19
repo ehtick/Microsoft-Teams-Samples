@@ -69,7 +69,7 @@ Task modules build on the foundation of Microsoft Teams tabs: a task module is e
     ```bash
     git clone https://github.com/OfficeDev/Microsoft-Teams-Samples.git
     ```
-  - In a terminal, navigate to `samples/app-task-module/nodejs`
+  - In a terminal, navigate to `samples/TeamsJS/app-task-module/nodejs`
   
   - Update the `.env` configuration for the bot to use the `MICROSOFT_APP_ID` and `MICROSOFT_APP_PASSWORD` from the Azure Bot resource. (Note that the MicrosoftAppId is the AppId created in step 1, the MicrosoftAppPassword is referred to as the "client secret" in step 1 and you can always create a new client secret anytime.). For `BASE_URI` provide the application base url, E.g. https://12345.ngrok-free.app if you are using ngrok and if you are using dev tunnels, your URL will be like: https://12345.devtunnels.ms.
 
@@ -214,4 +214,4 @@ contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additio
 
 - [Extend Teams apps across Microsoft 365](https://learn.microsoft.com/en-us/microsoftteams/platform/m365-apps/overview)
 
-<img src="https://pnptelemetry.azurewebsites.net/microsoft-teams-samples/samples/app-task-module-nodejs" />
+<img src="https://pnptelemetry.azurewebsites.net/microsoft-teams-samples/samples/TeamsJS/app-task-module-nodejs" />

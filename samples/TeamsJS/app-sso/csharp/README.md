@@ -118,7 +118,7 @@ Make sure your Application ID Url under Expose and API section is in below forma
 
 - Run the bot from a terminal or from Visual Studio:
 
-  A) From a terminal, navigate to `samples/app-sso/csharp`
+  A) From a terminal, navigate to `samples/TeamsJS/app-sso/csharp`
 
   ```bash
   # run the bot
@@ -128,7 +128,7 @@ Make sure your Application ID Url under Expose and API section is in below forma
 
   - Launch Visual Studio
   - File -> Open -> Project/Solution
-  - Navigate to `samples/app-sso/csharp` folder
+  - Navigate to `samples/TeamsJS/app-sso/csharp` folder
   - Select `App SSO Sample.sln` file
   - Press `F5` to run the project
 

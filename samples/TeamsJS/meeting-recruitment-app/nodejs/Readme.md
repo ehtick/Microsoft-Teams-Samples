@@ -115,14 +115,14 @@ The simplest way to run this sample in Teams is to use Microsoft 365 Agents Tool
     git clone https://github.com/OfficeDev/Microsoft-Teams-Samples.git
     ```
    
-   -Modify the `keys.js` file in the location `samples/meeting-app/nodejs/api/server` and fill in the `[STORAGE ACCOUNT NAME]` and `[ACCESS KEY]` for azure table storage.
+   -Modify the `keys.js` file in the location `samples/TeamsJS/meeting-app/nodejs/api/server` and fill in the `[STORAGE ACCOUNT NAME]` and `[ACCESS KEY]` for azure table storage.
  
 
   - We have two different solutions to run so follow below steps:
  
-    A) In a terminal, navigate to `samples/meeting-recruitment-app/nodejs/api`
+    A) In a terminal, navigate to `samples/TeamsJS/meeting-recruitment-app/nodejs/api`
 
-    B) In a different terminal, navigate to `samples/meeting-recruitment-app/nodejs/clientapp`
+    B) In a different terminal, navigate to `samples/TeamsJS/meeting-recruitment-app/nodejs/clientapp`
 
      * In both the terminal run 
    

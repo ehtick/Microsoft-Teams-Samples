@@ -168,4 +168,4 @@ Not supported on Teams Mobile or on Teams, Outlook, and Office for Web.
 ## Further Reading.
 [External-auth](https://learn.microsoft.com/microsoftteams/platform/tabs/how-to/authentication/auth-oauth-provider#add-authentication-to-external-browsers)
 
-<img src="https://pnptelemetry.azurewebsites.net/microsoft-teams-samples/samples/tab-external-auth-nodejs" />
+<img src="https://pnptelemetry.azurewebsites.net/microsoft-teams-samples/samples/TeamsJS/tab-external-auth-nodejs" />

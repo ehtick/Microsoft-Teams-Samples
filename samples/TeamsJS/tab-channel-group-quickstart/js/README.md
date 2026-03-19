@@ -90,7 +90,7 @@ The simplest way to run this sample in Teams is to use Microsoft 365 Agents Tool
     git clone https://github.com/OfficeDev/Microsoft-Teams-Samples.git
     ```
 
-- In a terminal, navigate to `samples/tab-channel-group-quickstart/js`
+- In a terminal, navigate to `samples/TeamsJS/tab-channel-group-quickstart/js`
 
 - Install modules
 

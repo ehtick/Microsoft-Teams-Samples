@@ -119,7 +119,7 @@ The simplest way to run this sample in Teams is to use Microsoft 365 Agents Tool
  - Build your solution
    - Launch Visual Studio
    - File -> Open -> Project/Solution
-   - Navigate to `samples/graph-app-installation-lifecycle/csharp/AppInstallation` folder
+   - Navigate to `samples/TeamsJS/graph-app-installation-lifecycle/csharp/AppInstallation` folder
    - Select `AppInstallation.csproj` file
    - Press `F5` to run the project
 5. Setup Manifest for Teams

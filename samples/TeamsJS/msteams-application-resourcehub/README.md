@@ -55,7 +55,7 @@ The external content will be redirected to the respective web pages
 ## ![BingSearch](Documentation/BingSearch.png)
 ## ![BingSearchResult](Documentation/BingSearchResult.png)
 
-**Note**: If you are facing any issue in your app, [please uncomment this line](https://github.com/OfficeDev/Microsoft-Teams-Samples/blob/main/samples/msteams-application-resourcehub/Source/microsoft-teams-apps-selfhelp/Bot/AdapterWithErrorHandler.cs#L26) and put your debugger for local debug.
+**Note**: If you are facing any issue in your app, [please uncomment this line](https://github.com/OfficeDev/Microsoft-Teams-Samples/blob/main/samples/TeamsJS/msteams-application-resourcehub/Source/microsoft-teams-apps-selfhelp/Bot/AdapterWithErrorHandler.cs#L26) and put your debugger for local debug.
 
 #Video
 Click the title of video link a task module will open and have a video in the task module which user can play.
@@ -132,4 +132,4 @@ Based on the selection the list of Teams or users will populate in the dropdown
  ## ![ShareWithTeamAndUsers](Documentation/ShareWithTeamAndUsers.png)
 
 
-<img src="https://pnptelemetry.azurewebsites.net/microsoft-teams-samples/samples/msteams-application-resourcehub" />
+<img src="https://pnptelemetry.azurewebsites.net/microsoft-teams-samples/samples/TeamsJS/msteams-application-resourcehub" />
