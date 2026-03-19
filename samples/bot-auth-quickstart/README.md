@@ -248,8 +248,6 @@ python main.py
 
 ## Running the Sample
 
-### Bot Commands
-
 **Authentication:**
 - **signin** - Sign in to the bot using your Microsoft 365 account
   - The bot will request your consent to access your profile information
