@@ -4,7 +4,7 @@
     "source": "officeDev",
     "title": "Meetings Stage View",
     "shortDescription": "This sample app demonstrates how to enable and configure applications for Microsoft Teams meetings, allowing users to interact with a shared meeting stage using the Live Share SDK.",
-    "url": "https://github.com/OfficeDev/Microsoft-Teams-Samples/tree/main/samples/meetings-stage-view/csharp",
+    "url": "https://github.com/OfficeDev/Microsoft-Teams-Samples/tree/main/samples/TeamsJS/meetings-stage-view/csharp",
     "longDescription": [
       "This sample application showcases how to integrate a shared meeting stage in Microsoft Teams, enabling real-time collaboration and interaction through the Live Share SDK. It provides features like a meeting side panel and customizable themes, enhancing user engagement during meetings."
     ],

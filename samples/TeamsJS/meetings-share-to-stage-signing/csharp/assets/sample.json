@@ -4,7 +4,7 @@
     "source": "officeDev",
     "title": "In-Meeting Document Signing",
     "shortDescription": "This Microsoft Teams sample app enables users to review and sign documents in real time during meetings, facilitating seamless collaboration.",
-    "url": "https://github.com/OfficeDev/Microsoft-Teams-Samples/tree/main/samples/meetings-share-to-stage-signing/csharp",
+    "url": "https://github.com/OfficeDev/Microsoft-Teams-Samples/tree/main/samples/TeamsJS/meetings-share-to-stage-signing/csharp",
     "longDescription": [
       "This sample application allows users to sign documents electronically during Microsoft Teams meetings, enhancing the efficiency of document management. It supports multiple roles, including document creators, signers, and readers, and is adaptable for various scenarios such as code reviews and collaborative document assessments."
     ],

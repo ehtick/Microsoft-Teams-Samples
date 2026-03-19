@@ -4,7 +4,7 @@
     "source": "officeDev",
     "title": "Meeting-Tabs",
     "shortDescription": "This app allows muting/unmuting Teams meeting audio and displays stage view in the meeting side panel.",
-    "url": "https://github.com/OfficeDev/Microsoft-Teams-Samples/tree/main/samples/meeting-tabs/csharp",
+    "url": "https://github.com/OfficeDev/Microsoft-Teams-Samples/tree/main/samples/TeamsJS/meeting-tabs/csharp",
     "longDescription": [
       "This sample demonstrates how to mute/unmute Teams meeting audio from the meeting side panel and includes stage view capabilities. It also supports Teams themes and RSC permissions handling."
     ],

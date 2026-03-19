@@ -4,7 +4,7 @@
     "source": "officeDev",
     "title": "Simple hello world app showcasing channel and group tabs in Microsoft Teams.",
     "shortDescription": "Create React App channel/group tab in JavaScript",
-    "url": "https://github.com/OfficeDev/Microsoft-Teams-Samples/tree/main/samples/tab-channel-group-quickstart/js",
+    "url": "https://github.com/OfficeDev/Microsoft-Teams-Samples/tree/main/samples/TeamsJS/tab-channel-group-quickstart/js",
     "longDescription": [
       "This sample application illustrates how to create channel and group tabs in Microsoft Teams, enabling collaborative spaces for web-based content. It includes setup instructions, prerequisites, and features for embedding Teams-aware webpages directly into your Teams environment."
     ],

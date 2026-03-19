@@ -4,7 +4,7 @@
     "source": "officeDev",
     "title": "Activity Feed Notification",
     "shortDescription": "This Teams sample app sends activity feed notifications using the Graph API within a tab.",
-    "url": "https://github.com/OfficeDev/Microsoft-Teams-Samples/tree/main/samples/graph-activity-feed/csharp",
+    "url": "https://github.com/OfficeDev/Microsoft-Teams-Samples/tree/main/samples/TeamsJS/graph-activity-feed/csharp",
     "longDescription": [
       "This sample app demonstrates sending activity feed notifications from a Teams tab using the Microsoft Graph API. It supports user, chat, and team scopes, allowing for seamless communication within Microsoft Teams."
     ],

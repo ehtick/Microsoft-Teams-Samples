@@ -4,7 +4,7 @@
     "source": "officeDev",
     "title": "QBot",
     "shortDescription": "QBot is an innovative solution for Microsoft Teams designed to facilitate intelligent question-and-answer interactions among educators, tutors, and students within classroom settings.",
-    "url": "https://github.com/OfficeDev/Microsoft-Teams-Samples/tree/main/samples/msteams-application-qbot",
+    "url": "https://github.com/OfficeDev/Microsoft-Teams-Samples/tree/main/samples/TeamsJS/msteams-application-qbot",
     "longDescription": [
       "QBot leverages Azure Cognitive Services to provide a robust question-and-answer platform within Microsoft Teams, enabling teachers and students to efficiently address each other's inquiries. This solution includes features such as role management, a knowledge base, and tracking capabilities for questions, making it an invaluable tool for educational environments."
     ],

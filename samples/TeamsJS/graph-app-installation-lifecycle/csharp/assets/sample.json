@@ -4,7 +4,7 @@
     "source": "officeDev",
     "title": "App Installation",
     "shortDescription": "This sample showcases how to manage the installation lifecycle of Teams apps using Microsoft Graph APIs through a Teams tab.",
-    "url": "https://github.com/OfficeDev/Microsoft-Teams-Samples/tree/main/samples/graph-app-installation-lifecycle/csharp",
+    "url": "https://github.com/OfficeDev/Microsoft-Teams-Samples/tree/main/samples/TeamsJS/graph-app-installation-lifecycle/csharp",
     "longDescription": [
       "This sample app demonstrates the installation lifecycle for Teams apps, including creation, updating, and deletion using Microsoft Graph APIs. It features integration with tabs and enables users to interact seamlessly within the Microsoft Teams environment."
     ],

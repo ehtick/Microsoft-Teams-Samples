@@ -4,7 +4,7 @@
     "source": "officeDev",
     "title": "Recruitment App Sample using Apps in Meetings",
     "shortDescription": "This sample demonstrates a recruitment meeting app with integrated bots for notifications, meeting details, and in-meeting features to assist the interview process.",
-    "url": "https://github.com/OfficeDev/Microsoft-Teams-Samples/tree/main/samples/meeting-recruitment-app/nodejs",
+    "url": "https://github.com/OfficeDev/Microsoft-Teams-Samples/tree/main/samples/TeamsJS/meeting-recruitment-app/nodejs",
     "longDescription": [
       "This recruitment app sample enhances meeting experiences by integrating features like bots for notifications, meeting details, and in-meeting assistance such as adding questions, notes, and side panel views. It helps streamline the interview process with features for adding, editing, and sharing candidate information."
     ],

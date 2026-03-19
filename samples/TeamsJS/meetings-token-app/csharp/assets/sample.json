@@ -4,7 +4,7 @@
     "source": "officeDev",
     "title": "Meeting Token Generator",
     "shortDescription": "The Meeting Token Generator app for Microsoft Teams allows participants to request and manage interaction tokens, ensuring equitable participation during meetings like scrums and Q&A sessions.",
-    "url": "https://github.com/OfficeDev/Microsoft-Teams-Samples/tree/main/samples/meetings-token-app/csharp",
+    "url": "https://github.com/OfficeDev/Microsoft-Teams-Samples/tree/main/samples/TeamsJS/meetings-token-app/csharp",
     "longDescription": [
       "This sample app enhances Microsoft Teams meetings by allowing participants to request sequential tokens for interaction, promoting fair engagement. Built with the Live Share SDK, it updates data in real-time for all meeting attendees, making it ideal for collaborative settings."
     ],

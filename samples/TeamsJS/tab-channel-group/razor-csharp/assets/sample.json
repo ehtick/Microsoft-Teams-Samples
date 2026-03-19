@@ -4,7 +4,7 @@
     "source": "officeDev",
     "title": "Channel/group tabs in ASP.NET Core with Razor",
     "shortDescription": "This sample demonstrates how to create custom channel and group tabs in Microsoft Teams using ASP.NET Core and Razor pages.",
-    "url": "https://github.com/OfficeDev/Microsoft-Teams-Samples/tree/main/samples/tab-channel-group/razor-csharp",
+    "url": "https://github.com/OfficeDev/Microsoft-Teams-Samples/tree/main/samples/TeamsJS/tab-channel-group/razor-csharp",
     "longDescription": [
       "This quickstart guide shows how to create custom channel and group tabs for Microsoft Teams with ASP.NET Core and Razor Pages. It covers the complete setup process, including manifest configuration and local testing using tools like Ngrok and the Teams Toolkit for Visual Studio."
     ],

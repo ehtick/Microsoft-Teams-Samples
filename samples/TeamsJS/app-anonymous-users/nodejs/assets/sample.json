@@ -4,7 +4,7 @@
     "source": "officeDev",
     "title": "Anonymous User Support",
     "shortDescription": "Add this sample app to enable anonymous user participation and interaction in Microsoft Teams meetings.",
-    "url": "https://github.com/OfficeDev/Microsoft-Teams-Samples/tree/main/samples/app-anonymous-users/nodejs",
+    "url": "https://github.com/OfficeDev/Microsoft-Teams-Samples/tree/main/samples/TeamsJS/app-anonymous-users/nodejs",
     "longDescription": [
       "This sample demonstrates how to support anonymous users in Microsoft Teams meeting apps, showcasing the setup and interaction flow for integrating guest and tenant users seamlessly."
     ],

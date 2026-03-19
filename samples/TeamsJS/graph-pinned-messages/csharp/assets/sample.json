@@ -4,7 +4,7 @@
     "source": "officeDev",
     "title": "This sample application demonstrates how to pin messages in Microsoft Teams chat using the Graph API and displays all pinned messages in a group chat.",
     "shortDescription": "This is a sample application which demonstrates how to pin messages in chat using Graph api.",
-    "url": "https://github.com/OfficeDev/Microsoft-Teams-Samples/tree/main/samples/graph-pinned-messages/csharp",
+    "url": "https://github.com/OfficeDev/Microsoft-Teams-Samples/tree/main/samples/TeamsJS/graph-pinned-messages/csharp",
     "longDescription": [
       "This sample application showcases the functionality of pinning messages in Microsoft Teams chat through the Graph API, enabling users to manage important messages effectively. It includes features like Teams Single Sign-On (SSO), MSAL.js 2.0 support, and interactive message handling within a customizable tab."
     ],

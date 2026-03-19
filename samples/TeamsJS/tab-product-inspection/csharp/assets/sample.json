@@ -4,7 +4,7 @@
     "source": "officeDev",
     "title": "Product Inspection",
     "shortDescription": "This sample application allows users to scan products in Microsoft Teams and mark them as approved or rejected.",
-    "url": "https://github.com/OfficeDev/Microsoft-Teams-Samples/tree/main/samples/tab-product-inspection/csharp",
+    "url": "https://github.com/OfficeDev/Microsoft-Teams-Samples/tree/main/samples/TeamsJS/tab-product-inspection/csharp",
     "longDescription": [
       "This application demonstrates how to scan products directly within Microsoft Teams, capturing images and allowing users to approve or reject items. It includes features like device permissions for media access and interactive app integration, enhancing the product inspection process."
     ],

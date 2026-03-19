@@ -4,7 +4,7 @@
     "source": "officeDev",
     "title": "Actions across Microsoft 365",
     "shortDescription": "This sample demonstrates how to build Teams apps using Actions in the Microsoft 365 app to streamline task management and enhance productivity by minimizing context switching.",
-    "url": "https://github.com/OfficeDev/Microsoft-Teams-Samples/tree/main/samples/m365-actions-preview/nodejs",
+    "url": "https://github.com/OfficeDev/Microsoft-Teams-Samples/tree/main/samples/TeamsJS/m365-actions-preview/nodejs",
     "longDescription": [
       "This sample illustrates how developers can integrate Actions in the Microsoft 365 app to simplify task completion and enhance user productivity. It enables seamless interaction with content, expanding app functionality while reducing the need for switching between applications."
     ],

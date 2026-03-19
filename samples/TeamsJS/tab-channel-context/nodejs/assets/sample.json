@@ -4,7 +4,7 @@
     "source": "officeDev",
     "title": "Tab context in channel",
     "shortDescription": "This sample application demonstrates how to access and display the tab context object in both private and shared channels within Microsoft Teams.",
-    "url": "https://github.com/OfficeDev/Microsoft-Teams-Samples/tree/main/samples/tab-channel-context/nodejs",
+    "url": "https://github.com/OfficeDev/Microsoft-Teams-Samples/tree/main/samples/TeamsJS/tab-channel-context/nodejs",
     "longDescription": [
       "This sample illustrates the capabilities of a tab application that shows the tab context object specifically for private and shared channels in Microsoft Teams. Users can expand and copy JSON slices from the context object, providing valuable insights based on the channel type."
     ],

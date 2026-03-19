@@ -4,7 +4,7 @@
     "source": "officeDev",
     "title": "Link unfurling meeting sample",
     "shortDescription": "This sample demonstrates a C# bot that enables users to share and collaboratively review links in Microsoft Teams meetings.",
-    "url": "https://github.com/OfficeDev/Microsoft-Teams-Samples/tree/main/samples/msgext-link-unfurling-meeting/csharp",
+    "url": "https://github.com/OfficeDev/Microsoft-Teams-Samples/tree/main/samples/TeamsJS/msgext-link-unfurling-meeting/csharp",
     "longDescription": [
       "This sample illustrates a C# bot that allows users to share a link to a resource, facilitating collaboration during Teams meetings. Users can seamlessly review the shared content through an adaptive card interface, enhancing group discussions."
     ],

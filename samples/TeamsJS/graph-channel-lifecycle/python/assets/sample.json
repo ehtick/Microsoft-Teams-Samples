@@ -4,7 +4,7 @@
     "source": "officeDev",
     "title": "Channel life cycle using Python",
     "shortDescription": "This sample demonstrates how to manage the lifecycle of channels in Microsoft Teams using the Graph API with Python.",
-    "url": "https://github.com/OfficeDev/Microsoft-Teams-Samples/tree/main/samples/graph-channel-lifecycle/python",
+    "url": "https://github.com/OfficeDev/Microsoft-Teams-Samples/tree/main/samples/TeamsJS/graph-channel-lifecycle/python",
     "longDescription": [
       "This sample application showcases the full lifecycle management of channels in Microsoft Teams, including creating, updating, and deleting channels through the Graph API. Built with Python, it offers seamless integration within Teams and provides clear setup instructions."
     ],

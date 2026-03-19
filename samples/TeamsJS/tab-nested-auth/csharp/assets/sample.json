@@ -4,7 +4,7 @@
     "source": "officeDev",
     "title": "This sample shows nested app authentication.",
     "shortDescription": "This sample showcases Azure AD single sign-on (SSO) within a Microsoft Teams tab, utilizing the On-Behalf-Of (OBO) flow to call Microsoft Graph APIs in C#.",
-    "url": "https://github.com/OfficeDev/Microsoft-Teams-Samples/tree/main/samples/tab-nested-auth/csharp",
+    "url": "https://github.com/OfficeDev/Microsoft-Teams-Samples/tree/main/samples/TeamsJS/tab-nested-auth/csharp",
     "longDescription": [
       "This Microsoft Teams sample app demonstrates the implementation of Azure AD single sign-on (SSO) using the On-Behalf-Of (OBO) flow to access Graph APIs in a Teams tab. It features nested app authentication, streamlining user authentication across Microsoft 365 applications for a seamless experience."
     ],

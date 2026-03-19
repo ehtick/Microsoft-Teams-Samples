@@ -4,7 +4,7 @@
     "source": "officeDev",
     "title": "Starter solution: Personal tab in TypeScript",
     "shortDescription": "This sample app demonstrates how to create a personal tab in Microsoft Teams using TypeScript.",
-    "url": "https://github.com/OfficeDev/Microsoft-Teams-Samples/tree/main/samples/tab-personal-quickstart/ts",
+    "url": "https://github.com/OfficeDev/Microsoft-Teams-Samples/tree/main/samples/TeamsJS/tab-personal-quickstart/ts",
     "longDescription": [
       "This quick-start sample provides detailed instructions for developing a personal tab in Microsoft Teams with TypeScript, featuring essential setup and deployment guidance. It covers prerequisites, coding requirements, and steps to run the app, ensuring seamless integration with Teams and other Microsoft applications."
     ],

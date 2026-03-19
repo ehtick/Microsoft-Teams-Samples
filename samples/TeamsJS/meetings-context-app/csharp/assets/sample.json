@@ -4,7 +4,7 @@
     "source": "officeDev",
     "title": "Meeting context",
     "shortDescription": "This sample demonstrates how to retrieve and display meeting context and participant details in Microsoft Teams using bot APIs.",
-    "url": "https://github.com/OfficeDev/Microsoft-Teams-Samples/tree/main/samples/meetings-context-app/csharp",
+    "url": "https://github.com/OfficeDev/Microsoft-Teams-Samples/tree/main/samples/TeamsJS/meetings-context-app/csharp",
     "longDescription": [
       "This sample application showcases how to access and present the meeting context object within a Teams meeting tab, utilizing bot APIs to fetch participant and meeting details. Users can interact with the bot to receive detailed information about participants and the meeting, enhancing their Teams experience."
     ],

@@ -4,7 +4,7 @@
     "source": "officeDev",
     "title": "Meeting-Tabs",
     "shortDescription": "This sample showcases a Teams meeting side panel with Mute/Unmute audio controls.",
-    "url": "https://github.com/OfficeDev/Microsoft-Teams-Samples/tree/main/samples/meeting-tabs/python",
+    "url": "https://github.com/OfficeDev/Microsoft-Teams-Samples/tree/main/samples/TeamsJS/meeting-tabs/python",
     "longDescription": [
       "This sample illustrates a Teams meeting side panel that enables users to Mute and Unmute audio during meetings. It features an interactive app stage view and supports Teams themes for enhanced user experience."
     ],
@@ -35,7 +35,7 @@
       {
         "type": "image",
         "order": 100,
-        "url": "https://raw.githubusercontent.com/OfficeDev/Microsoft-Teams-Samples/tree/main/samples/meeting-tabs/python/Images/MeetingTabsGif.gif",
+        "url": "https://raw.githubusercontent.com/OfficeDev/Microsoft-Teams-Samples/tree/main/samples/TeamsJS/meeting-tabs/python/Images/MeetingTabsGif.gif",
         "alt": "Solution UX showing Meeting Tab with different features."
       }
     ],
