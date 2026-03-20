@@ -133,15 +133,15 @@ On `Submit` button click, the bot will return the choice that we have selected.
 `Dependant Dropdown search:`
  Dependant typeahead search allows users to select data based on one of the dropdown. If the data of the main dropdown changes the data of the dependant dropdown changes with it. The data sets are loaded dynamically from the dataset specified in the card payload.
 
-![dependant dropdown search card](TypeaheadSearch/Images/9.DependantDropdown.png)
+![dependant dropdown search card](Images/9.DependantDropdown.png)
 
-![dependant dropdown search Countries](TypeaheadSearch/Images/10.CountryOptions.png)
+![dependant dropdown search Countries](Images/10.CountryOptions.png)
 
-![dependant dropdown search cities](TypeaheadSearch/Images/11.CitiesAsPerTheCountry.png)
+![dependant dropdown search cities](Images/11.CitiesAsPerTheCountry.png)
 
 `On `Submit` button click, the bot will return the choice that we have selected:`
 
-![dependant dropdown results](TypeaheadSearch/Images/12.SelectedDependantDropdown.png)
+![dependant dropdown results](Images/12.SelectedDependantDropdown.png)
 
 ## Deploy the bot to Azure
 

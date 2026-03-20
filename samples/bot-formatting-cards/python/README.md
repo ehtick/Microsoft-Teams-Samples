@@ -297,7 +297,7 @@ the Teams service needs to call into the bot.
 
 **Gauge Chart :**
 
-![GaugeChart_Card](Images/24.GaugeChart_Card.png)
+![GaugeChart_Card](Images/24.GuageChart_Card.png)
 
 **Horizontal Chart :**
 

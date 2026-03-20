@@ -140,7 +140,7 @@ You can interact with user scope web application by logging with demo tenant.
 ![Sample](Images/3.LoginSuccess.png)
 
 1. **Group chat and messages**
-![Sample](Images/4.GroupChatsAndMessages.png)
+![Sample](Images/4,GroupChatsAndMessages.png)
 
 
 ## Further reading

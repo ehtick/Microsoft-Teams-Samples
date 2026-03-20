@@ -7,7 +7,7 @@ This feature shown in this sample is currently available in Public Developer Pre
 
 - Showing messages based on option selected
 
-![Bot Receive Channel MessagesWithRSCGif](images/Bot_Channel_Messenging-RSC-nodejs-gif.gif)
+![Bot Receive Channel MessagesWithRSCGif](Images/Bot_Channel_Messenging-RSC.gif)
 
 ## Prerequisites
 

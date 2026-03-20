@@ -137,11 +137,11 @@ The simplest way to run this sample in Teams is to use Microsoft 365 Agents Tool
 
 **Click on 'Select Gray' button application will perform like below **
 
-![AppOutlook_Gray.png](Images/AppOutlook_Gray.png.png)
+![AppOutlook_Gray.png](Images/AppOutlook_Gray.png)
 
 **Click on 'Select Red' button application will perform like below **
 
-![AppOutlook_Red.png](Images/AppOutlook_Red.png.png)
+![AppOutlook_Red.png](Images/AppOutlook_Red.png)
 
 **Note:** Similarly, you can test your application in the Outlook desktop app as well.
 
@@ -161,11 +161,11 @@ The simplest way to run this sample in Teams is to use Microsoft 365 Agents Tool
 
 **Click on 'Select Gray' button application will perform like below **
 
-![AppOffice_Gray.png](Images/AppOffice_Gray.png.png)
+![AppOffice_Gray.png](Images/AppOffice_Gray.png)
 
 **Click on 'Select Red' button application will perform like below **
 
-![AppOffice_Red.png](Images/AppOffice_Red.png.png)
+![AppOffice_Red.png](Images/AppOffice_Red.png)
 
 **Note:** Similarly, you can test your application in the Office 365 desktop app as well.
 
