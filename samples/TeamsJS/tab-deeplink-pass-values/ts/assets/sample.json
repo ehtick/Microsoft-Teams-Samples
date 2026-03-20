@@ -4,7 +4,7 @@
     "source": "officeDev",
     "title": "DeepLink",
     "shortDescription": "This Microsoft Teams sample showcases how to use dynamic deep links to pass values to tab apps and standalone web apps.",
-    "url": "https://github.com/OfficeDev/Microsoft-Teams-Samples/tree/main/samples/tab-deeplink-pass-values/ts",
+    "url": "https://github.com/OfficeDev/Microsoft-Teams-Samples/tree/main/samples/TeamsJS/tab-deeplink-pass-values/ts",
     "longDescription": [
       "This sample app for Microsoft Teams illustrates the creation and usage of dynamic deep links to pass contextual values to tab and standalone web applications. It highlights the differences in link formatting and consumption based on the user’s access environment, enhancing navigation and data display capabilities."
     ],
@@ -31,7 +31,7 @@
       {
         "type": "image",
         "order": 100,
-        "url": "https://github.com/OfficeDev/Microsoft-Teams-Samples/tree/main/samples/tab-deeplink-pass-values/ts/Images/deepLinkSampleApp.gif",
+        "url": "https://github.com/OfficeDev/Microsoft-Teams-Samples/tree/main/samples/TeamsJS/tab-deeplink-pass-values/ts/Images/deepLinkSampleApp.gif",
         "alt": "Solution UX showing deeplink"
       }
     ],

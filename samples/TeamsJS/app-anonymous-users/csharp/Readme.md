@@ -128,7 +128,7 @@ Update {{FacebookAppId}} and {{FacebookAppPassword}} in appsetting.json.
     
 4. Run the app from a terminal or from Visual Studio, choose option A or B.
 
-    A) From a terminal, navigate to `samples/app-anonymous-users/csharp`
+    A) From a terminal, navigate to `samples/TeamsJS/app-anonymous-users/csharp`
 
     ```bash
     # run the app
@@ -138,11 +138,11 @@ Update {{FacebookAppId}} and {{FacebookAppPassword}} in appsetting.json.
 
     - Launch Visual Studio
     - File -> Open -> Project/Solution
-    - Navigate to `samples/app-anonymous-users/csharp` folder
+    - Navigate to `samples/TeamsJS/app-anonymous-users/csharp` folder
     - Select `AnonymousUsers.sln` file
     - Press `F5` to run the project
 
-5. In a terminal, navigate to `samples/app-anonymous-users/csharp/ClientApp`
+5. In a terminal, navigate to `samples/TeamsJS/app-anonymous-users/csharp/ClientApp`
 
     - Inside ClientApp folder execute the below command.
 
@@ -175,7 +175,7 @@ Update {{FacebookAppId}} and {{FacebookAppPassword}} in appsetting.json.
 - Add the app to team/groupChat scope (Supported scopes). 
 
 **Note:**
--   If you are facing any issue in your app,  [please uncomment this line](https://github.com/OfficeDev/Microsoft-Teams-Samples/blob/main/samples/app-anonymous-users/csharp/AdapterWithErrorHandler.cs#L27) and put your debugger for local debug.
+-   If you are facing any issue in your app,  [please uncomment this line](https://github.com/OfficeDev/Microsoft-Teams-Samples/blob/main/samples/TeamsJS/app-anonymous-users/csharp/AdapterWithErrorHandler.cs#L27) and put your debugger for local debug.
 
 ## Running the sample
 
@@ -319,4 +319,4 @@ You can interact with Teams Tab meeting sidepanel.
 
 
 
-<img src="https://pnptelemetry.azurewebsites.net/microsoft-teams-samples/samples/app-anonymous-users-csharp" />
+<img src="https://pnptelemetry.azurewebsites.net/microsoft-teams-samples/samples/TeamsJS/app-anonymous-users-csharp" />

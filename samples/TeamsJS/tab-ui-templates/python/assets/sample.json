@@ -4,7 +4,7 @@
     "source": "officeDev",
     "title": "Teams UI templates",
     "shortDescription": "This sample app provides tested, high-quality UI templates to help developers understand how to create effective applications for Microsoft Teams, covering common use cases like dashboards and forms.",
-    "url": "https://github.com/OfficeDev/Microsoft-Teams-Samples/tree/main/samples/tab-ui-templates/python",
+    "url": "https://github.com/OfficeDev/Microsoft-Teams-Samples/tree/main/samples/TeamsJS/tab-ui-templates/python",
     "longDescription": [
       "The Microsoft Teams UI Templates sample app serves as a comprehensive guide for developers to implement visually appealing and functional applications within Teams. It includes a variety of tested UI templates that cater to common use cases, such as dashboards and forms, ensuring a consistent user experience."
     ],
@@ -35,7 +35,7 @@
       {
         "type": "image",
         "order": 100,
-        "url": "https://raw.githubusercontent.com/OfficeDev/Microsoft-Teams-Samples/main/samples/tab-ui-templates/python/Images/tab-ui-templates.gif",
+        "url": "https://raw.githubusercontent.com/OfficeDev/Microsoft-Teams-Samples/main/samples/TeamsJS/tab-ui-templates/python/Images/tab-ui-templates.gif",
         "alt": "Solution UX showing Teams UI templates using python"
       }
     ],

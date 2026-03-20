@@ -99,4 +99,4 @@ At the bottom of the blade press `Add Setting`, this will open the `New Connecti
 
 
 
-<img src="https://pnptelemetry.azurewebsites.net/microsoft-teams-samples/samples/msgext-link-unfurling-reddit-csharp" />
+<img src="https://pnptelemetry.azurewebsites.net/microsoft-teams-samples/samples/TeamsJS/msgext-link-unfurling-reddit-csharp" />

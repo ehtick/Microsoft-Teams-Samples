@@ -4,7 +4,7 @@
     "source": "officeDev",
     "title": "Creating teams meetings in bulk using file upload method - C#",
     "shortDescription": "This sample app demonstrates bulk meeting creation on Teams calendars using an Excel upload.",
-    "url": "https://github.com/OfficeDev/Microsoft-Teams-Samples/blob/main/samples/graph-bulk-meetings/csharp",
+    "url": "https://github.com/OfficeDev/Microsoft-Teams-Samples/blob/main/samples/TeamsJS/graph-bulk-meetings/csharp",
     "longDescription": [
       "This sample application showcases how to bulk create meetings in Teams using the Graph API, leveraging an Excel sheet for input. It features tabs for user interaction and integrates seamlessly with Microsoft Teams."
     ],
@@ -35,7 +35,7 @@
       {
         "type": "Image",
         "order": 100,
-        "url": "https://raw.githubusercontent.com/OfficeDev/Microsoft-Teams-Samples/main/samples/graph-bulk-meetings/csharp/EventMeeting/Images/graph-bulk-meetings.gif",
+        "url": "https://raw.githubusercontent.com/OfficeDev/Microsoft-Teams-Samples/main/samples/TeamsJS/graph-bulk-meetings/csharp/EventMeeting/Images/graph-bulk-meetings.gif",
         "alt": "Solution UX showing gif animation for teams meeting event creation operations."
       }
     ],

@@ -128,7 +128,7 @@ The simplest way to run this sample in Teams is to use Microsoft 365 Agents Tool
     git clone https://github.com/OfficeDev/Microsoft-Teams-Samples.git
     ```
 
-2) In the folder where repository is cloned navigate to `samples/tab-request-approval/nodejs`
+2) In the folder where repository is cloned navigate to `samples/TeamsJS/tab-request-approval/nodejs`
 
 3) Install node modules
 

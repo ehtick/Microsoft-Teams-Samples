@@ -133,7 +133,7 @@ This sample application demonstrates how to utilize the Microsoft Graph API to s
 
 - Run the bot from a terminal or from Visual Studio:
 
-  A) From a terminal, navigate to `samples/graph-activity-feed/csharp` folder
+  A) From a terminal, navigate to `samples/TeamsJS/graph-activity-feed/csharp` folder
 
   ```bash
   # run the bot
@@ -144,7 +144,7 @@ This sample application demonstrates how to utilize the Microsoft Graph API to s
 
   - Launch Visual Studio
   - File -> Open -> Project/Solution
-  - Navigate to `samples/graph-activity-feed/csharp` folder
+  - Navigate to `samples/TeamsJS/graph-activity-feed/csharp` folder
   - Select `TabActivityFeed.csproj` file
   - Press `F5` to run the project
   
@@ -169,7 +169,7 @@ This sample application demonstrates how to utilize the Microsoft Graph API to s
    - Go to your project directory, the ./AppManifest folder, select the zip folder, and choose Open.
    - Select Add in the pop-up dialog box. Your app is uploaded to Teams.
 
-**Note**: If you are facing any issue in your app, please uncomment [this](https://github.com/OfficeDev/Microsoft-Teams-Samples/blob/main/samples/graph-activity-feed/csharp/ActivityFeedNotification/AdapterWithErrorHandler.cs#L25) line and put your debugger for local debug.
+**Note**: If you are facing any issue in your app, please uncomment [this](https://github.com/OfficeDev/Microsoft-Teams-Samples/blob/main/samples/TeamsJS/graph-activity-feed/csharp/ActivityFeedNotification/AdapterWithErrorHandler.cs#L25) line and put your debugger for local debug.
 
 ## Setting up activity types in manifest
 Teams Activity feed notification API uses activity to which user want a notification which we specify in app manifest, Add following activity type in your manifest for task creation.
@@ -225,4 +225,4 @@ Please make sure to replace {userId} with the ID of the user to whom you want to
 
 
 
-<img src="https://pnptelemetry.azurewebsites.net/microsoft-teams-samples/samples/graph-activity-feed-csharp" />
+<img src="https://pnptelemetry.azurewebsites.net/microsoft-teams-samples/samples/TeamsJS/graph-activity-feed-csharp" />

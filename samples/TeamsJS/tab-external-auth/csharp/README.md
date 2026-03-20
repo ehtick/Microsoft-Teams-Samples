@@ -211,4 +211,4 @@ Not supported on Teams Mobile or on Teams, Outlook, and Office for Web.
 
 
 
-<img src="https://pnptelemetry.azurewebsites.net/microsoft-teams-samples/samples/tab-external-auth-csharp" />
+<img src="https://pnptelemetry.azurewebsites.net/microsoft-teams-samples/samples/TeamsJS/tab-external-auth-csharp" />

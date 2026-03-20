@@ -93,7 +93,7 @@ To include resource data of graph notifications, this Graph API require self-sig
 
   - Launch Visual Studio code
   - File -> Open Folder
-  - Navigate to `samples/user-scope-web-application` folder.
+  - Navigate to `samples/TeamsJS/user-scope-web-application` folder.
   - Select `nodejs` folder.
 
   **Instruction for .env**
@@ -106,8 +106,8 @@ To include resource data of graph notifications, this Graph API require self-sig
 
    
    **Update For MicrosoftftAppId In sample code**
-        1. Navigate to `samples/user-scope-web-application/client/src/components/login.jsx` file and update `<<Microsoft-App-Id>>` with your MicrosoftAppID at line number 20.
-        2. Navigate to `samples/user-scope-web-application/client/src/components/userScopeTestApp.jsx` file and update `<<Microsoft-App-Id>>` with your MicrosoftAppID at line number 31.
+        1. Navigate to `samples/TeamsJS/user-scope-web-application/client/src/components/login.jsx` file and update `<<Microsoft-App-Id>>` with your MicrosoftAppID at line number 20.
+        2. Navigate to `samples/TeamsJS/user-scope-web-application/client/src/components/userScopeTestApp.jsx` file and update `<<Microsoft-App-Id>>` with your MicrosoftAppID at line number 31.
    
 
   - Install node modules
@@ -149,4 +149,4 @@ You can interact with user scope web application by logging with demo tenant.
 - [Get change notifications for chats using Microsoft Graph](https://review.learn.microsoft.com/en-us/graph/teams-changenotifications-chat?branch=main&branchFallbackFrom=pr-en-us-24192)
 
 
-<img src="https://pnptelemetry.azurewebsites.net/microsoft-teams-samples/samples/user-scope-web-application-nodejs" />
+<img src="https://pnptelemetry.azurewebsites.net/microsoft-teams-samples/samples/TeamsJS/user-scope-web-application-nodejs" />

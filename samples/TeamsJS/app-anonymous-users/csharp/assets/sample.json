@@ -4,7 +4,7 @@
     "source": "officeDev",
     "title": "Anonymous User Support",
     "shortDescription": "Add this sample app to enable anonymous user participation and interaction in Microsoft Teams meetings.",
-    "url": "https://github.com/OfficeDev/Microsoft-Teams-Samples/tree/main/samples/app-anonymous-users/csharp",
+    "url": "https://github.com/OfficeDev/Microsoft-Teams-Samples/tree/main/samples/TeamsJS/app-anonymous-users/csharp",
     "longDescription": [
       "This sample demonstrates how to support anonymous users in Microsoft Teams meeting apps, showcasing the setup and interaction flow for integrating guest and tenant users seamlessly."
     ],
@@ -35,7 +35,7 @@
       {
         "type": "image",
         "order": 100,
-        "url": "https://raw.githubusercontent.com/OfficeDev/Microsoft-Teams-Samples/main/samples/app-anonymous-users/csharp/Images/anonymoususersupport.gif",
+        "url": "https://raw.githubusercontent.com/OfficeDev/Microsoft-Teams-Samples/main/samples/TeamsJS/app-anonymous-users/csharp/Images/anonymoususersupport.gif",
         "alt": "Solution UX showing anonymous user support in Teams meeting apps."
       }
     ],

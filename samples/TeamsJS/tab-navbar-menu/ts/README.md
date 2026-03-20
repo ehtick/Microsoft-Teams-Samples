@@ -91,7 +91,7 @@ The simplest way to run this sample in Teams is to use Microsoft 365 Agents Tool
     git clone https://github.com/OfficeDev/Microsoft-Teams-Samples.git
     ```
 
-  - In a terminal, navigate to `samples/tab-navbar-menu/ts`
+  - In a terminal, navigate to `samples/TeamsJS/tab-navbar-menu/ts`
    
   - Install modules
 
@@ -148,4 +148,4 @@ The simplest way to run this sample in Teams is to use Microsoft 365 Agents Tool
 [Configure and add multiple actions in NavBar](https://learn.microsoft.com/en-us/microsoftteams/platform/concepts/design/personal-apps?view=msteams-client-js-1.12.1#configure-and-add-multiple-actions-in-navbar)
 
 
-<img src="https://pnptelemetry.azurewebsites.net/microsoft-teams-samples/samples/tab-navbar-menu-ts" />
+<img src="https://pnptelemetry.azurewebsites.net/microsoft-teams-samples/samples/TeamsJS/tab-navbar-menu-ts" />

@@ -4,7 +4,7 @@
     "source": "officeDev",
     "title": "MVC app creates, updates, deletes Teams channels",
     "shortDescription": "This sample application demonstrates how to manage the channel lifecycle—create, update, and delete channels—using the Microsoft Graph API through a Teams tab.",
-    "url": "https://github.com/OfficeDev/Microsoft-Teams-Samples/tree/main/samples/graph-channel-lifecycle/csharp",
+    "url": "https://github.com/OfficeDev/Microsoft-Teams-Samples/tree/main/samples/TeamsJS/graph-channel-lifecycle/csharp",
     "longDescription": [
       "This sample showcases the full lifecycle management of channels in Microsoft Teams, including creating, updating, and deleting channels using the Microsoft Graph API. Built with C#, it integrates seamlessly with the Teams environment and leverages the Teams Toolkit for deployment."
     ],
@@ -35,7 +35,7 @@
       {
         "type": "Image",
         "order": 100,
-        "url": "https://raw.githubusercontent.com/OfficeDev/Microsoft-Teams-Samples/main/samples/graph-channel-lifecycle/csharp/ChannelLifecycle/Images/ChannelLifeCycleModule.gif",
+        "url": "https://raw.githubusercontent.com/OfficeDev/Microsoft-Teams-Samples/main/samples/TeamsJS/graph-channel-lifecycle/csharp/ChannelLifecycle/Images/ChannelLifeCycleModule.gif",
         "alt": "Solution UX showing mvc app creates, updates, deletes teams channels"
       }
     ],

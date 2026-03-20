@@ -4,7 +4,7 @@
     "source": "officeDev",
     "title": "Starter solution: Personal tab with SSO  in JavaScript",
     "shortDescription": "This API server sample facilitates token exchange between Microsoft Teams and Google OAuth to access user profile information from the Graph API.",
-    "url": "https://github.com/OfficeDev/Microsoft-Teams-Samples/tree/main/samples/tab-personal-sso-quickstart/js",
+    "url": "https://github.com/OfficeDev/Microsoft-Teams-Samples/tree/main/samples/TeamsJS/tab-personal-sso-quickstart/js",
     "longDescription": [
       "This sample API server is designed to exchange access tokens provided by Microsoft Teams for Graph API access, specifically to read user profile data. It enables developers to display the logged-in user's profile picture by integrating Google OAuth for authentication."
     ],
@@ -35,7 +35,7 @@
       {
         "type": "image",
         "order": 100,
-        "url": "https://raw.githubusercontent.com/OfficeDev/Microsoft-Teams-Samples/main/samples/tab-personal-sso-quickstart/js/Images/TabPersonalSSOQuickstartGif.gif",
+        "url": "https://raw.githubusercontent.com/OfficeDev/Microsoft-Teams-Samples/main/samples/TeamsJS/tab-personal-sso-quickstart/js/Images/TabPersonalSSOQuickstartGif.gif",
         "alt": "Solution UX showing personal tab with sso  in javascript"
       }
     ],

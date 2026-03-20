@@ -125,7 +125,7 @@ The simplest way to run this sample in Teams is to use Microsoft 365 Agents Tool
    git clone https://github.com/OfficeDev/Microsoft-Teams-Samples.git
    ```
 
-1) In the folder where repository is cloned navigate to `samples/graph-pinned-messages/nodejs`
+1) In the folder where repository is cloned navigate to `samples/TeamsJS/graph-pinned-messages/nodejs`
 
 1) Update the `.env` configuration with the ```MicrosoftAppId```,  ```MicrosoftAppPassword``` and ```MicrosoftAppTenantId``` with values generated in step 1 while doing App Registration.
 
@@ -134,7 +134,7 @@ The simplest way to run this sample in Teams is to use Microsoft 365 Agents Tool
 
 ### 3.1. Install node modules and run server 
 
- Inside node js folder (samples/graph-pinned-messages/nodejs), open your local terminal and run the below command to install node modules. You can do the same in Visual studio code terminal by opening the project in Visual studio code 
+ Inside node js folder (samples/TeamsJS/graph-pinned-messages/nodejs), open your local terminal and run the below command to install node modules. You can do the same in Visual studio code terminal by opening the project in Visual studio code 
 
 ```bash
 npm install
@@ -152,7 +152,7 @@ npm install --legacy-peer-deps
 
 ### 3.2. Install node modules and run client 
 
- Navigate to `samples/graph-pinned-messages/nodejs/ClientApp` folder, Open your local terminal and run the below command to install node modules. You can do the same in Visual studio code terminal by opening the project in Visual studio code 
+ Navigate to `samples/TeamsJS/graph-pinned-messages/nodejs/ClientApp` folder, Open your local terminal and run the below command to install node modules. You can do the same in Visual studio code terminal by opening the project in Visual studio code 
 
 ```bash
 cd client
@@ -199,4 +199,4 @@ npm install --legacy-peer-deps
 ## Further reading
 - [Pinned message resource type](https://docs.microsoft.com/en-us/graph/api/chat-post-pinnedmessages?view=graph-rest-beta&tabs=csharp)
 
-<img src="https://pnptelemetry.azurewebsites.net/microsoft-teams-samples/samples/graph-pinned-messages-nodejs" />
+<img src="https://pnptelemetry.azurewebsites.net/microsoft-teams-samples/samples/TeamsJS/graph-pinned-messages-nodejs" />

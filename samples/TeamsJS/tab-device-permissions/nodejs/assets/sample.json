@@ -4,7 +4,7 @@
     "source": "officeDev",
     "title": "Tab Device Permission Demo",
     "shortDescription": "This Microsoft Teams sample app showcases how to manage device permissions for audio, video, and geolocation within a tab.",
-    "url": "https://github.com/OfficeDev/Microsoft-Teams-Samples/tree/main/samples/tab-device-permissions/nodejs",
+    "url": "https://github.com/OfficeDev/Microsoft-Teams-Samples/tree/main/samples/TeamsJS/tab-device-permissions/nodejs",
     "longDescription": [
       "This sample app for Microsoft Teams demonstrates how to handle device permissions, including audio, video, and geolocation, within a tab interface. It provides insights into device permission usage across desktop and mobile views, allowing developers to enhance user interactions effectively."
     ],
@@ -35,7 +35,7 @@
       {
         "type": "image",
         "order": 100,
-        "url": "https://raw.githubusercontent.com/OfficeDev/Microsoft-Teams-Samples/main/samples/tab-device-permissions/nodejs/Images/TabDevicePermissionsGif.gif",
+        "url": "https://raw.githubusercontent.com/OfficeDev/Microsoft-Teams-Samples/main/samples/TeamsJS/tab-device-permissions/nodejs/Images/TabDevicePermissionsGif.gif",
         "alt": "Solution UX showing tab device permission demo"
       }
     ],

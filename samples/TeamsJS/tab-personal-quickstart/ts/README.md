@@ -116,7 +116,7 @@ The simplest way to run this sample in Teams is to use Microsoft 365 Agents Tool
     git clone https://github.com/OfficeDev/Microsoft-Teams-Samples.git
     ```
 
--  In a terminal, navigate to `samples/tab-personal-quickstart/ts`
+-  In a terminal, navigate to `samples/TeamsJS/tab-personal-quickstart/ts`
 
  - Install modules
 
@@ -210,4 +210,4 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 
 
 
-<img src="https://pnptelemetry.azurewebsites.net/microsoft-teams-samples/samples/tab-personal-quickstart-ts" />
+<img src="https://pnptelemetry.azurewebsites.net/microsoft-teams-samples/samples/TeamsJS/tab-personal-quickstart-ts" />

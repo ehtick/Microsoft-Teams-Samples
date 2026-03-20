@@ -4,7 +4,7 @@
     "source": "officeDev",
     "title": "Tab App Navigation",
     "shortDescription": "This sample demonstrates tab navigation functionality, allowing users to switch between tabs in a Teams application.",
-    "url": "https://github.com/OfficeDev/Microsoft-Teams-Samples/tree/main/samples/tab-app-navigation/python",
+    "url": "https://github.com/OfficeDev/Microsoft-Teams-Samples/tree/main/samples/TeamsJS/tab-app-navigation/python",
     "longDescription": [
       "This sample illustrates the tab navigation feature in a Microsoft Teams application, enabling smooth transitions between different tabs. Designed for use with Python, it highlights how users can effectively navigate within the app for an enhanced experience."
     ],
@@ -35,7 +35,7 @@
       {
         "type": "image",
         "order": 100,
-        "url": "https://raw.githubusercontent.com/OfficeDev/Microsoft-Teams-Samples/main/samples/tab-app-navigation/python/Images/tab-app-navigation.gif",
+        "url": "https://raw.githubusercontent.com/OfficeDev/Microsoft-Teams-Samples/main/samples/TeamsJS/tab-app-navigation/python/Images/tab-app-navigation.gif",
         "alt": "Solution UX showing microsoft teams sample for tab app navigation"
       }
     ],

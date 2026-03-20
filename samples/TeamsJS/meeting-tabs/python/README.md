@@ -95,7 +95,7 @@ The simplest way to run this sample in Teams is to use Microsoft 365 Agents Tool
       git clone https://github.com/OfficeDev/Microsoft-Teams-Samples.git
      ```
 
-4. In the folder where repository is cloned navigate to `samples/meeting-tabs/python`
+4. In the folder where repository is cloned navigate to `samples/TeamsJS/meeting-tabs/python`
 
 5. Create and activate a virtual environment (recommended)
 

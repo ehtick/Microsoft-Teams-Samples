@@ -4,7 +4,7 @@
     "source": "officeDev",
     "title": "Broadcast message to organization using activity feed notification (Graph APIs)",
     "shortDescription": "This sample allows broadcasting messages to all organization members via Teams activity feed notifications using Graph APIs and Teams SSO.",
-    "url": "https://github.com/OfficeDev/Microsoft-Teams-Samples/tree/main/samples/graph-activity-feed-broadcast/csharp",
+    "url": "https://github.com/OfficeDev/Microsoft-Teams-Samples/tree/main/samples/TeamsJS/graph-activity-feed-broadcast/csharp",
     "longDescription": [
       "This sample demonstrates how to broadcast messages to all members of an organization through Teams activity feed notifications, leveraging Graph APIs and Teams SSO. It includes features such as bulk notifications, seamless integration with Teams, and authentication via Microsoft Entra ID."
     ],
@@ -35,7 +35,7 @@
       {
         "type": "Image",
         "order": 100,
-        "url": "https://raw.githubusercontent.com/OfficeDev/Microsoft-Teams-Samples/main/samples/graph-activity-feed-broadcast/csharp/ActivityFeedBroadcast/Images/ActivityFeedBroadcast.gif",
+        "url": "https://raw.githubusercontent.com/OfficeDev/Microsoft-Teams-Samples/main/samples/TeamsJS/graph-activity-feed-broadcast/csharp/ActivityFeedBroadcast/Images/ActivityFeedBroadcast.gif",
         "alt": "Solution UX showing broadcast message to organization using activity feed notification (graph apis)"
       }
     ],

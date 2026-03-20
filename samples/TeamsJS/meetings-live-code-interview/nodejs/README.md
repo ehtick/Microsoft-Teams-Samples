@@ -126,20 +126,20 @@ sequenceDiagram
   
   Install node modules
 
-   Inside node js folder,  navigate to `samples/meetings-live-code-interview/nodejs/api` open your local terminal and run the below command to install node modules. You can do the same in Visual Studio code terminal by opening the project in Visual Studio code.
+   Inside node js folder,  navigate to `samples/TeamsJS/meetings-live-code-interview/nodejs/api` open your local terminal and run the below command to install node modules. You can do the same in Visual Studio code terminal by opening the project in Visual Studio code.
 
-   - Repeat the same step in folder `samples/meetings-live-code-interview/nodejs`
+   - Repeat the same step in folder `samples/TeamsJS/meetings-live-code-interview/nodejs`
 
     ```bash
     npm install
     ```
   - We have two different solutions to run so follow below steps:
 
-     A) In a terminal, navigate to `samples/meetings-live-code-interview/nodejs/api`
+     A) In a terminal, navigate to `samples/TeamsJS/meetings-live-code-interview/nodejs/api`
 
-     B) In a different terminal, navigate to `samples/meetings-live-code-interview/nodejs`
+     B) In a different terminal, navigate to `samples/TeamsJS/meetings-live-code-interview/nodejs`
 
- - Run both solutions i.e. `samples/meetings-live-code-interview/nodejs/api` and `samples/meetings-live-code-interview/nodejs`
+ - Run both solutions i.e. `samples/TeamsJS/meetings-live-code-interview/nodejs/api` and `samples/TeamsJS/meetings-live-code-interview/nodejs`
     ```
     npm start
     ``` 

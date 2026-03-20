@@ -101,7 +101,7 @@ The simplest way to run this sample in Teams is to use Microsoft 365 Agents Tool
    git clone https://github.com/OfficeDev/Microsoft-Teams-Samples.git
    ```
 
-1) In a terminal, navigate to `samples/incoming-webhook/csharp/ClientApp`
+1) In a terminal, navigate to `samples/TeamsJS/incoming-webhook/csharp/ClientApp`
 
     ```bash
     npm install
@@ -113,7 +113,7 @@ The simplest way to run this sample in Teams is to use Microsoft 365 Agents Tool
     npm install --legacy-peer-deps
     ```
 
-1) In a terminal, navigate to `samples/incoming-webhook/csharp`
+1) In a terminal, navigate to `samples/TeamsJS/incoming-webhook/csharp`
 
     ```bash
     # change into project folder
@@ -195,4 +195,4 @@ The simplest way to run this sample in Teams is to use Microsoft 365 Agents Tool
 - [Build webhooks and connectors ](https://docs.microsoft.com/en-us/microsoftteams/platform/webhooks-and-connectors/what-are-webhooks-and-connectors)
 - [Extend Teams apps across Microsoft 365](https://learn.microsoft.com/en-us/microsoftteams/platform/m365-apps/overview)
 
-<img src="https://pnptelemetry.azurewebsites.net/microsoft-teams-samples/samples/incoming-webhook-csharp" />
+<img src="https://pnptelemetry.azurewebsites.net/microsoft-teams-samples/samples/TeamsJS/incoming-webhook-csharp" />

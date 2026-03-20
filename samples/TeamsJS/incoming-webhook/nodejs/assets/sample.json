@@ -4,7 +4,7 @@
     "source": "officeDev",
     "title": "Incoming webhook",
     "shortDescription": "This sample demonstrates sending message cards through Incoming Webhooks in Microsoft Teams and includes an HttpPOST action in the card.",
-    "url": "https://github.com/OfficeDev/Microsoft-Teams-Samples/tree/main/samples/incoming-webhook/nodejs",
+    "url": "https://github.com/OfficeDev/Microsoft-Teams-Samples/tree/main/samples/TeamsJS/incoming-webhook/nodejs",
     "longDescription": [
       "This sample showcases sending message cards in Microsoft Teams using Incoming Webhooks. It also demonstrates the HttpPOST action feature in the cards, enhancing interaction capabilities."
     ],
@@ -35,7 +35,7 @@
       {
         "type": "image",
         "order": 100,
-        "url": "https://raw.githubusercontent.com/OfficeDev/Microsoft-Teams-Samples/main/samples/incoming-webhook/nodejs/Images/webhook-app.gif",
+        "url": "https://raw.githubusercontent.com/OfficeDev/Microsoft-Teams-Samples/main/samples/TeamsJS/incoming-webhook/nodejs/Images/webhook-app.gif",
         "alt": "Solution UX showing incoming webhook"
       }
     ],

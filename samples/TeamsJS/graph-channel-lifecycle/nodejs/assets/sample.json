@@ -4,7 +4,7 @@
     "source": "officeDev",
     "title": "Channel life cycle using Node js",
     "shortDescription": "This sample demonstrates how to manage the lifecycle of channels in Microsoft Teams using the Graph API with Node.js.",
-    "url": "https://github.com/OfficeDev/Microsoft-Teams-Samples/tree/main/samples/graph-channel-lifecycle/nodejs",
+    "url": "https://github.com/OfficeDev/Microsoft-Teams-Samples/tree/main/samples/TeamsJS/graph-channel-lifecycle/nodejs",
     "longDescription": [
       "This sample application showcases the full lifecycle management of channels in Microsoft Teams, including creating, updating, and deleting channels through the Graph API. Built with Node.js, it offers seamless integration within Teams and provides clear setup instructions."
     ],
@@ -35,7 +35,7 @@
       {
         "type": "Image",
         "order": 100,
-        "url": "https://raw.githubusercontent.com/OfficeDev/Microsoft-Teams-Samples/main/samples/graph-channel-lifecycle/nodejs/Images/GraphChannelLifeCycleModule.gif",
+        "url": "https://raw.githubusercontent.com/OfficeDev/Microsoft-Teams-Samples/main/samples/TeamsJS/graph-channel-lifecycle/nodejs/Images/GraphChannelLifeCycleModule.gif",
         "alt": "Solution UX showing channel life cycle using node js"
       }
     ],

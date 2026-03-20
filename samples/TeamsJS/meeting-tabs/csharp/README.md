@@ -107,7 +107,7 @@ The simplest way to run this sample in Teams is to use Microsoft 365 Agents Tool
     
 4. Run the app from a terminal or from Visual Studio, choose option A or B.
 
-    A) From a terminal, navigate to `samples/meeting-tabs/csharp`
+    A) From a terminal, navigate to `samples/TeamsJS/meeting-tabs/csharp`
 
     ```bash
     # run the app
@@ -117,11 +117,11 @@ The simplest way to run this sample in Teams is to use Microsoft 365 Agents Tool
 
     - Launch Visual Studio
     - File -> Open -> Project/Solution
-    - Navigate to `samples/meeting-tabs/csharp` folder
+    - Navigate to `samples/TeamsJS/meeting-tabs/csharp` folder
     - Select `AppInMeeting.sln` file
     - Press `F5` to run the project
 
-5. In a terminal, navigate to `samples/meeting-tabs/csharp/ClientApp`
+5. In a terminal, navigate to `samples/TeamsJS/meeting-tabs/csharp/ClientApp`
 
     - Inside ClientApp folder execute the below command.
 

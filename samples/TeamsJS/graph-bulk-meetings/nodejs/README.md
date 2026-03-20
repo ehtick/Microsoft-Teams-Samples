@@ -103,7 +103,7 @@ The simplest way to run this sample in Teams is to use Microsoft 365 Agents Tool
     ```
   - Update the `.env` configuration for the bot to use the `App-Id`, `App-Secret` and Tenant-ID. (Note the MicrosoftAppId is the AppId created in step 1 (Setup for Bot), the MicrosoftAppPassword is referred to as the "client secret" in step 1 (Setup for Bot) and you can always create a new client secret anytime.) for the Tenant-ID is referred to as the "Directory (tenant) ID" in step 1
  
- - In a terminal, navigate to `samples/graph-bulk-meetings/nodejs`
+ - In a terminal, navigate to `samples/TeamsJS/graph-bulk-meetings/nodejs`
 
  - Install node modules and run client 
    ```bash
@@ -160,4 +160,4 @@ The simplest way to run this sample in Teams is to use Microsoft 365 Agents Tool
 - [Create Event](https://docs.microsoft.com/en-us/graph/api/user-post-events?view=graph-rest-1.0&tabs=javascript)
 
 
-<img src="https://pnptelemetry.azurewebsites.net/microsoft-teams-samples/samples/graph-bulk-meetings-nodejs" />
+<img src="https://pnptelemetry.azurewebsites.net/microsoft-teams-samples/samples/TeamsJS/graph-bulk-meetings-nodejs" />

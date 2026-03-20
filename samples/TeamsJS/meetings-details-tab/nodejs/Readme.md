@@ -104,10 +104,10 @@ The simplest way to run this sample in Teams is to use Microsoft 365 Agents Tool
 
     -Modfiy the Go to .env file  and add ```BotId``` ,  ```BotPassword``` and ```BaseUrl as tunnel URL``` information.
 
-    - In a terminal, navigate to `samples/meetings-details-tab/nodejs`
+    - In a terminal, navigate to `samples/TeamsJS/meetings-details-tab/nodejs`
 
         ```bash
-        cd samples/meetings-details-tab/nodejs
+        cd samples/TeamsJS/meetings-details-tab/nodejs
         ```
 
     - Install modules and Start the bot

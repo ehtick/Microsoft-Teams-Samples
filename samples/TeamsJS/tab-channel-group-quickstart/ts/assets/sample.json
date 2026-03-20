@@ -4,7 +4,7 @@
     "source": "officeDev",
     "title": "This sample demonstrates a basic hello world app featuring channel and group tabs in Microsoft Teams.",
     "shortDescription": "Create React App channel/group tab in TypeScript",
-    "url": "https://github.com/OfficeDev/Microsoft-Teams-Samples/tree/main/samples/tab-channel-group-quickstart/ts",
+    "url": "https://github.com/OfficeDev/Microsoft-Teams-Samples/tree/main/samples/TeamsJS/tab-channel-group-quickstart/ts",
     "longDescription": [
       "This sample application illustrates how to create channel and group tabs in Microsoft Teams, providing collaborative spaces for web content. It includes detailed setup instructions, prerequisites, and guidance for deploying the app within your Teams environment."
     ],
@@ -35,7 +35,7 @@
       {
         "type": "image",
         "order": 100,
-        "url": "https://raw.githubusercontent.com/OfficeDev/Microsoft-Teams-Samples/main/samples/tab-channel-group-quickstart/ts/Images/tab_channel_group_module.gif",
+        "url": "https://raw.githubusercontent.com/OfficeDev/Microsoft-Teams-Samples/main/samples/TeamsJS/tab-channel-group-quickstart/ts/Images/tab_channel_group_module.gif",
         "alt": "Solution UX showing starter solution: channel/group tab in typescript"
       }
     ],

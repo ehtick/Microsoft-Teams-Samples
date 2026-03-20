@@ -4,7 +4,7 @@
     "source": "officeDev",
     "title": "Meeting Token Generator",
     "shortDescription": "The Meeting Token Generator app allows participants to request and manage tokens for equitable interaction during Teams meetings.",
-    "url": "https://github.com/OfficeDev/Microsoft-Teams-Samples/tree/main/samples/meetings-token-app/nodejs",
+    "url": "https://github.com/OfficeDev/Microsoft-Teams-Samples/tree/main/samples/TeamsJS/meetings-token-app/nodejs",
     "longDescription": [
       "The Meeting Token Generator app enables participants to sequentially request interaction tokens, fostering fair engagement in meetings. It features real-time updates, a user list, and token management for efficient meeting flow."
     ],

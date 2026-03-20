@@ -111,7 +111,7 @@ The simplest way to run this sample in Teams is to use Microsoft 365 Agents Tool
   - Update the `.env` configuration for the bot to use the `MicrosoftAppId`, `MicrosoftAppPassword` and `MicrosoftAppTenantId`. (Note the MicrosoftAppId is the AppId created in step 1 (Setup for Bot), the MicrosoftAppPassword is referred to as the "client secret" in step 1 (Setup for Bot) and you can always create a new client secret anytime.) MicrosoftAppTenantId  created in step 1 (Setup for Bot), the MicrosoftAppTenantId is referred to as the "Directory (tenant) ID"
 
   - Navigate to project
-    In the folder where repository is cloned navigate to `samples/graph-teams-tag/nodejs`
+    In the folder where repository is cloned navigate to `samples/TeamsJS/graph-teams-tag/nodejs`
 
 
  - Install node modules and run server 
@@ -165,4 +165,4 @@ The simplest way to run this sample in Teams is to use Microsoft 365 Agents Tool
 - [teamworkTag resource type](https://docs.microsoft.com/en-us/graph/api/resources/teamworktag?view=graph-rest-beta)
 
 
-<img src="https://pnptelemetry.azurewebsites.net/microsoft-teams-samples/samples/graph-teams-tag-nodejs" />
+<img src="https://pnptelemetry.azurewebsites.net/microsoft-teams-samples/samples/TeamsJS/graph-teams-tag-nodejs" />

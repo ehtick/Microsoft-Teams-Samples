@@ -129,7 +129,7 @@ The simplest way to run this sample in Teams is to use Microsoft 365 Agents Tool
    ```
 17. Open the code in Visual Studio
    - File -> Open -> Project/Solution
-   - Navigate to folder where repository is cloned then `samples/tab-request-approval/csharp/TabRequestApproval.sln`
+   - Navigate to folder where repository is cloned then `samples/TeamsJS/tab-request-approval/csharp/TabRequestApproval.sln`
     
 18. Run ngrok - point to port 3978
 

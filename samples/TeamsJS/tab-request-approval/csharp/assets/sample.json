@@ -4,7 +4,7 @@
     "source": "officeDev",
     "title": "Send task approvals using activity feed notification (Graph APIs)",
     "shortDescription": "This sample app enables users to request task approvals through activity feed notifications, allowing managers to easily approve or reject requests.",
-    "url": "https://github.com/OfficeDev/Microsoft-Teams-Samples/tree/main/samples/tab-request-approval/csharp",
+    "url": "https://github.com/OfficeDev/Microsoft-Teams-Samples/tree/main/samples/TeamsJS/tab-request-approval/csharp",
     "longDescription": [
       "This application facilitates task approval requests in Microsoft Teams, where requesters can send notifications to their managers and track their request status. Managers can view pending requests through the activity feed and respond by approving or rejecting them, leveraging Teams SSO and Graph API for seamless interaction."
     ],
@@ -35,7 +35,7 @@
       {
         "type": "Image",
         "order": 100,
-        "url": "https://raw.githubusercontent.com/OfficeDev/Microsoft-Teams-Samples/main/samples/tab-request-approval/csharp/TabRequestApproval/Images/TabRequestApproval.gif",
+        "url": "https://raw.githubusercontent.com/OfficeDev/Microsoft-Teams-Samples/main/samples/TeamsJS/tab-request-approval/csharp/TabRequestApproval/Images/TabRequestApproval.gif",
         "alt": "Solution UX showing send task approvals using activity feed notification (graph apis)"
       }
     ],

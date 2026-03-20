@@ -4,7 +4,7 @@
     "source": "officeDev",
     "title": "Channel/group tabs in Javascript",
     "shortDescription": "Create React App channel/group tab in JavaScript",
-    "url": "https://github.com/OfficeDev/Microsoft-Teams-Samples/tree/main/samples/tab-channel-group/js",
+    "url": "https://github.com/OfficeDev/Microsoft-Teams-Samples/tree/main/samples/TeamsJS/tab-channel-group/js",
     "longDescription": [
       "This quickstart guide shows how to create custom channel and group tabs for Microsoft Teams with Javascript and react. It covers the complete setup process, including manifest configuration and local testing using tools like Ngrok and the Microsoft 365 Agents Toolkit for Visual Studio."
     ],
@@ -35,7 +35,7 @@
       {
         "type": "image",
         "order": 100,
-        "url": "https://raw.githubusercontent.com/OfficeDev/Microsoft-Teams-Samples/main/samples/tab-channel-group/js/Images/ChannelGroupTabModule.gif",
+        "url": "https://raw.githubusercontent.com/OfficeDev/Microsoft-Teams-Samples/main/samples/TeamsJS/tab-channel-group/js/Images/ChannelGroupTabModule.gif",
         "alt": "Solution UX showing starter solution: channel/group tab in javascript"
       }
     ],

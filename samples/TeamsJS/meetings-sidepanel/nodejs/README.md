@@ -98,14 +98,14 @@ The simplest way to run this sample in Teams is to use Microsoft 365 Agents Tool
       git clone https://github.com/OfficeDev/Microsoft-Teams-Samples.git
       ```
 
-4. Open .env file from this path folder (samples/meetings-sidepanel/nodejs/server) and update ```MicrosoftAppId```,  ```MicrosoftAppPassword``` information with values generated values while doing Microsoft Entra ID App Registration.
+4. Open .env file from this path folder (samples/TeamsJS/meetings-sidepanel/nodejs/server) and update ```MicrosoftAppId```,  ```MicrosoftAppPassword``` information with values generated values while doing Microsoft Entra ID App Registration.
 - Update ```BaseURL``` with your application domain URL like ngrok URL: https://xxxx.ngrok-free.app and if you are using dev tunnels, your URL will be like: https://12345.devtunnels.ms.
 
 5. Install node modules
 
-   Inside node js folder,  navigate to `samples/meetings-sidepanel/nodejs/server` open your local terminal and run the below command to install node modules. You can do the same in Visual Studio code terminal by opening the project in Visual Studio code.
+   Inside node js folder,  navigate to `samples/TeamsJS/meetings-sidepanel/nodejs/server` open your local terminal and run the below command to install node modules. You can do the same in Visual Studio code terminal by opening the project in Visual Studio code.
 
-   - Repeat the same step in folder `samples/meetings-sidepanel/nodejs/ClientApp`
+   - Repeat the same step in folder `samples/TeamsJS/meetings-sidepanel/nodejs/ClientApp`
 
     ```bash
     npm install
@@ -113,7 +113,7 @@ The simplest way to run this sample in Teams is to use Microsoft 365 Agents Tool
 
 6. We have two different solutions to run, so follow below steps:
  
-- In a terminal, navigate to `samples/meetings-sidepanel/nodejs/server` folder, Open your local terminal and run the below command to install node modules. You can do the same in Visual studio code terminal by opening the project in Visual studio code
+- In a terminal, navigate to `samples/TeamsJS/meetings-sidepanel/nodejs/server` folder, Open your local terminal and run the below command to install node modules. You can do the same in Visual studio code terminal by opening the project in Visual studio code
 ```bash
 npm install
 ```
@@ -128,7 +128,7 @@ If you face any dependency error while installing node modules, try using below 
 npm install --legacy-peer-deps
 ```
 
-- In a different terminal, navigate to `samples/meetings-sidepanel/nodejs/ClientApp` folder, Open your local terminal and run the below command to install node modules. You can do the same in Visual studio code terminal by opening the project in Visual studio code 
+- In a different terminal, navigate to `samples/TeamsJS/meetings-sidepanel/nodejs/ClientApp` folder, Open your local terminal and run the below command to install node modules. You can do the same in Visual studio code terminal by opening the project in Visual studio code 
 ```bash
 cd client
 npm install
@@ -155,7 +155,7 @@ npm install --legacy-peer-deps
     - **Zip** up the contents of the `appManifest` folder to create a `manifest.zip` (Make sure that zip file does not contains any subfolder otherwise you will get error while uploading your .zip package)
     - **Upload** the `manifest.zip` to Teams (In Teams Apps/Manage your apps click "Upload an app". Browse to and Open the .zip file. At the next dialog, click the Add button.)
 
-**Note**: If you are facing any issue in your app, [please uncomment this line](https://github.com/OfficeDev/Microsoft-Teams-Samples/blob/main/samples/meetings-sidepanel/nodejs/server/index.js#L48) and put your debugger for local debug.
+**Note**: If you are facing any issue in your app, [please uncomment this line](https://github.com/OfficeDev/Microsoft-Teams-Samples/blob/main/samples/TeamsJS/meetings-sidepanel/nodejs/server/index.js#L48) and put your debugger for local debug.
 
 ## Running the sample
 
@@ -211,4 +211,4 @@ Interact with SidePanel by clicking on the App icon present on the top menu besi
 - [Install the App in Teams Meeting](https://docs.microsoft.com/en-us/microsoftteams/platform/apps-in-teams-meetings/teams-apps-in-meetings?view=msteams-client-js-latest#meeting-lifecycle-scenarios)
 - [Handle theme change](https://learn.microsoft.com/en-us/microsoftteams/platform/tabs/how-to/access-teams-context?tabs=Json-v2%2Cteamsjs-v2%2Cdefault#handle-theme-change)
 
-<img src="https://pnptelemetry.azurewebsites.net/microsoft-teams-samples/samples/meetings-sidepanel-nodejs" />
+<img src="https://pnptelemetry.azurewebsites.net/microsoft-teams-samples/samples/TeamsJS/meetings-sidepanel-nodejs" />

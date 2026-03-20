@@ -4,7 +4,7 @@
     "source": "officeDev",
     "title": "Starter solution: Personal tab with SSO  in C#",
     "shortDescription": "This sample application demonstrates how to implement SSO authentication in a personal Teams tab using Azure Microsoft Entra and C#.",
-    "url": "https://github.com/OfficeDev/Microsoft-Teams-Samples/tree/main/samples/tab-personal-sso-quickstart/csharp_dotnetcore",
+    "url": "https://github.com/OfficeDev/Microsoft-Teams-Samples/tree/main/samples/TeamsJS/tab-personal-sso-quickstart/csharp_dotnetcore",
     "longDescription": [
       "This comprehensive sample illustrates how to implement SSO authentication for personal tabs in Microsoft Teams using Azure Microsoft Entra and C#. It includes setup instructions, integration with MSAL.js 2.0, Graph API usage, and guidance for running the app in local and production environments."
     ],
@@ -35,7 +35,7 @@
       {
         "type": "image",
         "order": 100,
-        "url": "https://raw.githubusercontent.com/OfficeDev/Microsoft-Teams-Samples/main/samples/tab-personal-sso-quickstart/csharp_dotnetcore/Images/TabPersonalSSOQuickstartGif.gif",
+        "url": "https://raw.githubusercontent.com/OfficeDev/Microsoft-Teams-Samples/main/samples/TeamsJS/tab-personal-sso-quickstart/csharp_dotnetcore/Images/TabPersonalSSOQuickstartGif.gif",
         "alt": "Solution UX showing personal tab with sso  in c#"
       }
     ],

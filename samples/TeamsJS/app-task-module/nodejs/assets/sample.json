@@ -4,7 +4,7 @@
     "source": "officeDev",
     "title": "Microsoft Teams task module",
     "shortDescription": "This sample demonstrates how to launch and interact with Teams task modules from tabs and bots using Adaptive Cards and custom HTML.",
-    "url": "https://github.com/OfficeDev/Microsoft-Teams-Samples/tree/main/samples/app-task-module/nodejs",
+    "url": "https://github.com/OfficeDev/Microsoft-Teams-Samples/tree/main/samples/TeamsJS/app-task-module/nodejs",
     "longDescription": [
       "This sample shows how to launch and interact with Microsoft Teams task modules from both tabs and bots. It supports custom HTML, <iframe> widgets, and Adaptive Cards for enhanced user experiences."
     ],
@@ -35,7 +35,7 @@
       {
         "type": "image",
         "order": 100,
-        "url": "https://raw.githubusercontent.com/OfficeDev/Microsoft-Teams-Samples/main/samples/app-task-module/nodejs/Images/AppTaskModule.gif",
+        "url": "https://raw.githubusercontent.com/OfficeDev/Microsoft-Teams-Samples/main/samples/TeamsJS/app-task-module/nodejs/Images/AppTaskModule.gif",
         "alt": "Solution UX showing microsoft teams task module"
       }
     ],

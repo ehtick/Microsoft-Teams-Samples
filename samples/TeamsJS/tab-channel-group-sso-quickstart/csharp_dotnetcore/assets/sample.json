@@ -4,7 +4,7 @@
     "source": "officeDev",
     "title": "Starter solution: Channel/Group tab with SSO in C#",
     "shortDescription": "This sample application showcases Microsoft Entra authentication within Teams channel tabs for secure access to user profiles.",
-    "url": "https://github.com/OfficeDev/Microsoft-Teams-Samples/tree/main/samples/tab-channel-group-sso-quickstart/csharp_dotnetcore",
+    "url": "https://github.com/OfficeDev/Microsoft-Teams-Samples/tree/main/samples/TeamsJS/tab-channel-group-sso-quickstart/csharp_dotnetcore",
     "longDescription": [
       "This sample application illustrates how to implement Microsoft Entra SSO authentication in channel tabs within Microsoft Teams, enabling secure access to user data."
     ],
@@ -35,7 +35,7 @@
       {
         "type": "image",
         "order": 100,
-        "url": "https://raw.githubusercontent.com/OfficeDev/Microsoft-Teams-Samples/main/samples/tab-channel-group-sso-quickstart/csharp_dotnetcore/Images/TabChannelGroupSsoQuickStartModule.gif",
+        "url": "https://raw.githubusercontent.com/OfficeDev/Microsoft-Teams-Samples/main/samples/TeamsJS/tab-channel-group-sso-quickstart/csharp_dotnetcore/Images/TabChannelGroupSsoQuickStartModule.gif",
         "alt": "Solution UX showing starter solution: channel/group tab with sso in c#"
       }
     ],

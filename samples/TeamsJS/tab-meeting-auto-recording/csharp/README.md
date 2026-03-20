@@ -141,7 +141,7 @@ The simplest way to run this sample in Teams is to use Microsoft 365 Agents Tool
     
 4. Run the app from a terminal or from Visual Studio, choose option A or B.
 
-    A) From a terminal, navigate to `samples/tab-meeting-auto-recording/csharp`
+    A) From a terminal, navigate to `samples/TeamsJS/tab-meeting-auto-recording/csharp`
 
     ```bash
     # run the app
@@ -151,13 +151,13 @@ The simplest way to run this sample in Teams is to use Microsoft 365 Agents Tool
 
     - Launch Visual Studio
     - File -> Open -> Project/Solution
-    - Navigate to `samples/tab-meeting-auto-recording/csharp` folder
+    - Navigate to `samples/TeamsJS/tab-meeting-auto-recording/csharp` folder
     - Select `MeetingAutoRecording.sln` file
     - Press `F5` to run the project
     
 **Note:** In the debug dropdown menu of Visual Studio, select default startup project > **MeetingAutoRecording**
 
-5. In a terminal, navigate to `samples/tab-meeting-auto-recording/csharp/MeetingAutoRecording/ClientApp`
+5. In a terminal, navigate to `samples/TeamsJS/tab-meeting-auto-recording/csharp/MeetingAutoRecording/ClientApp`
 
     - Inside ClientApp folder execute the below command.
 
@@ -166,7 +166,7 @@ The simplest way to run this sample in Teams is to use Microsoft 365 Agents Tool
         # npm start
 
         ```
-6. Open .env file from this path folder `samples/tab-meeting-auto-recording/csharp/MeetingAutoRecording/ClientApp` and update:
+6. Open .env file from this path folder `samples/TeamsJS/tab-meeting-auto-recording/csharp/MeetingAutoRecording/ClientApp` and update:
    - `{{MicrosoftAppId}}` - Generated from Step 2 (Application (client) ID)is the application app id
    
 7. Modify the `/appsettings.json` and fill in the following details:
@@ -235,4 +235,4 @@ You can interact with Teams Tab meeting sidepanel.
 - [Designing your Microsoft Teams app with basic Fluent UI components](https://learn.microsoft.com/en-us/microsoftteams/platform/concepts/design/design-teams-app-basic-ui-components)
 
 
-<img src="https://pnptelemetry.azurewebsites.net/microsoft-teams-samples/samples/tab-meeting-auto-recording-csharp" />
+<img src="https://pnptelemetry.azurewebsites.net/microsoft-teams-samples/samples/TeamsJS/tab-meeting-auto-recording-csharp" />

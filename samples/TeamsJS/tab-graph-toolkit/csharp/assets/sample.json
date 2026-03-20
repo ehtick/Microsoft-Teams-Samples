@@ -4,7 +4,7 @@
     "source": "officeDev",
     "title": "Teams tab with microsoft graph toolkit",
     "shortDescription": "This sample app showcases a Microsoft Teams tab that utilizes the Microsoft Graph Toolkit to interact with user data and enhance the user experience.",
-    "url": "https://github.com/OfficeDev/Microsoft-Teams-Samples/tree/main/samples/tab-graph-toolkit/csharp",
+    "url": "https://github.com/OfficeDev/Microsoft-Teams-Samples/tree/main/samples/TeamsJS/tab-graph-toolkit/csharp",
     "longDescription": [
       "This demo app illustrates how to implement a Microsoft Teams tab using the Microsoft Graph Toolkit, enabling seamless interaction with user data. It includes features like tabs and easy integration with Microsoft Graph for enhanced functionality."
     ],
@@ -35,7 +35,7 @@
       {
         "type": "image",
         "order": 100,
-        "url": "https://raw.githubusercontent.com/OfficeDev/Microsoft-Teams-Samples/main/samples/tab-graph-toolkit/csharp/TabGraphToolkit/Images/TabGraphToolKit.gif",
+        "url": "https://raw.githubusercontent.com/OfficeDev/Microsoft-Teams-Samples/main/samples/TeamsJS/tab-graph-toolkit/csharp/TabGraphToolkit/Images/TabGraphToolKit.gif",
         "alt": "Solution UX showing teams tab with microsoft graph toolkit"
       }
     ],

@@ -4,7 +4,7 @@
     "source": "officeDev",
     "title": "Send task approval request using activity feed notification (Graph APIs).",
     "shortDescription": "This sample shows a feature where requester can request for any task approval from manager and manager can see the pending request by user on the click of activity feed notification and can approve or reject the request.",
-    "url": "https://github.com/OfficeDev/Microsoft-Teams-Samples/tree/main/samples/tab-request-approval/python",
+    "url": "https://github.com/OfficeDev/Microsoft-Teams-Samples/tree/main/samples/TeamsJS/tab-request-approval/python",
     "longDescription": [
       "This application facilitates task approval requests in Microsoft Teams, where requesters can send notifications to their managers and track their request status. Managers can view pending requests through the activity feed and respond by approving or rejecting them, leveraging Teams SSO and Graph API for seamless interaction."
     ],
@@ -35,7 +35,7 @@
       {
         "type": "Image",
         "order": 100,
-        "url": "https://raw.githubusercontent.com/OfficeDev/Microsoft-Teams-Samples/main/samples/tab-request-approval/python/Images/Tab_Request_Approval.gif",
+        "url": "https://raw.githubusercontent.com/OfficeDev/Microsoft-Teams-Samples/main/samples/TeamsJS/tab-request-approval/python/Images/Tab_Request_Approval.gif",
         "alt": "Solution UX showing send task approval request using activity feed notification (graph apis)."
       }
     ],

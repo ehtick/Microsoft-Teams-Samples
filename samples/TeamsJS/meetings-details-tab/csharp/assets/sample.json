@@ -4,7 +4,7 @@
     "source": "officeDev",
     "title": "Meetings Details Tab",
     "shortDescription": "This sample demonstrates how to create and manage polls during Microsoft Teams meetings, allowing participants to respond and view results through adaptive cards.",
-    "url": "https://github.com/OfficeDev/Microsoft-Teams-Samples/tree/main/samples/meetings-details-tab/csharp",
+    "url": "https://github.com/OfficeDev/Microsoft-Teams-Samples/tree/main/samples/TeamsJS/meetings-details-tab/csharp",
     "longDescription": [
       "This sample application enables the creation of interactive polls within Teams meetings, where participants can submit their answers and view results in real time using adaptive cards. It includes features such as in-meeting tabs, bot interactions, and user-friendly interfaces to enhance engagement during meetings."
     ],
@@ -35,7 +35,7 @@
       {
         "type": "image",
         "order": 100,
-        "url": "https://raw.githubusercontent.com/OfficeDev/Microsoft-Teams-Samples/main/samples/csharp/DetailsTab/Images/DetailsTabModule.gif",
+        "url": "https://raw.githubusercontent.com/OfficeDev/Microsoft-Teams-Samples/main/samples/TeamsJS/csharp/DetailsTab/Images/DetailsTabModule.gif",
         "alt": "Solution UX showing meetings details tab"
       }
     ],

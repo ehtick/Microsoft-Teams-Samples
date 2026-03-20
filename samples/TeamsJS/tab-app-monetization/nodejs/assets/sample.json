@@ -4,7 +4,7 @@
     "source": "officeDev",
     "title": "App monetization in tab",
     "shortDescription": "This sample tab application showcases how to initiate a purchase flow using the Teams JS SDK.",
-    "url": "https://github.com/OfficeDev/Microsoft-Teams-Samples/tree/main/samples/tab-app-monetization/nodejs",
+    "url": "https://github.com/OfficeDev/Microsoft-Teams-Samples/tree/main/samples/TeamsJS/tab-app-monetization/nodejs",
     "longDescription": [
       "This sample demonstrates a Teams tab application that opens a purchase dialog and triggers a monetization flow through the Teams JS SDK. Users can experience app monetization features seamlessly integrated within Microsoft Teams."
     ],
@@ -35,7 +35,7 @@
       {
         "type": "Image",
         "order": 100,
-        "url": "https://raw.githubusercontent.com/OfficeDev/Microsoft-Teams-Samples/main/samples/tab-app-monetization/nodejs/Images/tab-app-monetization.gif",
+        "url": "https://raw.githubusercontent.com/OfficeDev/Microsoft-Teams-Samples/main/samples/TeamsJS/tab-app-monetization/nodejs/Images/tab-app-monetization.gif",
         "alt": "Solution UX showing Open Purchase experience in Tab."
       }
     ],

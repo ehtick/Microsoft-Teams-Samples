@@ -4,7 +4,7 @@
     "source": "officeDev",
     "title": "This is a sample application that shows the usage of Graph CRUD operations related to team tags.",
     "shortDescription": "This sample application demonstrates how to perform CRUD operations on team tags using Microsoft Graph API within a Microsoft Teams tab.",
-    "url": "https://github.com/OfficeDev/Microsoft-Teams-Samples/tree/main/samples/graph-teams-tag/csharp",
+    "url": "https://github.com/OfficeDev/Microsoft-Teams-Samples/tree/main/samples/TeamsJS/graph-teams-tag/csharp",
     "longDescription": [
       "This sample application allows users to create, update, and manage team tags using Microsoft Graph API in a Teams tab. It supports features like tag creation, editing, and deletion, enabling seamless interaction within team channels."
     ],
@@ -35,7 +35,7 @@
       {
         "type": "Image",
         "order": 100,
-        "url": "https://raw.githubusercontent.com/OfficeDev/Microsoft-Teams-Samples/main/samples/graph-teams-tag/csharp/GraphTeamsTag/Images/CreateTagFlow.gif",
+        "url": "https://raw.githubusercontent.com/OfficeDev/Microsoft-Teams-Samples/main/samples/TeamsJS/graph-teams-tag/csharp/GraphTeamsTag/Images/CreateTagFlow.gif",
         "alt": "Solution UX showing gif animation for teams Tag CRUD operations."
       }
     ],

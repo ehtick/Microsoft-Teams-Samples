@@ -4,7 +4,7 @@
     "source": "officeDev",
     "title": "App SSO C#",
     "shortDescription": "This sample app demonstrates Teams SSO integration for Tab, Bot, and Messaging Extension, using C# and Azure AD for secure authentication.",
-    "url": "https://github.com/OfficeDev/Microsoft-Teams-Samples/tree/main/samples/app-sso/csharp",
+    "url": "https://github.com/OfficeDev/Microsoft-Teams-Samples/tree/main/samples/TeamsJS/app-sso/csharp",
     "longDescription": [
       "This C# sample app provides single sign-on (SSO) functionality for Microsoft Teams. It includes authentication support for Teams Tab, Bot, and Messaging Extension with features like user profile retrieval and secure API access using Azure AD."
     ],
@@ -35,7 +35,7 @@
       {
         "type": "image",
         "order": 100,
-        "url": "https://github.com/OfficeDev/Microsoft-Teams-Samples/tree/main/samples/app-sso/csharp/Images/PreviewAppSSOCsharp.gif",
+        "url": "https://github.com/OfficeDev/Microsoft-Teams-Samples/tree/main/samples/TeamsJS/app-sso/csharp/Images/PreviewAppSSOCsharp.gif",
         "alt": "Solution UX showing app sso c#"
       }
     ],

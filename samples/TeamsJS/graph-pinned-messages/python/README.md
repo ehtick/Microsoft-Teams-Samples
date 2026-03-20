@@ -116,7 +116,7 @@ The simplest way to run this sample in Teams is to use Microsoft 365 Agents Tool
    git clone https://github.com/OfficeDev/Microsoft-Teams-Samples.git
    ```
 
-2. In the folder where repository is cloned navigate to `samples/graph-pinned-messages/python`
+2. In the folder where repository is cloned navigate to `samples/TeamsJS/graph-pinned-messages/python`
 
 3. Create and activate a virtual environment
    ```bash
@@ -178,4 +178,4 @@ The simplest way to run this sample in Teams is to use Microsoft 365 Agents Tool
 ## Further reading
 - [Pinned message resource type](https://docs.microsoft.com/en-us/graph/api/chat-post-pinnedmessages?view=graph-rest-beta&tabs=csharp)
 
-<img src="https://pnptelemetry.azurewebsites.net/microsoft-teams-samples/samples/graph-pinned-messages-python" />
+<img src="https://pnptelemetry.azurewebsites.net/microsoft-teams-samples/samples/TeamsJS/graph-pinned-messages-python" />

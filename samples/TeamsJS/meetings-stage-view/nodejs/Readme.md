@@ -109,14 +109,14 @@ For reference please check [Share app content to stage API](https://docs.microso
     git clone https://github.com/OfficeDev/Microsoft-Teams-Samples.git
     ```
   	
-- In a terminal, navigate to `samples/meetings-stage-view/nodejs`
+- In a terminal, navigate to `samples/TeamsJS/meetings-stage-view/nodejs`
 
 - Install modules
 
     ```
     npm install
     ```
- - Run both solutions i.e. samples/meetings-stage-view/nodejs/ and samples/meetings-stage-view/nodejs/Clientapp
+ - Run both solutions i.e. samples/TeamsJS/meetings-stage-view/nodejs/ and samples/TeamsJS/meetings-stage-view/nodejs/Clientapp
 
     ```
     npm start
@@ -131,11 +131,11 @@ For reference please check [Share app content to stage API](https://docs.microso
 3) Search the uploaded app and copy the `App ID`
 ![Admin Center](Images/adminCenter.png)
 
-4) Navigate to `samples/samples/TeamsJS/meetings-stage-view/nodejs/ClientApp/src/components/app-in-meeting.jsx`
+4) Navigate to `samples/TeamsJS/samples/TeamsJS/meetings-stage-view/nodejs/ClientApp/src/components/app-in-meeting.jsx`
 
 5) On line 74, replace `<<App id>>` with `Id` obtained in step 3.
 
-6) Navigate to `samples/samples/TeamsJS/meetings-stage-view/nodejs/ClientApp/src/components/share-to-meeting.jsx`
+6) Navigate to `samples/TeamsJS/samples/TeamsJS/meetings-stage-view/nodejs/ClientApp/src/components/share-to-meeting.jsx`
 
 7) On line 25, replace `<Application-Base-URL>` with your application's base url whrre app is running. E.g. if you are using ngrok it would be something like `https://1234.ngrok-free.app` and if you are using dev tunnels, your URL will be like: https://12345.devtunnels.ms.
 

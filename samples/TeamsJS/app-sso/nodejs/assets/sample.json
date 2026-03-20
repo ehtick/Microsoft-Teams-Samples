@@ -4,7 +4,7 @@
     "source": "officeDev",
     "title": "App SSO Node",
     "shortDescription": "This Microsoft Teams sample app demonstrates single sign-on (SSO) integration for Tabs, Bots, and Messaging Extensions, leveraging Azure AD and MSAL.js.",
-    "url": "https://github.com/OfficeDev/Microsoft-Teams-Samples/tree/main/samples/app-sso/nodejs",
+    "url": "https://github.com/OfficeDev/Microsoft-Teams-Samples/tree/main/samples/TeamsJS/app-sso/nodejs",
     "longDescription": [
       "This Microsoft Teams app provides single sign-on (SSO) functionality for Tabs, Bots, and Messaging Extensions using Azure AD and MSAL.js. It enables seamless authentication for users and integration with Microsoft Graph for retrieving profile details and more."
     ],
@@ -35,7 +35,7 @@
       {
         "type": "image",
         "order": 100,
-        "url": "https://github.com/OfficeDev/Microsoft-Teams-Samples/tree/main/samples/app-sso/nodejs/Images/preview_APP_SSO_Node.gif",
+        "url": "https://github.com/OfficeDev/Microsoft-Teams-Samples/tree/main/samples/TeamsJS/app-sso/nodejs/Images/preview_APP_SSO_Node.gif",
         "alt": "Solution UX showing app sso node"
       }
     ],

@@ -79,7 +79,7 @@ The simplest way to run this sample in Teams is to use Microsoft 365 Agents Tool
     git clone https://github.com/OfficeDev/Microsoft-Teams-Samples.git
     ```
 
-3) In a terminal, navigate to `samples/graph-rsc/nodejs`
+3) In a terminal, navigate to `samples/TeamsJS/graph-rsc/nodejs`
 
 4) Install modules
 

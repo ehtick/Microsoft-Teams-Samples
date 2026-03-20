@@ -4,7 +4,7 @@
     "source": "officeDev",
     "title": "ResourceHub",
     "shortDescription": "Resource Hub is a comprehensive solution designed to provide users with all the essential help and resources they need to effectively utilize Microsoft Teams.",
-    "url": "https://github.com/OfficeDev/Microsoft-Teams-Samples/tree/main/samples/msteams-application-resourcehub",
+    "url": "https://github.com/OfficeDev/Microsoft-Teams-Samples/tree/main/samples/TeamsJS/msteams-application-resourcehub",
     "longDescription": [
       "Resource Hub is an integrated platform that centralizes support and resources for Microsoft Teams, allowing users to quickly access basic guides, popular topics, and advanced features tailored to their work style or industry. With functionalities like custom Bing search, troubleshooting resources, and trending topics, it empowers organizations to maximize their Teams experience and adapt to new features seamlessly."
     ],
@@ -35,7 +35,7 @@
       {
         "type": "image",
         "order": 100,
-        "url": "https://raw.githubusercontent.com/OfficeDev/Microsoft-Teams-Samples/main/samples/msteams-application-resourcehub/Documentation/Dashboard.png",
+        "url": "https://raw.githubusercontent.com/OfficeDev/Microsoft-Teams-Samples/main/samples/TeamsJS/msteams-application-resourcehub/Documentation/Dashboard.png",
         "alt": "Gif showing  initial setup of a Mathematics course (Team)"
       }
     ],

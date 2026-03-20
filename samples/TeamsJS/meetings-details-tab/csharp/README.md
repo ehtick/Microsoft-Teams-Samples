@@ -114,7 +114,7 @@ The simplest way to run this sample in Teams is to use Microsoft 365 Agents Tool
 
 - Run the bot from a terminal or from Visual Studio:
 
-  A) From a terminal, navigate to `samples/app-checkin-location/csharp`
+  A) From a terminal, navigate to `samples/TeamsJS/app-checkin-location/csharp`
 
   ```bash
   # run the bot
@@ -123,7 +123,7 @@ The simplest way to run this sample in Teams is to use Microsoft 365 Agents Tool
   B) Or from Visual Studio
    - Launch Visual Studio
   - File -> Open -> Project/Solution
-  - Navigate to `samples/meetings-details-tab/csharp` folder
+  - Navigate to `samples/TeamsJS/meetings-details-tab/csharp` folder
   - Select `DetailsTab.csproj` file
   - Press `F5` to run the project
 

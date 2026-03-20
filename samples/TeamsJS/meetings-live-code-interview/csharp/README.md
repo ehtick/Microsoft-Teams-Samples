@@ -127,7 +127,7 @@ sequenceDiagram
     git clone https://github.com/OfficeDev/Microsoft-Teams-Samples.git
     ```
     
-     In a terminal, navigate to `samples/meeting-live-coding-interview/csharp`
+     In a terminal, navigate to `samples/TeamsJS/meeting-live-coding-interview/csharp`
 
     ```bash
     # change into project folder

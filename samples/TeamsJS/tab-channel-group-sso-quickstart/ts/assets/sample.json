@@ -4,7 +4,7 @@
     "source": "officeDev",
     "title": "Starter solution: Channel/Group tab with SSO in TypeScript",
     "shortDescription": "This sample application illustrates Microsoft Entra SSO authentication in Teams channel tabs, enabling secure access to user profiles and collaborative web content.",
-    "url": "https://github.com/OfficeDev/Microsoft-Teams-Samples/tree/main/samples/tab-channel-group-sso-quickstart/ts",
+    "url": "https://github.com/OfficeDev/Microsoft-Teams-Samples/tree/main/samples/TeamsJS/tab-channel-group-sso-quickstart/ts",
     "longDescription": [
       "This application showcases how to implement Microsoft Entra SSO authentication within channel tabs in Microsoft Teams, facilitating seamless user profile access and collaborative spaces."
     ],
@@ -35,7 +35,7 @@
       {
         "type": "image",
         "order": 100,
-        "url": "https://raw.githubusercontent.com/OfficeDev/Microsoft-Teams-Samples/main/samples/tab-channel-group-sso-quickstart/ts/Images/TabChannelGroupSSOModule.gif",
+        "url": "https://raw.githubusercontent.com/OfficeDev/Microsoft-Teams-Samples/main/samples/TeamsJS/tab-channel-group-sso-quickstart/ts/Images/TabChannelGroupSSOModule.gif",
         "alt": "Solution UX showing starter solution: channel/group tab with sso in typescript"
       }
     ],

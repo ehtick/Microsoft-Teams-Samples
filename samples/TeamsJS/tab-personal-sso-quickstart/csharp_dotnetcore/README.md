@@ -138,7 +138,7 @@ The simplest way to run this sample in Teams is to use Microsoft 365 Agents Tool
    - If you are using Visual Studio
   - Launch Visual Studio
   - File -> Open -> Project/Solution
-  - Navigate to `samples/tab-personal-sso-quickstart/csharp_dotnetcore` folder
+  - Navigate to `samples/TeamsJS/tab-personal-sso-quickstart/csharp_dotnetcore` folder
   - Select `PersonalTabSSO.csproj` file
 
 4. Setup Manifest for Teams

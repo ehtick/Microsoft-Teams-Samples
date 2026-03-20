@@ -86,7 +86,7 @@ You can try this sample by uploading the app package (.zip file) to your Teams c
     * `User.Read` (enabled by default)
     * Click on Add permissions. Please make sure to grant the admin consent for the required permissions.
 
-3. In a terminal, go to `samples/tab-channel-context/python`
+3. In a terminal, go to `samples/TeamsJS/tab-channel-context/python`
 
 4. Activate your desired virtual environment
 
@@ -135,4 +135,4 @@ To learn more about deploying a Python web app to Azure, see [Deploy Python apps
 - [Bot Framework Documentation](https://docs.botframework.com)
 - [Azure Bot Service Documentation](https://docs.microsoft.com/azure/bot-service/?view=azure-bot-service-4.0)
 
-<img src="https://pnptelemetry.azurewebsites.net/microsoft-teams-samples/samples/tab-channel-context-python" />
+<img src="https://pnptelemetry.azurewebsites.net/microsoft-teams-samples/samples/TeamsJS/tab-channel-context-python" />

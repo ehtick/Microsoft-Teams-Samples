@@ -4,7 +4,7 @@
     "source": "officeDev",
     "title": "Live coding interview using Shared meeting stage",
     "shortDescription": "This sample application showcases live coding interviews in Microsoft Teams using the Live Share SDK, allowing participants to collaborate in real-time on coding questions.",
-    "url": "https://github.com/OfficeDev/Microsoft-Teams-Samples/tree/main/samples/meetings-live-code-interview/csharp",
+    "url": "https://github.com/OfficeDev/Microsoft-Teams-Samples/tree/main/samples/TeamsJS/meetings-live-code-interview/csharp",
     "longDescription": [
       "This sample application enables live coding interviews in Microsoft Teams by utilizing the Live Share SDK, where a side panel displays coding questions for participants. Once a question is shared, all participants can collaboratively write and edit code, with real-time updates visible to everyone in the meeting."
     ],
@@ -35,7 +35,7 @@
       {
         "type": "image",
         "order": 100,
-        "url": "https://raw.githubusercontent.com/OfficeDev/Microsoft-Teams-Samples/main/samples/meetings-live-code-interview/csharp/MeetingLiveCoding/Images/MeetinLiveCodeInterview.gif",
+        "url": "https://raw.githubusercontent.com/OfficeDev/Microsoft-Teams-Samples/main/samples/TeamsJS/meetings-live-code-interview/csharp/MeetingLiveCoding/Images/MeetinLiveCodeInterview.gif",
         "alt": "Solution UX showing live coding interview using shared meeting stage"
       }
     ],

@@ -4,7 +4,7 @@
     "source": "officeDev",
     "title": "Starter solution: Personal tab with SSO in TypeScript",
     "shortDescription": "This sample application demonstrates how to implement Single Sign-On (SSO) authentication in personal Teams tabs using Azure Microsoft Entra and TypeScript.",
-    "url": "https://github.com/OfficeDev/Microsoft-Teams-Samples/tree/main/samples/tab-personal-sso-quickstart/ts",
+    "url": "https://github.com/OfficeDev/Microsoft-Teams-Samples/tree/main/samples/TeamsJS/tab-personal-sso-quickstart/ts",
     "longDescription": [
       "This comprehensive sample illustrates the setup of Single Sign-On (SSO) authentication for personal tabs in Microsoft Teams, utilizing Azure Microsoft Entra and TypeScript. It includes features like MSAL.js 2.0 support, Graph API integration, and detailed guidance for app registration and configuration to enhance user interaction within Teams."
     ],
@@ -35,7 +35,7 @@
       {
         "type": "image",
         "order": 100,
-        "url": "https://raw.githubusercontent.com/OfficeDev/Microsoft-Teams-Samples/main/samples/tab-personal-sso-quickstart/ts/Images/TabPersonalSSOQuickstartGif.gif",
+        "url": "https://raw.githubusercontent.com/OfficeDev/Microsoft-Teams-Samples/main/samples/TeamsJS/tab-personal-sso-quickstart/ts/Images/TabPersonalSSOQuickstartGif.gif",
         "alt": "Solution UX showing personal tab with sso in typescript"
       }
     ],

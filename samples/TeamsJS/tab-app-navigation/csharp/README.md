@@ -82,7 +82,7 @@ The simplest way to run this sample in Teams is to use Microsoft 365 Agents Tool
     ```bash
     git clone https://github.com/OfficeDev/Microsoft-Teams-Samples.git
     ```
-- In a terminal, navigate to `samples/tab-app-navigation/csharp`
+- In a terminal, navigate to `samples/TeamsJS/tab-app-navigation/csharp`
 
 - **Update Placeholder For External App ID**
     - Get the external app id from teams admin portal (https://admin.teams.microsoft.com/policies/manage-apps)
@@ -160,4 +160,4 @@ To learn more about deploying an app to Azure, see [Deploy your app to Azure](ht
 - [Navigate within a tab app](https://learn.microsoft.com/en-us/microsoftteams/platform/tabs/how-to/tab-navigation#navigate-between-tabs)
 - [Extend Teams apps across Microsoft 365](https://learn.microsoft.com/en-us/microsoftteams/platform/m365-apps/overview)
 
-<img src="https://pnptelemetry.azurewebsites.net/microsoft-teams-samples/samples/tab-app-navigation-csharp" />
+<img src="https://pnptelemetry.azurewebsites.net/microsoft-teams-samples/samples/TeamsJS/tab-app-navigation-csharp" />

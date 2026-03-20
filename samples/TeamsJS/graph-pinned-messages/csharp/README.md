@@ -137,7 +137,7 @@ The simplest way to run this sample in Teams is to use Microsoft 365 Agents Tool
 
 ### b. Launch Visual Studio
    - File -> Open -> Project/Solution
-   - Navigate to folder where repository is cloned then `samples/graph-pinned-messages/csharp/GraphPinnedMessage.sln`
+   - Navigate to folder where repository is cloned then `samples/TeamsJS/graph-pinned-messages/csharp/GraphPinnedMessage.sln`
 
 
 ### c. Update appsettings.json
@@ -145,7 +145,7 @@ Update configuration with the ```MicrosoftAppId```,  ```MicrosoftAppPassword```,
 
 ### d. Install node modules for client app. 
 
- Navigate to `samples/graph-pinned-messages/csharp/GraphPinnedMessage/ClientApp` folder, Open your local terminal and run the below command to install node modules. You can do the same in Visual studio code terminal by opening the project in Visual studio code 
+ Navigate to `samples/TeamsJS/graph-pinned-messages/csharp/GraphPinnedMessage/ClientApp` folder, Open your local terminal and run the below command to install node modules. You can do the same in Visual studio code terminal by opening the project in Visual studio code 
 
 ```bash
 cd client
@@ -189,4 +189,4 @@ npm install --legacy-peer-deps
 ## Further reading
 - [Pinned message resource type](https://docs.microsoft.com/en-us/graph/api/chat-post-pinnedmessages?view=graph-rest-beta&tabs=csharp)
 
-<img src="https://pnptelemetry.azurewebsites.net/microsoft-teams-samples/samples/graph-pinned-messages-csharp" />
+<img src="https://pnptelemetry.azurewebsites.net/microsoft-teams-samples/samples/TeamsJS/graph-pinned-messages-csharp" />

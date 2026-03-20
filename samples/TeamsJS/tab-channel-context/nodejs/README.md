@@ -84,7 +84,7 @@ The simplest way to run this sample in Teams is to use Microsoft 365 Agents Tool
 
 4) Install node modules
 
-   Inside node js folder,  navigate to `samples/tab-channel-context/nodejs` open your local terminal and run the below command to install node modules. You can do the same in Visual Studio code terminal by opening the project in Visual Studio code.
+   Inside node js folder,  navigate to `samples/TeamsJS/tab-channel-context/nodejs` open your local terminal and run the below command to install node modules. You can do the same in Visual Studio code terminal by opening the project in Visual Studio code.
 
     ```bash
     npm install
@@ -148,4 +148,4 @@ The simplest way to run this sample in Teams is to use Microsoft 365 Agents Tool
 - [Private Channels](https://docs.microsoft.com/en-us/MicrosoftTeams/private-channels)
 
 
-<img src="https://pnptelemetry.azurewebsites.net/microsoft-teams-samples/samples/tab-channel-context-nodejs" />
+<img src="https://pnptelemetry.azurewebsites.net/microsoft-teams-samples/samples/TeamsJS/tab-channel-context-nodejs" />
