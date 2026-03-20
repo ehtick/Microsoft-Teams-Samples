@@ -21,11 +21,11 @@ Resource Hub is an innovative solution crafted to enhance the Microsoft Teams ex
 Show users Art of Possible in Teams
 
 ## Quick links
-[Solution Overview](/samples/msteams-application-resourcehub/Documentation/SolutionOverview.md)
+[Solution Overview](/samples/TeamsJS/msteams-application-resourcehub/Documentation/SolutionOverview.md)
 
-[Deployment Guide](/samples/msteams-application-resourcehub/Documentation/DeploymentGuide.md)
+[Deployment Guide](/samples/TeamsJS/msteams-application-resourcehub/Documentation/DeploymentGuide.md)
 
-[App Installation Guide](/samples/msteams-application-resourcehub/Documentation/InstallationGuide.md)
+[App Installation Guide](/samples/TeamsJS/msteams-application-resourcehub/Documentation/InstallationGuide.md)
 
 Teams’ app capabilities included are – 
 1.	Custom Bing search
@@ -103,7 +103,7 @@ By filling in the feedback using item will be able to capture the item ID as wel
 
 Getting started feedback form: two feedback forms available
 1. Proactive feedback form: on completion of a learning path on achieving 100% our feedback form will pop up to capture user feedback as overall learning path
-2. Reactive feedback form: a feedback form is available to user where they can provide feedback on the learning path, and it is available throughout the completion of learning path   ## ![FeedbackOnLearningPath](Documentation/FeedbackOnLearningPath.png
+2. Reactive feedback form: a feedback form is available to user where they can provide feedback on the learning path, and it is available throughout the completion of learning path   ## ![FeedbackOnLearningPath](Documentation/FeedbackOnLearningPath.png)
 #New Tag
 When admin adds a new item under Essentials for you section of the application the item will be tagged as new for 24 hours
  
