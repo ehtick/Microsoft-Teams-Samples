@@ -3,7 +3,6 @@
   "manifestVersion": "1.19",
   "id": "<<Guid>>",
   "version": "1.0.0",
-  "packageName": "com.custom.tab",
   "developer": {
     "name": "Contoso",
     "websiteUrl": "https://www.microsoft.com",

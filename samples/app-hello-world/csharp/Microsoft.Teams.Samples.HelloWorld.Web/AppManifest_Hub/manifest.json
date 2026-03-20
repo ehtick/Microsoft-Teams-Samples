@@ -3,7 +3,6 @@
   "manifestVersion": "1.16",
   "version": "1.0.0",
   "id": "<<Microsoft-App-Id>>",
-  "packageName": "com.contoso.helloworld",
   "developer": {
     "name": "Contoso",
     "websiteUrl": "https://www.microsoft.com",

@@ -3,7 +3,6 @@
   "manifestVersion": "1.13",
   "version": "1.0.1",
   "id": "{{Manifest-id}}",
-  "packageName": "com.teams.incomingwebhook",
   "developer": {
     "name": "Microsoft",
     "websiteUrl": "https://www.microsoft.com",

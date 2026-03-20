@@ -3,7 +3,6 @@
   "manifestVersion": "1.12",
   "version": "1.0.0",
   "id": "f195eed2-4336-4c33-a11b-a417dcaa8680",
-  "packageName": "com.microsoft.teams.taskmoduletester",
   "developer": {
     "name": "Bill Bliss",
     "websiteUrl": "https://www.microsoft.com",

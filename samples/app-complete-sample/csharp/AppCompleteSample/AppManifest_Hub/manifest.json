@@ -3,7 +3,6 @@
   "manifestVersion": "1.16",
   "version": "1.5",
   "id": "{{Microsoft-App-Id}}",
-  "packageName": "com.skype.teams.samples.sampleapp",
   "developer": {
     "name": "Microsoft",
     "websiteUrl": "https://www.microsoft.com",

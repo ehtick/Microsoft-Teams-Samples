@@ -3,7 +3,6 @@
   "manifestVersion": "devPreview",
   "version": "1.0.2",
   "id": "${{TEAMS_APP_ID}}",
-  "packageName": "com.microsoft.teams.meetingsigning",
   "developer": {
     "name": "Contoso",
     "websiteUrl": "https://www.microsoft.com",

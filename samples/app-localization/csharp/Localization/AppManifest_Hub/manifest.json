@@ -3,7 +3,6 @@
   "manifestVersion": "1.16",
   "version": "1.0.1",
   "id": "<<Azure Application ID>>",
-  "packageName": "com.contoso.localization",
   "localizationInfo": {
     "defaultLanguageTag": "en-us",
     "additionalLanguages": [

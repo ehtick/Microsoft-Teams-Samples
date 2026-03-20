@@ -3,7 +3,6 @@
   "manifestVersion": "1.13",
   "version": "1.0.0",
   "id": "<<YOUR-MICROSOFT-APP-ID>>",
-  "packageName": "com.microsoft.teams.samples.AppSSO",
   "developer": {
     "name": "Microsoft",
     "websiteUrl": "https://<<DOMAIN-NAME>>",

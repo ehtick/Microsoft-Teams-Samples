@@ -3,7 +3,6 @@
   "manifestVersion": "1.16",
   "version": "1.0.0",
   "id": "{{GUID-ID}}",
-  "packageName": "com.microsoft.teams.tabexternalauth",
   "developer": {
     "name": "Microsoft",
     "websiteUrl": "https://www.microsoft.com",
