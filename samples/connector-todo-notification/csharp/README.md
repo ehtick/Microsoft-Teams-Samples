@@ -74,7 +74,7 @@ The minimum prerequisites to run this sample are:
 
 4. Configure your own connector : 
   >**Note**:The below gif file shows a simple implementation of a connector registration implementation. It also sends a connector card to the registered       connector via a process triggered "externally". 
-  ![Connector_Configuration](TeamsToDoAppConnector/Images/Connector_Setup/connector_setup_csharp.gif)
+  ![Connector_Configuration](Images/Connector_Setup/connector_setup_csharp.gif)
    1. Register a new connector in the [Connector Developer Portal](https://aka.ms/connectorsdashboard)
    1. Fill in all the basic details such as name, logo, descriptions etc. for the new connector.
    1. For the configuration page, you'll use our sample code's setup endpoint: `https://[BASE_URI]/connector/setup`

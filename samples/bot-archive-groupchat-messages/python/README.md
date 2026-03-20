@@ -119,7 +119,7 @@ You can interact with this bot by sending it a message. The bot will respond by 
 
 **Set up a bot:**
 
-![Bot Setupbot](Images/setupbot.png)
+![Bot Setupbot](Images/setupbot.jpg)
 
 ![Bot Welcome](Images/welcome.png)
 
