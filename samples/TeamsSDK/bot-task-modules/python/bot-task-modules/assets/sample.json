@@ -4,7 +4,7 @@
       "source": "officeDev",
       "title": "Task Modules using Teams SDK for Python",
       "shortDescription": "This sample app demonstrate how to use Task Modules",
-      "url": "https://github.com/OfficeDev/Microsoft-Teams-Samples/tree/main/samples/bot-task-modules/python",
+      "url": "https://github.com/OfficeDev/Microsoft-Teams-Samples/tree/main/samples/TeamsSDK/bot-task-modules/python",
       "longDescription": [
         "This sample app demonstrate how to use Task Modules"
       ],
@@ -34,7 +34,7 @@
         {
           "type": "image",
           "order": 100,
-          "url": "https://raw.githubusercontent.com/OfficeDev/Microsoft-Teams-Samples/main/samples/bot-task-modules/bot-task-modules.gif",
+          "url": "https://raw.githubusercontent.com/OfficeDev/Microsoft-Teams-Samples/main/samples/TeamsSDK/bot-task-modules/bot-task-modules.gif",
           "alt": "Solution UX showing Task Modules"
         }
       ],

@@ -4,7 +4,7 @@
     "source": "officeDev",
     "title": "Teams Bot Auth Quick-start with Graph API",
     "shortDescription": "This sample bot demonstrates implementing authentication in Microsoft Teams using Azure AD and Microsoft Graph API.",
-    "url": "https://github.com/OfficeDev/Microsoft-Teams-Samples/tree/main/samples/bot-auth-quickstart/dotnet",
+    "url": "https://github.com/OfficeDev/Microsoft-Teams-Samples/tree/main/samples/TeamsSDK/bot-auth-quickstart/dotnet",
     "longDescription": [
       "This Teams bot sample showcases authentication integration using Azure AD for seamless user authentication, and Microsoft Graph API integration to fetch the signed-in user's profile information."
     ],
@@ -35,7 +35,7 @@
       {
         "type": "image",
         "order": 100,
-        "url": "https://raw.githubusercontent.com/OfficeDev/Microsoft-Teams-Samples/main/samples/bot-auth-quickstart/bot-auth-quickstart.gif",
+        "url": "https://raw.githubusercontent.com/OfficeDev/Microsoft-Teams-Samples/main/samples/TeamsSDK/bot-auth-quickstart/bot-auth-quickstart.gif",
         "alt": "Solution UX showing teams bot auth quick-start with Microsoft Graph API integration"
       }
     ],

@@ -128,13 +128,13 @@ To receive real-time participant join and leave events, enable Meeting event sub
 
 ```bash
 # For Node.js:
-cd samples/bot-meetings/nodejs/bot-meetings
+cd samples/TeamsSDK/bot-meetings/nodejs/bot-meetings
 
 # For .NET:
-cd samples/bot-meetings/dotnet/bot-meetings
+cd samples/TeamsSDK/bot-meetings/dotnet/bot-meetings
 
 # For Python:
-cd samples/bot-meetings/python/bot-meetings
+cd samples/TeamsSDK/bot-meetings/python/bot-meetings
 ```
 
 **Install dependencies:**

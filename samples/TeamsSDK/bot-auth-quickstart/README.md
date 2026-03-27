@@ -183,7 +183,7 @@ git clone https://github.com/OfficeDev/Microsoft-Teams-Samples.git
 
 ```bash
 # For Node.js:
-cd samples/bot-auth-quickstart/nodejs/bot-auth-quickstart
+cd samples/TeamsSDK/bot-auth-quickstart/nodejs/bot-auth-quickstart
 ```
 
 **Install dependencies:**
@@ -273,7 +273,7 @@ Detailed logs can help diagnose authentication and connection issues.
 **For Node.js (TypeScript)**, logging is configured directly in the app via `ConsoleLogger`:
 ```typescript
 const app = new App({
-  logger: new ConsoleLogger('@samples/bot-auth-quickstart', { level: 'debug' }),
+  logger: new ConsoleLogger('@samples/TeamsSDK/bot-auth-quickstart', { level: 'debug' }),
 });
 ```
 

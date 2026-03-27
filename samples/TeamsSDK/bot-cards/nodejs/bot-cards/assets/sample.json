@@ -4,7 +4,7 @@
     "source": "officeDev",
     "title": "Bot Cards using Teams SDK",
     "shortDescription": "This sample demonstrates adaptive cards with the Teams SDK.",
-    "url": "https://github.com/OfficeDev/Microsoft-Teams-Samples/tree/main/samples/bot-cards/nodejs/bot-cards",
+    "url": "https://github.com/OfficeDev/Microsoft-Teams-Samples/tree/main/samples/TeamsSDK/bot-cards/nodejs/bot-cards",
     "longDescription": [
       "This bot demonstrates cards in Microsoft Teams using Teams SDK. It showcases taking various actions on cards, and toggling visibility."
     ],
@@ -35,7 +35,7 @@
       {
         "type": "Image",
         "order": 100,
-        "url": "https://raw.githubusercontent.com/OfficeDev/Microsoft-Teams-Samples/main/samples/bot-cards/bot-cards.gif",
+        "url": "https://raw.githubusercontent.com/OfficeDev/Microsoft-Teams-Samples/main/samples/TeamsSDK/bot-cards/bot-cards.gif",
         "alt": "Solution UX showing bot cards using Teams SDK"
       }
     ],

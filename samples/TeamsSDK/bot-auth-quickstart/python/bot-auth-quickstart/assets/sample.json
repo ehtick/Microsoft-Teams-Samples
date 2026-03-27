@@ -4,7 +4,7 @@
     "source": "officeDev",
     "title": "Bot Auth Quickstart",
     "shortDescription": "This sample bot demonstrates implementing SSO in Microsoft Teams using the Teams SDK and Azure AD.",
-    "url": "https://github.com/OfficeDev/Microsoft-Teams-Samples/tree/main/samples/bot-auth-quickstart/python",
+    "url": "https://github.com/OfficeDev/Microsoft-Teams-Samples/tree/main/samples/TeamsSDK/bot-auth-quickstart/python",
     "longDescription": [
       "This Teams bot sample showcases Single Sign-On (SSO) integration using Azure AD for seamless user authentication. Built with the Microsoft Teams SDK, it uses Microsoft Graph to fetch user details."
     ],
@@ -35,7 +35,7 @@
       {
         "type": "image",
         "order": 100,
-        "url": "https://raw.githubusercontent.com/OfficeDev/Microsoft-Teams-Samples/main/samples/bot-auth-quickstart/python/Images/Bot-auth-quickstart.gif",
+        "url": "https://raw.githubusercontent.com/OfficeDev/Microsoft-Teams-Samples/main/samples/TeamsSDK/bot-auth-quickstart/python/Images/Bot-auth-quickstart.gif",
         "alt": "Solution UX showing teams bot auth quickstart"
       }
     ],

@@ -4,7 +4,7 @@
     "source": "officeDev",
     "title": "Bot Quickstart",
     "shortDescription": "This sample demonstrates a basic Teams Bot for Microsoft Teams using TypeScript",
-    "url": "https://github.com/OfficeDev/Microsoft-Teams-Samples/tree/main/samples/bot-quickstart/nodejs",
+    "url": "https://github.com/OfficeDev/Microsoft-Teams-Samples/tree/main/samples/TeamsSDK/bot-quickstart/nodejs",
     "longDescription": [
       "This sample demonstrates a basic Teams Bot for Microsoft Teams using TypeScript. The bot showcases conversation features including conversation update events, message handling, and user mentions."
     ],
@@ -35,7 +35,7 @@
       {
         "type": "Image",
         "order": 100,
-        "url": "https://raw.githubusercontent.com/OfficeDev/Microsoft-Teams-Samples/main/samples/bot-quickstart/bot-quickstart.gif",
+        "url": "https://raw.githubusercontent.com/OfficeDev/Microsoft-Teams-Samples/main/samples/TeamsSDK/bot-quickstart/bot-quickstart.gif",
         "alt": "Solution UX showing conversation events for teams bot"
       }
     ],

@@ -14,7 +14,7 @@ This step will create an AAD app, it will be reused wherever it needs AAD throug
 - Fill out name and select third option for supported account type 
 - Set Redirect Uri to "https://token.botframework.com/.auth/web/redirect" and click "Register":
 
-    ![App Registration Organization](https://raw.githubusercontent.com/OfficeDev/Microsoft-Teams-Samples/main/samples/bot-auth-quickstart/assets/AppRegistration.png)
+    ![App Registration Organization](https://raw.githubusercontent.com/OfficeDev/Microsoft-Teams-Samples/main/samples/TeamsSDK/bot-auth-quickstart/assets/AppRegistration.png)
 
 - Navigate to the AAD app you just created, _copy and paste the Application ID (also referred to as **AppId** or **Client ID** — used as `CLIENT_ID` in the config) somewhere safe_. You'll need it in a future step:
     ![Save Application ID](https://raw.githubusercontent.com/OfficeDev/Microsoft-Teams-Samples/main/samples/bot-auth-quickstart/assets/AppId.png)

@@ -4,7 +4,7 @@
     "source": "officeDev",
     "title": "Bot Attachments using Teams SDK",
     "shortDescription": "This sample demonstrates file upload capabilities using Teams SDK.",
-    "url": "https://github.com/OfficeDev/Microsoft-Teams-Samples/tree/main/samples/bot-attachments/python/bot-attachments",
+    "url": "https://github.com/OfficeDev/Microsoft-Teams-Samples/tree/main/samples/TeamsSDK/bot-attachments/python/bot-attachments",
     "longDescription": [
       "This bot demonstrates file upload with OneDrive integration."
     ],
@@ -35,7 +35,7 @@
       {
         "type": "image",
         "order": 100,
-        "url": "https://raw.githubusercontent.com/OfficeDev/Microsoft-Teams-Samples/main/samples/bot-attachments/bot-attachments.gif",
+        "url": "https://raw.githubusercontent.com/OfficeDev/Microsoft-Teams-Samples/main/samples/TeamsSDK/bot-attachments/bot-attachments.gif",
         "alt": "Solution UX showing bot attachments using Teams SDK"
       }
     ],

@@ -4,7 +4,7 @@
     "source": "officeDev",
     "title": "Bot Message Extensions",
     "shortDescription": "This sample demonstrates message extensions for Microsoft Teams using Node.js and TypeScript",
-    "url": "https://github.com/OfficeDev/Microsoft-Teams-Samples/tree/main/samples/bot-message-extensions/nodejs/bot-message-extensions",
+    "url": "https://github.com/OfficeDev/Microsoft-Teams-Samples/tree/main/samples/TeamsSDK/bot-message-extensions/nodejs/bot-message-extensions",
     "longDescription": [
       "This sample showcases the capabilities of a search-based messaging extension in Microsoft Teams. Users can search for Wikipedia articles directly within the Teams compose area. The extension supports search commands, item selection, link unfurling, and result display."
     ],
@@ -35,7 +35,7 @@
       {
         "type": "Image",
         "order": 100,
-        "url": "https://raw.githubusercontent.com/OfficeDev/Microsoft-Teams-Samples/main/samples/bot-message-extensions/bot-message-extensions.gif",
+        "url": "https://raw.githubusercontent.com/OfficeDev/Microsoft-Teams-Samples/main/samples/TeamsSDK/bot-message-extensions/bot-message-extensions.gif",
         "alt": "Solution UX showing bot message extensions for Microsoft Teams"
       }
     ],

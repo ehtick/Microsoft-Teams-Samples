@@ -4,7 +4,7 @@
     "source": "officeDev",
     "title": "Quickstart Bot using Teams SDK",
     "shortDescription": "This sample demonstrates a basic Teams Bot for Microsoft Teams using dotnet",
-    "url": "https://github.com/OfficeDev/Microsoft-Teams-Samples/tree/main/samples/bot-quickstart/dotnet/bot-quickstart",
+    "url": "https://github.com/OfficeDev/Microsoft-Teams-Samples/tree/main/samples/TeamsSDK/bot-quickstart/dotnet/bot-quickstart",
     "longDescription": [
       "This sample demonstrates a basic Teams Bot for Microsoft Teams using dotnet. The bot showcases conversation features including conversation update events, message handling, and user mentions"
     ],
@@ -35,7 +35,7 @@
       {
         "type": "image",
         "order": 100,
-        "url": "https://raw.githubusercontent.com/OfficeDev/Microsoft-Teams-Samples/main/samples/bot-quickstart/bot-quickstart.gif",
+        "url": "https://raw.githubusercontent.com/OfficeDev/Microsoft-Teams-Samples/main/samples/TeamsSDK/bot-quickstart/bot-quickstart.gif",
         "alt": "Solution UX showing Conversation Bot using Teams SDK"
       }
     ],
