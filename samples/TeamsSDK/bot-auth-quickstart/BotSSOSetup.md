@@ -17,7 +17,7 @@ This step will create an AAD app, it will be reused wherever it needs AAD throug
     ![App Registration Organization](https://raw.githubusercontent.com/OfficeDev/Microsoft-Teams-Samples/main/samples/TeamsSDK/bot-auth-quickstart/assets/AppRegistration.png)
 
 - Navigate to the AAD app you just created, _copy and paste the Application ID (also referred to as **AppId** or **Client ID** — used as `CLIENT_ID` in the config) somewhere safe_. You'll need it in a future step:
-    ![Save Application ID](https://raw.githubusercontent.com/OfficeDev/Microsoft-Teams-Samples/main/samples/bot-auth-quickstart/assets/AppId.png)
+    ![Save Application ID](https://raw.githubusercontent.com/OfficeDev/Microsoft-Teams-Samples/main/samples/TeamsSDK/bot-auth-quickstart/assets/AppId.png)
 
 Alternatively, you can register the Entra app using the **Azure CLI**:
 
@@ -34,7 +34,7 @@ echo "App registration created with App ID: $appId"
 
 - Navigate to the "Certificates & secrets" blade and add a client secret by clicking "New Client Secret"
 
-    ![New Secret](https://raw.githubusercontent.com/OfficeDev/Microsoft-Teams-Samples/main/samples/bot-auth-quickstart/assets/ClientSecret.png)
+    ![New Secret](https://raw.githubusercontent.com/OfficeDev/Microsoft-Teams-Samples/main/samples/TeamsSDK/bot-auth-quickstart/assets/ClientSecret.png)
 </br>
 
 - _Copy and paste the secret value somewhere safe_. You'll need it in a future step
@@ -44,7 +44,7 @@ echo "App registration created with App ID: $appId"
 - Click "_Expose an API_" in the left rail
 
     - Set your Application ID URL to include your bot id - api://botid-<AppId>, where <AppId> is the id of the bot that will be making the SSO request and found in your Teams Application Manifest, which is the same you create and saved in step1.1:
-    ![Application ID URI](https://raw.githubusercontent.com/OfficeDev/Microsoft-Teams-Samples/main/samples/bot-auth-quickstart/assets/AppIdUri.png)
+    ![Application ID URI](https://raw.githubusercontent.com/OfficeDev/Microsoft-Teams-Samples/main/samples/TeamsSDK/bot-auth-quickstart/assets/AppIdUri.png)
 
     - Click "_Add a scope_"
 
@@ -66,7 +66,7 @@ echo "App registration created with App ID: $appId"
 
         - Click on Add scope button (Note: The domain part of the Scope name displayed just below the text field should automatically match the Application ID URI set in the previous step, with /access_as_user appended to the end)
 
-        ![Add Scope](https://raw.githubusercontent.com/OfficeDev/Microsoft-Teams-Samples/main/samples/bot-auth-quickstart/assets/CreateScope.png)
+        ![Add Scope](https://raw.githubusercontent.com/OfficeDev/Microsoft-Teams-Samples/main/samples/TeamsSDK/bot-auth-quickstart/assets/CreateScope.png)
 
 #### 1.4. Authorize client applications
 
@@ -76,7 +76,7 @@ Add the following Ids as authorized clients for your application
 
 - 5e3ce6c0-2b1f-4285-8d4b-75ee78787346 (Teams web application)
 
-    ![Add Client Application](https://raw.githubusercontent.com/OfficeDev/Microsoft-Teams-Samples/main/samples/bot-auth-quickstart/assets/AddClient.png)
+    ![Add Client Application](https://raw.githubusercontent.com/OfficeDev/Microsoft-Teams-Samples/main/samples/TeamsSDK/bot-auth-quickstart/assets/AddClient.png)
 
 #### 1.5. Add any necessary API permissions for downstream calls
 
@@ -84,7 +84,7 @@ Add the following Ids as authorized clients for your application
 
 - Add any user delegated permissions that your app will need to downstream APIs. This quick start only requires User.Read.
 
-    ![Add Permissions](https://raw.githubusercontent.com/OfficeDev/Microsoft-Teams-Samples/main/samples/bot-auth-quickstart/assets/image013.png)
+    ![Add Permissions](https://raw.githubusercontent.com/OfficeDev/Microsoft-Teams-Samples/main/samples/TeamsSDK/bot-auth-quickstart/assets/image013.png)
 
 #### 1.6. Enable implicit grant
 
@@ -151,7 +151,7 @@ az bot msteams create \
    
 - Switch to the "Settings" blade and click "Add Setting" under the OAuth Connection Settings section
 
-    ![Add OAuth Settings](https://raw.githubusercontent.com/OfficeDev/Microsoft-Teams-Samples/main/samples/bot-auth-quickstart/assets/AzureBotConfigurationPage.png)
+    ![Add OAuth Settings](https://raw.githubusercontent.com/OfficeDev/Microsoft-Teams-Samples/main/samples/TeamsSDK/bot-auth-quickstart/assets/AzureBotConfigurationPage.png)
 
 - Fill out the Connection Setting form
 
@@ -169,4 +169,4 @@ az bot msteams create \
 
     - Click "Save"
 
-    ![SSO Connection Settings](https://raw.githubusercontent.com/OfficeDev/Microsoft-Teams-Samples/main/samples/bot-auth-quickstart/assets/AzureBotConnectionString.png)
+    ![SSO Connection Settings](https://raw.githubusercontent.com/OfficeDev/Microsoft-Teams-Samples/main/samples/TeamsSDK/bot-auth-quickstart/assets/AzureBotConnectionString.png)
