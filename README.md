@@ -597,30 +597,30 @@ The [Teams Toolkit](https://marketplace.visualstudio.com/items?itemName=TeamsDev
 [msgext-search#cs]:samples/msgext-search/csharp
 [msgext-action#cs]:samples/msgext-action/csharp
 
-[teamssdk-bot-quickstart#cs]:samples/TeamsSDK/bot-quickstart/dotnet
-[teamssdk-bot-quickstart#ts]:samples/TeamsSDK/bot-quickstart/nodejs
-[teamssdk-bot-quickstart#python]:samples/TeamsSDK/bot-quickstart/python
-[teamssdk-bot-cards#cs]:samples/TeamsSDK/bot-cards/dotnet
-[teamssdk-bot-cards#ts]:samples/TeamsSDK/bot-cards/nodejs
-[teamssdk-bot-cards#python]:samples/TeamsSDK/bot-cards/python
-[teamssdk-bot-ai-messages#cs]:samples/TeamsSDK/bot-ai-messages/dotnet
-[teamssdk-bot-ai-messages#ts]:samples/TeamsSDK/bot-ai-messages/nodejs
-[teamssdk-bot-ai-messages#python]:samples/TeamsSDK/bot-ai-messages/python
-[teamssdk-bot-attachments#cs]:samples/TeamsSDK/bot-attachments/dotnet
-[teamssdk-bot-attachments#ts]:samples/TeamsSDK/bot-attachments/nodejs
-[teamssdk-bot-attachments#python]:samples/TeamsSDK/bot-attachments/python
-[teamssdk-bot-auth-quickstart#cs]:samples/TeamsSDK/bot-auth-quickstart/dotnet
-[teamssdk-bot-auth-quickstart#ts]:samples/TeamsSDK/bot-auth-quickstart/nodejs
-[teamssdk-bot-auth-quickstart#python]:samples/TeamsSDK/bot-auth-quickstart/python
-[teamssdk-bot-task-modules#cs]:samples/TeamsSDK/bot-task-modules/dotnet
-[teamssdk-bot-task-modules#ts]:samples/TeamsSDK/bot-task-modules/nodejs
-[teamssdk-bot-task-modules#python]:samples/TeamsSDK/bot-task-modules/python
-[teamssdk-bot-meetings#cs]:samples/TeamsSDK/bot-meetings/dotnet
-[teamssdk-bot-meetings#ts]:samples/TeamsSDK/bot-meetings/nodejs
-[teamssdk-bot-meetings#python]:samples/TeamsSDK/bot-meetings/python
-[teamssdk-bot-message-extensions#cs]:samples/TeamsSDK/bot-message-extensions/dotnet
-[teamssdk-bot-message-extensions#ts]:samples/TeamsSDK/bot-message-extensions/nodejs
-[teamssdk-bot-message-extensions#python]:samples/TeamsSDK/bot-message-extensions/python
+[teamssdk-bot-quickstart#cs]:samples/TeamsSDK/bot-quickstart/dotnet/bot-quickstart
+[teamssdk-bot-quickstart#ts]:samples/TeamsSDK/bot-quickstart/nodejs/bot-quickstart
+[teamssdk-bot-quickstart#python]:samples/TeamsSDK/bot-quickstart/python/bot-quickstart
+[teamssdk-bot-cards#cs]:samples/TeamsSDK/bot-cards/dotnet/bot-cards
+[teamssdk-bot-cards#ts]:samples/TeamsSDK/bot-cards/nodejs/bot-cards
+[teamssdk-bot-cards#python]:samples/TeamsSDK/bot-cards/python/bot-cards
+[teamssdk-bot-ai-messages#cs]:samples/TeamsSDK/bot-ai-messages/dotnet/bot-ai-messages
+[teamssdk-bot-ai-messages#ts]:samples/TeamsSDK/bot-ai-messages/nodejs/bot-ai-messages
+[teamssdk-bot-ai-messages#python]:samples/TeamsSDK/bot-ai-messages/python/bot-ai-messages
+[teamssdk-bot-attachments#cs]:samples/TeamsSDK/bot-attachments/dotnet/bot-attachments
+[teamssdk-bot-attachments#ts]:samples/TeamsSDK/bot-attachments/nodejs/bot-attachments
+[teamssdk-bot-attachments#python]:samples/TeamsSDK/bot-attachments/python/bot-attachments
+[teamssdk-bot-auth-quickstart#cs]:samples/TeamsSDK/bot-auth-quickstart/dotnet/bot-auth-quickstart
+[teamssdk-bot-auth-quickstart#ts]:samples/TeamsSDK/bot-auth-quickstart/nodejs/bot-auth-quickstart
+[teamssdk-bot-auth-quickstart#python]:samples/TeamsSDK/bot-auth-quickstart/python/bot-auth-quickstart
+[teamssdk-bot-task-modules#cs]:samples/TeamsSDK/bot-task-modules/dotnet/bot-task-modules
+[teamssdk-bot-task-modules#ts]:samples/TeamsSDK/bot-task-modules/nodejs/bot-task-modules
+[teamssdk-bot-task-modules#python]:samples/TeamsSDK/bot-task-modules/python/bot-task-modules
+[teamssdk-bot-meetings#cs]:samples/TeamsSDK/bot-meetings/dotnet/bot-meetings
+[teamssdk-bot-meetings#ts]:samples/TeamsSDK/bot-meetings/nodejs/bot-meetings
+[teamssdk-bot-meetings#python]:samples/TeamsSDK/bot-meetings/python/bot-meetings
+[teamssdk-bot-message-extensions#cs]:samples/TeamsSDK/bot-message-extensions/dotnet/bot-message-extensions
+[teamssdk-bot-message-extensions#ts]:samples/TeamsSDK/bot-message-extensions/nodejs/bot-message-extensions
+[teamssdk-bot-message-extensions#python]:samples/TeamsSDK/bot-message-extensions/python/bot-message-extensions
 
 
 ## Submitting issues
