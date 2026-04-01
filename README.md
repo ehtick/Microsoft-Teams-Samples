@@ -28,6 +28,7 @@ The easy way to browse through all the samples is to visit the [Microsoft 365 Sa
 1. [Meetings samples](#Meetings-samples)
 1. [Actions Preview](#Actions-preview)
 1. [Scenario specific samples](#Scenario-specific-samples)
+1. [Teams SDK Samples](#Teams-SDK-Samples)
 
 ## [Microsoft 365 Copilot samples](https://github.com/OfficeDev/Copilot-for-M365-Samples)
 | Name               | Description                                                                 | Level        | .NET                                                                                     | TypeScript                                                                                      | JavaScript                                                                                      | Python                                                                                      |
@@ -262,6 +263,18 @@ The [Teams Toolkit](https://marketplace.visualstudio.com/items?itemName=TeamsDev
 | 21 | App SSO                                        | Provides SSO functionality for Teams, supporting Tabs, Bots, and Messaging Extensions with secure API access.         | Advanced     | [View][app-sso#cs]                           | [View][app-sso#js] ![toolkit-icon](assets/toolkit-icon.png)                               | [View](/samples/TeamsJS/app-sso/csharp/demo-manifest/App-SSO.zip) |
 | 22 | Combined Tab and Office Add-in                 | Demonstrates using an add-in to act on Office documents and a tab to aggregate data about these actions.                               | Advanced     |                                              | [View][tab-add-in-combined#ts] ![toolkit-icon](assets/toolkit-icon.png)                   | [View](/samples/tab-add-in-combined/nodejs/demo-manifest/tab-add-in-combined.zip) |
 | 23 | App HR Talent                                   | Integrates with a simulated recruiting and talent management system, supporting bot, tab, and messaging extensions for HR operations.   | Advanced     | [View][app-HR-talent#csharp]                 |                                                 | [View](/samples/app-HR-talent/csharp/src/demo-manifest/TeamsTalentMgmt.zip) |
+
+## Teams SDK Samples
+| #  | Sample Name              | Description                                                                                                                                     | Level        | C#                                         | TypeScript                                      | Python                                         |
+|----|--------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------|--------------|--------------------------------------------|-------------------------------------------------|-------------------------------------------------|
+| 1  | Bot Quickstart           | Demonstrates bot conversation events handling including user info retrieval, mentions, and message echo.                                        | Basic        | [View][teamssdk-bot-quickstart#cs]         | [View][teamssdk-bot-quickstart#ts]             | [View][teamssdk-bot-quickstart#python]         |
+| 2  | Bot Cards                | Demonstrates various card types and interactive card behaviors including submit actions and dynamic content toggle.                              | Basic        | [View][teamssdk-bot-cards#cs]              | [View][teamssdk-bot-cards#ts]                  | [View][teamssdk-bot-cards#python]              |
+| 3  | Bot AI Messages          | Demonstrates AI message formatting features including AI labels, citations, feedback buttons, and sensitivity labels.                           | Basic        | [View][teamssdk-bot-ai-messages#cs]        | [View][teamssdk-bot-ai-messages#ts]            | [View][teamssdk-bot-ai-messages#python]        |
+| 4  | Bot Attachments          | Handles file downloads, uploads, and consent cards with OneDrive integration.                                                                   | Intermediate | [View][teamssdk-bot-attachments#cs]        | [View][teamssdk-bot-attachments#ts]            | [View][teamssdk-bot-attachments#python]        |
+| 5  | Bot Auth Quickstart      | Single Sign-On (SSO) authentication with Azure AD and Microsoft Graph integration for user profile retrieval.                                   | Intermediate | [View][teamssdk-bot-auth-quickstart#cs]    | [View][teamssdk-bot-auth-quickstart#ts]        | [View][teamssdk-bot-auth-quickstart#python]    |
+| 6  | Bot Task Modules         | Task modules (dialogs) in Teams with Adaptive Card, custom form, and multistep form approaches.                                                 | Intermediate | [View][teamssdk-bot-task-modules#cs]       | [View][teamssdk-bot-task-modules#ts]           | [View][teamssdk-bot-task-modules#python]       |
+| 7  | Bot Meetings             | Handles real-time meeting events and retrieves meeting transcripts via Microsoft Graph API with RSC permissions.                                 | Advanced     | [View][teamssdk-bot-meetings#cs]           | [View][teamssdk-bot-meetings#ts]               | [View][teamssdk-bot-meetings#python]           |
+| 8  | Bot Message Extensions   | Search-based messaging extension with Wikipedia integration, link unfurling, and search commands.                                                | Advanced     | [View][teamssdk-bot-message-extensions#cs] | [View][teamssdk-bot-message-extensions#ts]     | [View][teamssdk-bot-message-extensions#python] |
 
 ## Application templates
 
@@ -584,6 +597,30 @@ The [Teams Toolkit](https://marketplace.visualstudio.com/items?itemName=TeamsDev
 [msgext-search#cs]:samples/msgext-search/csharp
 [msgext-action#cs]:samples/msgext-action/csharp
 
+[teamssdk-bot-quickstart#cs]:samples/TeamsSDK/bot-quickstart/dotnet
+[teamssdk-bot-quickstart#ts]:samples/TeamsSDK/bot-quickstart/nodejs
+[teamssdk-bot-quickstart#python]:samples/TeamsSDK/bot-quickstart/python
+[teamssdk-bot-cards#cs]:samples/TeamsSDK/bot-cards/dotnet
+[teamssdk-bot-cards#ts]:samples/TeamsSDK/bot-cards/nodejs
+[teamssdk-bot-cards#python]:samples/TeamsSDK/bot-cards/python
+[teamssdk-bot-ai-messages#cs]:samples/TeamsSDK/bot-ai-messages/dotnet
+[teamssdk-bot-ai-messages#ts]:samples/TeamsSDK/bot-ai-messages/nodejs
+[teamssdk-bot-ai-messages#python]:samples/TeamsSDK/bot-ai-messages/python
+[teamssdk-bot-attachments#cs]:samples/TeamsSDK/bot-attachments/dotnet
+[teamssdk-bot-attachments#ts]:samples/TeamsSDK/bot-attachments/nodejs
+[teamssdk-bot-attachments#python]:samples/TeamsSDK/bot-attachments/python
+[teamssdk-bot-auth-quickstart#cs]:samples/TeamsSDK/bot-auth-quickstart/dotnet
+[teamssdk-bot-auth-quickstart#ts]:samples/TeamsSDK/bot-auth-quickstart/nodejs
+[teamssdk-bot-auth-quickstart#python]:samples/TeamsSDK/bot-auth-quickstart/python
+[teamssdk-bot-task-modules#cs]:samples/TeamsSDK/bot-task-modules/dotnet
+[teamssdk-bot-task-modules#ts]:samples/TeamsSDK/bot-task-modules/nodejs
+[teamssdk-bot-task-modules#python]:samples/TeamsSDK/bot-task-modules/python
+[teamssdk-bot-meetings#cs]:samples/TeamsSDK/bot-meetings/dotnet
+[teamssdk-bot-meetings#ts]:samples/TeamsSDK/bot-meetings/nodejs
+[teamssdk-bot-meetings#python]:samples/TeamsSDK/bot-meetings/python
+[teamssdk-bot-message-extensions#cs]:samples/TeamsSDK/bot-message-extensions/dotnet
+[teamssdk-bot-message-extensions#ts]:samples/TeamsSDK/bot-message-extensions/nodejs
+[teamssdk-bot-message-extensions#python]:samples/TeamsSDK/bot-message-extensions/python
 
 
 ## Submitting issues
