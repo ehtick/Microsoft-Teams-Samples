@@ -1,8 +1,8 @@
 > [!IMPORTANT]
+>
+> The Bot Framework SDK used to build some of our (now archived) samples is deprecated. Existing customers can continue to use Bot Framework SDK without disruption. Support tickets for Bot Framework SDK are no longer being serviced as of December 31st, 2025. If you have an existing agent built with the Bot Framework SDK, you can upgrade to the Teams SDK. For details on core changes and migration steps, [see the migration guide](https://microsoft.github.io/teams-sdk/typescript/migrations/)
 
-> The Bot Framework SDK used to build some of our (now archived) samples is deprecated. Existing customers can continue to use Bot Framework SDK without disruption. Support tickets for Bot Framework SDK are no longer being serviced as of December 31st, 2025. If you have an existing agent built with the Bot Framework SDK, you can upgrade to the Teams SDK. For details on core changes and migration steps, [see the migration guide](https://microsoft.github.io/teams-sdk/typescript/migrations/).
 
- 
 
 ## Welcome to the Teams Sample Repo
 
