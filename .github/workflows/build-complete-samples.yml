@@ -20,16 +20,8 @@ jobs:
     strategy:
       matrix:
         include:
-            - project_path: 'samples/meetings-events/csharp/MeetingEvents/MeetingEvents.csproj'
-              name: 'meetings-events'
-              version: '6.0.x'
-
             - project_path: 'samples/app-complete-auth/csharp/AppCompleteAuth/AppCompleteAuth.csproj'
               name: 'app-complete-auth'
-              version: '6.0.x'
-
-            - project_path: 'samples/app-hello-world/csharp/Microsoft.Teams.Samples.HelloWorld.Web/Microsoft.Teams.Samples.HelloWorld.Web.csproj'
-              name: 'app-hello-world'
               version: '6.0.x'
 
             - project_path: 'samples/app-checkin-location/csharp/AppCheckinLocation/AppCheckinLocation.csproj'
@@ -272,32 +264,12 @@ jobs:
               name: 'account-linking'
               version: '6.0.x'
              
-            - project_path: 'samples/bot-conversation/csharp/TeamsConversationBot.csproj'
-              name: 'bot-conversation'
-              version: '6.0.x'
-
-            - project_path: 'samples/bot-file-upload/csharp/TeamsFileUpload/TeamsFileUpload.csproj'
-              name: 'bot-file-upload'
-              version: '6.0.x'
-
             - project_path: 'samples/bot-initiate-thread-in-channel/csharp/TeamsStartNewThreadInTeam/TeamsStartNewThreadInTeam.csproj'
               name: 'bot-initiate-thread-in-channel'
               version: '6.0.x'
 
-            - project_path: 'samples/bot-message-reaction/csharp/MessageReaction/MessageReaction.csproj'
-              name: 'bot-message-reaction'
-              version: '8.0.x'
-
             - project_path: 'samples/bot-suggested-actions/csharp/SuggestedActions/SuggestedActionsBot.csproj'
               name: 'bot-suggested-actions'
-              version: '6.0.x'
-
-            - project_path: 'samples/bot-task-module/csharp/TeamsTaskModule.csproj'
-              name: 'bot-task-module'
-              version: '6.0.x'
-
-            - project_path: 'samples/bot-teams-authentication/csharp/TeamsAuth.csproj'
-              name: 'bot-teams-authentication'
               version: '6.0.x'
 
             - project_path: 'samples/bot-teams-catering/csharp/Catering/Catering.csproj'
@@ -380,10 +352,6 @@ jobs:
               name: 'msgext-search-auth-config'
               version: '6.0.x'
 
-            - project_path: 'samples/msgext-search/csharp/TeamsMessagingExtensionsSearch.csproj'
-              name: 'msgext-search'
-              version: '6.0.x'   
-                    
             - project_path: 'samples/TeamsJS/msteams-application-resourcehub/Source/microsoft-teams-apps-selfhelp/Microsoft.Teams.Apps.Selfhelp.csproj'
               name: 'msteams-application-resourcehub'
               version: '6.0.x' 
@@ -408,22 +376,10 @@ jobs:
               name: 'graph-activity-feed'
               version: '6.0.x' 
 
-            - project_path: 'samples/graph-proactive-installation/csharp/ProactiveAppInstallation/ProactiveAppInstallation.csproj'
-              name: 'graph-proactive-installation'
-              version: '6.0.x' 
-
-            - project_path: 'samples/bot-conversation-sso-quickstart/csharp_dotnetcore/BotConversationSsoQuickstart/BotConversationSsoQuickstart.csproj'
-              name: 'bot-conversation-sso-quickstart'
-              version: '6.0.x'           
-
             - project_path: 'samples/connector-todo-notification/csharp/TeamsToDoAppConnector.csproj'
               name: 'connector-todo-notification'
               version: '6.0.x'
 
-            - project_path: 'samples/bot-adaptive-card-actions/csharp/AdaptiveCardActions/AdaptiveCardActions.csproj'
-              name: 'bot-adaptive-card-actions'
-              version: '6.0.x'
-            
             - project_path: 'samples/bot-formatting-cards/csharp/BotFormattingCards/BotFormattingCards.csproj'
               name: 'bot-formatting-cards'
               version: '6.0.x'
@@ -548,10 +504,6 @@ jobs:
               name: 'app-complete-auth'
               version: '14.x'
 
-            - project_path: 'samples/app-hello-world/nodejs'
-              name: 'app-hello-world'
-              version: '14.x'
-
             - project_path: 'samples/app-link-unfurling-in-share-to-teams/nodejs'
               name: 'app-link-unfurling-in-share-to-teams'
               version: '18.x'
@@ -648,20 +600,12 @@ jobs:
               name: 'graph-chat-lifecycle'
               version: '14.x'
 
-            - project_path: 'samples/graph-proactive-installation/nodejs'
-              name: 'graph-proactive-installation'
-              version: '14.x'
-
             - project_path: 'samples/TeamsJS/graph-rsc/nodejs'
               name: 'graph-rsc'
               version: '14.x'
 
             - project_path: 'samples/meetings-notification/nodejs'
               name: 'meetings-notification'
-              version: '14.x'
-
-            - project_path: 'samples/meetings-events/nodejs'
-              name: 'meetings-events'
               version: '14.x'
 
             - project_path: 'samples/TeamsJS/meetings-sidepanel/nodejs'
@@ -820,28 +764,8 @@ jobs:
               name: 'bot-proactive-messaging-teamsfx'
               version: '18.x'              
 
-            - project_path: 'samples/app-auth/nodejs'
-              name: 'app-auth'
-              version: '16.x'
-
-            - project_path: 'samples/bot-conversation/nodejs'
-              name: 'bot-conversation'
-              version: '16.x'
-
-            - project_path: 'samples/bot-conversation-sso-quickstart/js'
-              name: 'bot-conversation-sso-quickstart'
-              version: '16.x'
-
-            - project_path: 'samples/bot-file-upload/nodejs'
-              name: 'bot-file-upload'
-              version: '16.x'
-
             - project_path: 'samples/bot-initiate-thread-in-channel/nodejs'
               name: 'bot-initiate-thread-in-channel'
-              version: '16.x'
-
-            - project_path: 'samples/bot-message-reaction/nodejs'
-              name: 'bot-message-reaction'
               version: '16.x'
 
             - project_path: 'samples/bot-people-picker-adaptive-card/nodejs'
@@ -851,10 +775,6 @@ jobs:
             - project_path: 'samples/bot-suggested-actions/nodejs'
               name: 'bot-suggested-actions'
               version: '16.x'
-
-            - project_path: 'samples/bot-task-module/nodejs'
-              name: 'bot-task-module'
-              version: '18.x' 
 
             - project_path: 'samples/connector-todo-notification/nodejs'
               name: 'connector-todo-notification'
@@ -936,10 +856,6 @@ jobs:
               name: 'msgext-link-unfurling'
               version: '16.x'
 
-            - project_path: 'samples/msgext-search/nodejs'
-              name: 'msgext-search'
-              version: '16.x'
-
             - project_path: 'samples/TeamsJS/tab-app-monetization/nodejs'
               name: 'tab-app-monetization'
               version: '16.x'
@@ -964,10 +880,6 @@ jobs:
               name: 'tab-ui-templates'
               version: '18.x'
 
-            - project_path: 'samples/bot-adaptive-card-actions/nodejs'
-              name: 'bot-adaptive-card-actions'
-              version: '18.x'
-            
             - project_path: 'samples/TeamsJS/tab-navbar-menu/ts'
               name: 'tab-navbar-menu'
               version: '16.x'
@@ -1000,10 +912,6 @@ jobs:
               name: 'bot-sso-adaptivecard'
               version: '18.x'
             
-            - project_path: 'samples/bot-teams-authentication/nodejs'
-              name: 'bot-teams-authentication'
-              version: '18.x'
-
             - project_path: 'samples/meetings-app-icon-badging/nodejs'
               name: 'meetings-app-icon-badging'
               version: '18.x'
@@ -1127,32 +1035,8 @@ jobs:
     strategy:
       matrix:
         include:
-            - project_path: 'samples/bot-conversation/java'
-              name: 'bot-conversation'
-              version: '18'
-
-            - project_path: 'samples/bot-message-reaction/java'
-              name: 'bot-message-reaction'
-              version: '18'
-
-            - project_path: 'samples/bot-teams-authentication/java'
-              name: 'bot-teams-authentication'
-              version: '18'
-
-            - project_path: 'samples/bot-file-upload/java'
-              name: 'bot-file-upload'
-              version: '18'   
-
-            - project_path: 'samples/bot-task-module/java'
-              name: 'bot-task-module'
-              version: '18'
-
             - project_path: 'samples/bot-initiate-thread-in-channel/java'
               name: 'bot-initiate-thread-in-channel'
-              version: '18'
-
-            - project_path: 'samples/msgext-search/java'
-              name: 'msgext-search'
               version: '18'
 
             - project_path: 'samples/msgext-action/java'
@@ -1190,22 +1074,6 @@ jobs:
     strategy:
       matrix:
         include:
-            - project_path: 'samples/bot-conversation/python'
-              name: 'bot-conversation'
-              version: '3.10.x'
-
-            - project_path: 'samples/bot-teams-authentication/python'
-              name: 'bot-teams-authentication'
-              version: '3.10.x'
-
-            - project_path: 'samples/bot-file-upload/python'
-              name: 'bot-file-upload'
-              version: '3.10.x'
-
-            - project_path: 'samples/bot-task-module/python'
-              name: 'bot-task-module'
-              version: '3.10.x'
-
             - project_path: 'samples/bot-initiate-thread-in-channel/python'
               name: 'bot-initiate-thread-in-channel'
               version: '3.10.x'
@@ -1213,10 +1081,6 @@ jobs:
             - project_path: 'samples/TeamsJS/graph-pinned-messages/python'
               name: 'graph-pinned-messages'
               version: '3.10.x'
-
-            - project_path: 'samples/msgext-search/python'
-              name: 'msgext-search'
-              version: '3.13.x'
 
             - project_path: 'samples/msgext-action/python'
               name: 'msgext-action'
