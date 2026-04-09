@@ -1050,7 +1050,7 @@ jobs:
               
             - project_path: 'samples/bot-tag-mention/nodejs'
               name: 'bot-tag-mention-nodejs'
-              
+              version: '18.x'
 
             - project_path: 'samples/bot-commands-menu/nodejs'
               name: 'bot-commands-menu'
