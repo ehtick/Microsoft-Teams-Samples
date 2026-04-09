@@ -20,6 +20,38 @@ jobs:
     strategy:
       matrix:
         include:
+            - project_path: 'samples/TeamsSDK/bot-ai-messages/dotnet/bot-ai-messages/BotAiMessages.csproj'
+              name: 'bot-ai-messages'
+              version: '10.0.x'
+
+            - project_path: 'samples/TeamsSDK/bot-attachments/dotnet/bot-attachments/BotAttachments.csproj'
+              name: 'bot-attachments'
+              version: '10.0.x'
+
+            - project_path: 'samples/TeamsSDK/bot-auth-quickstart/dotnet/bot-auth-quickstart/BotAuthQuickstart/BotAuthQuickstart.csproj'
+              name: 'bot-auth-quickstart'
+              version: '10.0.x'
+
+            - project_path: 'samples/TeamsSDK/bot-cards/dotnet/bot-cards/BotCards.csproj'
+              name: 'bot-cards'
+              version: '10.0.x'
+
+            - project_path: 'samples/TeamsSDK/bot-meetings/dotnet/bot-meetings/BotMeetings.csproj'
+              name: 'bot-meetings'
+              version: '10.0.x'
+
+            - project_path: 'samples/TeamsSDK/bot-message-extensions/dotnet/bot-message-extensions/BotMessageExtensions.csproj'
+              name: 'bot-message-extensions'
+              version: '10.0.x'
+
+            - project_path: 'samples/TeamsSDK/bot-quickstart/dotnet/bot-quickstart/BotQuickstart.csproj'
+              name: 'bot-quickstart'
+              version: '10.0.x'
+
+            - project_path: 'samples/TeamsSDK/bot-task-modules/dotnet/bot-task-modules/BotTaskModules.csproj'
+              name: 'bot-task-modules'
+              version: '10.0.x'
+           
             - project_path: 'samples/TeamsJS/app-sso/csharp/App SSO Sample/App SSO Sample.csproj'
               name: 'app-sso'
               version: '6.0.x'
