@@ -508,35 +508,35 @@ jobs:
 
             - project_path: 'samples/TeamsSDK/bot-ai-messages/python/bot-ai-messages'
               name: 'bot-ai-messages'
-              version: '3.10.x'
+              version: '3.12.x'
 
             - project_path: 'samples/TeamsSDK/bot-attachments/python/bot-attachments'
               name: 'bot-attachments'
-              version: '3.10.x'
+              version: '3.12.x'
 
             - project_path: 'samples/TeamsSDK/bot-auth-quickstart/python/bot-auth-quickstart'
               name: 'bot-auth-quickstart'
-              version: '3.10.x'
+              version: '3.12.x'
 
             - project_path: 'samples/TeamsSDK/bot-cards/python/bot-cards'
               name: 'bot-cards'
-              version: '3.10.x'
+              version: '3.12.x'
 
             - project_path: 'samples/TeamsSDK/bot-meetings/python/bot-meetings'
               name: 'bot-meetings'
-              version: '3.10.x'
+              version: '3.12.x'
 
             - project_path: 'samples/TeamsSDK/bot-message-extensions/python/bot-message-extensions'
               name: 'bot-message-extensions'
-              version: '3.10.x'
+              version: '3.12.x'
 
             - project_path: 'samples/TeamsSDK/bot-quickstart/python/bot-quickstart'
               name: 'bot-quickstart'
-              version: '3.10.x'
+              version: '3.12.x'
 
             - project_path: 'samples/TeamsSDK/bot-task-modules/python/bot-task-modules'
               name: 'bot-task-modules'
-              version: '3.10.x'
+              version: '3.12.x'
 
       fail-fast: false
     name: Build all "${{ matrix.name }}" python
