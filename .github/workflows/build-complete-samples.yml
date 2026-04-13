@@ -465,6 +465,10 @@ jobs:
               name: 'tab-adhoccalls-transcript-recording-api-server'
               version: '18.x'
 
+            - project_path: 'samples/TeamsSDK/bot-quickstart/nodejs/bot-quickstart'
+              name: 'bot-quickstart'
+              version: '20.x'
+
 
       fail-fast: false
     name: Build all "${{ matrix.name }}" nodejs
