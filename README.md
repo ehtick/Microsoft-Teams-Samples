@@ -17,8 +17,6 @@ The repository is organized into 3 different folders as noted below:
 ## Samples
 
 Teams SDK – Contains 8 new condensed samples built with the Teams SDK 
-
-Archived – Contains 100+ older samples built on Bot Framework SDK [Deprecated] 
  
 TeamsJS – Contains 58 samples built with the TeamsJS Library 
 
