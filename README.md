@@ -16,9 +16,11 @@ The repository is organized into 3 different folders as noted below:
 
 ## Samples
 
-Teams SDK – Contains 8 new condensed samples built with the Teams SDK 
+Teams SDK – Contains 8 new condensed samples built with the Teams SDK
+
+Archived – Contains 100+ older samples
  
-TeamsJS – Contains 58 samples built with the TeamsJS Library 
+TeamsJS – Contains 58 samples built with the TeamsJS Library
 
 The samples are sorted by SDK in the sections below to help you find exactly what you are looking for. For more in-depth information on these samples and how to utilize them see our [TEAMS PLATFORM DEVELOPER DOCUMENTATION](https://learn.microsoft.com/en-us/microsoftteams/platform/mstdd-landing) 
 
