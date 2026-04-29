@@ -11,13 +11,13 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^5.1.2",
-    "react-scripts": "3.4.1",
+    "react-scripts": "5.0.1",
     "scheduler": "^0.23.0"
   },
   "scripts": {
     "dev:teamsfx": "env-cmd --silent -f .localConfigs npm run start",
-    "start": "set NODE_OPTIONS=--openssl-legacy-provider && set PORT=3978 && react-scripts start",
-    "build": "set NODE_OPTIONS=--openssl-legacy-provider && react-scripts build",
+    "start": "set PORT=3978 && react-scripts start",
+    "build": "react-scripts build",
     "eject": "react-scripts eject"
   },
   "browserslist": {
