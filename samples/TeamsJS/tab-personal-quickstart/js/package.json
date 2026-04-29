@@ -16,8 +16,8 @@
   },
   "scripts": {
     "dev:teamsfx": "env-cmd --silent -f .localConfigs npm run start",
-    "start": "set PORT=3978 && react-scripts --openssl-legacy-provider start",
-    "build": "react-scripts --openssl-legacy-provider build",
+    "start": "set NODE_OPTIONS=--openssl-legacy-provider && set PORT=3978 && react-scripts start",
+    "build": "set NODE_OPTIONS=--openssl-legacy-provider && react-scripts build",
     "eject": "react-scripts eject"
   },
   "browserslist": {
